@@ -1,25 +1,34 @@
-const badTags = ['post'];
+const ignoreTags = require('../_data/ignoreTags.js');
 
 module.exports = class Post {
 	get data() {
 		return {
-			layout: 'base',
-			title: 'haliphax.dev',
+			layout: 'withHeader',
 		};
 	}
 
 	render(data) {
 		return /*html*/`
-			<h2>${data.title}</h2>
-			<ul>
-				${data.tags.filter(t => badTags.indexOf(t) < 0)
-					.map(t => /*html*/`
-						<li>
-							<a href="/tags/${t}/">${t}</a>
-						</li>
-					`).join('')}
-			</ul>
-			${data.content}
+			<div class="row">
+				<div class="col">
+					<span class="sr-only">Tags:</span>
+					<ul class="list-unstyled d-inline">
+						${data.tags.filter(t => ignoreTags.indexOf(t) < 0)
+							.map(t => /*html*/`
+								<li class="d-inline-block">
+									<a href="/tags/${t}/" class="badge badge-primary">
+										${t}
+									</a>
+								</li>
+							`).join('')}
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col">
+					${data.content}
+				</div>
+			</div>
 			`;
 	}
 };

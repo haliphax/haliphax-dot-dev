@@ -1,34 +1,30 @@
+const renderCollection = require('../_data/collection.11ty.js');
+
 module.exports = class Tag {
 	get data() {
 		return {
 			eleventyComputed: {
-				title({tag}) { return `Tagged: ${tag}`; },
+				title({ tag }) {
+					return `Tagged: ${tag}`;
+				},
 			},
-			layout: 'base',
+			layout: 'withHeader',
 			pagination: {
 				addAllPagesToCollections: true,
 				alias: 'tag',
 				data: 'collections',
-				filter: [
-					'all',
-					'post',
-				],
 				size: 1,
 			},
-			permalink({tag}) { return `/tags/${tag}/`; },
+			permalink({ tag }) {
+				return `/tags/${tag}/`;
+			},
 		};
 	}
 
-	render(data) {
+	render({ collections, tag }) {
 		return /*html*/`
-			<h2>Tag: ${data.tag}</h2>
-			<ul>
-				${data.collections[data.tag].map(t => /*html*/`
-					<li>
-						<a href="${t.url}">${t.data.title}</a>
-					</li>
-				`).join('')}
-			</ul>
+			${renderCollection(collections[tag])}
+			<a href="/tags/">View all tags</a>
 			`;
 	}
 };

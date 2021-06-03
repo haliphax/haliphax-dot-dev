@@ -2,18 +2,18 @@ const fs = require('fs');
 const markdownLibrary = require('./_data/markdownLib.js');
 
 module.exports = function (eleventyConfig) {
-	eleventyConfig.setDataDeepMerge(true);
 	eleventyConfig.addLayoutAlias('base', 'base.11ty.js');
 	eleventyConfig.addLayoutAlias('collection', 'collection.11ty.js');
 	eleventyConfig.addLayoutAlias('post', 'post.11ty.js');
+	eleventyConfig.addLayoutAlias('withHeader', 'withHeader.11ty.js');
+	eleventyConfig.addPassthroughCopy('css');
 
-	const markdownLibrary = markdownIt({
-		html: true,
-		breaks: true,
-		linkify: true,
-	});
-
+	eleventyConfig.setDataDeepMerge(true);
 	eleventyConfig.setLibrary('md', markdownLibrary);
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: '<!--more-->',
+	});
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
 			ready(err, browserSync) {

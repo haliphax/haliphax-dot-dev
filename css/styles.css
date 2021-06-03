@@ -1,0 +1,26 @@
+:root {
+	--pink-color: #f0f;
+    --pink-color-light: #f7f;
+    --pink-color-very-light: #faf;
+    --pink-color-dark: #a0a;
+    --pink-color-very-dark: #707;
+    --pink-box-shadow-color: #a0a;
+    --pink-box-shadow-color-darker: #707;
+	--primary-color: var(--pink-color);                                     /* Before: var(--yellow-color) */
+	--primary-color-light: var(--pink-color-light);                         /* Before: var(--yellow-color-light) */
+	--primary-color-very-light: var(--pink-color-very-light);               /* Before: var(--yellow-color-very-light) */
+	--primary-color-dark: var(--pink-color-dark);                           /* Before: var(--yellow-color-dark) */
+	--primary-color-very-dark: var(--pink-color-very-dark);                 /* Before: var(--yellow-color-very-dark) */
+	--primary-box-shadow-color: var(--pink-box-shadow-color);               /* Before: var(--yellow-box-shadow-color) */
+	--primary-box-shadow-color-darker: var(--pink-box-shadow-color-darker); /* Before: var(--yellow-box-shadow-color-darker) */
+	--text-color-on-primary-color-bg: var(--text-color-on-pink-color-bg);   /* Before: var(--text-color-on-yellow-color-bg) */
+	--primary-color: var(--pink-color);
+}
+
+ul.list-unstyled {
+	list-style-type: none;
+}
+ul.list-unstyled > li {
+	margin: 0;
+	padding: 0;
+}

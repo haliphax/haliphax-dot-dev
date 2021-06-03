@@ -1,22 +1,19 @@
+const renderCollection = require('../_data/collection.11ty.js');
+
 module.exports = class Index {
 	get data() {
 		return {
-			layout: 'base',
+			header: 'Recent posts',
+			layout: 'withHeader',
+			myLimit: 3,
 			title: 'Home',
 		};
 	}
 
 	render(data) {
 		return /*html*/`
-			<h2>Recent posts</h2>
-			<ul>
-				${data.collections.post.reverse().slice(0, 5)
-					.map(p => /*html*/`
-						<li>
-							<a href="${p.url}">${p.data.title}</a>
-						</li>
-					`).join('\n')}
-			</ul>
+			${renderCollection(data.collections.post)}
+			<a href="/tags/">View all tags</a>
 			`;
 	}
 };
