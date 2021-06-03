@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addLayoutAlias('collection', 'collection.11ty.js');
 	eleventyConfig.addLayoutAlias('post', 'post.11ty.js');
 
-	let markdownLibrary = markdownIt({
+	const markdownLibrary = markdownIt({
 		html: true,
 		breaks: true,
 		linkify: true,
