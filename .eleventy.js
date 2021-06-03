@@ -1,5 +1,5 @@
 const fs = require('fs');
-const markdownIt = require('markdown-it');
+const markdownLibrary = require('./_data/markdownLib.js');
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.setDataDeepMerge(true);
