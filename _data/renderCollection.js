@@ -1,5 +1,5 @@
 const slugify = require('slugify');
-const md = require('./markdownLib.js');
+const md = require('./markdownLib');
 
 module.exports = (items, limit) => /*html*/`
 	<hr />

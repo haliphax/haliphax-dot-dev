@@ -1,5 +1,5 @@
 const fs = require('fs');
-const markdownLibrary = require('./_data/markdownLib.js');
+const markdownLibrary = require('./_data/markdownLib');
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addLayoutAlias('base', 'base.11ty.js');

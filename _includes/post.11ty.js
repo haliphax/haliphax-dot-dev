@@ -1,4 +1,4 @@
-const ignoreTags = require('../_data/ignoreTags.js');
+const ignoreTags = require('../_data/ignoreTags');
 
 module.exports = class Post {
 	get data() {
