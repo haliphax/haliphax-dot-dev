@@ -1,4 +1,4 @@
-const renderCollection = require('../_data/collection.11ty.js');
+const renderCollection = require('../_data/renderCollection');
 
 module.exports = class Tag {
 	get data() {
