@@ -16,12 +16,14 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.setLibrary('md', markdownLibrary);
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
-			ready: function (err, browserSync) {
+			ready(err, browserSync) {
 				const content_404 = fs.readFileSync('_site/404.html');
 
 				browserSync.addMiddleware('*', (req, res) => {
 					// Provides the 404 content without redirect.
-					res.writeHead(404, { 'Content-Type': 'text/html; charset=UTF-8' });
+					res.writeHead(404, {
+						'Content-Type': 'text/html; charset=UTF-8'
+					});
 					res.write(content_404);
 					res.end();
 				});
@@ -35,6 +37,7 @@ module.exports = function (eleventyConfig) {
 		templateFormats: [
 			'11ty.js',
 			'md',
+			'njk',
 			'html',
 		],
 		pathPrefix: '/',
@@ -42,7 +45,7 @@ module.exports = function (eleventyConfig) {
 		htmlTemplateEngine: 'njk',
 		dataTemplateEngine: false,
 		dir: {
-			input: '_content',
+			input: 'content',
 			includes: '../_includes',
 			data: '_data',
 			output: '_site',
