@@ -10,7 +10,7 @@ module.exports = class Post {
 	render(data) {
 		return /*html*/`
 			<span class="sr-only">Tags:</span>
-			<ul class="list-unstyled d-inline-block mb-5">
+			<ul class="list-unstyled d-inline-block mb-10">
 				${data.tags.filter(t => ignoreTags.indexOf(t) < 0)
 					.map(t => /*html*/`
 						<li class="d-inline-block">
