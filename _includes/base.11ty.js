@@ -1,3 +1,14 @@
+const preloads = [
+	'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap',
+	'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css',
+	'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css',
+	'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css',
+	'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css',
+].map(p => /*html*/`
+	<link rel="preload" href="${p}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript><link rel="stylesheet" href="${p}"></noscript>
+`).join('');
+
 module.exports = class Base {
 	render(data) {
 		return /*html*/`
@@ -8,25 +19,61 @@ module.exports = class Base {
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<title>${data.title} | haliphax.dev</title>
 					<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
-					<link rel="preconnect" href="https://fonts.gstatic.com" />
-					<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet" />
-					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
+					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" media="screen" />
 					<link href="/css/styles.css" rel="stylesheet" />
-					<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css" rel="stylesheet" />
-					<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css" rel="stylesheet" />
-					<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css" rel="stylesheet" />
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" async></script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
+					${preloads}
 				</head>
 				<body class="dark-mode">
 					<a class="btn btn-primary" id="skip-nav" href="#main-content">
 						<span class="fas fa-forward"></span>
 						Skip to main content
 					</a>
-					<div class="page-wrapper">
+					<div class="page-wrapper with-sidebar"
+						data-sidebar-type="overlayed-sm-and-down">
+						<button id="btn-sidebar-toggle" type="button"
+							class="btn btn-action position-absolute t-0 l-0 m-5"
+							onclick="halfmoon.toggleSidebar()">
+							<span class="fa fa-bars"></span>
+							<span class="sr-only">Toggle sidebar menu</span>
+						</button>
+						<div class="sidebar">
+							<div class="sidebar-menu">
+								<div class="sidebar-content">
+									<h5 class="sidebar-title">Site</h5>
+									<div class="sidebar-divider"></div>
+									<a href="/" class="sidebar-link">
+										<span class="fa fa-home"></span>
+										Homepage
+									</a>
+									<a href="/tags/" class="sidebar-link">
+										<span class="fa fa-tags"></span>
+										Tags
+									</a>
+									<br />
+									<h5 class="sidebar-title">Social</h5>
+									<div class="sidebar-divider"></div>
+									<a href="https://twitch.tv/haliphax" class="sidebar-link">
+										<span class="fab fa-twitch"></span>
+										Twitch
+									</a>
+									<a href="https://github.com/haliphax" class="sidebar-link">
+										<span class="fab fa-github"></span>
+										GitHub
+									</a>
+									<a href="https://www.youtube.com/channel/UCOl2xKyCvJAyGl-as3VTOeg" class="sidebar-link">
+										<span class="fab fa-youtube"></span>
+										YouTube
+									</a>
+									<a href="https://twitter.com/hxdev" class="sidebar-link">
+										<span class="fab fa-twitter"></span>
+										Twitter
+									</a>
+								</div>
+							</div>
+						</div>
 						<div class="content-wrapper">
 							<nav class="navbar">
-								<div class="container-md px-0">
+								<div class="container px-0">
 									<div class="navbar-brand w-full">
 										<h1 class="text-center w-full w-md-auto">
 											<img src="/img/skull-icon.png" alt="" class="align-bottom" />
@@ -35,13 +82,17 @@ module.exports = class Base {
 									</div>
 								</div>
 							</nav>
-							<div class="container-md pb-10">
-								<main id="main-content" class="px-10 pt-10">
+							<div class="container px-20 pb-10">
+								<main id="main-content" class="pt-10">
 									${data.content}
 								</main>
 							</div>
 						</div>
 					</div>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" async></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js" async></script>
+					<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js"></script>
 				</body>
 			</html>
 			`;
