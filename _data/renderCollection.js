@@ -11,15 +11,16 @@ module.exports = (items, limit) => /*html*/`
 						.replace(/<[^>]+>/g, ' ')
 						.replace(/\s{2,}/g, ' ')
 						.replace(/\n/g, ' ')
-						.slice(0, 200));
+						.slice(0, 160)
+						.replace(/ [^ ]*$/, ''));
 
 				return /*html*/`
-					<li class="col-12 col-sm-6 col-md-4 col-lg-3 d-flex">
+					<li class="col-12 col-md-6 col-lg-4 d-flex">
 						<div class="card m-5 p-20 w-full">
 							<h3 class="card-title mb-5">${p.data.title}</h3>
 							<hr />
 							<article aria-labelledby="${slug}">
-								<p class="text-muted">${summary}</p>
+								<p class="text-muted">${summary} &hellip;</p>
 							</article>
 							<div class="d-block h-20 mb-20 pb-5"></div>
 							<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
