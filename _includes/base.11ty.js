@@ -19,20 +19,24 @@ module.exports = class Base {
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
 				</head>
 				<body class="dark-mode">
+					<a class="btn btn-primary" id="skip-nav" href="#main-content">
+						<span class="fas fa-forward"></span>
+						Skip to main content
+					</a>
 					<div class="page-wrapper with-navbar">
 						<nav class="navbar">
-							<div class="container-lg px-0">
-								<div class="navbar-brand">
-									<h1 class="text-center">
-										<img src="/img/skull-icon.png" alt="" class="align-text-bottom" />
+							<div class="container-md px-0">
+								<div class="navbar-brand w-full">
+									<h1 class="text-center w-full w-md-auto">
+										<img src="/img/skull-icon.png" alt="" class="align-bottom" />
 										<a href="/" aria-label="Homepage">haliphax</a>
 									</h1>
 								</div>
 							</div>
 						</nav>
 						<div class="content-wrapper">
-							<div class="container-lg">
-								<main id="main-content" class="px-10">
+							<div class="container-md">
+								<main id="main-content" class="px-10 pt-10">
 									${data.content}
 								</main>
 							</div>

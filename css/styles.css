@@ -1,21 +1,22 @@
 :root {
+	--navbar-height: 13rem;
 	/* pink */
 	--pink-color: #f0f;
     --pink-color-light: #f7f;
     --pink-color-very-light: #faf;
-    --pink-color-dark: #a0a;
-    --pink-color-very-dark: #707;
-    --pink-box-shadow-color: #a0a;
-    --pink-box-shadow-color-darker: #707;
+    --pink-color-dark: #909;
+    --pink-color-very-dark: #505;
+    --pink-box-shadow-color: #909;
+    --pink-box-shadow-color-darker: #505;
 	--text-color-on-pink-color-bg: #000;
 	/* blue */
-	--blue-color: #0aa;
-    --blue-color-light: #0ff;
-    --blue-color-very-light: #aff;
-    --blue-color-dark: #0aa;
-    --blue-color-very-dark: #077;
-    --blue-box-shadow-color: #0aa;
-    --blue-box-shadow-color-darker: #077;
+	--blue-color: #0ff;
+    --blue-color-light: #9ff;
+    --blue-color-very-light: #cff;
+    --blue-color-dark: #099;
+    --blue-color-very-dark: #055;
+    --blue-box-shadow-color: #099;
+    --blue-box-shadow-color-darker: #055;
 	--text-color-on-blue-color-bg: #000;
 	/* primary color */
 	--primary-color: var(--pink-color);
@@ -39,17 +40,25 @@
 	--secondary-color: var(--blue-color);
 }
 
-body {
-	padding-top: 9rem;
+/* skip navigation */
+#skip-nav {
+	position: absolute;
+	top: 1rem;
+	left: -100%;
+	z-index: 9999;
 }
+#skip-nav:focus {
+	left: 1rem;
+}
+
 /* navbar */
-.navbar {
-	height: 13rem;
-	padding-top: 1rem;
+.dark-mode .navbar {
+	border-bottom: .5rem ridge var(--primary-color-dark);
 }
 .navbar-brand h1 img {
-	height: 8rem;
+	height: 9rem;
 }
+
 /* headers */
 h1, h2 {
 	font-family: 'Shrikhand', sans-serif;
@@ -74,4 +83,41 @@ ul.list-unstyled {
 ul.list-unstyled > li {
 	margin: 0;
 	padding: 0;
+}
+
+/***
+* media queries
+***/
+
+/* tablet */
+@media screen and (max-width: 768px) {
+	h1 a {
+		font-size: 6rem;
+		line-height: 7rem;
+	}
+	.navbar-brand h1 img {
+		height: 7rem;
+	}
+}
+
+/* mobile medium */
+@media screen and (max-width: 480px) {
+	h1 a {
+		font-size: 5rem;
+		line-height: 6rem;
+	}
+	.navbar-brand h1 img {
+		height: 6rem;
+	}
+}
+
+/* mobile tiny */
+@media screen and (max-width: 360px) {
+	h1 a {
+		font-size: 4rem;
+		line-height: 5rem;
+	}
+	.navbar-brand h1 img {
+		height: 5rem;
+	}
 }
