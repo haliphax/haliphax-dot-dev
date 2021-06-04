@@ -59,7 +59,15 @@
 	left: 1rem;
 }
 
-/* sidebar toggle */
+/* sidebar */
+.page-wrapper[data-sidebar-hidden] > .sidebar {
+	display: none;
+}
+.page-wrapper > .sidebar {
+	left: 0 !important;
+	display: block;
+}
+
 #btn-sidebar-toggle {
 	display: none;
 	padding-left: 1rem;
@@ -123,7 +131,7 @@ ul.list-unstyled > li {
 /* tablet (md) and above */
 @media screen and (min-width: 769px) {
 	.page-wrapper[data-sidebar-hidden] > .sidebar {
-		left: 0 !important;
+		display: block !important;
 	}
 	.page-wrapper[data-sidebar-hidden] > .content-wrapper {
 		left: var(--sidebar-width) !important;
