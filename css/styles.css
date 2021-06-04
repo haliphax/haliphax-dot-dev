@@ -1,4 +1,5 @@
 :root {
+	/* pink */
 	--pink-color: #f0f;
     --pink-color-light: #f7f;
     --pink-color-very-light: #faf;
@@ -6,17 +7,67 @@
     --pink-color-very-dark: #707;
     --pink-box-shadow-color: #a0a;
     --pink-box-shadow-color-darker: #707;
-	--primary-color: var(--pink-color);                                     /* Before: var(--yellow-color) */
-	--primary-color-light: var(--pink-color-light);                         /* Before: var(--yellow-color-light) */
-	--primary-color-very-light: var(--pink-color-very-light);               /* Before: var(--yellow-color-very-light) */
-	--primary-color-dark: var(--pink-color-dark);                           /* Before: var(--yellow-color-dark) */
-	--primary-color-very-dark: var(--pink-color-very-dark);                 /* Before: var(--yellow-color-very-dark) */
-	--primary-box-shadow-color: var(--pink-box-shadow-color);               /* Before: var(--yellow-box-shadow-color) */
-	--primary-box-shadow-color-darker: var(--pink-box-shadow-color-darker); /* Before: var(--yellow-box-shadow-color-darker) */
-	--text-color-on-primary-color-bg: var(--text-color-on-pink-color-bg);   /* Before: var(--text-color-on-yellow-color-bg) */
+	--text-color-on-pink-color-bg: #000;
+	/* blue */
+	--blue-color: #0aa;
+    --blue-color-light: #0ff;
+    --blue-color-very-light: #aff;
+    --blue-color-dark: #0aa;
+    --blue-color-very-dark: #077;
+    --blue-box-shadow-color: #0aa;
+    --blue-box-shadow-color-darker: #077;
+	--text-color-on-blue-color-bg: #000;
+	/* primary color */
 	--primary-color: var(--pink-color);
+	--primary-color-light: var(--pink-color-light);
+	--primary-color-very-light: var(--pink-color-very-light);
+	--primary-color-dark: var(--pink-color-dark);
+	--primary-color-very-dark: var(--pink-color-very-dark);
+	--primary-box-shadow-color: var(--pink-box-shadow-color);
+	--primary-box-shadow-color-darker: var(--pink-box-shadow-color-darker);
+	--text-color-on-primary-color-bg: var(--text-color-on-pink-color-bg);
+	--primary-color: var(--pink-color);
+	/* secondary color */
+	--secondary-color: var(--blue-color);
+	--secondary-color-light: var(--blue-color-light);
+	--secondary-color-very-light: var(--blue-color-very-light);
+	--secondary-color-dark: var(--blue-color-dark);
+	--secondary-color-very-dark: var(--blue-color-very-dark);
+	--secondary-box-shadow-color: var(--blue-box-shadow-color);
+	--secondary-box-shadow-color-darker: var(--blue-box-shadow-color-darker);
+	--text-color-on-secondary-color-bg: var(--text-color-on-blue-color-bg);
+	--secondary-color: var(--blue-color);
 }
 
+body {
+	padding-top: 9rem;
+}
+/* navbar */
+.navbar {
+	height: 13rem;
+	padding-top: 1rem;
+}
+.navbar-brand h1 img {
+	height: 8rem;
+}
+/* headers */
+h1, h2 {
+	font-family: 'Shrikhand', sans-serif;
+}
+h1 a {
+	color: var(--pink-color);
+	font-size: 8rem;
+	line-height: 8rem;
+	text-shadow: 0 0 16px var(--pink-color);
+	-webkit-text-stroke: 1px var(--pink-color);
+	-webkit-text-fill-color: var(--pink-color-very-dark);
+}
+h1 a:hover {
+	text-decoration: none;
+	text-shadow: 0 0 16px var(--pink-color-very-light);
+}
+
+/* unstyled list */
 ul.list-unstyled {
 	list-style-type: none;
 }

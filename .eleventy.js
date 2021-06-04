@@ -7,6 +7,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addLayoutAlias('post', 'post.11ty.js');
 	eleventyConfig.addLayoutAlias('withHeader', 'withHeader.11ty.js');
 	eleventyConfig.addPassthroughCopy('css');
+	eleventyConfig.addPassthroughCopy('img');
 
 	eleventyConfig.setDataDeepMerge(true);
 	eleventyConfig.setLibrary('md', markdownLibrary);
@@ -38,11 +39,9 @@ module.exports = function (eleventyConfig) {
 			'11ty.js',
 			'md',
 			'njk',
-			'html',
 		],
 		pathPrefix: '/',
 		markdownTemplateEngine: 'njk',
-		htmlTemplateEngine: 'njk',
 		dataTemplateEngine: false,
 		dir: {
 			input: 'content',

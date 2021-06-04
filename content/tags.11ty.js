@@ -14,13 +14,18 @@ module.exports = class Tags {
 			.filter(t => ignoreTags.indexOf(t) < 0);
 
 		return /*html*/`
-			<ul class="list-unstyled">
-				${tags.map(t => /*html*/`
-					<li class="d-inline-block">
-						<a href="/tags/${t}/" class="btn btn-primary">${t}</a>
-					</li>
-					`).join('')}
-			</ul>
+			<div class="card border mt-0 mx-0 pt-20 pb-10">
+				<ul class="list-unstyled">
+					${tags.map(t => /*html*/`
+						<li class="d-inline-block">
+							<a href="/tags/${t}/" class="btn btn-secondary">
+								<span class="fas fa-tag"></span>
+								${t}
+							</a>
+						</li>
+						`).join('')}
+				</ul>
+			</div>
 			`;
 	}
 };

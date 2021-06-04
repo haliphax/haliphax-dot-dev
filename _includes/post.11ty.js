@@ -9,25 +9,21 @@ module.exports = class Post {
 
 	render(data) {
 		return /*html*/`
-			<div class="row">
-				<div class="col">
-					<span class="sr-only">Tags:</span>
-					<ul class="list-unstyled d-inline">
-						${data.tags.filter(t => ignoreTags.indexOf(t) < 0)
-							.map(t => /*html*/`
-								<li class="d-inline-block">
-									<a href="/tags/${t}/" class="badge badge-primary">
-										${t}
-									</a>
-								</li>
-							`).join('')}
-					</ul>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col">
-					${data.content}
-				</div>
+			<span class="sr-only">Tags:</span>
+			<ul class="list-unstyled d-inline">
+				${data.tags.filter(t => ignoreTags.indexOf(t) < 0)
+					.map(t => /*html*/`
+						<li class="d-inline-block">
+							<a href="/tags/${t}/"
+								class="badge badge-secondary">
+								<span class="fas fa-tag"></span>
+								${t}
+							</a>
+						</li>
+					`).join('')}
+			</ul>
+			<div class="card border mx-0 pb-0 pt-5">
+				${data.content}
 			</div>
 			`;
 	}

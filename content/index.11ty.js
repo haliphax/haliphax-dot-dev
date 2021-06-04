@@ -5,15 +5,17 @@ module.exports = class Index {
 		return {
 			header: 'Recent posts',
 			layout: 'withHeader',
-			myLimit: 3,
 			title: 'Home',
 		};
 	}
 
 	render(data) {
 		return /*html*/`
-			${renderCollection(data.collections.post)}
-			<a href="/tags/">View all tags</a>
+			${renderCollection(data.collections.post, 5)}
+			<a href="/tags/">
+				<span class="fas fa-tags"></span>
+				View all tags
+			</a>
 			`;
 	}
 };
