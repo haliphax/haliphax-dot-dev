@@ -1,13 +1,15 @@
-const preloads = [
-	'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap',
-	'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css',
-	'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css',
-	'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css',
-	'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css',
-].map(p => /*html*/`
-	<link rel="preload" href="${p}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-	<noscript><link rel="stylesheet" href="${p}"></noscript>
-`).join('');
+const preloads =
+	[
+		'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css',
+	].map(p => /*html*/`
+		<link rel="preload" href="${p}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<noscript><link rel="stylesheet" href="${p}"></noscript>
+	`)
+	.join('');
 
 module.exports = class Base {
 	render(data) {
