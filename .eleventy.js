@@ -2,6 +2,7 @@ const fs = require('fs');
 const markdownLibrary = require('./_includes/markdownLib');
 
 module.exports = function (eleventyConfig) {
+	// adds
 	eleventyConfig.addLayoutAlias('base', 'layouts/base.11ty.js');
 	eleventyConfig.addLayoutAlias('collection', 'layouts/collection.11ty.js');
 	eleventyConfig.addLayoutAlias('post', 'layouts/post.11ty.js');
@@ -9,12 +10,7 @@ module.exports = function (eleventyConfig) {
 	eleventyConfig.addPassthroughCopy('css');
 	eleventyConfig.addPassthroughCopy('img');
 
-	eleventyConfig.setDataDeepMerge(true);
-	eleventyConfig.setLibrary('md', markdownLibrary);
-	eleventyConfig.setFrontMatterParsingOptions({
-		excerpt: true,
-		excerpt_separator: '<!--more-->',
-	});
+	// sets
 	eleventyConfig.setBrowserSyncConfig({
 		callbacks: {
 			ready(err, browserSync) {
@@ -33,21 +29,27 @@ module.exports = function (eleventyConfig) {
 		ui: false,
 		ghostMode: false,
 	});
+	eleventyConfig.setDataDeepMerge(true);
+	eleventyConfig.setLibrary('md', markdownLibrary);
+	eleventyConfig.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: '<!--more-->',
+	});
 
 	return {
+		dataTemplateEngine: false,
+		dir: {
+			data: '_data',
+			includes: '../_includes',
+			input: 'content',
+			output: '_site',
+		},
+		markdownTemplateEngine: 'njk',
+		pathPrefix: '/',
 		templateFormats: [
 			'11ty.js',
 			'md',
 			'njk',
 		],
-		pathPrefix: '/',
-		markdownTemplateEngine: 'njk',
-		dataTemplateEngine: false,
-		dir: {
-			input: 'content',
-			includes: '../_includes',
-			data: '_data',
-			output: '_site',
-		},
 	};
 };
