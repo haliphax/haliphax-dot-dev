@@ -1,4 +1,4 @@
-const ignoreTags = require('../_data/ignoreTags');
+const ignoreTags = require('../_includes/ignoreTags');
 
 module.exports = class Tags {
 	get data() {

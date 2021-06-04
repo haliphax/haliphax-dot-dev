@@ -1,11 +1,11 @@
 const fs = require('fs');
-const markdownLibrary = require('./_data/markdownLib');
+const markdownLibrary = require('./_includes/markdownLib');
 
 module.exports = function (eleventyConfig) {
-	eleventyConfig.addLayoutAlias('base', 'base.11ty.js');
-	eleventyConfig.addLayoutAlias('collection', 'collection.11ty.js');
-	eleventyConfig.addLayoutAlias('post', 'post.11ty.js');
-	eleventyConfig.addLayoutAlias('withHeader', 'withHeader.11ty.js');
+	eleventyConfig.addLayoutAlias('base', 'layouts/base.11ty.js');
+	eleventyConfig.addLayoutAlias('collection', 'layouts/collection.11ty.js');
+	eleventyConfig.addLayoutAlias('post', 'layouts/post.11ty.js');
+	eleventyConfig.addLayoutAlias('withHeader', 'layouts/withHeader.11ty.js');
 	eleventyConfig.addPassthroughCopy('css');
 	eleventyConfig.addPassthroughCopy('img');
 

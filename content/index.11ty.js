@@ -1,4 +1,4 @@
-const renderCollection = require('../_data/renderCollection');
+const renderCollection = require('../_includes/renderCollection');
 
 module.exports = class Index {
 	get data() {
