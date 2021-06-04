@@ -14,10 +14,10 @@ module.exports = class Tags {
 			.filter(t => ignoreTags.indexOf(t) < 0);
 
 		return /*html*/`
-			<div class="card border mt-0 mx-0 pt-20 pb-10">
+			<div class="card border mt-0 mx-0 pt-20 pb-0">
 				<ul class="list-unstyled">
 					${tags.map(t => /*html*/`
-						<li class="d-inline-block">
+						<li class="d-inline-block mr-5 mb-5">
 							<a href="/tags/${t}/" class="btn btn-secondary">
 								<span class="fas fa-tag"></span>
 								${t}

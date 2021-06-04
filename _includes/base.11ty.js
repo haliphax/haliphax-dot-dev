@@ -23,19 +23,19 @@ module.exports = class Base {
 						<span class="fas fa-forward"></span>
 						Skip to main content
 					</a>
-					<div class="page-wrapper with-navbar">
-						<nav class="navbar">
-							<div class="container-md px-0">
-								<div class="navbar-brand w-full">
-									<h1 class="text-center w-full w-md-auto">
-										<img src="/img/skull-icon.png" alt="" class="align-bottom" />
-										<a href="/" aria-label="Homepage">haliphax</a>
-									</h1>
-								</div>
-							</div>
-						</nav>
+					<div class="page-wrapper">
 						<div class="content-wrapper">
-							<div class="container-md">
+							<nav class="navbar">
+								<div class="container-md px-0">
+									<div class="navbar-brand w-full">
+										<h1 class="text-center w-full w-md-auto">
+											<img src="/img/skull-icon.png" alt="" class="align-bottom" />
+											<a href="/" aria-label="Homepage">haliphax</a>
+										</h1>
+									</div>
+								</div>
+							</nav>
+							<div class="container-md pb-10">
 								<main id="main-content" class="px-10 pt-10">
 									${data.content}
 								</main>
