@@ -10,12 +10,6 @@ module.exports = class Index {
 	}
 
 	render(data) {
-		return /*html*/`
-			${renderCollection(data.collections.post, 6)}
-			<a href="/tags/">
-				<span class="fas fa-tags"></span>
-				View all tags
-			</a>
-			`;
+		return renderCollection(data.collections.post, 6);
 	}
 };
