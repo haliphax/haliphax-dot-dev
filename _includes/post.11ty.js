@@ -10,7 +10,7 @@ module.exports = class Post {
 	render(data) {
 		return /*html*/`
 			<span class="sr-only">Tags:</span>
-			<ul class="list-unstyled d-inline">
+			<ul class="list-unstyled d-inline-block mb-5">
 				${data.tags.filter(t => ignoreTags.indexOf(t) < 0)
 					.map(t => /*html*/`
 						<li class="d-inline-block">
@@ -22,7 +22,7 @@ module.exports = class Post {
 						</li>
 					`).join('')}
 			</ul>
-			<div class="card border mx-0 pb-0 pt-5">
+			<div class="card border mx-0 pb-0 pt-5 mt-0">
 				${data.content}
 			</div>
 			`;
