@@ -7,13 +7,12 @@ module.exports = (items, limit) => /*html*/`
 			${Array.from(items).reverse().slice(0, limit)
 				.map(p => {
 					const slug = slugify(p.url);
-					let summary = p.template.frontMatter.excerpt;
-
-					if (summary)
-						summary = `<p>${summary}</p>`;
-					else
-						summary = md.render(
-							p.template.frontMatter.content.slice(0, 200));
+					let summary = p.template.frontMatter.excerpt
+						||  md.render(p.template.frontMatter.content)
+							.replace(/<[^>]+>/g, ' ')
+							.replace(/\s{2,}/g, ' ')
+							.replace(/\n/g, ' ')
+							.slice(0, 200);
 
 					return /*html*/`
 						<li>
@@ -24,7 +23,7 @@ module.exports = (items, limit) => /*html*/`
 							</a>
 							<article aria-labelledby="${slug}"
 								class="d-inline-block ml-10">
-								${summary}
+								<p>${summary}</p>
 							</article>
 						</li>
 						`;
