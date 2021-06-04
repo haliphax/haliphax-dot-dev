@@ -32,7 +32,8 @@ module.exports = class Base {
 						Skip to main content
 					</a>
 					<div class="page-wrapper with-sidebar"
-						data-sidebar-type="overlayed-sm-and-down">
+						data-sidebar-hidden="true"
+						data-sidebar-type="overlayed-sm-and-down" >
 						<button id="btn-sidebar-toggle" type="button"
 							class="btn btn-action position-absolute t-0 l-0 m-5"
 							onclick="halfmoon.toggleSidebar()">
@@ -92,6 +93,7 @@ module.exports = class Base {
 							</div>
 						</div>
 					</div>
+					<script>if(matchMedia('(min-width:769px)').matches)document.querySelector('.page-wrapper').removeAttribute('data-sidebar-hidden');</script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" async></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js" async></script>
