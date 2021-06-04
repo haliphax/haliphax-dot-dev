@@ -7,6 +7,7 @@ module.exports = class Base {
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<title>${data.title} | haliphax.dev</title>
+					<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 					<link rel="preconnect" href="https://fonts.gstatic.com" />
 					<link href="https://fonts.googleapis.com/css2?family=Shrikhand&display=swap" rel="stylesheet" />
 					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
