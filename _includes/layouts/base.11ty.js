@@ -102,22 +102,27 @@ module.exports = class Base {
 							</div>
 						</div>
 					</div>
-					<script>if(matchMedia('(min-width:769px)').matches)document.querySelector('.page-wrapper').removeAttribute('data-sidebar-hidden');</script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" async></script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js" async></script>
-					<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js" async></script>
 					<script>
-					// Twitch live alert
 					(function(){
+						// Sidebar management
+						if (!matchMedia('(min-width:769px)').matches)
+							document.querySelector('.page-wrapper')
+								.removeAttribute('data-sidebar-hidden');
+
+						// Twitch live alert
 						const root = (window.location.hostname == 'localhost'
 							? '' : 'https://api.haliphax.dev');
 
 						fetch(root + '/twitch-live.json')
 							.then(r => r.json())
-							.then(d => d.live && (document.querySelector('#twitch-live').style = ''));
+							.then(d => d.live
+								&& (document.querySelector('#twitch-live').style = ''));
 					}());
 					</script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" async></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
+					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js" async></script>
+					<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js" async></script>
 				</body>
 			</html>
 			`;
