@@ -88,7 +88,7 @@ module.exports = class Base {
 							</nav>
 							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
-									<div class="alert alert-primary text-center" id="twitch-live"
+									<div class="alert alert-primary text-center mb-20" id="twitch-live"
 										style="display:none">
 										<a href="https://twitch.tv/haliphax" class="no-external">
 											<span class="fab fa-twitch"></span>
