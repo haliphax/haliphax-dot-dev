@@ -88,8 +88,7 @@ module.exports = class Base {
 							</nav>
 							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
-									<div class="alert alert-primary text-center mb-20" id="twitch-live"
-										style="display:none">
+									<div class="alert alert-primary text-center mb-20 d-none" id="twitch-live">
 										<a href="https://twitch.tv/haliphax" class="no-external">
 											<span class="fab fa-twitch"></span>
 											I'm streaming on Twitch <em>right now</em>.
@@ -116,7 +115,8 @@ module.exports = class Base {
 						fetch(root + '/twitch-live.json')
 							.then(r => r.json())
 							.then(d => d.live
-								&& (document.querySelector('#twitch-live').style = ''));
+								&& (document.querySelector('#twitch-live')
+									.classList.remove('d-none')));
 					}());
 					</script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" async></script>
