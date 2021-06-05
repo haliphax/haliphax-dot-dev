@@ -115,9 +115,6 @@ module.exports = class Base {
 									.remove('d-none')));
 					}());
 					</script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" async></script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
-					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js" async></script>
 				</body>
 			</html>
 			`;
