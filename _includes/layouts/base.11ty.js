@@ -105,7 +105,7 @@ module.exports = class Base {
 					<script>
 					(function(){
 						// Sidebar management
-						if (!matchMedia('(min-width:769px)').matches)
+						if (matchMedia('(min-width:769px)').matches)
 							document.querySelector('.page-wrapper')
 								.removeAttribute('data-sidebar-hidden');
 
