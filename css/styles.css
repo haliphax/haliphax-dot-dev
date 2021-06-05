@@ -113,7 +113,7 @@ ul.list-unstyled > li {
 }
 
 /* external links */
-.content-wrapper a[href*='://']::before {
+.content-wrapper a[href*='://']:not(.no-external)::before {
 	content: '\f35d';
 	display: inline-block;
 	font-family: 'Font Awesome 5 Free';
