@@ -35,8 +35,7 @@ module.exports = class Base {
 						data-sidebar-hidden="true"
 						data-sidebar-type="overlayed-sm-and-down" >
 						<button id="btn-sidebar-toggle" type="button"
-							class="btn btn-action position-absolute t-0 l-0 m-5"
-							onclick="halfmoon.toggleSidebar()">
+							class="btn btn-action position-absolute t-0 l-0 m-5">
 							<span class="fa fa-bars"></span>
 							<span class="sr-only">Toggle sidebar menu</span>
 						</button>
@@ -104,9 +103,19 @@ module.exports = class Base {
 					<script>
 					(function(){
 						// Sidebar management
+						const wrapper = document.querySelector('.page-wrapper');
+
 						if (matchMedia('(min-width:769px)').matches)
 							document.querySelector('.page-wrapper')
 								.removeAttribute('data-sidebar-hidden');
+
+						document.getElementById('btn-sidebar-toggle')
+							.addEventListener('click', e => {
+								if (wrapper.getAttribute('data-sidebar-hidden'))
+									wrapper.removeAttribute('data-sidebar-hidden');
+								else
+									wrapper.setAttribute('data-sidebar-hidden', 'true');
+							});
 
 						// Twitch live alert
 						const root = (window.location.hostname == 'localhost'
@@ -115,14 +124,13 @@ module.exports = class Base {
 						fetch(root + '/twitch-live.json')
 							.then(r => r.json())
 							.then(d => d.live
-								&& (document.querySelector('#twitch-live')
-									.classList.remove('d-none')));
+								&& (document.getElementById('twitch-live').classList
+									.remove('d-none')));
 					}());
 					</script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/regular.min.js" async></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js" async></script>
-					<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js" async></script>
 				</body>
 			</html>
 			`;
