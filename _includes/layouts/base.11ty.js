@@ -79,7 +79,7 @@ module.exports = class Base {
 							<nav class="navbar">
 								<div class="container px-0">
 									<div class="navbar-brand w-full">
-										<h1 class="text-center w-full w-md-auto">
+										<h1 class="text-center w-full">
 											<img src="/img/skull-icon.png" alt="" class="align-bottom" />
 											<a href="/" aria-label="Homepage">haliphax</a>
 										</h1>
