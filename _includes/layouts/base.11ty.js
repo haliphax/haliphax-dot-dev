@@ -1,3 +1,4 @@
+/** CSS preload markup */
 const preloads =
 	[
 		'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap',
@@ -11,6 +12,14 @@ const preloads =
 		<noscript><link rel="stylesheet" href="${p}"></noscript>
 	`)
 	.join('');
+
+/** generate sidebar link for given object */
+const generateSidebarLink = ({ icon, name, url}) => /*html*/`
+	<a href="${url}" class="sidebar-link">
+		<span class="${icon}"></span>
+		${name}
+	</a>
+	`;
 
 module.exports = class Base {
 	render(data) {
@@ -44,33 +53,11 @@ module.exports = class Base {
 								<div class="sidebar-content">
 									<h5 class="sidebar-title">Site</h5>
 									<div class="sidebar-divider"></div>
-									<a href="/" class="sidebar-link">
-										<span class="fa fa-home"></span>
-										Homepage
-									</a>
-									<a href="/tags/" class="sidebar-link">
-										<span class="fa fa-tags"></span>
-										Tags
-									</a>
+									${data.links.map(d => generateSidebarLink(d)).join('')}
 									<br />
 									<h5 class="sidebar-title">Social</h5>
 									<div class="sidebar-divider"></div>
-									<a href="https://twitch.tv/haliphax" class="sidebar-link">
-										<span class="fab fa-twitch"></span>
-										Twitch
-									</a>
-									<a href="https://github.com/haliphax" class="sidebar-link">
-										<span class="fab fa-github"></span>
-										GitHub
-									</a>
-									<a href="https://www.youtube.com/channel/UCOl2xKyCvJAyGl-as3VTOeg" class="sidebar-link">
-										<span class="fab fa-youtube"></span>
-										YouTube
-									</a>
-									<a href="https://twitter.com/hxdev" class="sidebar-link">
-										<span class="fab fa-twitter"></span>
-										Twitter
-									</a>
+									${data.socials.map(d => generateSidebarLink(d)).join('')}
 								</div>
 							</div>
 						</div>

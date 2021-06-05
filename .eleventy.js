@@ -39,7 +39,7 @@ module.exports = function (eleventyConfig) {
 	return {
 		dataTemplateEngine: false,
 		dir: {
-			data: '_data',
+			data: '../_data',
 			includes: '../_includes',
 			input: 'content',
 			output: 'docs',
