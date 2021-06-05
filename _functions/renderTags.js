@@ -1,4 +1,4 @@
-const ignoreTags = require('./ignoreTags');
+const ignoreTags = require('../_data/ignoreTags');
 
 module.exports = (tags) => {
 	const filtered = tags.filter(t => ignoreTags.indexOf(t) < 0);

@@ -1,5 +1,3 @@
-const ignoreTags = require('../_includes/ignoreTags');
-
 module.exports = class Tags {
 	get data() {
 		return {
@@ -11,7 +9,7 @@ module.exports = class Tags {
 
 	render(data) {
 		const tags = Object.keys(data.collections)
-			.filter(t => ignoreTags.indexOf(t) < 0);
+			.filter(t => data.ignoreTags.indexOf(t) < 0);
 
 		return /*html*/`
 			<div class="card border mt-0 mx-0 pt-20 pb-0">

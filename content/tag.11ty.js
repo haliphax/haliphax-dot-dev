@@ -1,5 +1,3 @@
-const renderCollection = require('../_includes/renderCollection');
-
 module.exports = class Tag {
 	get data() {
 		return {
@@ -23,7 +21,7 @@ module.exports = class Tag {
 
 	render({ collections, tag }) {
 		return /*html*/`
-			${renderCollection(collections[tag])}
+			${this.renderCollection(collections[tag])}
 			<a href="/tags/">
 				<span class="fas fa-tags"></span>
 				View all tags

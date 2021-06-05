@@ -1,5 +1,3 @@
-const renderCollection = require('../_includes/renderCollection');
-
 module.exports = class Index {
 	get data() {
 		return {
@@ -10,6 +8,6 @@ module.exports = class Index {
 	}
 
 	render(data) {
-		return renderCollection(data.collections.post, 6);
+		return this.renderCollection(data.collections.post, 6);
 	}
 };

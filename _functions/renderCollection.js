@@ -1,5 +1,5 @@
 const slugify = require('slugify');
-const md = require('./markdownLib');
+const md = require('../_includes/markdownLib');
 
 module.exports = (items, limit) => /*html*/`
 	<ul class="list-unstyled row d-flex flex-row">

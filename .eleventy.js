@@ -1,22 +1,30 @@
-const fs = require('fs');
-const markdownLibrary = require('./_includes/markdownLib');
+const fs = require('fs'),
+	markdownLibrary = require('./_includes/markdownLib'),
+	renderCollection = require('./_functions/renderCollection'),
+	renderTags = require('./_functions/renderTags');
 
-module.exports = function (eleventyConfig) {
-	// adds
-	eleventyConfig.addLayoutAlias('base', 'layouts/base.11ty.js');
-	eleventyConfig.addLayoutAlias('collection', 'layouts/collection.11ty.js');
-	eleventyConfig.addLayoutAlias('post', 'layouts/post.11ty.js');
-	eleventyConfig.addLayoutAlias('withHeader', 'layouts/withHeader.11ty.js');
-	eleventyConfig.addPassthroughCopy('css');
-	eleventyConfig.addPassthroughCopy('img');
+module.exports = function (cfg) {
+	// functions
+	cfg.addJavaScriptFunction('renderCollection', renderCollection);
+	cfg.addJavaScriptFunction('renderTags', renderTags);
 
-	// sets
-	eleventyConfig.setBrowserSyncConfig({
+	// layouts
+	cfg.addLayoutAlias('base', 'layouts/base.11ty.js');
+	cfg.addLayoutAlias('collection', 'layouts/collection.11ty.js');
+	cfg.addLayoutAlias('post', 'layouts/post.11ty.js');
+	cfg.addLayoutAlias('withHeader', 'layouts/withHeader.11ty.js');
+
+	// assets
+	cfg.addPassthroughCopy('css');
+	cfg.addPassthroughCopy('img');
+
+	// browser sync for local development
+	cfg.setBrowserSyncConfig({
 		callbacks: {
-			ready(err, browserSync) {
+			ready(_, browserSync) {
 				const content_404 = fs.readFileSync('docs/404.html');
 
-				browserSync.addMiddleware('*', (req, res) => {
+				browserSync.addMiddleware('*', (_, res) => {
 					// Provides the 404 content without redirect.
 					res.writeHead(404, {
 						'Content-Type': 'text/html; charset=UTF-8'
@@ -29,9 +37,12 @@ module.exports = function (eleventyConfig) {
 		ui: false,
 		ghostMode: false,
 	});
-	eleventyConfig.setDataDeepMerge(true);
-	eleventyConfig.setLibrary('md', markdownLibrary);
-	eleventyConfig.setFrontMatterParsingOptions({
+
+	// use markdown-it
+	cfg.setLibrary('md', markdownLibrary);
+
+	// customize excerpt tag
+	cfg.setFrontMatterParsingOptions({
 		excerpt: true,
 		excerpt_separator: '<!--more-->',
 	});
