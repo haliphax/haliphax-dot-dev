@@ -86,7 +86,7 @@
 }
 
 /* headers */
-h1, h2 {
+h1, h2, .card-title, .sidebar-title {
 	font-family: 'Shrikhand', cursive;
 }
 h1 a {
