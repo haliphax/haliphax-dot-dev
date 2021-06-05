@@ -2,21 +2,21 @@
 :root {
 	/* pink */
 	--pink-color: #f0f;
-    --pink-color-light: #f7f;
-    --pink-color-very-light: #faf;
-    --pink-color-dark: #909;
-    --pink-color-very-dark: #505;
-    --pink-box-shadow-color: #909;
-    --pink-box-shadow-color-darker: #505;
+	--pink-color-light: #f7f;
+	--pink-color-very-light: #faf;
+	--pink-color-dark: #909;
+	--pink-color-very-dark: #505;
+	--pink-box-shadow-color: #909;
+	--pink-box-shadow-color-darker: #505;
 	--text-color-on-pink-color-bg: #000;
 	/* blue */
 	--blue-color: #0ff;
-    --blue-color-light: #9ff;
-    --blue-color-very-light: #cff;
-    --blue-color-dark: #099;
-    --blue-color-very-dark: #055;
-    --blue-box-shadow-color: #099;
-    --blue-box-shadow-color-darker: #055;
+	--blue-color-light: #9ff;
+	--blue-color-very-light: #cff;
+	--blue-color-dark: #099;
+	--blue-color-very-dark: #055;
+	--blue-box-shadow-color: #099;
+	--blue-box-shadow-color-darker: #055;
 	--text-color-on-blue-color-bg: #000;
 	/* primary color */
 	--primary-color: var(--pink-color);
@@ -39,8 +39,9 @@
 	--text-color-on-secondary-color-bg: var(--text-color-on-blue-color-bg);
 	--secondary-color: var(--blue-color);
 
-	--navbar-height: 13rem;
+	--dm-alert-primary-text-color: var(--pink-color-light);
 	--dm-sidebar-link-text-color: var(--pink-color);
+	--navbar-height: 13rem;
 }
 
 /* style overrides */
@@ -76,11 +77,12 @@
 }
 
 /* navbar */
-.dark-mode .navbar {
+.page-wrapper .navbar {
 	border-bottom: .5rem ridge var(--primary-color-dark);
 }
 .navbar-brand h1 img {
 	height: 9rem;
+	width: 14.878rem;
 }
 
 /* headers */
@@ -147,6 +149,7 @@ ul.list-unstyled > li {
 	}
 	.navbar-brand h1 img {
 		height: 7rem;
+		width: 11.572rem;
 	}
 }
 
@@ -165,6 +168,7 @@ ul.list-unstyled > li {
 	}
 	.navbar-brand h1 img {
 		height: 6rem;
+		width: 9.919rem;
 	}
 }
 
@@ -176,5 +180,6 @@ ul.list-unstyled > li {
 	}
 	.navbar-brand h1 img {
 		height: 5rem;
+		width: 8.266rem;
 	}
 }

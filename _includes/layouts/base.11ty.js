@@ -88,12 +88,12 @@ module.exports = class Base {
 							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
 									<div class="alert alert-primary text-center mb-20 d-none" id="twitch-live">
-										<a href="https://twitch.tv/haliphax" class="no-external">
-											<span class="fab fa-twitch"></span>
-											I'm streaming on Twitch <em>right now</em>.
-											Stop by and say hello!
-											<span class="fab fa-twitch"></span>
-										</a>
+											I'm streaming on Twitch <em><strong>right now</strong></em>.
+											You should stop by.
+											<a href="https://twitch.tv/haliphax" class="btn btn-sm btn-primary ml-10 no-external">
+												<span class="fab fa-twitch"></span>
+												Let's go!
+											</a>
 									</div>
 									${data.content}
 								</main>
