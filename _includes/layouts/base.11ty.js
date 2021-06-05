@@ -88,6 +88,15 @@ module.exports = class Base {
 							</nav>
 							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
+									<div class="alert alert-primary text-center" id="twitch-live"
+										style="display:none">
+										<a href="https://twitch.tv/haliphax" class="no-external">
+											<span class="fab fa-twitch"></span>
+											I'm streaming on Twitch <em>right now</em>.
+											Stop by and say hello!
+											<span class="fab fa-twitch"></span>
+										</a>
+									</div>
 									${data.content}
 								</main>
 							</div>
@@ -98,6 +107,17 @@ module.exports = class Base {
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/solid.min.js" async></script>
 					<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/brands.min.js" async></script>
 					<script src="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/js/halfmoon.min.js" async></script>
+					<script>
+					// Twitch live alert
+					(function(){
+						const root = (window.location.hostname == 'localhost'
+							? '' : 'https://api.haliphax.dev');
+
+						fetch(root + '/twitch-live.json')
+							.then(r => r.json())
+							.then(d => d.live && (document.querySelector('#twitch-live').style = ''));
+					}());
+					</script>
 				</body>
 			</html>
 			`;
