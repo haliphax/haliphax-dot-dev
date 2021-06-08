@@ -2,7 +2,7 @@ module.exports = class Post {
 	get data() {
 		return {
 			layout: 'withHeader',
-			permalink(data) {
+			permalink(_) {
 				const y = this.page.date.getFullYear(),
 					m = this.page.date.getMonth() + 1,
 					m0 = m < 10 ? `0${m}` : m,
