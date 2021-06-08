@@ -6,13 +6,14 @@ module.exports = (items, limit) => /*html*/`
 		${Array.from(items).reverse().slice(0, limit)
 			.map(p => {
 				const slug = slugify(p.url);
-				let summary = (p.template.frontMatter.excerpt
-					|| md.render(p.template.frontMatter.content)
-						.replace(/<[^>]+>/g, ' ')
+				let summary = md.render(
+					p.template.frontMatter.excerpt || p.template.frontMatter.content)
+						.replace(/<[^>]+>/g, '')
 						.replace(/\s{2,}/g, ' ')
-						.replace(/\n/g, ' ')
-						.slice(0, 160)
-						.replace(/ [^ ]*$/, ''));
+						.replace(/\n/g, ' ');
+
+				if (!p.template.frontMatter.excerpt)
+						summary = summary.slice(0, 300).replace(/ [^ ]*$/, '');
 
 				return /*html*/`
 					<li class="col-12 col-md-6 col-lg-4 d-flex">
