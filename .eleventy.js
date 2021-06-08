@@ -55,7 +55,7 @@ module.exports = function (cfg) {
 			input: 'content',
 			output: 'docs',
 		},
-		markdownTemplateEngine: 'njk',
+		markdownTemplateEngine: '11ty.js',
 		pathPrefix: '/',
 		templateFormats: [
 			'11ty.js',
