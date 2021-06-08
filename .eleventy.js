@@ -1,7 +1,8 @@
 const fs = require('fs'),
 	markdownLibrary = require('./_includes/markdownLib'),
 	renderCollection = require('./_functions/renderCollection'),
-	renderTags = require('./_functions/renderTags');
+	renderTags = require('./_functions/renderTags'),
+	syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = function (cfg) {
 	// functions
@@ -17,6 +18,9 @@ module.exports = function (cfg) {
 	// assets
 	cfg.addPassthroughCopy('css');
 	cfg.addPassthroughCopy('img');
+
+	// plugins
+	cfg.addPlugin(syntaxHighlight);
 
 	// browser sync for local development
 	cfg.setBrowserSyncConfig({

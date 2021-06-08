@@ -6,6 +6,7 @@ const preloads =
 		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css',
 		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css',
 		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css',
+		'/css/prism-synthwave84.css',
 	]
 	.map(p => /*html*/`
 		<link rel="preload" href="${p}" as="style" onload="this.onload=null;this.rel='stylesheet'">
