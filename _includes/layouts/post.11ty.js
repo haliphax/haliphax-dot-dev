@@ -21,7 +21,7 @@ module.exports = class Post {
 				${data.content}
 			</div>
 			<p class="text-muted">
-				<span class="fa fa-clock"></span>
+				<span class="fa fa-calendar"></span>
 				Posted: ${this.page.date.toISOString().replace(/T.*$/, '')}
 			</p>
 			`;
