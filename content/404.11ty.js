@@ -1,15 +1,14 @@
 module.exports = class FourOhFour {
 	get data() {
 		return {
-			permalink: '404.html',
 			layout: 'withHeader',
+			metaDescription: 'The page you were looking for could not be found.',
+			permalink: '404.html',
 			title: 'Not found',
 		};
 	}
 
-	render(data) {
-		return /*html*/`
-			<p>The page you were looking for could not be found.</p>
-			`;
+	render(_) {
+		return /*html*/`<p>The page you were looking for could not be found.</p>`;
 	}
 };

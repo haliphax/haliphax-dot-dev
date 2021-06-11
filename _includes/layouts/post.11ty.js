@@ -1,6 +1,21 @@
+const fs = require('fs');
+const md = require('../markdownLib');
+
 module.exports = class Post {
 	get data() {
 		return {
+			eleventyComputed: {
+				metaDescription(data) {
+					const content = fs.readFileSync(data.page.inputPath, 'utf8')
+						.replace(/^(.|\n)+?---\n/m, '');
+
+					return md.render(content)
+						.replace(/<[^>]+>/g, '')
+						.replace(/\s{2,}/g, ' ')
+						.replace(/\n/g, ' ')
+						.slice(0, 300).replace(/ [^ ]*$/, ' &hellip;');
+				},
+			},
 			layout: 'withHeader',
 			permalink(_) {
 				const y = this.page.date.getFullYear(),
