@@ -20,11 +20,9 @@ module.exports = class Post {
 			permalink(_) {
 				const y = this.page.date.getFullYear(),
 					m = this.page.date.getMonth() + 1,
-					m0 = m < 10 ? `0${m}` : m,
-					d = this.page.date.getDate(),
-					d0 = d < 10 ? `0${d}` : d;
+					m0 = m < 10 ? `0${m}` : m;
 
-				return `/${y}/${m0}/${d0}/${this.page.fileSlug}/`;
+				return `/${y}/${m0}/${this.page.fileSlug}/`;
 			},
 		};
 	}
