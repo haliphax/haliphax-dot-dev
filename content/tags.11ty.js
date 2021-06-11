@@ -2,6 +2,7 @@ module.exports = class Tags {
 	get data() {
 		return {
 			layout: 'withHeader',
+			metaDescription: 'List of all post tags',
 			permalink: '/tags/index.html',
 			title: 'Tags',
 		};

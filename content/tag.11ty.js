@@ -2,6 +2,9 @@ module.exports = class Tag {
 	get data() {
 		return {
 			eleventyComputed: {
+				metaDescription({ tag }) {
+					return `Posts tagged with: ${tag}`;
+				},
 				title({ tag }) {
 					return `Tagged: ${tag}`;
 				},
