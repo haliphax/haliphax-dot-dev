@@ -1,6 +1,6 @@
 ---
 title: My daughter deserves better
-tags: ['women-in-tech', 'industry']
+tags: ['post', 'women-in-tech', 'industry']
 layout: post
 ---
 
