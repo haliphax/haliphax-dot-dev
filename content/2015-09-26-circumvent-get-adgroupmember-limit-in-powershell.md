@@ -1,6 +1,6 @@
 ---
 title: "Circumvent Get-ADGroupMember limit in PowerShell"
-tags: ['post', 'active directory', 'fix', 'powershell']
+tags: ['post', 'active-directory', 'fix', 'powershell']
 layout: post
 ---
 
@@ -20,9 +20,9 @@ and then handle them as you wish:
 
     $group = Get-ADGroup "group name goes here" -Properties Members
 
-    $group.Members | % {  
-        $user = Get-ADUser $_  
-        # Do something with the $user object here  
-    }  
+    $group.Members | % {
+        $user = Get-ADUser $_
+        # Do something with the $user object here
+    }
 
 It's that simple!

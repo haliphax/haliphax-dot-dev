@@ -1,6 +1,6 @@
 ---
 title: "rexCrawler release"
-tags: ['post', 'my software']
+tags: ['post', 'my-software']
 layout: post
 ---
 

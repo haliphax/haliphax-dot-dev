@@ -1,6 +1,6 @@
 ---
 title: "Check all CheckBoxes in a GridView using jQuery"
-tags: ['post', 'aspx', 'c-sharp', 'dot net', 'javascript', 'jquery', 'my software']
+tags: ['post', 'aspx', 'c-sharp', 'dot net', 'javascript', 'jquery', 'my-software']
 layout: post
 ---
 
@@ -14,21 +14,21 @@ First, we'll build a `GridView` control similar to this, with an
 `<input />` check box in the `HeaderTemplate` corresponding to each
 row's `CheckBox` control:
 
-**ASP.NET Code:**  
+**ASP.NET Code:**
 
     #!xml
-    <asp:GridView ID="myGridView" runat="server">  
-        <Columns>  
-            <asp:TemplateField>  
-                <HeaderTemplate>  
-                    <input type="checkbox" id="chkAll" />  
-                </HeaderTemplate>  
-                <ItemTemplate>  
-                    <asp:CheckBox ID="myCheckBox" runat="server" />  
-                </ItemTemplate>  
-            </asp:TemplateField>  
-            <!-- other fields here ... -->  
-        </Columns>  
+    <asp:GridView ID="myGridView" runat="server">
+        <Columns>
+            <asp:TemplateField>
+                <HeaderTemplate>
+                    <input type="checkbox" id="chkAll" />
+                </HeaderTemplate>
+                <ItemTemplate>
+                    <asp:CheckBox ID="myCheckBox" runat="server" />
+                </ItemTemplate>
+            </asp:TemplateField>
+            <!-- other fields here ... -->
+        </Columns>
     </asp:GridView>
 
 Obviously, the `chkAll` item needs some client-side script before it's
@@ -36,12 +36,12 @@ going to do anything meaningful. You could either place the following
 jQuery code into the `onchange` event for `chkAll`, or we can wire up an
 event handler in a `&gt;script />` block:
 
-**Javascript (jQuery) code:**  
+**Javascript (jQuery) code:**
 
     #!js
-    $('#chkAll').change(function() {  
+    $('#chkAll').change(function() {
         $('#<%=myGridView.ClientID%> input[type=checkbox]')
-            .attr('checked', $(this).attr('checked'));  
+            .attr('checked', $(this).attr('checked'));
     });
 
 It's as simple as that! Checking or un-checking `chkAll` will cause each

@@ -1,6 +1,6 @@
 ---
 title: "Twitter 'Acro' bot"
-tags: ['post', 'api', 'git', 'my software', 'python', 'twitter']
+tags: ['post', 'api', 'git', 'my-software', 'python', 'twitter']
 layout: post
 ---
 

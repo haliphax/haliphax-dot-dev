@@ -1,6 +1,6 @@
 ---
 title: "Image dimension Field Validator for Sitecore CMS"
-tags: ['post', 'c-sharp', 'dot net', 'my software', 'sitecore']
+tags: ['post', 'c-sharp', 'dot net', 'my-software', 'sitecore']
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Photobucket thumbnail bookmarklet"
-tags: ['post', 'bookmarklets', 'javascript', 'my software', 'tool']
+tags: ['post', 'bookmarklets', 'javascript', 'my-software', 'tool']
 layout: post
 ---
 

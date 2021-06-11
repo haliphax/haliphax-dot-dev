@@ -1,6 +1,6 @@
 ---
 title: "Give-Me-Coins.com Condensed UserScript"
-tags: ['post', 'encryption', 'javascript', 'my software', 'userscript']
+tags: ['post', 'encryption', 'javascript', 'my-software', 'userscript']
 layout: post
 ---
 

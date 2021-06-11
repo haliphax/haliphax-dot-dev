@@ -1,6 +1,6 @@
 ---
 title: "Send XMPP messages with Perl (from the command line, too!)"
-tags: ['post', 'my software', 'perl', 'shell', 'tool', 'xmpp']
+tags: ['post', 'my-software', 'perl', 'shell', 'tool', 'xmpp']
 layout: post
 ---
 
@@ -18,31 +18,31 @@ The following Perl script has been tested with ActiveState Perl on
 Windows 7, Vista, and XP, as well as the standard *apt*-installed Perl 5
 distribution for Debian Linux.
 
-**Perl code:**  
+**Perl code:**
 
-    #!/usr/bin/perl  
-    use strict;  
+    #!/usr/bin/perl
+    use strict;
     use Net::XMPP;
 
     my ($recip, $msg) = @ARGV;
 
-    if(! $recip || ! $msg) {  
-        print 'Syntax: $0 <recipient> <message>\n';  
-        exit;  
+    if(! $recip || ! $msg) {
+        print 'Syntax: $0 <recipient> <message>\n';
+        exit;
     }
 
-    my $con = new Net::XMPP::Client();  
-    my $status = $con->Connect(  
-        hostname => 'jabber.org',  
-        connectiontype => 'tcpip',  
-        tls => 0);  
-    die('ERROR: XMPP connection failed') if ! defined($status);  
-    my @result = $con->AuthSend(  
-        hostname => 'jabber.org',  
-        username => 'username',  
-        password => 'password');  
-    die('ERROR: XMPP authentication failed') if $result[0] ne 'ok';  
-    die('ERROR: XMPP message failed') if ($con->MessageSend(to => $recip, body => $msg) != 0);  
+    my $con = new Net::XMPP::Client();
+    my $status = $con->Connect(
+        hostname => 'jabber.org',
+        connectiontype => 'tcpip',
+        tls => 0);
+    die('ERROR: XMPP connection failed') if ! defined($status);
+    my @result = $con->AuthSend(
+        hostname => 'jabber.org',
+        username => 'username',
+        password => 'password');
+    die('ERROR: XMPP authentication failed') if $result[0] ne 'ok';
+    die('ERROR: XMPP message failed') if ($con->MessageSend(to => $recip, body => $msg) != 0);
     print 'Success!\n';
 
 You will want to modify the script to use your own account's
@@ -51,7 +51,7 @@ to work with XMPP providers other than
 [jabber.org](http://www.jabber.org) (i.e., Google Talk or even your own
 Jabber/XMPP server).
 
-To use it, simply call it like so:  
+To use it, simply call it like so:
 
 	perl xmpp.pl recipient@hostname "Hello!"
 

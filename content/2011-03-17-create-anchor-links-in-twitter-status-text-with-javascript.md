@@ -1,6 +1,6 @@
 ---
 title: "Create anchor links in Twitter status text with JavaScript"
-tags: ['post', 'javascript', 'my software', 'regex', 'twitter']
+tags: ['post', 'javascript', 'my-software', 'regex', 'twitter']
 layout: post
 ---
 
@@ -38,46 +38,46 @@ for use with `String.replace` (with some callback magic peppered in).
 Next to the configuration values at the top of the function block are
 suggested values for integrating with identi.ca (rather than Twitter).
 
-**JavaScript code:**  
+**JavaScript code:**
 
     #!js
-    // Convert URLs (w/ or w/o protocol), @mentions, and #hashtags into anchor links  
-    function twitterLinks(text)  
-    {  
-        var base_url = 'http://twitter.com/'; // identica: 'http://identi.ca/'  
-        var hashtag_part = 'search?q=#'; // identica: 'tag/'  
-        // convert URLs into links  
-        text = text.replace(  
-            /(>|<a[^<>]+href=['"])?(https?:\/\/([-a-z0-9]+\.)+[a-z]{2,5}(\/[-a-z0-9!#()\/?&.,]*[^ !#?().,])?)/gi,  
-            function($0, $1, $2) {  
+    // Convert URLs (w/ or w/o protocol), @mentions, and #hashtags into anchor links
+    function twitterLinks(text)
+    {
+        var base_url = 'http://twitter.com/'; // identica: 'http://identi.ca/'
+        var hashtag_part = 'search?q=#'; // identica: 'tag/'
+        // convert URLs into links
+        text = text.replace(
+            /(>|<a[^<>]+href=['"])?(https?:\/\/([-a-z0-9]+\.)+[a-z]{2,5}(\/[-a-z0-9!#()\/?&.,]*[^ !#?().,])?)/gi,
+            function($0, $1, $2) {
                 return ($1 ? $0 : '<a href="' + $2 + '" target="_blank">' + $2
-                    + '</a>');  
-            });  
-        // convert protocol-less URLs into links  
-        text = text.replace(  
-            /(:\/\/|>)?\b(([-a-z0-9]+\.)+[a-z]{2,5}(\/[-a-z0-9!#()\/?&.]*[^ !#?().,])?)/gi,  
-            function($0, $1, $2) {  
+                    + '</a>');
+            });
+        // convert protocol-less URLs into links
+        text = text.replace(
+            /(:\/\/|>)?\b(([-a-z0-9]+\.)+[a-z]{2,5}(\/[-a-z0-9!#()\/?&.]*[^ !#?().,])?)/gi,
+            function($0, $1, $2) {
                 return ($1 ? $0 : '<a href="http://' + $2 + '">' + $2
-                    + '</a>');  
-            });  
-        // convert @mentions into follow links  
-        text = text.replace(  
-            /(:\/\/|>)?(@([_a-z0-9-]+))/gi,  
-            function($0, $1, $2, $3) {  
-                return ($1 ? $0 : '<a href="' + base_url + $3  
-                    + '" title="Follow ' + $3 + '" target="_blank">@' + $3  
-                    + '</a>');  
-            });  
-        // convert #hashtags into tag search links  
-        text = text.replace(  
-            /(:\/\/[^ <]*|>)?(\#([_a-z0-9-]+))/gi,  
-            function($0, $1, $2, $3) {  
-                return ($1 ? $0 : '<a href="' + base_url + hashtag_part + $3  
-                    + '" title="Search tag: ' + $3 + '" target="_blank">#' + $3  
-                    + '</a>');  
-            });  
+                    + '</a>');
+            });
+        // convert @mentions into follow links
+        text = text.replace(
+            /(:\/\/|>)?(@([_a-z0-9-]+))/gi,
+            function($0, $1, $2, $3) {
+                return ($1 ? $0 : '<a href="' + base_url + $3
+                    + '" title="Follow ' + $3 + '" target="_blank">@' + $3
+                    + '</a>');
+            });
+        // convert #hashtags into tag search links
+        text = text.replace(
+            /(:\/\/[^ <]*|>)?(\#([_a-z0-9-]+))/gi,
+            function($0, $1, $2, $3) {
+                return ($1 ? $0 : '<a href="' + base_url + hashtag_part + $3
+                    + '" title="Search tag: ' + $3 + '" target="_blank">#' + $3
+                    + '</a>');
+            });
 
-        return text;  
+        return text;
     }
 
 Please forgive the lack of syntax highlighting in the pasted code;

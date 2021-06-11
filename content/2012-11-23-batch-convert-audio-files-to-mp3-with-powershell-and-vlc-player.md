@@ -1,6 +1,6 @@
 ---
 title: "Batch convert audio files to MP3 with PowerShell and VLC Player"
-tags: ['post', 'audio', 'my software', 'powershell', 'tool', 'vlc']
+tags: ['post', 'audio', 'my-software', 'powershell', 'tool', 'vlc']
 layout: post
 ---
 

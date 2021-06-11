@@ -1,6 +1,6 @@
 ---
 title: "jQuery visibility pseudo-selectors"
-tags: ['post', 'javascript', 'jquery', 'my software', 'plugin']
+tags: ['post', 'javascript', 'jquery', 'my-software', 'plugin']
 layout: post
 ---
 

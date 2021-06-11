@@ -1,6 +1,6 @@
 ---
 title: "WordPress plugin minify Makefile"
-tags: ['post', 'javascript', 'linux', 'my software', 'php', 'regex', 'shell', 'tool', 'wordpress']
+tags: ['post', 'javascript', 'linux', 'my-software', 'php', 'regex', 'shell', 'tool', 'wordpress']
 layout: post
 ---
 

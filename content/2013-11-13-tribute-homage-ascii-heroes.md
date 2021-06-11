@@ -1,6 +1,6 @@
 ---
 title: "Tribute: An Homage to My ASCII Heroes"
-tags: ['post', 'my software']
+tags: ['post', 'my-software']
 layout: post
 ---
 

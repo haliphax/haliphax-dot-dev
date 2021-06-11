@@ -1,6 +1,6 @@
 ---
 title: "SVG polyfill in pure Javascript"
-tags: ['post', 'javascript', 'my software', 'polyfill', 'svg']
+tags: ['post', 'javascript', 'my-software', 'polyfill', 'svg']
 layout: post
 ---
 
@@ -11,13 +11,13 @@ bit disappointed that the author felt the need to include jQuery as a
 dependency simply to use its selector engine and `each` function. So, I
 rewrote it in pure Javascript.<!--more-->
 
-**Javascript:**  
+**Javascript:**
 
 	#!js
-    if(!(!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect)){  
+    if(!(!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect)){
         var imgs = document.getElementsByTagName('img');
 
-        for(var i = 0; i &lt; imgs.length; i++) {  
-            imgs[i].setAttribute('src', imgs[i].getAttribute('src').replace(/\.svg/, '.png'));  
-        }  
-    }  
+        for(var i = 0; i &lt; imgs.length; i++) {
+            imgs[i].setAttribute('src', imgs[i].getAttribute('src').replace(/\.svg/, '.png'));
+        }
+    }

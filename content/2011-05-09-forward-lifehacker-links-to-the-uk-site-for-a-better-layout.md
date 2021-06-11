@@ -1,6 +1,6 @@
 ---
 title: "Forward Gawker sites to their UK counterparts for a better layout"
-tags: ['post', 'javascript', 'lifehacker', 'my software', 'tool', 'userscript']
+tags: ['post', 'javascript', 'lifehacker', 'my-software', 'tool', 'userscript']
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "WebFOCUS Impact Analysis report compactor"
-tags: ['post', 'business intelligence', 'my software', 'php', 'regex', 'webfocus']
+tags: ['post', 'business-intelligence', 'my-software', 'php', 'regex', 'webfocus']
 layout: post
 ---
 
@@ -12,70 +12,70 @@ in one CSV-formatted output block.<!--more-->
 **PHP code:**
 
     #!php
-    <?php  
-    /*  
-    Program: Impact Analysis Compactor  
-    Author: haliphax  
-    Date: 2009/8/7  
-    Changed: Never  
-    Purpose: Takes multiple Impact Analysis Reports from WebFOCUS Developer  
-    Studio and combines them into one CSV-formatted output block.  
-    Notes: Only reads HTM-formatted IA reports. *.IAR are not recognized.  
-    Usage: php iarcompactor.php > output.csv  
+    <?php
+    /*
+    Program: Impact Analysis Compactor
+    Author: haliphax
+    Date: 2009/8/7
+    Changed: Never
+    Purpose: Takes multiple Impact Analysis Reports from WebFOCUS Developer
+    Studio and combines them into one CSV-formatted output block.
+    Notes: Only reads HTM-formatted IA reports. *.IAR are not recognized.
+    Usage: php iarcompactor.php > output.csv
     */
 
-    # grab list of Impact Analysis reports  
+    # grab list of Impact Analysis reports
     $files = glob('*.htm');
 
-    # cycle through reports  
-    foreach($files as $file)  
-    {  
-        # grab HTML and parse out table rows  
-        $html = file_get_contents($file);  
-        preg_match_all('#<tr[^>]*>.+?</tr>#i', $html, $matches);  
-        $cnt = count($matches[0]);  
+    # cycle through reports
+    foreach($files as $file)
+    {
+        # grab HTML and parse out table rows
+        $html = file_get_contents($file);
+        preg_match_all('#<tr[^>]*>.+?</tr>#i', $html, $matches);
+        $cnt = count($matches[0]);
         $reports = array();
 
-        # iterate through table rows, skipping header  
-        for($a = 1; $a < $cnt; $a++)  
-        {  
-            # parse out table cells  
-            preg_match_all('#<td[^>]*>(.+?)</td>#i', $matches[0][$a], $fields);  
-            # assign field variables  
-            $report = $fields[1][0];  
-            $folder = $fields[1][1];  
-            $usage = $fields[1][2];  
-            $domain = $fields[1][3];  
-            $line = $fields[1][4];  
-            $description = $fields[1][5];  
-            $comments = $fields[1][6];  
-            # build arrays if they don't already exist  
-            if(! is_array($reports[$domain]))  
-                $reports[$domain] = array();  
-            if(! is_array($reports[$domain][$folder]))  
-                $reports[$domain][$folder] = array();  
-            # make the "line numbers" list pretty with commmas  
-            if(strlen($reports[$domain][$folder][$report] > 0))  
-                $reports[$domain][$folder][$report] .= ', ';  
-            # record line number  
-            $reports[$domain][$folder][$report] .= $line;  
+        # iterate through table rows, skipping header
+        for($a = 1; $a < $cnt; $a++)
+        {
+            # parse out table cells
+            preg_match_all('#<td[^>]*>(.+?)</td>#i', $matches[0][$a], $fields);
+            # assign field variables
+            $report = $fields[1][0];
+            $folder = $fields[1][1];
+            $usage = $fields[1][2];
+            $domain = $fields[1][3];
+            $line = $fields[1][4];
+            $description = $fields[1][5];
+            $comments = $fields[1][6];
+            # build arrays if they don't already exist
+            if(! is_array($reports[$domain]))
+                $reports[$domain] = array();
+            if(! is_array($reports[$domain][$folder]))
+                $reports[$domain][$folder] = array();
+            # make the "line numbers" list pretty with commmas
+            if(strlen($reports[$domain][$folder][$report] > 0))
+                $reports[$domain][$folder][$report] .= ', ';
+            # record line number
+            $reports[$domain][$folder][$report] .= $line;
         }
 
-        # sort final report (doesn't work so great, need to re-sort in Excel)  
-        foreach($reports as $kd => $domain)  
-        {  
-            foreach($domain as $kf => $folder)  
-                ksort($reports[$kd][$kf]);  
-            ksort($reports[$kd]);  
+        # sort final report (doesn't work so great, need to re-sort in Excel)
+        foreach($reports as $kd => $domain)
+        {
+            foreach($domain as $kf => $folder)
+                ksort($reports[$kd][$kf]);
+            ksort($reports[$kd]);
         }
 
-        ksort($reports);  
-        # output to csv  
-        foreach($reports as $domain => $domainArray)  
-            foreach($domainArray as $folder => $folderArray)  
-                foreach($folderArray as $report => $lines)  
-                    echo "\"{$domain}\",\"{$folder}\",\"{$report}\","  
-                        . "\"{$lines}\"" . PHP_EOL;  
+        ksort($reports);
+        # output to csv
+        foreach($reports as $domain => $domainArray)
+            foreach($domainArray as $folder => $folderArray)
+                foreach($folderArray as $report => $lines)
+                    echo "\"{$domain}\",\"{$folder}\",\"{$report}\","
+                        . "\"{$lines}\"" . PHP_EOL;
     }
 
 Currently, nothing is being done with several of the fields--though that

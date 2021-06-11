@@ -1,6 +1,6 @@
 ---
 title: "rexCrawler v2.4.5.0 released"
-tags: ['post', 'my software']
+tags: ['post', 'my-software']
 layout: post
 ---
 

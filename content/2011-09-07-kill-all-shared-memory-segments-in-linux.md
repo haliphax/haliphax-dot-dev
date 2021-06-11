@@ -1,6 +1,6 @@
 ---
 title: "Kill all shared memory segments in Linux"
-tags: ['post', 'linux', 'my software', 'regex', 'shell', 'tool']
+tags: ['post', 'linux', 'my-software', 'regex', 'shell', 'tool']
 layout: post
 ---
 

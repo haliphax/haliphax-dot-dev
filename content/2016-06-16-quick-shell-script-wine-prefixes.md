@@ -1,6 +1,6 @@
 ---
 title: "A quick shell script for wine prefixes"
-tags: ['post', 'linux', 'my software', 'shell', 'tool']
+tags: ['post', 'linux', 'my-software', 'shell', 'tool']
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "ascii.js: A font-based rendering engine for ASCII artwork"
-tags: ['post', 'css', 'javascript', 'my software']
+tags: ['post', 'css', 'javascript', 'my-software']
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Currency Field Validator for Sitecore CMS"
-tags: ['post', 'c-sharp', 'dot net', 'my software', 'sitecore']
+tags: ['post', 'c-sharp', 'dot net', 'my-software', 'sitecore']
 layout: post
 ---
 
@@ -19,58 +19,58 @@ formats.<!--more-->
 *Note: In the code below, replace `your.namespace.validators` with
 something more suited to your particular project.*
 
-**C# code:**  
+**C# code:**
 
     #!csharp
-    using System.Runtime.Serialization;  
-    using Sitecore.Data.Validators;  
-    using System;  
-    using Sitecore.Data.Items;  
+    using System.Runtime.Serialization;
+    using Sitecore.Data.Validators;
+    using System;
+    using Sitecore.Data.Items;
     using System.Text;
 
-    namespace your.namespace.validators  
-    {  
-        [Serializable]  
+    namespace your.namespace.validators
+    {
+        [Serializable]
         public class CurrencyValidator :
-        Sitecore.Data.Validators.StandardValidator  
-        {  
+        Sitecore.Data.Validators.StandardValidator
+        {
             public CurrencyValidator() { }
 
             public CurrencyValidator(SerializationInfo info, StreamingContext
-            context)  
-            : base(info, context)  
+            context)
+            : base(info, context)
             { }
 
-            public override string Name  
-            {  
-                get  
-                {  
-                    return ("CurrencyValidator");  
-                }  
+            public override string Name
+            {
+                get
+                {
+                    return ("CurrencyValidator");
+                }
             }
 
-            protected override ValidatorResult GetMaxValidatorResult()  
-            {  
-                return (GetFailedResult(ValidatorResult.Error));  
+            protected override ValidatorResult GetMaxValidatorResult()
+            {
+                return (GetFailedResult(ValidatorResult.Error));
             }
 
-            protected override ValidatorResult Evaluate()  
-            {  
-                // ignore blank fields (use the Sitecore-supplied Required validator if you want blank fields to fail)  
-                if(ControlValidationValue == "") return ValidatorResult.Valid;  
-                decimal val = -1;  
-                decimal.TryParse(ControlValidationValue, out val);  
-                // value must be 0 or greater  
-                if (val >= 0)  
-                // value must not have more than 2 digits after the decimal point  
-                if(Math.Round(val, 2) == val)  
-                // valid result  
-                return ValidatorResult.Valid;  
-                // fall-through: invalid result  
-                Text = "The number must be a positive integer or a positive float with no more than 2 digits after the decimal point.";  
-                return (GetFailedResult(ValidatorResult.Error));  
-            }  
-        }  
+            protected override ValidatorResult Evaluate()
+            {
+                // ignore blank fields (use the Sitecore-supplied Required validator if you want blank fields to fail)
+                if(ControlValidationValue == "") return ValidatorResult.Valid;
+                decimal val = -1;
+                decimal.TryParse(ControlValidationValue, out val);
+                // value must be 0 or greater
+                if (val >= 0)
+                // value must not have more than 2 digits after the decimal point
+                if(Math.Round(val, 2) == val)
+                // valid result
+                return ValidatorResult.Valid;
+                // fall-through: invalid result
+                Text = "The number must be a positive integer or a positive float with no more than 2 digits after the decimal point.";
+                return (GetFailedResult(ValidatorResult.Error));
+            }
+        }
     }
 
 Create a new field-level `Validation Rule` item in your *sitecore* tree

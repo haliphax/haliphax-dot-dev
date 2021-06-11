@@ -1,6 +1,6 @@
 ---
 title: "Selective backup/copy script for moving files into production"
-tags: ['post', 'my software', 'php', 'tool']
+tags: ['post', 'my-software', 'php', 'tool']
 layout: post
 ---
 

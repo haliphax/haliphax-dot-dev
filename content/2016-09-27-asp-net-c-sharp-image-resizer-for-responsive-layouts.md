@@ -1,6 +1,6 @@
 ---
 title: "ASP.NET/C# image resizer for responsive layouts"
-tags: ['post', 'aspx', 'c-sharp', 'dot net', 'image editing', 'javascript', 'my software', 'regex', 'responsive']
+tags: ['post', 'aspx', 'c-sharp', 'dot net', 'image-editing', 'javascript', 'my-software', 'regex', 'responsive']
 layout: post
 ---
 

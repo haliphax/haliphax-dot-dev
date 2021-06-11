@@ -1,6 +1,6 @@
 ---
 title: "Simple file access concurrency in C#"
-tags: ['post', 'aspx', 'c-sharp', 'my software', 'xml']
+tags: ['post', 'aspx', 'c-sharp', 'my-software', 'xml']
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Central repository"
-tags: ['post', 'blog news']
+tags: ['post', 'blog']
 layout: post
 ---
 

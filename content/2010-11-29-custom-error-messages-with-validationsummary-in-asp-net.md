@@ -1,6 +1,6 @@
 ---
 title: "Custom error messages with ValidationSummary in ASP.NET"
-tags: ['post', 'aspx', 'c-sharp', 'dot net', 'forms', 'my software']
+tags: ['post', 'aspx', 'c-sharp', 'dot net', 'forms', 'my-software']
 layout: post
 ---
 
@@ -14,26 +14,26 @@ code-behind file alone, without adding additional clutter to your
 extension class can be added to a `Page`'s `Validators` list with ease
 for displaying custom error messages.<!--more-->
 
-**C# code:**  
+**C# code:**
 
     #!csharp
-    public class ValidationError : IValidator {  
-        private string _ErrorMessage;  
-        private bool _IsValid;  
-        public string ErrorMessage { get { return this._ErrorMessage; } set { this._ErrorMessage = value; } }  
-        public bool IsValid { get { return this._IsValid; } set { this._IsValid = value; } }  
-        public ValidationError(string message) { this.ErrorMessage = message; }  
-        public void Validate() { this.IsValid = false; }  
+    public class ValidationError : IValidator {
+        private string _ErrorMessage;
+        private bool _IsValid;
+        public string ErrorMessage { get { return this._ErrorMessage; } set { this._ErrorMessage = value; } }
+        public bool IsValid { get { return this._IsValid; } set { this._IsValid = value; } }
+        public ValidationError(string message) { this.ErrorMessage = message; }
+        public void Validate() { this.IsValid = false; }
     }
 
 In order to use the class in your code-behind, you just add a new
 instance of the `ValidationError` class to the `Validators` member of
 your container.
 
-**C# code:**  
+**C# code:**
 
     #!csharp
-    Validators.Add(new ValidationError("There was a problem.  Everybody freak out!"));  
+    Validators.Add(new ValidationError("There was a problem.  Everybody freak out!"));
     Validate();
 
 I suppose you could use this code to add the `CustomValidator` control

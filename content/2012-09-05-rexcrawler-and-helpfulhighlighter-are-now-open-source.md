@@ -1,6 +1,6 @@
 ---
 title: "rexCrawler and HelpfulHighlighter are now open source"
-tags: ['post', 'c-sharp', 'dot net', 'git', 'my software', 'open source', 'plugin', 'regex', 'tool', 'vbnet']
+tags: ['post', 'c-sharp', 'dot net', 'git', 'my-software', 'open-source', 'plugin', 'regex', 'tool', 'vbnet']
 layout: post
 ---
 
