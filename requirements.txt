@@ -1,3 +1,3 @@
-python-dotenv==0.17.1
+python-dotenv==0.18.0
 requests==2.25.1
 twitch-python==0.0.19
