@@ -1,11 +1,13 @@
 const fs = require('fs'),
+	htmlEntities = require('./_functions/htmlEntities'),
 	markdownLibrary = require('./_includes/markdownLib'),
 	renderCollection = require('./_functions/renderCollection'),
 	renderTags = require('./_functions/renderTags'),
 	syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
-module.exports = function (cfg) {
+module.exports = (cfg) => {
 	// functions
+	cfg.addJavaScriptFunction('htmlEntities', htmlEntities);
 	cfg.addJavaScriptFunction('renderCollection', renderCollection);
 	cfg.addJavaScriptFunction('renderTags', renderTags);
 
@@ -64,7 +66,6 @@ module.exports = function (cfg) {
 		templateFormats: [
 			'11ty.js',
 			'md',
-			'njk',
 		],
 	};
 };
