@@ -1,0 +1,29 @@
+name: Streaming status
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+jobs:
+  twitch-status:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
+        cache: 'pip'
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+    - name: Check and update status
+      env:
+        JSON_OUTPUT_DIR: '.'
+        JSONBIN_TOKEN: ${{ secrets.JSONBIN_TOKEN }}
+        TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+        TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+        TWITCH_USERNAME: haliphax
+      run: |
+        python -m api
+        wget https://jsonbin.org/haliphax/twitch-status -O new.json
+        if [ "$(md5sum twitch-live.json)" == "$(md5sum new.json)"]; then
+          curl -X POST -H "authorization: token ${JSONBIN_TOKEN}" \
+            -d '@new.json' https://jsonbin.org/haliphax/twitch-status
+        fi
