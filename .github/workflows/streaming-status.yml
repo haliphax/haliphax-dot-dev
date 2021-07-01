@@ -14,7 +14,7 @@ jobs:
       run: pip install -r requirements.txt
     - name: Check and update status
       env:
-        JSON_OUTPUT_DIR: '.'
+        JSON_OUTPUT_DIR: "."
         JSONBIN_TOKEN: ${{ secrets.JSONBIN_TOKEN }}
         TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
         TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
@@ -24,6 +24,9 @@ jobs:
         curl https://jsonbin.org/haliphax/twitch-status | python -m json.tool > old.json
         if [ "$(md5sum old.json)" != "$(md5sum new.json)" ]; then
           curl -X POST -H "authorization: token ${JSONBIN_TOKEN}" \
-            -d '@new.json' https://jsonbin.org/haliphax/twitch-status
+            -d "@new.json" https://jsonbin.org/haliphax/twitch-status
+          echo "Status changed"
+        else
+          echo "No change"
         fi
         exit 0
