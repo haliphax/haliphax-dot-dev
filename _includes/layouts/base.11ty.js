@@ -33,7 +33,7 @@ module.exports = class Base {
 				<head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-					<title>${data.title} | haliphax.dev</title>
+					<title>${data.title} | ${data.strings.siteName}</title>
 					<meta name="description" content="${metaDescription}" />
 					<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
 					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" media="screen" />
@@ -56,11 +56,11 @@ module.exports = class Base {
 						<div class="sidebar">
 							<div class="sidebar-menu">
 								<div class="sidebar-content">
-									<h5 class="sidebar-title">Site</h5>
+									<h5 class="sidebar-title">${data.strings.siteMenuHeader}</h5>
 									<div class="sidebar-divider"></div>
 									${data.links.map(d => generateSidebarLink(d)).join('')}
 									<br />
-									<h5 class="sidebar-title">Social</h5>
+									<h5 class="sidebar-title">${data.strings.socialMenuHeader}</h5>
 									<div class="sidebar-divider"></div>
 									${data.socials.map(d => generateSidebarLink(d)).join('')}
 								</div>
@@ -71,8 +71,8 @@ module.exports = class Base {
 								<div class="container px-0">
 									<div class="navbar-brand w-full">
 										<h1 class="text-center w-full">
-											<img src="/img/skull-icon.png" alt="" class="align-bottom" />
-											<a href="/" aria-label="Homepage">haliphax</a>
+											<img src="/img/header.png" alt="" class="align-bottom" />
+											<a href="/" aria-label="Homepage">${data.strings.header}</a>
 										</h1>
 									</div>
 								</div>
@@ -82,7 +82,8 @@ module.exports = class Base {
 									<div class="alert alert-primary text-center mb-20 d-none" id="twitch-live">
 											I'm streaming on Twitch <em><strong>right now</strong></em>.
 											You should stop by.
-											<a href="https://twitch.tv/haliphax" class="btn btn-sm btn-primary ml-10 no-external">
+											<a href="https://twitch.tv/${data.twitch.username}"
+												class="btn btn-sm btn-primary ml-10 no-external">
 												<span class="fab fa-twitch"></span>
 												Let's go!
 											</a>
@@ -110,10 +111,10 @@ module.exports = class Base {
 							});
 
 						// Twitch live alert
-						const root = (window.location.hostname == 'localhost'
-							? '' : 'https://api.haliphax.dev');
+						const statusUrl = (window.location.hostname == 'localhost'
+							? '/twitch.json' : '${data.twitch.jsonUrl}');
 
-						fetch(root + '/twitch-live.json')
+						fetch(statusUrl)
 							.then(r => r.json())
 							.then(d => d.live
 								&& (document.getElementById('twitch-live').classList
