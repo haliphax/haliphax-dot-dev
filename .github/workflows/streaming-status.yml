@@ -22,7 +22,7 @@ jobs:
       run: |
         python -m api | python -m json.tool > new.json
         curl https://jsonbin.org/haliphax/twitch-status | python -m json.tool > old.json
-        if [ "$(md5sum twitch-live.json)" != "$(md5sum new.json)" ]; then
+        if [ "$(md5sum old.json)" != "$(md5sum new.json)" ]; then
           curl -X POST -H "authorization: token ${JSONBIN_TOKEN}" \
             -d '@new.json' https://jsonbin.org/haliphax/twitch-status
         fi
