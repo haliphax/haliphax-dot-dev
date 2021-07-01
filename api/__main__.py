@@ -10,21 +10,19 @@ from twitch import Helix
 
 
 def main():
-	load_dotenv()
+    load_dotenv()
 
-	# settings
-	CLIENT_ID = getenv('TWITCH_CLIENT_ID')
-	CLIENT_SECRET = getenv('TWITCH_CLIENT_SECRET')
-	OUTPUT_DIR = getenv('JSON_OUTPUT_DIR')
-	USERNAME = getenv('TWITCH_USERNAME')
+    # settings
+    CLIENT_ID = getenv('TWITCH_CLIENT_ID')
+    CLIENT_SECRET = getenv('TWITCH_CLIENT_SECRET')
+    USERNAME = getenv('TWITCH_USERNAME')
 
-	# Twitch API client
-	helix = Helix(CLIENT_ID, CLIENT_SECRET)
-	me = helix.user(USERNAME)
+    # Twitch API client
+    helix = Helix(CLIENT_ID, CLIENT_SECRET)
+    me = helix.user(USERNAME)
 
-	with open(join(realpath(OUTPUT_DIR), 'twitch-live.json'), 'w') as out:
-		out.write(json.dumps({'live': me.is_live}))
+    print(json.dumps({'live': me.is_live}))
 
 
 if __name__ == '__main__':
-	main()
+    main()
