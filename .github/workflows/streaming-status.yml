@@ -23,8 +23,8 @@ jobs:
       run: |
         python -m api
         wget https://jsonbin.org/haliphax/twitch-status -O new.json
-        if [ "$(md5sum twitch-live.json)" == "$(md5sum new.json)" ]; then
+        if [ "$(md5sum twitch-live.json)" != "$(md5sum new.json)" ]; then
           curl -X POST -H "authorization: token ${JSONBIN_TOKEN}" \
             -d '@new.json' https://jsonbin.org/haliphax/twitch-status
         fi
-				exit 0
+        exit 0
