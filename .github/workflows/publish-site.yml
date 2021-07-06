@@ -10,16 +10,16 @@ jobs:
     - uses: actions/setup-node@v2
       with:
         node-version: 16.x
-        cache: 'npm'
+        cache: npm
     - name: Install dependencies
       run: npm install
     - name: Publish site
       run: |
         mkdir docs
-        echo "haliphax.dev" > docs/CNAME
+        echo haliphax.dev > docs/CNAME
         npx @11ty/eleventy
-        git config --global user.email "git@github.com"
-        git config --global user.name "GitHub Actions"
+        git config user.email git@github.com
+        git config user.name 'GitHub Actions'
         git add -f docs
         git commit -m 'publish site'
         git push -f -u origin master:gh-pages
