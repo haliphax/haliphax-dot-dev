@@ -31,7 +31,7 @@ const main = async () => {
 			headers: { authorization: `token ${process.env.JSONBIN_TOKEN}` },
 			method: 'PUT',
 		})
-		.then(() => console.log('✅ Status updated'));
+		.then(() => console.log('✅ Status updated', apiResult));
 	}
 	else {
 		console.log('🤷 No change');
