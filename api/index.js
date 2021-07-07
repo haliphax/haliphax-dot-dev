@@ -29,7 +29,7 @@ const main = async () => {
 		await fetch(process.env.JSONBIN_URL, {
 			body: JSON.stringify(apiResult),
 			headers: { authorization: `token ${process.env.JSONBIN_TOKEN}` },
-			method: 'PUT',
+			method: 'POST',
 		})
 		.then(() => console.log('✅ Status updated', apiResult));
 	}
