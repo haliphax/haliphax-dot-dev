@@ -11,7 +11,7 @@ const main = async () => {
 		client_secret: process.env.TWITCH_CLIENT_SECRET,
 	});
 
-	console.log('❓ Querying API for stream data');
+	console.log('❓ Querying Twitch for stream data');
 
 	const apiResponse = await api.getStreams(
 		{ channels: [process.env.TWITCH_USERNAME] });
