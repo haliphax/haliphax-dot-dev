@@ -35,7 +35,7 @@ module.exports = class Base {
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<title>${data.title} | ${data.strings.siteName}</title>
 					<meta name="description" content="${metaDescription}" />
-					<link rel="icon" href="data:;base64,iVBORw0KGgo=" />
+					<link rel="icon" href="/img/favicon.gif" />
 					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" media="screen" />
 					<link href="/css/styles.css" rel="stylesheet" />
 					${preloads}
