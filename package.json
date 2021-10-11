@@ -20,7 +20,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.1.3",
     "dotenv": "^10.0.0",
     "json-diff": "^0.5.4",
-    "markdown-it-anchor": "^8.3.1",
+    "markdown-it-anchor": "^8.4.1",
     "node-fetch": "^2.6.1",
     "node-twitch": "^0.4.5"
   }
