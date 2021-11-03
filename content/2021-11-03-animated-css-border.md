@@ -1,6 +1,6 @@
 ---
 title: Animated CSS "border"
-tags: ['post', 'my-software', 'css']
+tags: ['post', 'css', 'experiment']
 layout: post
 ---
 
