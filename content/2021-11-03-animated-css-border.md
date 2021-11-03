@@ -58,10 +58,12 @@ body, body * {
 
 /* ✨ special stuff */
 
+/* main wrapper */
 .tron {
 	flex-direction: row;
 }
 
+/* universal styles */
 .tron::before,
 .tron::after,
 .tron > div::before,
@@ -70,9 +72,10 @@ body, body * {
 	animation-iteration-count: 1;
 	animation-timing-function: linear;
 	background-repeat: no-repeat;
-  content: '';
+	content: '';
 }
 
+/* vertical borders */
 .tron::before,
 .tron::after {
 	animation-duration: .0625s;
@@ -80,6 +83,7 @@ body, body * {
 	width: 4px;
 }
 
+/* left border animation */
 @keyframes tron-before {
 	0% {
 		background-position: 0 0;
@@ -89,11 +93,13 @@ body, body * {
 	}
 }
 
+/* left border hover */
 .tron:hover::before {
 	animation-name: tron-before;
 	background-image: linear-gradient(to top, #f0f 50%, transparent 50%, transparent 100%);
 }
 
+/* right border animation */
 @keyframes tron-after {
 	0% {
 		background-position: 0 100%;
@@ -103,6 +109,7 @@ body, body * {
 	}
 }
 
+/* right border hover */
 .tron:hover::after {
 	animation-delay: .1875s;
 	animation-name: tron-after;
@@ -110,10 +117,12 @@ body, body * {
 	background-position: 0 100%;
 }
 
+/* internal wrapper */
 .tron > div {
 	flex-direction: column;
 }
 
+/* horizontal borders */
 .tron > div::before,
 .tron > div::after {
 	animation-duration: .125s;
@@ -121,6 +130,7 @@ body, body * {
 	height: 4px;
 }
 
+/* top border animation */
 @keyframes tron-inner-before {
 	0% {
 		background-position: 100% 0;
@@ -130,6 +140,7 @@ body, body * {
 	}
 }
 
+/* top border hover */
 .tron:hover > div::before {
 	animation-delay: .0625s;
 	animation-name: tron-inner-before;
@@ -137,6 +148,7 @@ body, body * {
 	background-position: 100% 0;
 }
 
+/* bottom border animation */
 @keyframes tron-inner-after {
 	0% {
 		background-position: 0% 0;
@@ -146,6 +158,7 @@ body, body * {
 	}
 }
 
+/* bottom border hover */
 .tron:hover > div::after {
 	animation-delay: .25s;
 	animation-name: tron-inner-after;
