@@ -22,5 +22,136 @@ outside of the object before being entirely visible.
 It was fun to do, as I don't stretch my CSS muscles very often. Next time,
 maybe I'll see if I can implement the same effect using the Grid layout model!
 
+For the sake of posterity, here is the HTML and CSS source code:
+
+```html
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Tron border demo</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="tron">
+			<div>
+				<div class="example">Hover over me!</div>
+			</div>
+		</div>
+	</body>
+</html>
+```
+
+```css
+html {
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+body, body * {
+	display: flex;
+}
+
+.example {
+	border: 1px solid #aaa;
+	padding: .25em;
+}
+
+/* ✨ special stuff */
+
+.tron {
+	flex-direction: row;
+}
+
+.tron::before,
+.tron::after,
+.tron > div::before,
+.tron > div::after {
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	background-repeat: no-repeat;
+  content: '';
+}
+
+.tron::before,
+.tron::after {
+	animation-duration: .0625s;
+	background-size: 100% 200%;
+	width: 4px;
+}
+
+@keyframes tron-before {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 0 100%;
+	}
+}
+
+.tron:hover::before {
+	animation-name: tron-before;
+	background-image: linear-gradient(to top, #f0f 50%, transparent 50%, transparent 100%);
+}
+
+@keyframes tron-after {
+	0% {
+		background-position: 0 100%;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.tron:hover::after {
+	animation-delay: .1875s;
+	animation-name: tron-after;
+	background-image: linear-gradient(to bottom, #f0f 50%, transparent 50%, transparent 100%);
+	background-position: 0 100%;
+}
+
+.tron > div {
+	flex-direction: column;
+}
+
+.tron > div::before,
+.tron > div::after {
+	animation-duration: .125s;
+	background-size: 200% 100%;
+	height: 4px;
+}
+
+@keyframes tron-inner-before {
+	0% {
+		background-position: 100% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.tron:hover > div::before {
+	animation-delay: .0625s;
+	animation-name: tron-inner-before;
+	background-image: linear-gradient(to right, #f0f 50%, transparent 50%, transparent 100%);
+	background-position: 100% 0;
+}
+
+@keyframes tron-inner-after {
+	0% {
+		background-position: 0% 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
+}
+
+.tron:hover > div::after {
+	animation-delay: .25s;
+	animation-name: tron-inner-after;
+	background-image: linear-gradient(to left, #f0f 50%, transparent 50%, transparent 100%);
+}
+```
+
 
 [Check out the CodePen]: https://codepen.io/haliphax/pen/bGradKo
