@@ -18,6 +18,7 @@ jobs:
         mkdir docs
         echo haliphax.dev > docs/CNAME
         npx @11ty/eleventy
+				npx html-minifier --collapse-whitespace --remove-comments --minify-css true --minify-js true docs
         git config user.email git@github.com
         git config user.name 'GitHub Actions'
         git add -f docs
