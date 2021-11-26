@@ -14,9 +14,11 @@ jobs:
     - name: Install dependencies
       run: npm install
     - name: Publish site
+      env:
+        CNAME: ${{ secrets.CNAME }}
       run: |
         mkdir docs
-        echo haliphax.dev > docs/CNAME
+        echo "$CNAME" > docs/CNAME
         npx @11ty/eleventy
         git config user.email git@github.com
         git config user.name 'GitHub Actions'
