@@ -30,10 +30,14 @@ module.exports = class Post {
 	}
 
 	render(data) {
+		const reformatted = this.htmlEntities(
+			data.content.replace(/<\/?h\d+[^>]*>/ig, x =>
+				x.replace(/\d/, d => parseInt(d) + 3)));
+
 		return /*html*/`
 			${this.renderTags(data.tags)}
 			<div class="card border mx-0 pb-0 pt-5 mt-0 mb-0">
-				${this.htmlEntities(data.content)}
+				${reformatted}
 			</div>
 			<p class="text-muted">
 				<span class="fa fa-calendar"></span>
