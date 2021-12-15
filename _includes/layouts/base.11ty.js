@@ -51,6 +51,7 @@ module.exports = class Base {
 					<meta property="og:title" content="${ogTitle}" />
 					<meta property="og:type" content="${ogType}" />
 					<meta property="article:author" content="${ogAuthor}" />
+					<meta property="article:published_time" content="${this.page.date.toISOString()}" />
 					${data.tags == undefined ? ''
 						: data.tags?.map(t =>
 								/*html*/`<meta property="article:tag" content="${t}" />`)
