@@ -24,8 +24,11 @@ const generateSidebarLink = ({ icon, name, url}) => /*html*/`
 
 module.exports = class Base {
 	render(data) {
+		const title = data.title;
+		const ogTitle = data.ogTitle ?? title;
 		const metaDescription = data.metaDescription
-			|| data.metaDefaults.description;
+			?? data.metaDefaults.description;
+		const ogImage = data.strings.openGraphImageUrl.replace('{title}', encodeURIComponent(ogTitle));
 
 		return /*html*/`
 			<!doctype html>
@@ -33,8 +36,13 @@ module.exports = class Base {
 				<head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-					<title>${data.title} | ${data.strings.siteName}</title>
-					<meta name="description" content="${metaDescription}" />
+					<title>${title}</title>
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:site" content="${data.strings.twitter}" />
+					<meta name="twitter:creator" content="${data.strings.twitter}" />
+					<meta name="description" property="og:description" content="${metaDescription}" />
+					<meta property="og:image" content="${ogImage}" />
+					<meta property="og:title" content="${ogTitle}" />
 					<link rel="icon" href="/img/favicon.gif" />
 					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" media="screen" />
 					<link href="/css/styles.css" rel="stylesheet" />

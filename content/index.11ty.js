@@ -4,6 +4,7 @@ module.exports = class Index {
 			header: 'Recent posts',
 			layout: 'withHeader',
 			title: 'Home',
+			ogTitle: 'haliphax.dev',
 		};
 	}
 
