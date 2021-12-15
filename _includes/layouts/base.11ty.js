@@ -1,3 +1,5 @@
+const metaEncode = require('../../_functions/metaEncode');
+
 /** CSS preload markup */
 const preloads =
 	[
@@ -24,10 +26,13 @@ const generateSidebarLink = ({ icon, name, url}) => /*html*/`
 
 module.exports = class Base {
 	render(data) {
-		const ogTitle = data.ogTitle ?? data.title;
-		const metaDescription = data.metaDescription
-			?? data.metaDefaults.description;
-		const ogImage = data.strings.openGraphImageUrl.replace('{title}', encodeURIComponent(ogTitle));
+		const ogTitle = metaEncode(data.ogTitle ?? data.title);
+		const ogAuthor = metaEncode(data.ogAuthor ?? data.metaDefaults.author);
+		const ogType = data.ogType ?? data.metaDefaults.openGraphType;
+		const metaDescription = metaEncode(
+			data.metaDescription ?? data.metaDefaults.description);
+		const ogImage = data.strings.openGraphImageUrl.replace(
+			'{title}', encodeURIComponent(data.ogTitle ?? data.title));
 
 		return /*html*/`
 			<!doctype html>
@@ -36,15 +41,26 @@ module.exports = class Base {
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<title>${data.title} | ${data.strings.siteName}</title>
-					<meta property="og:title" content="${ogTitle}" />
 					<meta property="og:description" content="${metaDescription}" />
+					<meta property="og:image:alt" content="${ogTitle}" />
+					<meta property="og:image:height" content="600" />
+					<meta property="og:image:type" content="image/jpeg" />
+					<meta property="og:image:width" content="1200" />
 					<meta property="og:image" content="${ogImage}" />
+					<meta property="og:site_name" content="${data.strings.siteName}" />
+					<meta property="og:title" content="${ogTitle}" />
+					<meta property="og:type" content="${ogType}" />
+					<meta property="article:author" content="${ogAuthor}" />
+					${data.tags == undefined ? ''
+						: data.tags?.map(t =>
+								/*html*/`<meta property="article:tag" content="${t}" />`)
+							.join('')}
 					<meta name="twitter:card" content="summary_large_image" />
-					<meta name="twitter:site" content="${data.strings.twitter}" />
 					<meta name="twitter:creator" content="${data.strings.twitter}" />
-					<meta name="twitter:title" content="${ogTitle}" />
 					<meta name="twitter:description" content="${metaDescription}" />
 					<meta name="twitter:image" content="${ogImage}" />
+					<meta name="twitter:site" content="${data.strings.twitter}" />
+					<meta name="twitter:title" content="${ogTitle}" />
 					<link rel="icon" href="/img/favicon.gif" />
 					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" media="screen" />
 					<link href="/css/styles.css" rel="stylesheet" />

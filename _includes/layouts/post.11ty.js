@@ -19,6 +19,7 @@ module.exports = class Post {
 				},
 			},
 			layout: 'withHeader',
+			ogType: 'article',
 			permalink(_) {
 				const y = this.page.date.getFullYear(),
 					m = this.page.date.getMonth() + 1,

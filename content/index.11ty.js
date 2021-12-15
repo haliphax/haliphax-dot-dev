@@ -5,6 +5,7 @@ module.exports = class Index {
 			layout: 'withHeader',
 			title: 'Home',
 			ogTitle: 'haliphax.dev',
+			ogType: 'website',
 		};
 	}
 

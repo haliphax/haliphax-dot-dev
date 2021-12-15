@@ -3,6 +3,7 @@ module.exports = class FourOhFour {
 		return {
 			layout: 'withHeader',
 			metaDescription: 'The page you were looking for could not be found.',
+			ogType: 'website',
 			permalink: '404.html',
 			title: 'Not found',
 		};

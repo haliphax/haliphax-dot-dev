@@ -3,6 +3,7 @@ module.exports = class Tags {
 		return {
 			layout: 'withHeader',
 			metaDescription: 'List of all post tags',
+			ogType: 'website',
 			permalink: '/tags/index.html',
 			title: 'Tags',
 		};

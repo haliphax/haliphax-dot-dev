@@ -10,6 +10,7 @@ module.exports = class Tag {
 				},
 			},
 			layout: 'withHeader',
+			ogType: 'website',
 			pagination: {
 				addAllPagesToCollections: true,
 				alias: 'tag',
