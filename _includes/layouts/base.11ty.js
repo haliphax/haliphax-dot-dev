@@ -24,7 +24,7 @@ const generateSidebarLink = ({ icon, name, url}) => /*html*/`
 
 module.exports = class Base {
 	render(data) {
-		const title = data.title;
+		const title = `${data.title} | ${data.strings.siteName}`;
 		const ogTitle = data.ogTitle ?? title;
 		const metaDescription = data.metaDescription
 			?? data.metaDefaults.description;
