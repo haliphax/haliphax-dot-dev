@@ -41,7 +41,7 @@ module.exports = class Base {
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<title>${data.title} | ${data.strings.siteName}</title>
-					<meta property="og:description" content="${metaDescription}" />
+					<meta property="og:description" name="description" content="${metaDescription}" />
 					<meta property="og:image:alt" content="${ogTitle}" />
 					<meta property="og:image:height" content="600" />
 					<meta property="og:image:type" content="image/jpeg" />
