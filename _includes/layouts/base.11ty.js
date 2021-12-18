@@ -82,7 +82,7 @@ module.exports = class Base {
 						</button>
 						<div class="sidebar">
 							<div class="sidebar-menu">
-								<div class="sidebar-content">
+								<nav class="sidebar-content">
 									<h5 class="sidebar-title">${data.strings.siteMenuHeader}</h5>
 									<div class="sidebar-divider"></div>
 									${data.links.map(d => generateSidebarLink(d)).join('')}
@@ -90,11 +90,11 @@ module.exports = class Base {
 									<h5 class="sidebar-title">${data.strings.socialMenuHeader}</h5>
 									<div class="sidebar-divider"></div>
 									${data.socials.map(d => generateSidebarLink(d)).join('')}
-								</div>
+								</nav>
 							</div>
 						</div>
 						<div class="content-wrapper">
-							<nav class="navbar">
+							<div class="navbar" role="banner">
 								<div class="container px-0">
 									<div class="navbar-brand w-full">
 										<h1 class="text-center w-full">
@@ -103,7 +103,7 @@ module.exports = class Base {
 										</h1>
 									</div>
 								</div>
-							</nav>
+							</div>
 							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
 									<div class="alert alert-primary text-center mb-20 d-none" id="twitch-live">
@@ -121,32 +121,32 @@ module.exports = class Base {
 						</div>
 					</div>
 					<script>
-					(function(){
-						// Sidebar management
-						const wrapper = document.querySelector('.page-wrapper');
+						(function(){
+							// Sidebar management
+							const wrapper = document.querySelector('.page-wrapper');
 
-						if (matchMedia('(min-width:769px)').matches)
-							document.querySelector('.page-wrapper')
-								.removeAttribute('data-sidebar-hidden');
+							if (matchMedia('(min-width:769px)').matches)
+								document.querySelector('.page-wrapper')
+									.removeAttribute('data-sidebar-hidden');
 
-						document.getElementById('btn-sidebar-toggle')
-							.addEventListener('click', e => {
-								if (wrapper.getAttribute('data-sidebar-hidden'))
-									wrapper.removeAttribute('data-sidebar-hidden');
-								else
-									wrapper.setAttribute('data-sidebar-hidden', 'true');
-							});
+							document.getElementById('btn-sidebar-toggle')
+								.addEventListener('click', e => {
+									if (wrapper.getAttribute('data-sidebar-hidden'))
+										wrapper.removeAttribute('data-sidebar-hidden');
+									else
+										wrapper.setAttribute('data-sidebar-hidden', 'true');
+								});
 
-						// Twitch live alert
-						const statusUrl = (window.location.hostname == 'localhost'
-							? '/twitch.json' : '${data.twitch.jsonUrl}');
+							// Twitch live alert
+							const statusUrl = (window.location.hostname == 'localhost'
+								? '/twitch.json' : '${data.twitch.jsonUrl}');
 
-						fetch(statusUrl)
-							.then(r => r.json())
-							.then(d => d.live
-								&& (document.getElementById('twitch-live').classList
-									.remove('d-none')));
-					}());
+							fetch(statusUrl)
+								.then(r => r.json())
+								.then(d => d.live
+									&& (document.getElementById('twitch-live').classList
+										.remove('d-none')));
+						}());
 					</script>
 				</body>
 			</html>

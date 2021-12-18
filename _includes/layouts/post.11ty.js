@@ -34,15 +34,16 @@ module.exports = class Post {
 		const reformatted = this.htmlEntities(
 			data.content.replace(/<\/?h\d+[^>]*>/ig, x =>
 				x.replace(/\d/, d => parseInt(d) + 3)));
+		const posted = this.page.date.toISOString().replace(/T.*$/, '');
 
 		return /*html*/`
 			${this.renderTags(data.tags)}
 			<div class="card border mx-0 pb-0 pt-5 mt-0 mb-0">
 				${reformatted}
 			</div>
-			<p class="text-muted">
+			<p class="text-muted" role="contentinfo">
 				<span class="fa fa-calendar"></span>
-				Posted: ${this.page.date.toISOString().replace(/T.*$/, '')}
+				Posted: <time datetime="${posted}">${posted}</time>
 			</p>
 			`;
 	}
