@@ -1,10 +1,4 @@
 .env
 .vscode/
-*.pyc
-bin/
 docs/
-include/
-lib/
 node_modules/
-share/
-src/
