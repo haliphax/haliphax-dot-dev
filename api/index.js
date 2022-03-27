@@ -1,5 +1,5 @@
 require('dotenv').config();
-const fetch = require('node-fetch');
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
 const jsonDiff = require('json-diff');
 const TwitchApi = require('node-twitch').default;
 
