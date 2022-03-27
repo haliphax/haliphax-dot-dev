@@ -20,12 +20,12 @@ module.exports = class Post {
 			},
 			layout: 'withHeader',
 			ogType: 'article',
-			permalink(_) {
-				const y = this.page.date.getFullYear(),
-					m = this.page.date.getMonth() + 1,
+			permalink(data) {
+				const y = data.page.date.getFullYear(),
+					m = data.page.date.getMonth() + 1,
 					m0 = m < 10 ? `0${m}` : m;
 
-				return `/${y}/${m0}/${this.page.fileSlug}/`;
+				return `/${y}/${m0}/${data.page.fileSlug}/`;
 			},
 		};
 	}
