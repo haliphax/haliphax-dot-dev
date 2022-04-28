@@ -21,7 +21,7 @@
     "dotenv": "^16.0.0",
     "json-diff": "^0.7.4",
     "markdown-it-anchor": "^8.6.2",
-    "node-fetch": "^3.2.3",
+    "node-fetch": "^3.2.4",
     "node-twitch": "^0.4.5"
   }
 }
