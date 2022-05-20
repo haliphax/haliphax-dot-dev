@@ -4,10 +4,10 @@ const metaEncode = require('../../_functions/metaEncode');
 const preloads =
 	[
 		'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/fontawesome.min.css',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/regular.min.css',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/solid.min.css',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/brands.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/regular.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css',
+		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css',
 		'/css/prism-synthwave84.css',
 	]
 	.map(p => /*html*/`
