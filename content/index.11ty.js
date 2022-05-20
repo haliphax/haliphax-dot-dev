@@ -1,6 +1,7 @@
 module.exports = class Index {
 	get data() {
 		return {
+			changefreq: 'monthly',
 			header: 'Recent posts',
 			layout: 'withHeader',
 			title: 'Home',

@@ -9,6 +9,7 @@ module.exports = class Tag {
 					return `Tagged: ${tag}`;
 				},
 			},
+			changeFreq: 'monthly',
 			layout: 'withHeader',
 			ogType: 'website',
 			robots: 'noindex',

@@ -1,6 +1,7 @@
 module.exports = class Tags {
 	get data() {
 		return {
+			changeFreq: 'monthly',
 			layout: 'withHeader',
 			metaDescription: 'List of all post tags',
 			ogType: 'website',
