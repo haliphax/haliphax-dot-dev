@@ -14,7 +14,7 @@ module.exports = class Post {
 						.replace(/<[^>]+>/g, '')
 						.replace(/\s{2,}/g, ' ')
 						.replace(/\n/g, ' '))
-						.slice(0, 300)
+						.slice(0, 160)
 						.replace(/\s+[^ ]*$/, '') + ' &hellip;';
 				},
 			},
