@@ -5,6 +5,7 @@ module.exports = class Tags {
 			metaDescription: 'List of all post tags',
 			ogType: 'website',
 			permalink: '/tags/index.html',
+			robots: 'noindex',
 			title: 'Tags',
 		};
 	}

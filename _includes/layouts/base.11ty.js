@@ -41,6 +41,8 @@ module.exports = class Base {
 				<head>
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+					${data.robots == undefined ? ''
+						: /*html*/`<meta name="robots" content="${data.robots}" />`}
 					<title>${data.title} | ${data.strings.siteName}</title>
 					<link rel="canonical" href="${canonicalUrl}" />
 					<meta property="og:description" name="description" content="${metaDescription}" />

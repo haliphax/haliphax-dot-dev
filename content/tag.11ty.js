@@ -11,6 +11,7 @@ module.exports = class Tag {
 			},
 			layout: 'withHeader',
 			ogType: 'website',
+			robots: 'noindex',
 			pagination: {
 				addAllPagesToCollections: true,
 				alias: 'tag',
