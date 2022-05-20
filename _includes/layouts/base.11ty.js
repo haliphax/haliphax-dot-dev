@@ -110,7 +110,7 @@ module.exports = class Base {
 									<div class="alert alert-primary text-center mb-20 d-none" id="twitch-live">
 											I'm streaming on Twitch <em><strong>right now</strong></em>.
 											You should stop by.
-											<a href="https://twitch.tv/${data.twitch.username}"
+											<a href="https://www.twitch.tv/${data.twitch.username}"
 												class="btn btn-sm btn-primary ml-10 no-external">
 												<span class="fab fa-twitch"></span>
 												Let's go!
