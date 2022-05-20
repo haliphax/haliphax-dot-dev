@@ -15,28 +15,28 @@ this post, click on the thumbnails.*
 First, we start by opening the Project configuration by right-clicking
 the "My Project" object in the Solution Explorer and selecting "Open."
 
-[![How to use files as Resources #1]({filename}/images/files-as-resources-in-net-projects-1.png)]({filename}/images/files-as-resources-in-net-projects-1.png)
+`[SCREENSHOT MISSING]`
 
 Next, make sure you have selected the "Resources" tab in the
 configuration list.
 
-[![How to use files as Resources #2]({filename}/images/files-as-resources-in-net-projects-2.jpg)]({filename}/images/files-as-resources-in-net-projects-2.jpg)
+`[SCREENSHOT MISSING]`
 
 Here's where your options may differ. If you want to track the file
 you're including as a Resource by associating it with your project, you
 can drag that file from an Explorer window into your project.
 
-[![How to use files as Resources #3]({filename}/images/files-as-resources-in-net-projects-3.jpg)]({filename}/images/files-as-resources-in-net-projects-3.jpg)
+`[SCREENSHOT MISSING]`
 
 The file is now a part of your project, and as such, will show up in the
 Solution Explorer.
 
-[![How to use files as Resources #4]({filename}/images/files-as-resources-in-net-projects-4.jpg)]({filename}/images/files-as-resources-in-net-projects-4.jpg)
+`[SCREENSHOT MISSING]`
 
 Now, drag the file from Solution Explorer into the Resources panel to
 include it as a resource in your compiled solution.
 
-[![How to use files as Resources #5]({filename}/images/files-as-resources-in-net-projects-5.jpg)]({filename}/images/files-as-resources-in-net-projects-5.jpg)
+`[SCREENSHOT MISSING]`
 
 If you don't want to track the file by associating it with your project,
 you can just as easily drag the file directly into the Resources panel.
@@ -46,7 +46,7 @@ is missing, that Resource will fail to be added to the compiled project.
 
 Be sure to save your Project configuration after adding the resource.
 
-[![How to use files as Resources #6]({filename}/images/files-as-resources-in-net-projects-6.jpg)]({filename}/images/files-as-resources-in-net-projects-6.jpg)
+`[SCREENSHOT MISSING]`
 
 At this point, you have the Resource available to your .NET project
 through an object called the *ResourceManager*. The easiest way to
@@ -64,16 +64,16 @@ the physical resource after it has been written. Its default value is
 
 **VB.NET Code:**
 
+```vb
+If helpFile = Nothing _
+	Or Not My.Computer.FileSystem.FileExists(helpFile) _
+Then
+	helpFile = IO.Path.GetTempPath & "rexCrawler.chm"
+	ExtractHelpToFile()
+End If
 
-    #!vbnet
-    If helpFile = Nothing _  
-        Or Not My.Computer.FileSystem.FileExists(helpFile) _  
-    Then  
-        helpFile = IO.Path.GetTempPath & "rexCrawler.chm"  
-        ExtractHelpToFile()  
-    End If
-
-    Help.ShowHelp(Me, helpFile)
+Help.ShowHelp(Me, helpFile)
+```
 
 The following code represents the contents of the *ExtractHelpToFile()*
 Sub. It uses *IO.Path.GetTempPath* to find a suitable location to write
@@ -82,19 +82,20 @@ ResourceManager and a *FileStream* to write to the physical location.
 
 **VB.NET Code:**
 
-    #!vbnet
-    Dim resource As IO.Stream = New IO.MemoryStream(My.Resources.rexCrawler)  
-    Dim output As IO.Stream = _  
-        New IO.FileStream(helpFile, IO.FileMode.Create, IO.FileAccess.Write)  
-    Dim bytes(4096) As Byte  
-    Dim bytesread As Integer = 0
+```vb
+Dim resource As IO.Stream = New IO.MemoryStream(My.Resources.rexCrawler)
+Dim output As IO.Stream = _
+	New IO.FileStream(helpFile, IO.FileMode.Create, IO.FileAccess.Write)
+Dim bytes(4096) As Byte
+Dim bytesread As Integer = 0
 
-    While resource.Position < resource.Length - 1  
-        bytesread = resource.Read(bytes, 0, bytes.Length)  
-        output.Write(bytes, 0, bytesread)  
-    End While
+While resource.Position < resource.Length - 1
+	bytesread = resource.Read(bytes, 0, bytes.Length)
+	output.Write(bytes, 0, bytesread)
+End While
 
-    output.Close()]
+output.Close()]
+```
 
 This method can be adapted to any type of binary file you wish to write
 to a temporary location. I would also recommend using a version number
@@ -107,7 +108,7 @@ as a Byte array. If you can find constructors that will allow a Byte
 array as their input source, you're in business.
 
 The preceding code has been taken directly from
-[rexCrawler](http://sites.google.com/site/rexcrawler) v2.4.5.0 source.
+[rexCrawler](https://sites.google.com/site/rexcrawler) v2.4.5.0 source.
 I, haliphax, the author of this blog and of the rexCrawler software,
 allow the use of the source code posted here for non-profit and personal
 use.

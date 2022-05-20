@@ -1,5 +1,5 @@
 ---
-title: "Add &quot;desktop version&quot; and &quot;mark all as read&quot; links to Tiny Tiny RSS mobile plugin"
+title: 'Add "desktop version" and "mark all as read" links to Tiny Tiny RSS mobile plugin'
 tags: ['post', 'php', 'plugin', 'tool']
 layout: post
 ---
@@ -24,8 +24,8 @@ directly into the mobile UI.
 For the time being, implementing this yourself will take small, manual
 edits to two files:
 
--   plugins/mobile/backend.php
--   plugins/mobile/prefs.php
+- plugins/mobile/backend.php
+- plugins/mobile/prefs.php
 
 The `backend.php` file is an AJAX controller that receives calls from
 the interface and acts on its behalf. The `prefs.php` file is the
@@ -35,21 +35,20 @@ their functionality is self-contained.
 
 **plugins/mobile/backend.php, line 59**
 
-    #!php
-    case "markAllRead":  
-        catchup_feed($link, -4, false);  
-        break;
+```php
+case "markAllRead":
+	catchup_feed($link, -4, false);
+	break;
+```
 
 **plugins/mobile/prefs.php, line 64**
 
-    #!php
-    <div class="row"><label><a href="javascript:(function(){if(!confirm('Are you sure?'))return;new Ajax.Request('backend.php',{parameters:'op=markAllRead',onComplete:function(){alert('Done');}});}())">Mark All as Read</a></label></div>  
-    <div class="row"><label><a href="javascript:window.location='../../index.php?mobile=false';">Full Version</a></label></div>
-
-[![New
-features]({filename}/images/add-desktop-version-and-mark-all-as-read-links-to-tiny-tiny-rss-mobile-plugin.png)]({filename}/images/add-desktop-version-and-mark-all-as-read-links-to-tiny-tiny-rss-mobile-plugin.png)
+```php
+<div class="row"><label><a href="javascript:(function(){if(!confirm('Are you sure?'))return;new Ajax.Request('backend.php',{parameters:'op=markAllRead',onComplete:function(){alert('Done');}});}())">Mark All as Read</a></label></div>
+<div class="row"><label><a href="javascript:window.location='../../index.php?mobile=false';">Full Version</a></label></div>
+```
 
 Voila! You now have an easy shortcut to the desktop version if you need
 it (though it is also available from the logon/logoff screen), and the
 added functionality of being able to mark all articles as read from the
-mobile interface. Cheers.  
+mobile interface. Cheers.
