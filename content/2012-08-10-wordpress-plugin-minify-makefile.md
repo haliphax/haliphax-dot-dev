@@ -48,8 +48,8 @@ It can no doubt be made even more universal—perhaps to work with
 WordPress themes, [CodeIgniter](http://codeigniter.com/) apps, and
 more—so tinker away!
 
-<script src="https://gist.github.com/3315112.js"></script>
-<noscript><https://gist.github.com/3315112></noscript>
+<script src="https://gist.github.com/haliphax/3315112.js"></script>
+<noscript><https://gist.github.com/haliphax/3315112></noscript>
 
 **Note:** You will need to make adjustments if you are using `*.mo` and
 `*.po` language files—I'm not that far along in my own project, so the
