@@ -1,7 +1,7 @@
 module.exports = [
 	{
 		name: 'Twitch',
-		url: 'https://twitch.tv/haliphax',
+		url: 'https://www.twitch.tv/haliphax',
 		icon: 'fab fa-twitch',
 	},
 	{
@@ -11,7 +11,7 @@ module.exports = [
 	},
 	{
 		name: 'YouTube',
-		url: 'https://www.youtube.com/channel/UCOl2xKyCvJAyGl-as3VTOeg',
+		url: 'https://www.youtube.com/c/haliphaxyt',
 		icon: 'fab fa-youtube',
 	},
 	{
