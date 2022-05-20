@@ -33,6 +33,7 @@ module.exports = class Base {
 			data.metaDescription ?? data.metaDefaults.description);
 		const ogImage = data.strings.openGraphImageUrl.replace(
 			'{title}', encodeURIComponent(data.ogTitle ?? data.title));
+		const canonicalUrl = `${data.strings.siteRoot}${this.page.url}`;
 
 		return /*html*/`
 			<!doctype html>
@@ -41,6 +42,7 @@ module.exports = class Base {
 					<meta charset="utf-8" />
 					<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 					<title>${data.title} | ${data.strings.siteName}</title>
+					<link rel="canonical" href="${canonicalUrl}" />
 					<meta property="og:description" name="description" content="${metaDescription}" />
 					<meta property="og:image:alt" content="${ogTitle}" />
 					<meta property="og:image:height" content="600" />
@@ -50,7 +52,7 @@ module.exports = class Base {
 					<meta property="og:site_name" content="${data.strings.siteName}" />
 					<meta property="og:title" content="${ogTitle}" />
 					<meta property="og:type" content="${ogType}" />
-					<meta property="og:url" content="${data.strings.siteRoot}${this.page.url}" />
+					<meta property="og:url" content="${canonicalUrl}" />
 					<meta property="article:author" content="${ogAuthor}" />
 					<meta property="article:published_time" content="${this.page.date.toISOString()}" />
 					${data.tags == undefined ? ''
