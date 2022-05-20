@@ -20,6 +20,7 @@ module.exports = (cfg) => {
 	// assets
 	cfg.addPassthroughCopy('css');
 	cfg.addPassthroughCopy('img');
+	cfg.addPassthroughCopy('content/ahrefs_*');
 
 	// plugins
 	cfg.addPlugin(syntaxHighlight);
