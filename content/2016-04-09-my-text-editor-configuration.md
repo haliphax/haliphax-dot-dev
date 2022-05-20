@@ -16,5 +16,3 @@ status indicators, git command shortcuts, markdown support, word counts,
 close-all-but-this shortcut, recently-used file list, and **more!**
 
 <https://github.com/haliphax/vim-config>
-
-![vim]({filename}/images/my-text-editor-configuration.png)
