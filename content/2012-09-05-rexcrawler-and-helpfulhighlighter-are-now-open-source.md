@@ -5,22 +5,20 @@ layout: post
 ---
 
 After having dipped my toe in the water of open source with some Arachni
-module changes and the development of [a simple WordPress
-plugin](/portfolio/whats-my-status/), I've finally taken the plunge; two
-of my personal projects are now completely open source, and hosted on
-[github](https://github.com). Much of the code is stale—and somewhat
-embarrassing—but I figured that it was high time I shrug off that
-self-defensive apprehension and use it as fuel to make me a better
-developer.<!--more-->
+module changes and the development of a simple WordPress
+plugin, I've finally taken the plunge; two of my personal projects are now
+completely open source, and hosted on [github](https://github.com). Much of
+the code is stale—and somewhat embarrassing—but I figured that it was high
+time I shrug off that self-defensive apprehension and use it as fuel to make
+me a better developer.<!--more-->
 
-[rexCrawler](https://github.com/haliphax/rexcrawler)
-:   Versatile, Windows-based file system searching tool that leverages
-    regular expressions
+[rexCrawler](https://github.com/haliphax/rexcrawler):
+	Versatile, Windows-based file system searching tool that leverages
+  regular expressions
 
-[HelpfulHighlighter](https://github.com/haliphax/helpful-highlighter)
-:   Adaptive Excel 2007/2010 AddIn for visually/mentally imparied users
-    that will highlight the current row and column - [download the
-    binaries](/portfolio/helpfulhighlighter/)
+[HelpfulHighlighter](https://github.com/haliphax/helpful-highlighter):
+	Adaptive Excel 2007/2010 AddIn for visually/mentally imparied users
+	that will highlight the current row and column
 
 *Excuses and thinly-veiled self deprecation:
 

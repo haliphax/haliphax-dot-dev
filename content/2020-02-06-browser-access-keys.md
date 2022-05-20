@@ -34,6 +34,6 @@ stumbled across them, am planning to implement them in my own project very
 soon, and figured their existence was worth reminding the world of.
 
 [Nexus Clash]: https://www.nexusclash.com
-[PBBG]: {filename}/2020-01-31-userscripts-for-urban-dead.md
+[PBBG]: /2020/01/userscripts-for-urban-dead/
 [web browser access keys]: https://en.wikipedia.org/wiki/Access_key
 [article]: https://www.thesitewizard.com/webdesign/access-keys-are-useless.shtml

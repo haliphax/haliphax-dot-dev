@@ -26,102 +26,102 @@ mind that you should "escape" any reserved characters (such as the
 backslashes must also be preceded by a backslash.
 
 <s>Download a copy of bulkRename
-v1.1 for yourself.</s> *See [v2.0]({filename}/2011-11-28-bulkrename-v2-0-released.md), instead!*
+v1.1 for yourself.</s> *See [v2.0](/2011/11/bulkrename-v2-0-released/), instead!*
 
 To show my support for open source software, I am also releasing the
 code for this nifty little tool. See below.
 
 **VB.NET code:**
 
-    #!vbnet
-    '===============================================================================
-    ' Title: bulkRename
-    ' Author: haliphax
-    ' Version: 1.1
-    ' Date: 9/17/2008
-    ' Description: Rename files in bulk given a root folder, a regex to compare
-    ' against for filename matches, and a new naming convention which
-    ' can use group references from the filename regex.
-    '===============================================================================
+```vb
+'===============================================================================
+' Title: bulkRename
+' Author: haliphax
+' Version: 1.1
+' Date: 9/17/2008
+' Description: Rename files in bulk given a root folder, a regex to compare
+' against for filename matches, and a new naming convention which
+' can use group references from the filename regex.
+'===============================================================================
 
-    Imports System.Text.RegularExpressions
+Imports System.Text.RegularExpressions
 
-    Module bulkRename
-        Sub Main()
-            Console.WriteLine("bulkRename.exe v1.1 by haliphax - 9/17/08")
-            Console.WriteLine("==========================================")
+Module bulkRename
+	Sub Main()
+		Console.WriteLine("bulkRename.exe v1.1 by haliphax - 9/17/08")
+		Console.WriteLine("==========================================")
 
-            ' boolean for test mode - no actual file renaming takes place
-            Dim testOnly As Boolean = False
-            If Regex.Match(Command, "(^| )-t($| )").Success Then
-                testOnly = True
-                Console.WriteLine("*** TEST ONLY, WILL NOT RENAME ***")
-            End If
+		' boolean for test mode - no actual file renaming takes place
+		Dim testOnly As Boolean = False
+		If Regex.Match(Command, "(^| )-t($| )").Success Then
+			testOnly = True
+			Console.WriteLine("*** TEST ONLY, WILL NOT RENAME ***")
+		End If
 
-            ' root folder
-            Dim root As String = Regex.Match(LTrim(Command), "^[^ ]+").Value
-            ' regex for current file naming convention
-            Dim curRgx As String = Regex.Match(Command, "-c ([^ ]+)").Groups(1).Value
-            ' format for new file naming convention
-            Dim renFmt As String = Regex.Match(Command, "-r ([^ ]+)").Groups(1).Value
+		' root folder
+		Dim root As String = Regex.Match(LTrim(Command), "^[^ ]+").Value
+		' regex for current file naming convention
+		Dim curRgx As String = Regex.Match(Command, "-c ([^ ]+)").Groups(1).Value
+		' format for new file naming convention
+		Dim renFmt As String = Regex.Match(Command, "-r ([^ ]+)").Groups(1).Value
 
-            ' validate parameters
-            If root = "" Or curRgx = "" Or renFmt = "" Then
-                Console.WriteLine("Syntax:")
-                Console.WriteLine("bulkRename.exe [<folder>] -c <regex pattern>" & _
-                    " -r <rename pattern>")
-                Exit Sub
-            End If
+		' validate parameters
+		If root = "" Or curRgx = "" Or renFmt = "" Then
+			Console.WriteLine("Syntax:")
+			Console.WriteLine("bulkRename.exe [<folder>] -c <regex pattern>" & _
+				" -r <rename pattern>")
+			Exit Sub
+		End If
 
-            ' test regex for flaws
-            Try
-                Regex.Match("", curRgx)
-            Catch ex As Exception
-                Console.WriteLine("Error: " & ex.Message)
-                Exit Sub
-            End Try
+		' test regex for flaws
+		Try
+			Regex.Match("", curRgx)
+		Catch ex As Exception
+			Console.WriteLine("Error: " & ex.Message)
+			Exit Sub
+		End Try
 
-            ' trim root if it has a trailing backslash
-            If Right(root, 1) = "\\" Then root = Left(root, root.Length - 1)
+		' trim root if it has a trailing backslash
+		If Right(root, 1) = "\\" Then root = Left(root, root.Length - 1)
 
-            ' load files in root folder
-            Dim files = Nothing
+		' load files in root folder
+		Dim files = Nothing
 
-            Try
-                files = My.Computer.FileSystem.GetFiles(root)
-            Catch ex As Exception
-                Console.WriteLine("Error: " & ex.Message)
-                Exit Sub
-            End Try
+		Try
+			files = My.Computer.FileSystem.GetFiles(root)
+		Catch ex As Exception
+			Console.WriteLine("Error: " & ex.Message)
+			Exit Sub
+		End Try
 
-            Dim counter As Integer = 0
-            Console.WriteLine("* Root Folder: " & root)
+		Dim counter As Integer = 0
+		Console.WriteLine("* Root Folder: " & root)
 
-            ' iterate through file list and check for matches
-            For Each fileName As String In files
-                ' file matches regex for current convention
-                If Regex.Match(fileName, curRgx).Success Then
-                    counter += 1
-                    ' build new file name and output renaming action
-                    Dim newFileName As String = Regex.Replace(fileName, curRgx, _
-                        renFmt)
-                    newFileName = Right(newFileName, _
-                        newFileName.Length - root.Length - 1)
-                    Dim displayName As String = Right(fileName, _
-                        fileName.Length - root.Length - 1)
-                    Console.WriteLine(displayName & " ==> " & newFileName)
+		' iterate through file list and check for matches
+		For Each fileName As String In files
+			' file matches regex for current convention
+			If Regex.Match(fileName, curRgx).Success Then
+				counter += 1
+				' build new file name and output renaming action
+				Dim newFileName As String = Regex.Replace(fileName, curRgx, _
+					renFmt)
+				newFileName = Right(newFileName, _
+					newFileName.Length - root.Length - 1)
+				Dim displayName As String = Right(fileName, _
+					fileName.Length - root.Length - 1)
+				Console.WriteLine(displayName & " ==> " & newFileName)
 
-                    ' actually rename if not in test mode
-                    If Not testOnly Then
-                        Try
-                            My.Computer.FileSystem.RenameFile(fileName, newFileName)
-                        Catch ex As Exception
-                            Console.WriteLine("Error: " & ex.Message)
-                        End Try
-                    End If
-                End If
-            Next
+				' actually rename if not in test mode
+				If Not testOnly Then
+					Try
+						My.Computer.FileSystem.RenameFile(fileName, newFileName)
+					Catch ex As Exception
+						Console.WriteLine("Error: " & ex.Message)
+					End Try
+				End If
+			End If
+		Next
 
-            Console.WriteLine("* Files renamed: " & counter)
-        End Sub
-    End Module
+		Console.WriteLine("* Files renamed: " & counter)
+	End Sub
+End Module
