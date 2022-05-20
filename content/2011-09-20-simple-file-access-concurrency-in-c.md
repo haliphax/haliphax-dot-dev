@@ -19,45 +19,46 @@ write back to it without being usurped by concurrent requests. There is
 a fail-safe mechanism which will wait for up to 3 seconds (30 attempts
 to lock the file) before failing outright.<!--more-->
 
-    #!csharp
-    System.IO.FileStream s = null;
+```cs
+System.IO.FileStream s = null;
 
-    try
-    {
-        bool failed = true;
-        int failedCount = 0;
+try
+{
+	bool failed = true;
+	int failedCount = 0;
 
-        while(failed && failedCount &lt; 30)
-			try
-			{
-				s = System.IO.File.Create(YourMutexFileName, 1,
-					System.IO.FileOptions.DeleteOnClose);
-				s.Lock(0, s.Length);
-				failed = false;
-			}
-			catch(Exception ex)
-			{
-				if(ex is System.IO.IOException)
-					failedCount++;
-				else
-					throw;
+	while(failed && failedCount &lt; 30)
+	try
+	{
+	s = System.IO.File.Create(YourMutexFileName, 1,
+		System.IO.FileOptions.DeleteOnClose);
+	s.Lock(0, s.Length);
+	failed = false;
+	}
+	catch(Exception ex)
+	{
+	if(ex is System.IO.IOException)
+		failedCount++;
+	else
+		throw;
 
-				System.Threading.Thread.Sleep(100);
-			}
+	System.Threading.Thread.Sleep(100);
+	}
 
-        if(failed)
-			throw new Exception("Failed too many times to obtain mutex");
+	if(failed)
+	throw new Exception("Failed too many times to obtain mutex");
 
-        // ... do something with your resources here ...
-    }
-    finally
-    {
-        if(s != null)
-        {
-            s.Unlock(0, s.Length);
-            s.Close();
-        }
-    }
+	// ... do something with your resources here ...
+}
+finally
+{
+	if(s != null)
+	{
+		s.Unlock(0, s.Length);
+		s.Close();
+	}
+}
+```
 
 *Update: I've wrapped the entire thing in a `try-finally` block so that,
 should an unexpected `Exception` occur, the mutex will still be
