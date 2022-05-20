@@ -66,6 +66,6 @@ in the scripts will throw an error. Happy minifying!
 
 
 [Flask]: https://flask.palletsprojects.com
-[Flask-Assets]: http://flask-assets.readthedocs.io
+[Flask-Assets]: https://flask-assets.readthedocs.io
 [webassets]: https://webassets.readthedocs.io
 [ESBuild]: https://github.com/evanw/esbuild

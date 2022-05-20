@@ -4,13 +4,13 @@ tags: ['post', 'javascript', 'linux', 'my-software', 'php', 'regex', 'shell', 't
 layout: post
 ---
 
-While working on my first commercial [WordPress](http://wordpress.org/)
+While working on my first commercial [WordPress](https://wordpress.org/)
 plugin, the need for build automation finally struck me. The
 environments in which I do my most development are all driven by Linux,
 and so I wanted to use a tried, true, and ubiquitous build automation
 mechanism to fulfill my need. As such, I wound up going with a
 `Makefile`, to be parsed and executed by the [GNU
-make](http://www.gnu.org/software/make/) application. The result is an
+make](https://www.gnu.org/software/make/) application. The result is an
 incredibly convenient automated build that minifies my Javascript/CSS
 (thanks to reducisaurus), and creates a version-appropriate archive of
 my plugin.<!--more-->
@@ -45,7 +45,7 @@ The `Makefile` has several targets:
 -   **help** - Displays list of targets
 
 It can no doubt be made even more universal—perhaps to work with
-WordPress themes, [CodeIgniter](http://codeigniter.com/) apps, and
+WordPress themes, [CodeIgniter](https://codeigniter.com/) apps, and
 more—so tinker away!
 
 <script src="https://gist.github.com/haliphax/3315112.js"></script>

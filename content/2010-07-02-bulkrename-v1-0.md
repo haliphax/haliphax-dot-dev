@@ -6,7 +6,7 @@ layout: post
 
 A while back (in 2008), I wrote a simple system utility with VB.NET
 which leverages the power of [regular
-expressions](http://www.regular-expressions.info) to rename files in
+expressions](https://www.regular-expressions.info) to rename files in
 bulk according to a pattern. I've had to use it several times recently
 after placing it on a metaphorical shelf to gather dust, and it got me
 thinking: Maybe other people can benefit from this utility. That's what

@@ -8,7 +8,7 @@ While it provides an efficient, organized web front-end for your
 personal git repositories, the [cgit](https://github.com/kevclark/cgit)
 application is missing a few of the more sparkling features found at
 [github](https://github.com)--notably, a comments/discussion system.
-Enter: [disqus](http://disqus.com).<!--more-->
+Enter: [disqus](https://disqus.com).<!--more-->
 
 Disqus is a Javascript-injected, centralized discussion system that is
 gaining traction with blogs and other CMS-based sites as of late. One of
@@ -25,24 +25,24 @@ disqus platform (be sure to replace
 **REPLACE-WITH-YOUR-DISQUS-SHORTNAME** in the code below):
 
     #!html
-    <script type="text/javascript">  
-        window.onload = function() {  
-            if((window.location.href.match(/\/tree\/.*[?&]id=/)  
-                && document.querySelector('table.blob'))  
-                || window.location.href.match(/\/commit\/.*[?&]id=(?!.+&ss=1\$)/))  
-            {  
-                var d = document.createElement('div');  
-                d.id = 'disqus_thread';  
-                document.querySelector('div.content').appendChild(d);  
-                var disqus_shortname = 'REPLACE-WITH-YOUR-DISQUS-SHORTNAME';  
-                var dsq = document.createElement('script');  
-                dsq.type = 'text/javascript';  
-                dsq.async = true;  
-                dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';  
-                document.body.appendChild(dsq);  
-            }  
-        };  
-    </script>  
+    <script type="text/javascript">
+        window.onload = function() {
+            if((window.location.href.match(/\/tree\/.*[?&]id=/)
+                && document.querySelector('table.blob'))
+                || window.location.href.match(/\/commit\/.*[?&]id=(?!.+&ss=1\$)/))
+            {
+                var d = document.createElement('div');
+                d.id = 'disqus_thread';
+                document.querySelector('div.content').appendChild(d);
+                var disqus_shortname = 'REPLACE-WITH-YOUR-DISQUS-SHORTNAME';
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+                document.body.appendChild(dsq);
+            }
+        };
+    </script>
 
 The code above will only inject the disqus platform on
 *version-specific* commit summaries and individual file views. (Without
@@ -55,7 +55,7 @@ To include this newly-fashioned header in your cgit system, add the
 following line to your `cgitrc` file (with the appropriate path, of
 course):
 
-    header=/path/to/your.html  
+    header=/path/to/your.html
 
 That's it! The next time you visit a version-specific commit or file in
 your cgit system, the disqus comment thread should be injected at the

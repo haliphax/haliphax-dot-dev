@@ -13,6 +13,6 @@ SharePoint services... but upon reboot and manually starting the
 before-mentioned services ourselves, everything was back to normal.
 
 You can download the savior KB
-[here](http://support.microsoft.com/kb/936867/). I pray that I have
+[here](https://support.microsoft.com/kb/936867/). I pray that I have
 saved at least one person the migraines that my department has been
 going through for the last few days.

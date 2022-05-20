@@ -5,7 +5,7 @@ layout: post
 ---
 
 To piggy-back on the [Javascript function to load an XML
-document](http://roadha.us/2008/09/browser-independent-xml-load-with-javascript/):
+document](/2008/09/browser-independent-xml-load-with-javascript/):
 what can be done to load an XSL stylesheet and apply it to the XML? For
 the most part, loading it is a snap... but, as is often the case,
 Internet Explorer is the exception to the rule. So, we write a function
@@ -18,25 +18,25 @@ transform an XML tree using an XMLDOM object as your XSL.*
 **Javascript code:**
 
     #!js
-    function loadXSL(dname)  
-    {  
-        if(window.ActiveXObject) {  
-            // Internet Explorer  
-            try {  
+    function loadXSL(dname)
+    {
+        if(window.ActiveXObject) {
+            // Internet Explorer
+            try {
                 var xslDoc = new
-                ActiveXObject("Msxml2.FreeThreadedDOMDocument");  
-                xslDoc.async = false;  
-                xslDoc.resolveExternals = false;  
-                xslDoc.load(dname);  
-                return(xslDoc);  
-            } catch(e) {  
-                alert("Cannot load XSL stylesheet\\n\\nError:\\n" + e.message);  
-                return(false);  
-            }  
-        } else {  
-            // Everything else  
-            return(loadXML(dname));  
-        }  
+                ActiveXObject("Msxml2.FreeThreadedDOMDocument");
+                xslDoc.async = false;
+                xslDoc.resolveExternals = false;
+                xslDoc.load(dname);
+                return(xslDoc);
+            } catch(e) {
+                alert("Cannot load XSL stylesheet\\n\\nError:\\n" + e.message);
+                return(false);
+            }
+        } else {
+            // Everything else
+            return(loadXML(dname));
+        }
     }
 
 Next, we will need a function for applying the XSL stylesheet to the XML
@@ -47,32 +47,32 @@ course--and sends the resulting formatted XML to a given container
 **Javascript code:**
 
     #!js
-    function xslTransform(xml, xsl, div, par)  
-    {  
-        if(typeof par == "undefined") par = null;  
+    function xslTransform(xml, xsl, div, par)
+    {
+        if(typeof par == "undefined") par = null;
         div.innerHTML = "";
 
-        if(window.ActiveXObject) {  
-            // Internet Explorer  
-            var xslt = new ActiveXObject("Msxml2.XSLTemplate");  
-            xslt.stylesheet = xsl;  
-            var xsltProc = xslt.createProcessor();  
-            xsltProc.input = xml;  
-            for(var a = 0; a < par.length; a++)  
-                xsltProc.addParameter(par[a].pname, par[a].pval);  
-            xsltProc.transform();  
-            div.innerHTML = xsltProc.output;  
+        if(window.ActiveXObject) {
+            // Internet Explorer
+            var xslt = new ActiveXObject("Msxml2.XSLTemplate");
+            xslt.stylesheet = xsl;
+            var xsltProc = xslt.createProcessor();
+            xsltProc.input = xml;
+            for(var a = 0; a < par.length; a++)
+                xsltProc.addParameter(par[a].pname, par[a].pval);
+            xsltProc.transform();
+            div.innerHTML = xsltProc.output;
         }
-        else if(document.implementation  
-            && document.implementation.createDocument)  
-        {  
-            // Mozilla/Firefox, Opera, WebKit (Safari, Chrome), etc.  
-            var xsltProc = new XSLTProcessor();  
-            xsltProc.importStylesheet(xsl);  
-            for(var a = 0; a < par.length; a++)  
-                xsltProc.setParameter(null, par[a].pname, par[a].pval);  
-            div.appendChild(xsltProc.transformToFragment(xml, document));  
-        }  
+        else if(document.implementation
+            && document.implementation.createDocument)
+        {
+            // Mozilla/Firefox, Opera, WebKit (Safari, Chrome), etc.
+            var xsltProc = new XSLTProcessor();
+            xsltProc.importStylesheet(xsl);
+            for(var a = 0; a < par.length; a++)
+                xsltProc.setParameter(null, par[a].pname, par[a].pval);
+            div.appendChild(xsltProc.transformToFragment(xml, document));
+        }
     }
 
 XSL parameters are a handy way for Javascript to influence the XSL

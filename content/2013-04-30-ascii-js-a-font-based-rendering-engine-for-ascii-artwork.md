@@ -15,6 +15,6 @@ web-ified versions of these fonts—with some help from the `@font-face`
 CSS directive—to display that artwork in its intended form without
 resorting to a text-to-image conversion process.
 
-Confused yet? Check out [my ASCII gallery](http://oddnetwork.org/ascii).
+Confused yet? Check out [my ASCII gallery](https://oddnetwork.org/ascii).
 If you want to run your own, or just see how it works, I've also put the
 [ascii.js source on GitHub](https://github.com/haliphax/ascii.js).

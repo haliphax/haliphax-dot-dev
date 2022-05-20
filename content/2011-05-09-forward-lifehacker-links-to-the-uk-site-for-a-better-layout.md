@@ -4,13 +4,13 @@ tags: ['post', 'javascript', 'lifehacker', 'my-software', 'tool', 'userscript']
 layout: post
 ---
 
-I wrote a (*really*) simple [userscript](http://greasyfork.org) today
+I wrote a (*really*) simple [userscript](https://greasyfork.org) today
 that reloads Lifehacker pages under
-[uk.lifehacker.com](http://uk.lifehacker.com). Why did I do this?
+[uk.lifehacker.com](https://uk.lifehacker.com). Why did I do this?
 Because the Lifehacker UK site doesn't have the trendy new (horrendous)
 AJAXified layout. Maybe using a `hosts` redirect instead of a userscript
 is a better way to handle it (since you're still going to see a flash of
-the [lifehacker.com](http://lifehacker.com) site before being redirected
+the [lifehacker.com](https://lifehacker.com) site before being redirected
 with the userscript), but this method is far less intrusive—and less
 likely to break any pages on the UK site which may rely on resources
 from the naked domain.<!--more-->
@@ -46,15 +46,15 @@ script:
 // ==/UserScript==
 
 (function() {
-		var loc = /^(https?:\/\/)(deadspin|gizmodo|gawker|kotaku|lifehacker|jezebel|io9|jalopnik)\.com(.+)$/i;
-		var match = loc.exec(window.location);
+	var loc = /^(https?:\/\/)(deadspin|gizmodo|gawker|kotaku|lifehacker|jezebel|io9|jalopnik)\.com(.+)$/i;
+	var match = loc.exec(window.location);
 
-		if(match)
-		{
-				try { window.stop(); }
-				catch(ex) { document.execCommand("Stop"); }
+	if(match)
+	{
+		try { window.stop(); }
+		catch(ex) { document.execCommand("Stop"); }
 
-				window.location.href = match[1] + "uk." + match[2] + ".com" + match[3];
-		}
+		window.location.href = match[1] + "uk." + match[2] + ".com" + match[3];
+	}
 })();
 ```

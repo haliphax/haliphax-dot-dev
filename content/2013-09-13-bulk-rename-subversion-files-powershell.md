@@ -14,16 +14,17 @@ had to follow that I believe will be of benefit to others.<!--more-->
 
 I used the following PowerShell script to pull it off:
 
-    #!powershell
-    Get-ChildItem -recurse |
-        Where-Object {
-            -not $_.PsIsContainer -and $_.Name -match "^app_"
-        } |
-        ForEach {
-            $fullname = $_.FullName
-            $newname = $fullname -replace '\\app_', '\' iex "svn rename '$fullname' '$newname'"
-        }
+```powershell
+	Get-ChildItem -recurse |
+		Where-Object {
+			-not $_.PsIsContainer -and $_.Name -match "^app_"
+		} |
+		ForEach {
+			$fullname = $_.FullName
+			$newname = $fullname -replace '\\app_', '\' iex "svn rename '$fullname' '$newname'"
+		}
+```
 
 **Note:** You will need a command-line SVN client to do this. I used
-[CollabNet's SVN client](http://www.collab.net/downloads/subversion),
+[CollabNet's SVN client](https://www.collab.net/downloads/subversion),
 but there are others out there.

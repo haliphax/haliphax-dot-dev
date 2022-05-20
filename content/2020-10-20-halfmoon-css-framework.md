@@ -36,5 +36,5 @@ my hands dirty with it.
 
 
 [cssnext]: https://cssnext.github.io/
-[Halfmoon]: http://gethalfmoon.com
+[Halfmoon]: https://www.gethalfmoon.com
 [Shoelace]: https://shoelace.style

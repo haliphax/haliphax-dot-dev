@@ -4,7 +4,7 @@ tags: ['post', 'bookmarklets', 'javascript', 'tool']
 layout: post
 ---
 
-[Mozilla Labs](http://www.mozillalabs.com/) has this really nifty,
+[Mozilla Labs](https://www.mozillalabs.com/) has this really nifty,
 Javascript-based collaboration utility, ~~TowTruck~~, which allows
 real-time web editing collaboration in the browser. It's got a lot of
 nifty features I won't get into in this post; sufficed to say, it's
@@ -18,7 +18,7 @@ when they land on the page in question, and you're off to the races.
 It's just that simple. Drag the link below onto your bookmarks bar to
 start your adventure.
 
--   <a href="javascript:(function(d,s)%7Bs=d.createElement('script');s.setAttribute('src',%20'https://towtruck.mozillalabs.com/towtruck.js');d.body.appendChild(s);s.onload=function()%7BTowTruck();%7D;%7D(document))">Truck It!</a>
-    <small>← drag this onto your bookmarks bar, brah</small>
+- <a href="javascript:(function(d,s)%7Bs=d.createElement('script');s.setAttribute('src',%20'https://towtruck.mozillalabs.com/towtruck.js');d.body.appendChild(s);s.onload=function()%7BTowTruck();%7D;%7D(document))">Truck It!</a>
+  <small>← drag this onto your bookmarks bar, brah</small>
 
 **Update 2016-08-23:** TowTruck has been discontinued.

@@ -12,7 +12,7 @@ different.<!--more-->
 
 Assuming you have stored the connection string for your *SqlConnection*
 object in a [*ConnectionString*
-key](http://roadha.us/2008/07/using-the-connectionstrings-element-in-asp-net-web-config/)
+key](/2008/07/using-the-connectionstrings-element-in-asp-net-web-config/)
 called *databaseReader*, the following code will build and execute a
 prepared statement that will resist SQL injection techniques:
 

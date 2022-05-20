@@ -7,7 +7,7 @@ layout: post
 Several years ago, I wrote a series of
 [UserScripts](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
 for a persistent, browser-based game (PBBG) called
-[Urban Dead](http://urbandead.com). These scripts tidy up the user interface
+[Urban Dead](https://urbandead.com). These scripts tidy up the user interface
 a bit and add some new features to the game that make quality-of-life
 improvements to the experience (in my opinion). I abandoned them--and the
 game--for several years, but I recently picked it back up again. As such, I

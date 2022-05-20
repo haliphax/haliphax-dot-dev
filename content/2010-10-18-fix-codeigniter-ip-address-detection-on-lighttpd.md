@@ -18,17 +18,19 @@ following code:</s>
 
 **PHP code:**
 
-    #!php
-    if (!$this->valid_ip($this->ip_address))]
+```php
+if (!$this->valid_ip($this->ip_address))]
+```
 
 <s>...and replace it with this:</s>
 
 **PHP code:**
 
-    #!php
-    $this->ip_address = preg_replace("#^[:a-z0-9]+:#i", "", $this->ip_address);
+```php
+$this->ip_address = preg_replace("#^[:a-z0-9]+:#i", "", $this->ip_address);
 
-    if (!$this->valid_ip($this->ip_address))
+if (!$this->valid_ip($this->ip_address))
+```
 
 Update
 ------
@@ -43,74 +45,75 @@ github</s> which does just that. Thanks, Anthony!**
 
 Here is the updated code:
 
-**PHP code:**  
+**PHP code:**
 
-    #!php
-    <?php if (! defined('BASEPATH')) exit('No direct script access allowed');
+```php
+<?php if (! defined('BASEPATH')) exit('No direct script access allowed');
 
-    require_once(BASEPATH.'/libraries/Input.php');
+require_once(BASEPATH.'/libraries/Input.php');
 
-    /**  
-    * Input Class Override  
-    *  
-    * Pre-processes global input data for security  
-    *  
-    * @package CodeIgniter  
-    * @subpackage Libraries  
-    * @category Input  
-    * @author haliphax / ExpressionEngine Dev Team  
-    * @link http://codeigniter.com/user_guide/libraries/input.html  
-    */  
-    class Input extends CI_Input  
-    {
-        function Input()  
-        {  
-            parent::CI_Input();
-        }  
+/**
+* Input Class Override
+*
+* Pre-processes global input data for security
+*
+* @package CodeIgniter
+* @subpackage Libraries
+* @category Input
+* @author haliphax / ExpressionEngine Dev Team
+* @link https://codeigniter.com/user_guide/libraries/input.html
+*/
+class Input extends CI_Input
+{
+	function Input()
+	{
+		parent::CI_Input();
+	}
 
-        /**  
-        * Validate IP Address  
-        *  
-        * Updated version suggested by Geert De Deckere  
-        *  
-        * @access public  
-        * @param string  
-        * @return string  
-        * @see http://roadha.us/2010/10/fix-codeigniter-ip-address-detection-on-lighttpd/
-        */  
-        function valid_ip($ip)  
-        {  
-            $ip = preg_replace("/^[:a-z0-9]+:/i", "", $ip); // See the link in the @see declaration above for more info
+	/**
+	* Validate IP Address
+	*
+	* Updated version suggested by Geert De Deckere
+	*
+	* @access public
+	* @param string
+	* @return string
+	* @see https://haliphax.dev/2010/10/fix-codeigniter-ip-address-detection-on-lighttpd/
+	*/
+	function valid_ip($ip)
+	{
+		$ip = preg_replace("/^[:a-z0-9]+:/i", "", $ip); // See the link in the @see declaration above for more info
 
-            $ip_segments = explode('.', $ip);
+		$ip_segments = explode('.', $ip);
 
-            // Always 4 segments needed  
-            if (count($ip_segments) != 4)  
-            {  
-                return FALSE;  
-            }  
+		// Always 4 segments needed
+		if (count($ip_segments) != 4)
+		{
+			return FALSE;
+		}
 
-            // IP can not start with 0  
-            if ($ip_segments[0][0] == '0')  
-            {  
-                return FALSE;  
-            }  
+		// IP can not start with 0
+		if ($ip_segments[0][0] == '0')
+		{
+			return FALSE;
+		}
 
-            // Check each segment  
-            foreach ($ip_segments as $segment)  
-            {  
-                // IP segments must be digits and can not be  
-                // longer than 3 digits or greater then 255  
-                if ($segment == '' || preg_match("/[^0-9]/", $segment) ||
-                    $segment > 255 || strlen($segment) > 3)  
-                {  
-                    return FALSE;  
-                }  
-            }
+		// Check each segment
+		foreach ($ip_segments as $segment)
+		{
+			// IP segments must be digits and can not be
+			// longer than 3 digits or greater then 255
+			if ($segment == '' || preg_match("/[^0-9]/", $segment) ||
+				$segment > 255 || strlen($segment) > 3)
+			{
+				return FALSE;
+			}
+		}
 
-            return TRUE;  
-        }  
-    }
+		return TRUE;
+	}
+}
+```
 
 If having "::ffff:" in front of your addresses was causing the problem,
 this snippet should have you back on your way juggling IP addresses in

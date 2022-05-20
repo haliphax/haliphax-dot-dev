@@ -8,5 +8,5 @@ My WordPress microblog feed widget recently went through another update.
 This time around, I've added the ability to filter out replies and
 re-posts ("retweets" in Twitter lingo, "redents" in identi.ca speak)
 from your activity feed. [Pick up the new
-version](http://wordpress.org/extend/plugins/whats-my-status/) from the
-[WordPress plugins site](http://wordpress.org/extend/plugins/).
+version](https://wordpress.org/extend/plugins/whats-my-status/) from the
+[WordPress plugins site](https://wordpress.org/extend/plugins/).

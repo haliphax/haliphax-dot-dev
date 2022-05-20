@@ -4,15 +4,15 @@ tags: ['post', 'javascript', 'my-software', 'userscript']
 layout: post
 ---
 
-The way that [TVGuide.com's listings](http://www.tvguide.com/listings/)
+The way that [TVGuide.com's listings](https://www.tvguide.com/listings/)
 are organized is difficult to work with. This UserScript (compatible
-with [GreaseMonkey](http://www.greasespot.net/), Chrome, Opera, and
+with [GreaseMonkey](https://www.greasespot.net/), Chrome, Opera, and
 perhaps more) will gut the listings from the layout and give you one
 all-encompassing, manageable scroll bar for perusal.<!--more-->
 
     #!js
     // ==UserScript==
-    // @match http://www.tvguide.com/listings/
+    // @match https://www.tvguide.com/listings/
     // @name TV Guide Tidy
     // @description Cleans up the TV Guide listings page
     // @version 1.0
@@ -30,7 +30,7 @@ all-encompassing, manageable scroll bar for perusal.<!--more-->
 
 The script is [available for
 download](https://greasyfork.org/scripts/4654-tv-guide-tidy) at
-[greasyfork.org](http://greasyfork.org/).
+[greasyfork.org](https://greasyfork.org/).
 
 *Note: To install this UserScript in Chrome, you will have to download
 the file, open `chrome://extensions` (Settings icon → Tools →

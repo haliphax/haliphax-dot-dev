@@ -11,7 +11,7 @@ incredibly well on hardware from at least two generations ago; it is
 completely headless; the entire system loads itself into RAM in the form
 of a compressed file system; it all fits onto a bootable USB stick; and
 I can back it up and rebuild it with ease, thanks to the virtualization
-capability of Oracle's [VirtualBox](http://www.virtualbox.org) software.
+capability of Oracle's [VirtualBox](https://www.virtualbox.org) software.
 This is my recipe (of sorts) for building your very own.<!--more-->
 
 **Originally written for Ubuntu 12.04 LTS (*precise*), this walkthrough
@@ -79,7 +79,7 @@ tweaking here and there as I refine my process.)*
     USB stick.
 -   All 3 of the machines can be paved from within VirtualBox; you just
     need to [make a VMDK proxy for your USB
-    stick](http://www.sysprobs.com/access-physical-disk-virtualbox-desktop-virtualization-software)
+    stick](https://www.sysprobs.com/access-physical-disk-virtualbox-desktop-virtualization-software)
     so that you can boot from it on a bare VM in order to pave it. (I
     have a machine setup with no storage of its own—just the
     VMDK proxy.)
@@ -92,162 +92,162 @@ you need to do at that point. Reading the comment should provide enough
 explanation as to what you need to do (i.e., transfer files from one
 server to another, create the grub boot script, etc.).*
 
-**Build Box:**  
+**Build Box:**
 
     #!sh
-    # get build tools  
-    sudo apt-get install fakeroot build-essential crash kexec-tools makedumpfile kernel-wedge kernel-package git-core libncurses5 libncurses5-dev libelf-dev asciidoc binutils-dev bc -y  
-    # get dependencies  
-    sudo apt-get build-dep linux -y  
-    # clone the kernel repo (and go have some coffee)  
-    git clone git://kernel.ubuntu.com/ubuntu/ubuntu-saucy.git saucy  
-    cd saucy  
-    # get a list of kernels  
+    # get build tools
+    sudo apt-get install fakeroot build-essential crash kexec-tools makedumpfile kernel-wedge kernel-package git-core libncurses5 libncurses5-dev libelf-dev asciidoc binutils-dev bc -y
+    # get dependencies
+    sudo apt-get build-dep linux -y
+    # clone the kernel repo (and go have some coffee)
+    git clone git://kernel.ubuntu.com/ubuntu/ubuntu-saucy.git saucy
+    cd saucy
+    # get a list of kernels
     git tag -l
 
     # choose which kernel you wish to build, then use it in the checkout command below
 
-    # checkout a kernel branch into a working branch  
-    git checkout -b work Ubuntu-3.11.0-12.19  
-    # build the necessary control scripts, as Ubuntu git kernels do not include them by default  
-    fakeroot debian/rules clean  
-    # configure your kernel  
+    # checkout a kernel branch into a working branch
+    git checkout -b work Ubuntu-3.11.0-12.19
+    # build the necessary control scripts, as Ubuntu git kernels do not include them by default
+    fakeroot debian/rules clean
+    # configure your kernel
     make menuconfig
 
     # set AUFS (Ubuntu 3rd party drivers) and SquashFS (File systems -> Miscellaneous) as built-in
 
     # set processor governor to 'ondemand' (Power management and ACPI options -> CPU Frequency scaling)
 
-    # parallel build; change this to 1+(number of processors) based on your machine specs  
-    export CONCURRENCY_LEVEL=3  
-    # build your kernel  
-    fakeroot make-kpkg --initrd --append-to-version=-saucy-custom kernel-headers kernel-image  
+    # parallel build; change this to 1+(number of processors) based on your machine specs
+    export CONCURRENCY_LEVEL=3
+    # build your kernel
+    fakeroot make-kpkg --initrd --append-to-version=-saucy-custom kernel-headers kernel-image
 
-**Target:**  
+**Target:**
 
     #!sh
-    # get live-boot and squashfs stuff  
+    # get live-boot and squashfs stuff
     sudo apt-get install live-boot live-boot-initramfs-tools squashfs-tools -y
 
     # pull down your kernel and headers packages from Build Box
 
-    # install them  
-    sudo dpkg -i linux-image-*.deb  
+    # install them
+    sudo dpkg -i linux-image-*.deb
     sudo dpkg -i linux-headers-*.deb
 
     # reboot into your new kernel so that it is used when we update-grub below!
 
     # create /etc/grub.d/50_ramsession
 
-    # make it executable  
+    # make it executable
     sudo chmod +x /etc/grub.d/50_ramsession
 
     # set GRUB_DEFAULT='Ubun2RAM' in /etc/default/grub
 
-    # rebuild the grub bootloader menu to include Ubun2RAM  
-    sudo update-grub  
+    # rebuild the grub bootloader menu to include Ubun2RAM
+    sudo update-grub
 
-**/etc/grub.d/50_ramsession (Target):**  
-
-    #!sh
-    #!/usr/bin/env bash  
-    cat <<EOF  
-    # ram session; disable apparmor and boot read/write squashfs/aufs combo from /live/filesystem.squashfs  
-    menuentry 'Ubun2RAM' --class ubuntu --class gnu-linux --class gnu --class os {  
-        linux /boot/vmlinuz-$(uname -r) BOOT=LIVE boot=live toram=filesystem.squashfs rw quiet splash nonetworking apparmor=0 security="" $vt_handoff  
-        initrd /boot/initrd.img-$(uname -r)  
-    }  
-    EOF  
-
-**Thumb Box:**  
+**/etc/grub.d/50_ramsession (Target):**
 
     #!sh
-    # get squashfs tools  
+    #!/usr/bin/env bash
+    cat <<EOF
+    # ram session; disable apparmor and boot read/write squashfs/aufs combo from /live/filesystem.squashfs
+    menuentry 'Ubun2RAM' --class ubuntu --class gnu-linux --class gnu --class os {
+        linux /boot/vmlinuz-$(uname -r) BOOT=LIVE boot=live toram=filesystem.squashfs rw quiet splash nonetworking apparmor=0 security="" $vt_handoff
+        initrd /boot/initrd.img-$(uname -r)
+    }
+    EOF
+
+**Thumb Box:**
+
+    #!sh
+    # get squashfs tools
     sudo apt-get install squashfs-tools -y
 
     # pull down your kernel and headers packages from Build Box
 
-    # install them  
-    sudo dpkg -i linux-image-*.deb  
+    # install them
+    sudo dpkg -i linux-image-*.deb
     sudo dpkg -i linux-headers-*.deb
 
     # install/update whatever software you want at this point (start here if you already have a working Ubun2RAM and you're just updating it)
 
-    # next, we make the file system image (do this each time you update or install software)  
-    sh makeimage.sh  
-    # push your squashed file system image to the USB stick when you're done installing stuff  
-    sh pushimage.sh  
+    # next, we make the file system image (do this each time you update or install software)
+    sh makeimage.sh
+    # push your squashed file system image to the USB stick when you're done installing stuff
+    sh pushimage.sh
 
-**makeimage.sh (Thumb Box):**  
+**makeimage.sh (Thumb Box):**
 
     #!sh
     #!/usr/bin/env bash
 
     # usage: makeimage.sh [staging folder] [device]
 
-    # default value for staging folder  
-    STAGING=/var/squashfs  
-    # pull staging folder from command line arguments if any  
-    if [ $1 ]; then  
-        STAGING=$1  
-        shift  
-    fi  
+    # default value for staging folder
+    STAGING=/var/squashfs
+    # pull staging folder from command line arguments if any
+    if [ $1 ]; then
+        STAGING=$1
+        shift
+    fi
 
-    # make the staging folder if it doesn't exist  
-    [ !-d ${STAGING} ] && sudo mkdir -p ${STAGING}  
-    # if staging folder is on a device, mount it  
-    [ $1 ] && sudo mount $1 ${STAGING}  
-    # copy the system into the staging folder, excluding unnecessary parts  
-    sudo rsync -avxW --delete / ${STAGING} \  
-        --exclude=/proc/* --exclude=/tmp/* --exclude=/dev/* --exclude=/sys/* \  
-        --exclude=/boot/* --exclude=/etc/mtab --exclude=/live \  
-        --exclude=/var/cache/apt/archives/*.deb --exclude=/var/run \  
-        --exclude=/var/mail --exclude=/var/lock --exclude=/var/backups \  
-        --exclude=/var/tmp \  
-        --exclude=${STAGING}  
-    # remove the root mount from the squashed /etc/fstab  
-    sudo sed -i '/\^[\^ ]+ \/ /d' ${STAGING}/etc/fstab  
-    # increase the device number of the NIC in squashed /etc/network/interfaces  
-    sudo sed -i 's/eth1/eth2/' ${STAGING}/etc/network/interfaces  
-    # trim logs from staging folder  
-    [ -n "$STAGING" ] && sudo find ${STAGING}/var/log -type f -iregex '.*\.[0-9].*' -exec rm -v {} \;  
-    [ -n "$STAGING" ] && sudo find ${STAGING}/var/log -type f -iname '*.gz' -exec rm -v {} \;  
-    [ -n "$STAGING" ] && sudo find ${STAGING}/var/log -type f | while read file; do echo -n '' | sudo tee $file; done  
-    # make the squashfs file from the staging folder contents  
-    sudo mksquashfs ${STAGING} filesystem.squashfs -noappend -always-use-fragments  
-    # if we mounted a device for staging, unmount it  
-    [ $1 ] && sudo umount $1  
+    # make the staging folder if it doesn't exist
+    [ !-d ${STAGING} ] && sudo mkdir -p ${STAGING}
+    # if staging folder is on a device, mount it
+    [ $1 ] && sudo mount $1 ${STAGING}
+    # copy the system into the staging folder, excluding unnecessary parts
+    sudo rsync -avxW --delete / ${STAGING} \
+        --exclude=/proc/* --exclude=/tmp/* --exclude=/dev/* --exclude=/sys/* \
+        --exclude=/boot/* --exclude=/etc/mtab --exclude=/live \
+        --exclude=/var/cache/apt/archives/*.deb --exclude=/var/run \
+        --exclude=/var/mail --exclude=/var/lock --exclude=/var/backups \
+        --exclude=/var/tmp \
+        --exclude=${STAGING}
+    # remove the root mount from the squashed /etc/fstab
+    sudo sed -i '/\^[\^ ]+ \/ /d' ${STAGING}/etc/fstab
+    # increase the device number of the NIC in squashed /etc/network/interfaces
+    sudo sed -i 's/eth1/eth2/' ${STAGING}/etc/network/interfaces
+    # trim logs from staging folder
+    [ -n "$STAGING" ] && sudo find ${STAGING}/var/log -type f -iregex '.*\.[0-9].*' -exec rm -v {} \;
+    [ -n "$STAGING" ] && sudo find ${STAGING}/var/log -type f -iname '*.gz' -exec rm -v {} \;
+    [ -n "$STAGING" ] && sudo find ${STAGING}/var/log -type f | while read file; do echo -n '' | sudo tee $file; done
+    # make the squashfs file from the staging folder contents
+    sudo mksquashfs ${STAGING} filesystem.squashfs -noappend -always-use-fragments
+    # if we mounted a device for staging, unmount it
+    [ $1 ] && sudo umount $1
 
-**pushimage.sh (Thumb Box):**  
+**pushimage.sh (Thumb Box):**
 
     #!sh
     #!/usr/bin/env bash
 
     # usage: pushimage.sh [destination device] [mount point]
 
-    # default values  
-    DEST=/dev/sdb1  
-    WHERE=/mnt  
+    # default values
+    DEST=/dev/sdb1
+    WHERE=/mnt
 
-    # pull destination device from command line arguments if any  
-    if [ $1 ]; then  
-        DEST=$1  
-        shift  
-    fi  
+    # pull destination device from command line arguments if any
+    if [ $1 ]; then
+        DEST=$1
+        shift
+    fi
 
-    # pull mount point from command line arguments if any  
-    [ $1 ] && WHERE=$1  
-    # mount the device  
-    sudo mount ${DEST} ${WHERE}  
-    # send the squashed file system to the device  
-    sudo rsync -rvW --progress filesystem.squashfs ${WHERE}/live/  
-    # unmount the device  
-    sudo umount ${DEST}  
+    # pull mount point from command line arguments if any
+    [ $1 ] && WHERE=$1
+    # mount the device
+    sudo mount ${DEST} ${WHERE}
+    # send the squashed file system to the device
+    sudo rsync -rvW --progress filesystem.squashfs ${WHERE}/live/
+    # unmount the device
+    sudo umount ${DEST}
 
 **More information:**
 
 -   [Pulling specific kernel versions from the Ubuntu kernel git
-    repositories](http://wiki.ubuntu.com/Kernel/Dev/KernelGitGuide)
+    repositories](https://wiki.ubuntu.com/Kernel/Dev/KernelGitGuide)
 -   [Compiling your own Ubuntu
-    kernel](http://help.ubuntu.com/community/Kernel/Compile)<a>
+    kernel](https://help.ubuntu.com/community/Kernel/Compile)<a>
 

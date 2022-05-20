@@ -24,14 +24,14 @@ frameworks.
 **ASP.NET 2.0 (.NET Framework 3.5) web.config:**
 
     #!xml
-    <?xml version="1.0" encoding="utf-8" ?>  
-    <configuration>  
-        <connectionStrings>  
-            <add name="databaseReader" connectionString="server=sqlserver.myhost.com;database=myDatabase;uid=username;pwd=password;" />  
-        </connectionStrings>  
-        <system.web>  
-            <!-- insert web-specific contents, et al -->  
-        </system.web>  
+    <?xml version="1.0" encoding="utf-8" ?>
+    <configuration>
+        <connectionStrings>
+            <add name="databaseReader" connectionString="server=sqlserver.myhost.com;database=myDatabase;uid=username;pwd=password;" />
+        </connectionStrings>
+        <system.web>
+            <!-- insert web-specific contents, et al -->
+        </system.web>
     </configuration>
 
 The example given above is a stripped-down implementation of *web.config*, and particular to
@@ -44,21 +44,21 @@ method in order to accomplish this:
 **VB.NET 3.5 code:**
 
     #!vbnet
-    ' Grab the connection string from web.config's ConnectionStrings element  
-    Dim connStr as String = ConfigurationManager.ConnectionStrings("databaseReader").ConnectionString  
-    ' Connect to the database using the retrieved connection string  
+    ' Grab the connection string from web.config's ConnectionStrings element
+    Dim connStr as String = ConfigurationManager.ConnectionStrings("databaseReader").ConnectionString
+    ' Connect to the database using the retrieved connection string
     Dim conn as SqlConnection = new SqlConnection(connStr)
 
-    ' Output the database server's connection status  
-    Try  
-        conn.Open()  
-        Response.Write("Database connection was successful.<br />")  
-    Catch ex as Exception  
-        Response.Write("Could not connect to the database.<br />")  
+    ' Output the database server's connection status
+    Try
+        conn.Open()
+        Response.Write("Database connection was successful.<br />")
+    Catch ex as Exception
+        Response.Write("Could not connect to the database.<br />")
     End Try
 
 Use this method in conjunction with the before-mentioned [prepared
-statements](http://roadha.us/2008/07/prepared-sql-statements-in-vb-net/),
+statements](/2008/07/prepared-sql-statements-in-vb-net/),
 and you've got yourself a nifty little RDBMS connection that is
 (somewhat) secure... and, more importantly, replicated even in the event
 of a change to the `ConnectionStrings` key's value.

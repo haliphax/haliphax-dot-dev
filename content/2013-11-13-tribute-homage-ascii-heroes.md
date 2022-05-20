@@ -12,7 +12,7 @@ that I've made—I can't help but shout about it from the
 mountaintops.<!--more-->
 
 *(TL;DR - Here's a [link to the
-colly](http://pc.textmod.es/pack/blocktronics_acid_trip/r-tribut.txt.xb))*
+colly](https://16colo.rs/pack/blocktronics_acid_trip/r-tribut.xb))*
 
 ANSI and [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) have been
 a personal hobby of mine for about 20 years now. I first got involved
@@ -33,8 +33,7 @@ haunts as a spectator and check in on the world I once knew. To my
 surprise, it was still lively and inspiring (albeit much smaller).
 Before too long, my old hobby resurfaced entirely, and I was drawing
 once again. I did small, individual pieces at first, but then recently
-joined a regularly-releasing group
-([Break!Ascii](http://breakascii.org)) and started getting really
+joined a regularly-releasing group Break!Ascii) and started getting really
 comfortable in my own skin again as an artist. I then returned to the
 colly.
 
@@ -55,7 +54,7 @@ laid bare in 79 columns and 2,013 lines of text; an homage to my ASCII
 heroes.
 
 [Tribute: An Homage to My ASCII Heroes - A colly by haliphax of
-Remorse/ACiD](http://pc.textmod.es/pack/blocktronics_acid_trip/r-tribut.txt.xb)
+Remorse/ACiD](https://16colo.rs/pack/blocktronics_acid_trip/r-tribut.xb)
 
 [Blocktronics: ACiD
-Trip](http://pc.textmod.es/pack/blocktronics_acid_trip/)
+Trip](https://16colo.rs/pack/blocktronics_acid_trip/)

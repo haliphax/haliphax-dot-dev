@@ -5,8 +5,8 @@ layout: post
 ---
 
 My experimental link-staggering Facebook service,
-[staggr](http://staggr.oddnetwork.org), has been featured on the free
-software blog, [freewaregenius.com](http://www.freewaregenius.com/).
+staggr, has been featured on the free
+software blog, [freewaregenius.com](https://www.freewaregenius.com/).
 Cheggit:
 
-<http://www.freewaregenius.com/automate-facebook-link-posting-at-20-minutes-intervals-with-staggr/>
+<https://www.freewaregenius.com/automate-facebook-link-posting-at-20-minutes-intervals-with-staggr/>

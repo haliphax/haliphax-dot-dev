@@ -4,8 +4,8 @@ tags: ['post', 'fix', 'internet-explorer', 'javascript', 'jquery', 'my-software'
 layout: post
 ---
 
-Since 1.1.3, [jQuery's](http://jquery.com)
-[slideUp()](http://api.jquery.com/slideUp/) method has had problems with
+Since 1.1.3, [jQuery's](https://jquery.com)
+[slideUp()](https://api.jquery.com/slideUp/) method has had problems with
 flickering in Internet Explorer. While this issue can generally be fixed
 by avoiding Quirks Mode with a `DOCTYPE` declaration, it doesn't always
 work so easily. (The HTML 5 declaration worked for me, but was
