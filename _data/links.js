@@ -11,7 +11,7 @@ module.exports = [
 	},
 	{
 		name: 'Search',
-		url: 'https://duckduckgo.com/?q=haliphax.dev',
+		url: 'https://duckduckgo.com/?q=site:haliphax.dev',
 		icon: 'fa fa-search',
 	},
 ];
