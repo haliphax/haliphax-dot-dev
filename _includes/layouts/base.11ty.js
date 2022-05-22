@@ -90,11 +90,11 @@ module.exports = class Base {
 								<nav class="sidebar-content">
 									<h5 class="sidebar-title">${data.strings.siteMenuHeader}</h5>
 									<div class="sidebar-divider"></div>
-									${data.links.map(d => generateSidebarLink(d)).join('')}
+									${data.links.map(generateSidebarLink).join('')}
 									<br />
 									<h5 class="sidebar-title">${data.strings.socialMenuHeader}</h5>
 									<div class="sidebar-divider"></div>
-									${data.socials.map(d => generateSidebarLink(d)).join('')}
+									${data.socials.map(generateSidebarLink).join('')}
 								</nav>
 							</div>
 						</div>
