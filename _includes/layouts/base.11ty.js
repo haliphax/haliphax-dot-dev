@@ -126,7 +126,7 @@ module.exports = class Base {
 						</div>
 					</div>
 					<script>
-						(function(){
+						(() => {
 							// Sidebar management
 							const wrapper = document.querySelector('.page-wrapper');
 
@@ -151,7 +151,7 @@ module.exports = class Base {
 								.then(d => d.live
 									&& (document.getElementById('twitch-live').classList
 										.remove('d-none')));
-						}());
+						})();
 					</script>
 				</body>
 			</html>
