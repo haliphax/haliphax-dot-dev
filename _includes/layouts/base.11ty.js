@@ -36,23 +36,11 @@ module.exports = class Base {
 			'{title}', encodeURIComponent(data.ogTitle ?? data.title));
 		const canonicalUrl = `${data.strings.siteRoot}${this.page.url}`;
 
-		if (data.tags) {
+		if (data.tags)
 			metaLabels.push(["Tags", data.tags.join(', ')]);
 
-			if (data.tags.includes('post')) {
-				const words = data.content
-					.replace(/<[^>]*>|&\w+;/ig, '')
-					.split(/\n+/)
-					.filter(s => s)
-					.map(s => s.split(/\s+/).length)
-					.reduce((p, c) => p + c)
-				const wpm = 300;
-				const readTime = Math.max(1, Math.round(words / wpm));
-				const minutes = readTime === 1 ? 'minute' : 'minutes';
-
-				metaLabels.push(["Read time", `${readTime} ${minutes}`]);
-			}
-		}
+		if (data.readingTime)
+			metaLabels.push(["Reading time", data.readingTime])
 
 		return /*html*/`
 			<!doctype html>
