@@ -31,9 +31,28 @@ module.exports = class Base {
 		const ogType = data.ogType ?? data.metaDefaults.openGraphType;
 		const metaDescription = metaEncode(
 			data.metaDescription ?? data.metaDefaults.description);
+		const metaLabels = [];
 		const ogImage = data.strings.openGraphImageUrl.replace(
 			'{title}', encodeURIComponent(data.ogTitle ?? data.title));
 		const canonicalUrl = `${data.strings.siteRoot}${this.page.url}`;
+
+		if (data.tags) {
+			metaLabels.push(["Tags", data.tags.join(', ')]);
+
+			if (data.tags.includes('post')) {
+				const words = data.content
+					.replace(/<[^>]*>|&\w+;/ig, '')
+					.split(/\n+/)
+					.filter(s => s)
+					.map(s => s.split(/\s+/).length)
+					.reduce((p, c) => p + c)
+				const wpm = 300;
+				const readTime = Math.max(1, Math.round(words / wpm));
+				const minutes = readTime === 1 ? 'minute' : 'minutes';
+
+				metaLabels.push(["Read time", `${readTime} ${minutes}`]);
+			}
+		}
 
 		return /*html*/`
 			<!doctype html>
@@ -58,7 +77,7 @@ module.exports = class Base {
 					<meta property="article:author" content="${ogAuthor}" />
 					<meta property="article:published_time" content="${this.page.date.toISOString()}" />
 					${data.tags == undefined ? ''
-						: data.tags?.map(t =>
+						: data.tags.map(t =>
 								/*html*/`<meta property="article:tag" content="${t}" />`)
 							.join('')}
 					<meta name="twitter:card" content="summary_large_image" />
@@ -67,6 +86,11 @@ module.exports = class Base {
 					<meta name="twitter:image" content="${ogImage}" />
 					<meta name="twitter:site" content="${data.strings.twitter}" />
 					<meta name="twitter:title" content="${ogTitle}" />
+					${metaLabels.length === 0 ? ''
+						: metaLabels.map((v, i) => /*html*/`
+							<meta name="twitter:label${i+1}" content="${v[0]}" />
+							<meta name="twitter:data${i+1}" content="${v[1]}" />
+							`).join('')}
 					<link rel="icon" href="/img/favicon.gif" />
 					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" media="screen" />
 					<link href="/css/styles.css" rel="stylesheet" />
