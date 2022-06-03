@@ -91,7 +91,7 @@ html {
 }
 
 /* headers */
-h1, h2, .card-title, .sidebar-title {
+h1, h2, h3, .card-title, .sidebar-title {
 	font-family: 'Shrikhand', cursive;
 	word-break: break-word;
 }

@@ -2,15 +2,59 @@ module.exports = class Index {
 	get data() {
 		return {
 			changeFreq: 'monthly',
-			header: 'Recent posts',
-			layout: 'withHeader',
+			layout: 'base',
 			title: 'Home',
 			ogTitle: 'haliphax.dev',
 			ogType: 'website',
 		};
 	}
 
-	render(data) {
-		return this.renderCollection(data.collections.post, 6);
+	async render(data) {
+		const vod = (await this.getTwitchData()).latestVod;
+		const vodDescription = this.getDescription(vod.description);
+
+		return /*html*/`
+			<div class="row d-flex">
+				<div class="card m-5 p-20 w-full row">
+					<div class="col">
+						I am a software developer and
+						<a href="https://oddnetwork.org/ascii/">textmode artist</a>. I
+						worked as a web developer in higher education for almost 15 years,
+						but I have recently moved into the private sector to work with
+						microservices and cloud native solutions. I enjoy solving problems
+						and sharing what I have learned with others.
+					</div>
+				</div>
+			</div>
+			<h2 class="mb-0">Latest stream</h2>
+			<div class="row d-flex">
+				<div class="card m-5 p-20 w-full row">
+					<div class="col col-sm-6" aria-hidden="true">
+						<div class="mr-10">
+							<a href="${vod.url}" class="no-external">
+								<img src="${vod.thumbnail_url}" class="w-full border-0" />
+							</a>
+						</div>
+					</div>
+					<div class="col col-sm-6">
+						<div class="ml-10">
+							<h3 class="card-title mb-5">${vod.title}</h3>
+							<hr />
+							<p>${vodDescription}</p>
+							<div class="text-right">
+								<a href="${vod.url}"
+									class="btn btn-secondary d-inline-block no-external">
+									<span class="far fa-eye"></span>
+									<span aria-hidden="true">Watch VOD</span>
+									<span class="sr-only">Watch VOD: ${vod.title}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h2 class="mb-0">Recent posts</h2>
+			${this.renderCollection(data.collections.post, 6)}
+			`;
 	}
 };

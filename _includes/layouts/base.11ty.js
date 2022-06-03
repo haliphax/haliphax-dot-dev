@@ -24,8 +24,10 @@ const generateSidebarLink = ({ icon, name, url}) => /*html*/`
 	</a>
 	`;
 
+
 module.exports = class Base {
-	render(data) {
+	async render(data) {
+		const twitchData = await this.getTwitchData();
 		const ogTitle = metaEncode(data.ogTitle ?? data.title);
 		const ogAuthor = metaEncode(data.ogAuthor ?? data.metaDefaults.author);
 		const ogType = data.ogType ?? data.metaDefaults.openGraphType;
@@ -66,7 +68,7 @@ module.exports = class Base {
 					<meta property="article:published_time" content="${this.page.date.toISOString()}" />
 					${data.tags == undefined ? ''
 						: data.tags.map(t =>
-								/*html*/`<meta property="article:tag" content="${t}" />`)
+							/*html*/`<meta property="article:tag" content="${t}" />`)
 							.join('')}
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="twitter:creator" content="${data.strings.twitter}" />
@@ -75,8 +77,8 @@ module.exports = class Base {
 					<meta name="twitter:title" content="${ogTitle}" />
 					${metaLabels.length === 0 ? ''
 						: metaLabels.map((v, i) => /*html*/`
-							<meta name="twitter:label${i+1}" content="${v[0]}" />
-							<meta name="twitter:data${i+1}" content="${v[1]}" />
+							<meta name="twitter:label${i + 1}" content="${v[0]}" />
+							<meta name="twitter:data${i + 1}" content="${v[1]}" />
 							`).join('')}
 					<meta name="generator" content="${data.metaDefaults.generator}" />
 					<link rel="icon" href="/img/favicon.gif" />
@@ -123,15 +125,17 @@ module.exports = class Base {
 							</div>
 							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
-									<div class="alert alert-primary text-center mb-20 d-none" id="twitch-live">
-											I'm streaming on Twitch <em><strong>right now</strong></em>.
-											You should stop by.
-											<a href="https://www.twitch.tv/${data.twitch.username}"
-												class="btn btn-sm btn-primary ml-10 no-external">
-												<span class="fab fa-twitch"></span>
-												Let's go!
-											</a>
-									</div>
+									${!twitchData.live ? ''
+										: /*html*/`
+											<div class="alert alert-primary text-center mb-20" id="twitch-live">
+													I'm streaming on Twitch <em><strong>right now</strong></em>.  You should stop by.
+													<a href="https://www.twitch.tv/${data.twitch.username}"
+														class="btn btn-sm btn-primary ml-10 no-external">
+														<span class="fab fa-twitch"></span>
+														Let's go!
+													</a>
+											</div>
+											`}
 									${data.content}
 								</main>
 							</div>
@@ -153,16 +157,6 @@ module.exports = class Base {
 									else
 										wrapper.setAttribute('data-sidebar-hidden', 'true');
 								});
-
-							// Twitch live alert
-							const statusUrl = (window.location.hostname == 'localhost'
-								? '/twitch.json' : '${data.twitch.jsonUrl}');
-
-							fetch(statusUrl)
-								.then(r => r.json())
-								.then(d => d.live
-									&& (document.getElementById('twitch-live').classList
-										.remove('d-none')));
 						})();
 					</script>
 				</body>

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const getTwitchData = require('./_functions/getTwitchData');
 const htmlEntities = require('./_functions/htmlEntities');
 const htmlmin = require('html-minifier');
 const markdownLibrary = require('./_includes/markdownLib');
@@ -8,6 +9,7 @@ const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = (cfg) => {
 	// functions
+	cfg.addJavaScriptFunction('getTwitchData', getTwitchData);
 	cfg.addJavaScriptFunction('htmlEntities', htmlEntities);
 	cfg.addJavaScriptFunction('renderCollection', renderCollection);
 	cfg.addJavaScriptFunction('renderTags', renderTags);
