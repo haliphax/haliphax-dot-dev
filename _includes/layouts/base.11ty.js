@@ -32,7 +32,7 @@ module.exports = class Base {
 		const metaDescription = metaEncode(
 			data.metaDescription ?? data.metaDefaults.description);
 		const metaLabels = [];
-		const ogImage = data.strings.openGraphImageUrl.replace(
+		const ogImage = data.metaDefaults.openGraphImageUrl.replace(
 			'{title}', encodeURIComponent(data.ogTitle ?? data.title));
 		const canonicalUrl = `${data.strings.siteRoot}${this.page.url}`;
 
@@ -57,7 +57,7 @@ module.exports = class Base {
 					<meta property="og:image:height" content="600" />
 					<meta property="og:image:type" content="image/jpeg" />
 					<meta property="og:image:width" content="1200" />
-					<meta property="og:image" content="${ogImage}" />
+					<meta property="og:image" name="twitter:image" content="${ogImage}" />
 					<meta property="og:site_name" content="${data.strings.siteName}" />
 					<meta property="og:title" content="${ogTitle}" />
 					<meta property="og:type" content="${ogType}" />
@@ -71,7 +71,6 @@ module.exports = class Base {
 					<meta name="twitter:card" content="summary_large_image" />
 					<meta name="twitter:creator" content="${data.strings.twitter}" />
 					<meta name="twitter:description" content="${metaDescription}" />
-					<meta name="twitter:image" content="${ogImage}" />
 					<meta name="twitter:site" content="${data.strings.twitter}" />
 					<meta name="twitter:title" content="${ogTitle}" />
 					${metaLabels.length === 0 ? ''
