@@ -78,7 +78,7 @@ module.exports = class Base {
 							<meta name="twitter:label${i+1}" content="${v[0]}" />
 							<meta name="twitter:data${i+1}" content="${v[1]}" />
 							`).join('')}
-					<meta name="generator" value="${data.metaDefaults.generator}" />
+					<meta name="generator" content="${data.metaDefaults.generator}" />
 					<link rel="icon" href="/img/favicon.gif" />
 					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" media="screen" />
 					<link href="/css/styles.css" rel="stylesheet" />
