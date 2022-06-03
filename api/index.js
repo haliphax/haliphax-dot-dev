@@ -3,7 +3,7 @@ const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch
 const jsonDiff = require('json-diff');
 const TwitchApi = require('node-twitch').default;
 
-const main = async () => {
+(async () => {
 	console.log('💬 Connecting to Twitch API');
 
 	const api = new TwitchApi({
@@ -36,6 +36,4 @@ const main = async () => {
 	else {
 		console.log('🤷 No change');
 	}
-};
-
-main();
+})();
