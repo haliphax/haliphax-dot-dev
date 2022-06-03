@@ -11,12 +11,13 @@ module.exports = (tags) => {
 				: /*html*/`
 					<ul class="list-unstyled d-inline-block mb-10">
 						${filtered.map(t => /*html*/`
-								<li class="d-inline-block">
+								<li class="d-inline-block mr-1">
 									<a href="/tags/${t}/"
 										class="badge badge-secondary">
 										<span class="fas fa-tag"></span>
 										${t}
 									</a>
+									&nbsp;
 								</li>
 							`)
 							.join('')}
