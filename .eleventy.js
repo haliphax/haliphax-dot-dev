@@ -1,9 +1,10 @@
-const fs = require('fs'),
-	htmlEntities = require('./_functions/htmlEntities'),
-	markdownLibrary = require('./_includes/markdownLib'),
-	renderCollection = require('./_functions/renderCollection'),
-	renderTags = require('./_functions/renderTags'),
-	syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+const fs = require('fs');
+const htmlEntities = require('./_functions/htmlEntities');
+const htmlmin = require('html-minifier');
+const markdownLibrary = require('./_includes/markdownLib');
+const renderCollection = require('./_functions/renderCollection');
+const renderTags = require('./_functions/renderTags');
+const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = (cfg) => {
 	// functions
@@ -53,6 +54,21 @@ module.exports = (cfg) => {
 		excerpt: true,
 		excerpt_separator: '<!--more-->',
 	});
+
+	// html minification
+	cfg.addTransform('html-minify', function(content) {
+		if (this.outputPath && this.outputPath.endsWith('.html')) {
+			let minified = htmlmin.minify(content, {
+				useShortDoctype: true,
+				removeComments: true,
+				collapseWhitespace: true
+			});
+
+			return minified;
+		}
+
+    return content;
+  });
 
 	return {
 		dataTemplateEngine: false,
