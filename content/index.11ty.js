@@ -33,7 +33,7 @@ module.exports = class Index {
 						<div class="mr-10">
 							<a href="${vod.url}" class="no-external">
 								<img src="${vod.thumbnail_url}" width="640" height="360"
-									class="w-full border-0" />
+									class="w-full h-auto border-0" />
 							</a>
 						</div>
 					</div>
