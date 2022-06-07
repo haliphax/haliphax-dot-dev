@@ -11,7 +11,6 @@ module.exports = class Index {
 
 	async render(data) {
 		const vod = (await this.getTwitchData()).latestVod;
-		const vodDescription = this.getDescription(vod.description);
 
 		return /*html*/`
 			<div class="row d-flex">
@@ -44,7 +43,7 @@ module.exports = class Index {
 						<div class="ml-10">
 							<h3 class="card-title mb-5">${vod.title}</h3>
 							<hr />
-							<p class="text-muted">${vodDescription}</p>
+							<p class="text-muted">${vod.description}</p>
 							<div class="text-right">
 								<a href="${vod.url}"
 									class="btn btn-secondary d-inline-block no-external">
