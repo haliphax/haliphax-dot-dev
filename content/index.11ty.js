@@ -26,7 +26,10 @@ module.exports = class Index {
 					</div>
 				</div>
 			</div>
-			<h2 class="mb-0">Latest stream</h2>
+			<h2 class="mb-0">
+				<span class="fa fa-eye text-primary mr-5"></span>
+				Latest stream
+			</h2>
 			<div class="row d-flex">
 				<div class="card m-5 p-20 w-full row">
 					<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
@@ -41,7 +44,7 @@ module.exports = class Index {
 						<div class="ml-10">
 							<h3 class="card-title mb-5">${vod.title}</h3>
 							<hr />
-							<p>${vodDescription}</p>
+							<p class="text-muted">${vodDescription}</p>
 							<div class="text-right">
 								<a href="${vod.url}"
 									class="btn btn-secondary d-inline-block no-external">
@@ -54,7 +57,10 @@ module.exports = class Index {
 					</div>
 				</div>
 			</div>
-			<h2 class="mb-0">Recent posts</h2>
+			<h2 class="mb-0">
+				<span class="fa fa-sticky-note text-primary mr-5"></span>
+				Recent posts
+			</h2>
 			${this.renderCollection(data.collections.post, 6)}
 			`;
 	}

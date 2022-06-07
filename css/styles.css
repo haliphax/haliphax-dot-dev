@@ -73,7 +73,6 @@ html {
 	left: 0 !important;
 	display: block;
 }
-
 #btn-sidebar-toggle {
 	display: none;
 	padding-left: 1rem;
@@ -109,6 +108,12 @@ h1 a:hover {
 	text-shadow: 0 0 16px var(--pink-color-dark);
 	-webkit-text-fill-color: var(--pink-color);
 	-webkit-text-stroke: 1px var(--pink-color-dark);
+}
+
+/* homepage section heading icons */
+h2 > span {
+	-webkit-text-fill-color: var(--pink-color-very-dark);
+	-webkit-text-stroke: 1px var(--pink-color);
 }
 
 /* headings in articles */
