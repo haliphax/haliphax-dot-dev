@@ -32,7 +32,7 @@ module.exports = class Index {
 			<div class="row d-flex">
 				<div class="card m-5 p-20 w-full row">
 					<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
-						<div class="mr-10">
+						<div class="mr-sm-10">
 							<a href="${vod.url}" class="no-external">
 								<img src="${vod.thumbnail_url}" width="640" height="360"
 									class="w-full h-auto border-0" />
@@ -40,7 +40,7 @@ module.exports = class Index {
 						</div>
 					</div>
 					<div class="col-12 col-sm-6 col-md-12 col-lg-6">
-						<div class="ml-10">
+						<div class="ml-sm-10">
 							<h3 class="card-title mb-5">${vod.title}</h3>
 							<hr />
 							<p class="text-muted">${vod.description}</p>
