@@ -1,5 +1,4 @@
 const fs = require('fs'),
-	htmlEntities = require('../../_functions/htmlEntities'),
 	md = require('../markdownLib');
 
 const getContent = data => fs.readFileSync(data.page.inputPath, 'utf8')
@@ -10,12 +9,7 @@ module.exports = class Post {
 		return {
 			eleventyComputed: {
 				metaDescription(data) {
-					return htmlEntities(md.render(getContent(data))
-						.replace(/<[^>]+>/g, '')
-						.replace(/\s{2,}/g, ' ')
-						.replace(/\n/g, ' '))
-						.slice(0, 159)
-						.replace(/\s+[^ ]*$/, '') + ' &hellip;';
+					this.getDescription(md.render(getContent(data)))
 				},
 				readingTime(data) {
 					if (!data.tags.includes('post'))

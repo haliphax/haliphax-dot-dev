@@ -1,2 +1,4 @@
-module.exports = text =>
+const metaEncode = text =>
 	text.replace(/"/g, '&quot;');
+
+module.exports = metaEncode;

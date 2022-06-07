@@ -2,7 +2,7 @@ const htmlEntities = require('../_functions/htmlEntities'),
 	md = require('../_includes/markdownLib'),
 	slugify = require('slugify');
 
-module.exports = (items, limit) => /*html*/`
+const renderCollection = (items, limit) => /*html*/`
 	<ul class="list-unstyled row d-flex flex-row">
 		${Array.from(items).reverse().slice(0, limit)
 			.map(p => {
@@ -44,3 +44,5 @@ module.exports = (items, limit) => /*html*/`
 			}).join('')}
 	</ul>
 	`;
+
+module.exports = renderCollection;

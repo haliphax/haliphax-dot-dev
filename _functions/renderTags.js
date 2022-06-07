@@ -1,6 +1,6 @@
 const ignoreTags = require('../_data/ignoreTags');
 
-module.exports = (tags) => {
+const renderTags = tags => {
 	const filtered = tags.filter(t => ignoreTags.indexOf(t) < 0);
 
 	return /*html*/`
@@ -25,3 +25,5 @@ module.exports = (tags) => {
 		</span>
 		`;
 };
+
+module.exports = renderTags;
