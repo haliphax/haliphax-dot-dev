@@ -32,7 +32,8 @@ module.exports = class Index {
 					<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 						<div class="mr-10">
 							<a href="${vod.url}" class="no-external">
-								<img src="${vod.thumbnail_url}" class="w-full border-0" />
+								<img src="${vod.thumbnail_url}" width="640" height="360"
+									class="w-full border-0" />
 							</a>
 						</div>
 					</div>
