@@ -29,14 +29,14 @@ module.exports = class Index {
 			<h2 class="mb-0">Latest stream</h2>
 			<div class="row d-flex">
 				<div class="card m-5 p-20 w-full row">
-					<div class="col col-sm-6" aria-hidden="true">
+					<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 						<div class="mr-10">
 							<a href="${vod.url}" class="no-external">
 								<img src="${vod.thumbnail_url}" class="w-full border-0" />
 							</a>
 						</div>
 					</div>
-					<div class="col col-sm-6">
+					<div class="col-12 col-sm-6 col-md-12 col-lg-6">
 						<div class="ml-10">
 							<h3 class="card-title mb-5">${vod.title}</h3>
 							<hr />
