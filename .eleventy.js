@@ -61,17 +61,14 @@ module.exports = (cfg) => {
 
 	// html minification
 	cfg.addTransform('html-minify', function(content) {
-		if (this.outputPath && this.outputPath.endsWith('.html')) {
-			let minified = htmlmin.minify(content, {
-				useShortDoctype: true,
-				removeComments: true,
-				collapseWhitespace: true
-			});
+		if (!this.outputPath || !this.outputPath.endsWith('.html'))
+			return content;
 
-			return minified;
-		}
-
-    return content;
+		return htmlmin.minify(content, {
+			useShortDoctype: true,
+			removeComments: true,
+			collapseWhitespace: true
+		});
   });
 
 	return {
