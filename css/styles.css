@@ -133,6 +133,16 @@ ul.list-unstyled > li {
 	padding: 0;
 }
 
+/* pre-formatted text */
+code, kbd, pre, samp {
+	border-radius: 0.2em;
+	border: 1px solid var(--dark-color-light);
+	color: var(--secondary-color);
+	font-size: 1em;
+	padding-left: 0.15em;
+	padding-right: 0.15em;
+}
+
 /* external links */
 .content-wrapper a[href*='://']:not(.no-external)::before {
 	content: '\f35d';
