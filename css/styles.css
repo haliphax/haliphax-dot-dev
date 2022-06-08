@@ -124,6 +124,17 @@ h2 > span {
 	visibility: visible;
 }
 
+/* lists */
+ul, ol {
+	margin-left: 1em;
+}
+ul {
+	list-style: circle outside;
+}
+ol {
+	list-style: decimal outside;
+}
+
 /* unstyled list */
 ul.list-unstyled {
 	list-style-type: none;
