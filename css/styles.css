@@ -153,12 +153,21 @@ kbd:not([class*="language-"]),
 pre:not([class*="language-"]),
 samp:not([class*="language-"])
 {
-	border-radius: 0.2em;
+	border-radius: .2em;
 	border: 1px solid var(--dark-color-light);
 	color: var(--secondary-color);
 	font-size: 1em;
-	padding-left: 0.15em;
-	padding-right: 0.15em;
+	padding-left: .15em;
+	padding-right: .15em;
+}
+
+/* card image link hover */
+.card a > img {
+	transition-duration: .5s;
+}
+.card a > img:hover {
+	transform-origin: 50% 50%;
+	transform: scale(1.05);
 }
 
 /* external links */
@@ -185,17 +194,17 @@ samp:not([class*="language-"])
 	content: '\f0f4';
 	display: inline-block;
 	font-size: 1.1em;
-	line-height: 0.45em;
-	margin: -0.45em 0 0 -0.2em;
+	line-height: .45em;
+	margin: -.45em 0 0 -.2em;
 	overflow-y: hidden;
-	padding-top: 0.45em;
+	padding-top: .45em;
 }
 .fa-ko-fi::after {
 	color: #000;
 	content: '\f004';
 	font-size: 50%;
 	font-weight: 900;
-	margin: 0.5em 0 0 -2em;
+	margin: .5em 0 0 -2em;
 	position: absolute;
 }
 
