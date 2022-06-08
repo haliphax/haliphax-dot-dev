@@ -22,6 +22,6 @@ module.exports = [
 	{
 		name: 'Ko-fi',
 		url: 'https://ko-fi.com/haliphax',
-		icon: 'fas fa-coffee',
+		icon: 'fas fa-ko-fi',
 	},
 ];
