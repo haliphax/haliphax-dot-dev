@@ -43,7 +43,7 @@ The `::before` and `::after` pseudo elements use the `content` property to
 display the `coffee` and `heart` icons, respectively. A combination of
 `font-size`, `line-height`, `overflow-y`, `padding-top`, and `margin` are used
 to truncate the "saucer" component of the `coffee` icon and resize the
-resul. This step is necessary since the free icon set does not include the
+result. This step is necessary since the free icon set does not include the
 `mug` icon, which has no saucer. Finally, `font-size`, `color`, `position`, and
 `margin` are used to shrink the `heart` icon and move it into place over the
 mug.
