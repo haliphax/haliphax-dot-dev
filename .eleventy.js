@@ -1,6 +1,7 @@
 const fs = require('fs');
 const getDescription = require('./_functions/getDescription');
 const getTwitchData = require('./_functions/getTwitchData');
+const getYouTubeData = require('./_functions/getYouTubeData');
 const htmlEntities = require('./_functions/htmlEntities');
 const htmlmin = require('html-minifier');
 const markdownLibrary = require('./_includes/markdownLib');
@@ -12,6 +13,7 @@ module.exports = (cfg) => {
 	// functions
 	cfg.addJavaScriptFunction('getDescription', getDescription);
 	cfg.addJavaScriptFunction('getTwitchData', getTwitchData);
+	cfg.addJavaScriptFunction('getYouTubeData', getYouTubeData);
 	cfg.addJavaScriptFunction('htmlEntities', htmlEntities);
 	cfg.addJavaScriptFunction('renderCollection', renderCollection);
 	cfg.addJavaScriptFunction('renderTags', renderTags);

@@ -11,6 +11,11 @@ module.exports = class Index {
 
 	async render(data) {
 		const vod = (await this.getTwitchData()).latestVod;
+		const vodDescription =
+			this.getDescription(vod.description, data.misc.blurbLength);
+		const yt = await this.getYouTubeData();
+		const ytDescription =
+			this.getDescription(yt.snippet.description, data.misc.blurbLength);
 
 		return /*html*/`
 			<div class="row d-flex">
@@ -43,7 +48,7 @@ module.exports = class Index {
 						<div class="ml-sm-10">
 							<h3 class="card-title mb-5">${vod.title}</h3>
 							<hr />
-							<p class="text-muted">${vod.description}</p>
+							<p class="text-muted">${vodDescription}</p>
 							<div class="text-right">
 								<a href="${vod.url}"
 									class="btn btn-secondary d-inline-block no-external">
@@ -57,10 +62,41 @@ module.exports = class Index {
 				</div>
 			</div>
 			<h2 class="mb-0">
+				<span class="fa fa-play text-primary mr-5"></span>
+				Latest video
+			</h2>
+			<div class="row d-flex">
+				<div class="card m-5 p-20 w-full row">
+					<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
+						<div class="mr-sm-10">
+							<a href="https://youtu.be/${yt.id}" class="no-external">
+								<img src="${yt.snippet.thumbnails.maxres.url}" width="1280" height="720"
+									class="w-full h-auto border-0" />
+							</a>
+						</div>
+					</div>
+					<div class="col-12 col-sm-6 col-md-12 col-lg-6">
+						<div class="ml-sm-10">
+							<h3 class="card-title mb-5">${yt.snippet.title}</h3>
+							<hr />
+							<p class="text-muted">${ytDescription}</p>
+							<div class="text-right">
+								<a href="${vod.url}"
+									class="btn btn-secondary d-inline-block no-external">
+									<span class="fa fa-play"></span>
+									<span aria-hidden="true">Watch video</span>
+									<span class="sr-only">Watch video: ${yt.snippet.title}</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h2 class="mb-0">
 				<span class="fa fa-sticky-note text-primary mr-5"></span>
 				Recent posts
 			</h2>
-			${this.renderCollection(data.collections.post, 6)}
+			${this.renderCollection(data.collections.post, 3, true)}
 			`;
 	}
 };

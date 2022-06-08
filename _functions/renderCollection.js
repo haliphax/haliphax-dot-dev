@@ -1,33 +1,34 @@
-const htmlEntities = require('../_functions/htmlEntities'),
-	md = require('../_includes/markdownLib'),
-	slugify = require('slugify');
+const { blurbLength, jumboBlurbLength } = require('../_data/misc');
+const getDescription = require('./getDescription');
+const md = require('../_includes/markdownLib');
+const slugify = require('slugify');
 
-const renderCollection = (items, limit) => /*html*/`
+const renderCollection = (items, limit, jumboFirst = false) => /*html*/`
 	<ul class="list-unstyled row d-flex flex-row">
 		${Array.from(items).reverse().slice(0, limit)
-			.map(p => {
+			.map((p, i) => {
+				const cutoff = jumboFirst && i === 0 ? jumboBlurbLength : blurbLength;
 				const slug = slugify(p.url);
-				let summary = htmlEntities(md.render(
-					p.template.frontMatter.excerpt || p.template.frontMatter.content)
-						.replace(/<[^>]+>/g, '')
-						.replace(/\s+/g, ' ')
-						.replace(/\n/g, ' '));
+				const content = md.render(
+					p.template.frontMatter.excerpt || p.template.frontMatter.content);
+				const summary = getDescription(content, cutoff);
+				const classes = [];
 
-				if (!p.template.frontMatter.excerpt)
-						summary = summary.slice(0, 300)
-							// don't end in the middle of a word
-							.replace(/\s+[^ ]*$/, '');
+				if (i > 0 || !jumboFirst) {
+					classes.push('col-md-6');
+				}
 
-				// avoid "orphan" typography (one dangling word on the last line)
-				summary = summary.replace(/([^ ]) ([^ ]+)$/, '$1&nbsp;$2');
+				if (!jumboFirst) {
+					classes.push('col-lg-4');
+				}
 
 				return /*html*/`
-					<li class="col-12 col-md-6 col-lg-4 d-flex">
+					<li class="col-12 ${classes.join(' ')} d-flex">
 						<div class="card m-5 p-20 w-full">
 							<h3 class="card-title mb-5">${p.data.title}</h3>
 							<hr />
 							<article aria-labelledby="${slug}">
-								<p class="text-muted">${summary}&nbsp;&hellip;</p>
+								<p class="text-muted">${summary}</p>
 							</article>
 							<div class="d-block h-20 mb-20 pb-5"></div>
 							<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
