@@ -125,19 +125,22 @@ h2 > span {
 }
 
 /* lists */
-ul, ol {
+ul:not(.d-inline):not(.d-inline-block):not(.d-flex),
+ol:not(.d-inline):not(.d-inline-block):not(.d-flex)
+{
 	margin-left: 1em;
 }
-ul {
+ul:not(.d-inline):not(.d-inline-block):not(.d-flex) {
 	list-style: circle outside;
 }
-ol {
+ol:not(.d-inline):not(.d-inline-block):not(.d-flex) {
 	list-style: decimal outside;
 }
 
 /* unstyled list */
 ul.list-unstyled {
 	list-style-type: none;
+	margin: 0;
 }
 ul.list-unstyled > li {
 	margin: 0;
@@ -145,7 +148,11 @@ ul.list-unstyled > li {
 }
 
 /* pre-formatted text */
-code, kbd, pre, samp {
+code:not([class*="language-"]),
+kbd:not([class*="language-"]),
+pre:not([class*="language-"]),
+samp:not([class*="language-"])
+{
 	border-radius: 0.2em;
 	border: 1px solid var(--dark-color-light);
 	color: var(--secondary-color);
