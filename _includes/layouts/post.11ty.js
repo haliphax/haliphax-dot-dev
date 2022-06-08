@@ -9,7 +9,7 @@ module.exports = class Post {
 		return {
 			eleventyComputed: {
 				metaDescription(data) {
-					this.getDescription(md.render(getContent(data)))
+					return this.getDescription(md.render(getContent(data)))
 				},
 				readingTime(data) {
 					if (!data.tags.includes('post'))
