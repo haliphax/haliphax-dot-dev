@@ -85,7 +85,7 @@ module.exports = class Base {
 					<link href="/css/styles.css" rel="stylesheet" />
 					${preloads}
 				</head>
-				<body class="dark-mode">
+				<body class="dark-mode mh-full h-full">
 					<a class="btn btn-primary" id="skip-nav" href="#main-content">
 						<span class="fas fa-forward"></span>
 						Skip to main content
@@ -111,8 +111,8 @@ module.exports = class Base {
 								</nav>
 							</div>
 						</div>
-						<div class="content-wrapper">
-							<div class="navbar" role="banner">
+						<div class="content-wrapper d-flex flex-column">
+							<div class="navbar d-flex" role="banner">
 								<div class="container px-0">
 									<div class="navbar-brand w-full">
 										<h1 class="text-center w-full">
@@ -122,7 +122,7 @@ module.exports = class Base {
 									</div>
 								</div>
 							</div>
-							<div class="container px-20 pb-10">
+							<div class="container px-20 pb-10 d-flex">
 								<main id="main-content" class="pt-10">
 									${!twitchData.live ? ''
 										: /*html*/`
@@ -138,6 +138,17 @@ module.exports = class Base {
 									${data.content}
 								</main>
 							</div>
+							<hr />
+							<footer class="d-flex mt-auto mx-20 my-20 px-20">
+								<span class="m-auto">
+									This site's
+									<a href="https://github.com/haliphax/haliphax-dot-dev">source code</a>
+									is licensed under the permissive
+									<a href="https://github.com/haliphax/haliphax-dot-dev/blob/master/LICENSE">MIT license</a>.
+									Content is licensed under the
+									<a href="https://github.com/haliphax/haliphax-dot-dev/tree/master/content/posts/LICENSE">Creative Commons Attribution-ShareAlike International 4.0 license</a>.
+								</small>
+							</footer>
 						</div>
 					</div>
 					<script>

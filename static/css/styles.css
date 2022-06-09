@@ -208,6 +208,16 @@ samp:not([class*="language-"])
 	position: absolute;
 }
 
+/* footer */
+footer {
+	font-size: .65em;
+	color: #000;
+}
+footer a:link,
+footer a:visited {
+	color: var(--gray-color-very-dark);
+}
+
 /***
 * media queries
 ***/
