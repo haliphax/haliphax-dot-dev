@@ -139,7 +139,7 @@ module.exports = class Base {
 								</main>
 							</div>
 							<hr />
-							<footer class="d-flex mt-auto mx-20 my-20 px-20">
+							<footer class="d-flex mt-auto mx-20 my-20">
 								<span class="m-auto">
 									This site's
 									<a href="https://github.com/haliphax/haliphax-dot-dev">source code</a>
