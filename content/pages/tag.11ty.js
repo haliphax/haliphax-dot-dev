@@ -28,10 +28,12 @@ module.exports = class Tag {
 	render({ collections, tag }) {
 		return /*html*/`
 			${this.renderCollection(collections[tag])}
-			<a href="/tags/">
-				<span class="fas fa-tags"></span>
-				View all tags
-			</a>
+			<p>
+				<a href="/tags/">
+					<span class="fas fa-tags"></span>
+					View all tags
+				</a>
+			</p>
 			`;
 	}
 };
