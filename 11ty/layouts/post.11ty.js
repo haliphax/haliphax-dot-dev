@@ -46,11 +46,11 @@ module.exports = class Post {
 		const posted = this.page.date.toISOString().replace(/T.*$/, '');
 
 		return /*html*/`
-			<small class="d-block text-muted">
+			${this.renderTags(data.tags)}
+			<small class="d-block text-muted mb-10">
 				<i class="fa fa-book"></i>
 				Reading time: ${data.readingTime}
 			</small>
-			${this.renderTags(data.tags)}
 			<div class="card border mx-0 pb-0 pt-5 mt-0 mb-0">
 				${reformatted}
 			</div>
