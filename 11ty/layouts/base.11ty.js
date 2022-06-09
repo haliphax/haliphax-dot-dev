@@ -122,7 +122,7 @@ module.exports = class Base {
 									</div>
 								</div>
 							</div>
-							<div class="container px-20 pb-10 d-flex">
+							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
 									${!twitchData.live ? ''
 										: /*html*/`
