@@ -1,7 +1,7 @@
 module.exports = class Index {
 	get data() {
 		return {
-			changeFreq: 'monthly',
+			changeFreq: 'weekly',
 			layout: 'base',
 			ogTitle: 'haliphax.dev',
 			ogType: 'website',
