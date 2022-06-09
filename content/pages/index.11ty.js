@@ -22,7 +22,7 @@ module.exports = class Index {
 			<div class="row d-flex">
 				<div class="intro card m-5 p-20 w-full row">
 					<div class="col">
-						I am a software developer and
+						I am a software engineer and
 						<a href="https://oddnetwork.org/ascii/">textmode artist</a>. I
 						worked as a web developer in higher education for almost 15 years,
 						but I have recently moved into the private sector to work with
