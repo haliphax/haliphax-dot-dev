@@ -111,7 +111,7 @@ h1 a:hover {
 }
 
 /* intro */
-.intro {
+.card.intro {
 	border-color: var(--primary-color-dark);
 }
 
