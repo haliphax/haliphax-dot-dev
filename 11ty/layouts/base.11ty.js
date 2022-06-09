@@ -1,5 +1,3 @@
-const metaEncode = require('../../_functions/metaEncode');
-
 /** CSS preload markup */
 const preloads =
 	[
@@ -28,10 +26,10 @@ const generateSidebarLink = ({ icon, name, url}) => /*html*/`
 module.exports = class Base {
 	async render(data) {
 		const twitchData = await this.getTwitchData();
-		const ogTitle = metaEncode(data.ogTitle ?? data.title);
-		const ogAuthor = metaEncode(data.ogAuthor ?? data.metaDefaults.author);
+		const ogTitle = this.metaEncode(data.ogTitle ?? data.title);
+		const ogAuthor = this.metaEncode(data.ogAuthor ?? data.metaDefaults.author);
 		const ogType = data.ogType ?? data.metaDefaults.openGraphType;
-		const metaDescription = metaEncode(
+		const metaDescription = this.metaEncode(
 			data.metaDescription ?? data.metaDefaults.description);
 		const metaLabels = [];
 		const ogImage = data.metaDefaults.openGraphImageUrl.replace(

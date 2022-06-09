@@ -1,38 +1,25 @@
+const cfgFunctions = require('./11ty/functions/_config');
+const cfgLayouts = require('./11ty/layouts/_config');
+const cfgTransforms = require('./11ty/transforms/_config');
 const fs = require('fs');
-const getDescription = require('./_functions/getDescription');
-const getTwitchData = require('./_functions/getTwitchData');
-const getYouTubeData = require('./_functions/getYouTubeData');
-const htmlEntities = require('./_functions/htmlEntities');
-const htmlmin = require('html-minifier');
-const markdownLibrary = require('./_includes/markdownLib');
-const renderCollection = require('./_functions/renderCollection');
-const renderTags = require('./_functions/renderTags');
+const markdownLibrary = require('./11ty/lib/markdownIt');
 const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = (cfg) => {
-	// functions
-	cfg.addJavaScriptFunction('getDescription', getDescription);
-	cfg.addJavaScriptFunction('getTwitchData', getTwitchData);
-	cfg.addJavaScriptFunction('getYouTubeData', getYouTubeData);
-	cfg.addJavaScriptFunction('htmlEntities', htmlEntities);
-	cfg.addJavaScriptFunction('renderCollection', renderCollection);
-	cfg.addJavaScriptFunction('renderTags', renderTags);
-
-	// layouts
-	cfg.addLayoutAlias('base', 'layouts/base.11ty.js');
-	cfg.addLayoutAlias('collection', 'layouts/collection.11ty.js');
-	cfg.addLayoutAlias('post', 'layouts/post.11ty.js');
-	cfg.addLayoutAlias('withHeader', 'layouts/withHeader.11ty.js');
-
-	// assets
-	cfg.addPassthroughCopy('css');
-	cfg.addPassthroughCopy('img');
-	cfg.addPassthroughCopy('content/ahrefs_*');
-
-	// plugins
+	cfgFunctions(cfg);
+	cfgLayouts(cfg);
+	cfgTransforms(cfg);
+	cfg.addPassthroughCopy({ 'static': '/' });
 	cfg.addPlugin(syntaxHighlight);
+	cfg.setLibrary('md', markdownLibrary);
 
-	// browser sync for local development
+	// custom excerpt marker
+	cfg.setFrontMatterParsingOptions({
+		excerpt: true,
+		excerpt_separator: '<!--more-->',
+	});
+
+	// browser sync for hot reload during local development
 	cfg.setBrowserSyncConfig({
 		callbacks: {
 			ready(_, browserSync) {
@@ -52,32 +39,11 @@ module.exports = (cfg) => {
 		ghostMode: false,
 	});
 
-	// use markdown-it
-	cfg.setLibrary('md', markdownLibrary);
-
-	// customize excerpt tag
-	cfg.setFrontMatterParsingOptions({
-		excerpt: true,
-		excerpt_separator: '<!--more-->',
-	});
-
-	// html minification
-	cfg.addTransform('html-minify', function(content) {
-		if (!this.outputPath || !this.outputPath.endsWith('.html'))
-			return content;
-
-		return htmlmin.minify(content, {
-			useShortDoctype: true,
-			removeComments: true,
-			collapseWhitespace: true
-		});
-  });
-
 	return {
 		dataTemplateEngine: false,
 		dir: {
-			data: '../_data',
-			includes: '../_includes',
+			data: '../11ty/data',
+			includes: '../11ty',
 			input: 'content',
 			output: 'docs',
 		},

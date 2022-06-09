@@ -3,9 +3,10 @@ module.exports = class Index {
 		return {
 			changeFreq: 'monthly',
 			layout: 'base',
-			title: 'Home',
 			ogTitle: 'haliphax.dev',
 			ogType: 'website',
+			permalink: '/index.html',
+			title: 'Home',
 		};
 	}
 

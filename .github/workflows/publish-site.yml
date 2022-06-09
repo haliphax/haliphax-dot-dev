@@ -24,14 +24,12 @@ jobs:
 
     - name: Publish site
       env:
-        CNAME: ${{ secrets.CNAME }}
         TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
         TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
         TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
         YT_API_KEY: ${{ secrets.YT_API_KEY }}
       run: |
         mkdir docs
-        echo "$CNAME" > docs/CNAME
         npx @11ty/eleventy
         git config user.email git@github.com
         git config user.name 'GitHub Actions'

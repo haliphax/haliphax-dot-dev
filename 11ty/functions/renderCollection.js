@@ -1,6 +1,6 @@
-const { blurbLength, jumboBlurbLength } = require('../_data/misc');
+const { blurbLength, jumboBlurbLength } = require('../data/misc');
 const getDescription = require('./getDescription');
-const md = require('../_includes/markdownLib');
+const md = require('../lib/markdownIt');
 const slugify = require('slugify');
 
 const renderCollection = (items, limit, jumboFirst = false) => /*html*/`
