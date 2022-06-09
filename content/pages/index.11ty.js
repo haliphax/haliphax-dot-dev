@@ -20,7 +20,7 @@ module.exports = class Index {
 
 		return /*html*/`
 			<div class="row d-flex">
-				<div class="card m-5 p-20 w-full row">
+				<div class="intro card m-5 p-20 w-full row">
 					<div class="col">
 						I am a software developer and
 						<a href="https://oddnetwork.org/ascii/">textmode artist</a>. I
