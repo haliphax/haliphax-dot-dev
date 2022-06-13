@@ -169,6 +169,7 @@ samp:not([class*="language-"])
 /* card image link hover */
 .card a > img {
 	transition-duration: .5s;
+	transition-property: transform;
 }
 .card a > img:hover {
 	transform-origin: 50% 50%;
