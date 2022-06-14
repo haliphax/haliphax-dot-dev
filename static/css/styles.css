@@ -206,7 +206,7 @@ samp:not([class*="language-"])
 	padding-top: .45em;
 }
 .fa-ko-fi::after {
-	color: #000;
+	color: var(--dm-sidebar-bg-color);
 	content: '\f004';
 	font-size: 50%;
 	font-weight: 900;
