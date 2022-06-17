@@ -10,7 +10,7 @@ module.exports = class Index {
 		};
 	}
 
-	async render(data) {
+	render(data) {
 		const vod = data.external.twitch?.latestVod;
 		const vodDescription =
 			this.getDescription(vod?.description, data.misc.blurbLength);

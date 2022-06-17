@@ -10,7 +10,7 @@ module.exports = class FourOhFour {
 		};
 	}
 
-	render(_) {
+	render() {
 		return /*html*/`<p>The page you were looking for could not be found.</p>`;
 	}
 };
