@@ -129,9 +129,9 @@ Uses the YouTube Data API to retrieve latest video information
 
 ## Workflows
 
-This site is hosted entirely on GitHub Pages. Both its main publishing and
-periodic update methods make use of GitHub Actions workflows to update the live
-site automatically when new content or data is available.
+This site is hosted entirely on [GitHub Pages]. Both its main publishing and
+periodic update methods make use of [GitHub Actions] workflows to update the
+live site automatically when new content or data is available.
 
 ### Automatic publish on merge
 
@@ -156,6 +156,8 @@ workflow, the site will be re-published (along with the new data).
 [Eleventy]: https://11ty.dev
 [checkTwitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/checkTwitch.mjs
 [checkYouTube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/checkYouTube.mjs
+[GitHub Pages]: https://pages.github.com
+[GitHub Actions]: https://github.com/features/actions
 [publish-site.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/publish-site.yml
 [hosted cronjob]: https://cron-job.org
 [workflow dispatch event]: https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event
