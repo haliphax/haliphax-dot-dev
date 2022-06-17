@@ -153,18 +153,16 @@ module.exports = class Base {
 						(() => {
 							// Sidebar management
 							const wrapper = document.querySelector('.page-wrapper');
+							const dsh = 'data-sidebar-hidden';
 
-							if (matchMedia('(min-width:769px)').matches)
-								document.querySelector('.page-wrapper')
-									.removeAttribute('data-sidebar-hidden');
+							matchMedia('(min-width:769px)').matches
+								&& wrapper.removeAttribute(dsh);
 
 							document.getElementById('btn-sidebar-toggle')
-								.addEventListener('click', e => {
-									if (wrapper.getAttribute('data-sidebar-hidden'))
-										wrapper.removeAttribute('data-sidebar-hidden');
-									else
-										wrapper.setAttribute('data-sidebar-hidden', 'true');
-								});
+								.addEventListener('click', () =>
+									wrapper.getAttribute(dsh)
+										? wrapper.removeAttribute(dsh)
+										: wrapper.setAttribute(dsh, 'true'));
 						})();
 					</script>
 				</body>
