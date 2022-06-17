@@ -93,24 +93,24 @@ does not take place if there is nothing to update.
 
 ```shell
 # this could fail and end your workflow early
-node tasks/someTask.mjs
+npm run check-twitch
 ```
 
 ```shell
 # this will always proceed to the next step
-node tasks/someTask.mjs || true
+npm run check-twitch || true
 ```
 
 ```shell
 # this will set the shell variable DIFF to 1 if there are differences while
 # also proceeding to the next step
-node tasks/someTask.mjs || DIFF=1
+npm run check-twitch || DIFF=1
 ```
 
 ### Twitch data
 
 ```shell
-node tasks/checkTwitch.mjs
+npm run check-twitch
 ```
 
 Uses the Twitch API to retrieve live stream and VOD information
@@ -120,7 +120,7 @@ Uses the Twitch API to retrieve live stream and VOD information
 ### YouTube data
 
 ```shell
-node tasks/checkYouTube.mjs
+npm run check-youtube
 ```
 
 Uses the YouTube Data API to retrieve latest video information

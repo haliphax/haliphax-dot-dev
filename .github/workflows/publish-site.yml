@@ -29,12 +29,8 @@ jobs:
         TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
         YT_API_KEY: ${{ secrets.YT_API_KEY }}
       run: |
-        #--- pull external data
-        node tasks/checkTwitch.mjs || true
-        node tasks/checkYouTube.mjs || true
-
-        #--- build site
-        npx @11ty/eleventy
+        #--- pull external data and build site
+        npm run full
 
         #--- publish to GitHub Pages
         git config user.email git@github.com

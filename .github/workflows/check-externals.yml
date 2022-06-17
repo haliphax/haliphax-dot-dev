@@ -29,12 +29,12 @@ jobs:
       run: |
         #--- compare API response with locally cached JSON data
         DIFF=0
-        node tasks/checkTwitch.mjs || DIFF=1
-        node tasks/checkYouTube.mjs || DIFF=1
+        npm run check-twitch || DIFF=1
+        npm run check-youtube || DIFF=1
         [ $DIFF == 0 ] && exit 0
 
         #--- data is different; rebuild the site
-        npx @11ty/eleventy
+        npm run build
 
         #--- publish to GitHub Pages
         git config user.email git@github.com
