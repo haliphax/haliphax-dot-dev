@@ -1,17 +1,18 @@
 const cfgFunctions = require('./11ty/functions/_config');
 const cfgLayouts = require('./11ty/layouts/_config');
+const cfgLibraries = require('./11ty/lib/_config');
+const cfgPlugins = require('./11ty/plugins/_config');
 const cfgTransforms = require('./11ty/transforms/_config');
 const fs = require('fs');
-const markdownLibrary = require('./11ty/lib/markdownIt');
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
 
 module.exports = cfg => {
 	cfgFunctions(cfg);
 	cfgLayouts(cfg);
+	cfgLibraries(cfg);
+	cfgPlugins(cfg);
 	cfgTransforms(cfg);
+
 	cfg.addPassthroughCopy({ 'static': '/' });
-	cfg.addPlugin(syntaxHighlight);
-	cfg.setLibrary('md', markdownLibrary);
 
 	// custom excerpt marker
 	cfg.setFrontMatterParsingOptions({
