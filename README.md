@@ -87,7 +87,13 @@ Uses the YouTube Data API to retrieve latest video information
 
 - Task: [checkYouTube.mjs]
 
-## Automatic publish on merge
+## Workflows
+
+This site is hosted entirely on GitHub Pages. Both its main publishing and
+periodic update methods make use of GitHub Actions workflows to update the live
+site automatically when new content or data is available.
+
+### Automatic publish on merge
 
 When the `master` branch of this repository is updated, a GitHub workflow will
 regenerate the site and update the `gh-pages` branch. This causes the GitHub
@@ -96,7 +102,7 @@ new content.
 
 - Workflow: [publish-site.yml]
 
-## Periodic updates
+### Periodic updates
 
 This site is periodically updated by way of a [hosted cronjob] and a GitHub
 workflow. Every 5 minutes, the cronjob runs the workflow responsible for
