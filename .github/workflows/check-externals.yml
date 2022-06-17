@@ -1,4 +1,4 @@
-name: Check external content sources
+name: Check external data sources
 
 on:
   workflow_dispatch:

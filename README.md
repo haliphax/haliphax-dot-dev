@@ -47,6 +47,20 @@ of `1`. This is used to chain them together with an early exit in the GitHub
 workflow responsible for polling external data sources so that a publish action
 does not take place if there is nothing to update.
 
+> **Note:** Because they will end with an exit code of `1` when there are
+> differences, this must be accounted for when running them individually in a
+> workflow. See examples below.
+
+```shell
+# this could fail and end your workflow early
+node tasks/getTwitchData.mjs
+```
+
+```shell
+# this will always proceed to the next step
+node tasks/getTwitchData.mjs || true
+```
+
 ### Twitch data
 
 ```shell
