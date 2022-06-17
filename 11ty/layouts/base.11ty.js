@@ -25,7 +25,6 @@ const generateSidebarLink = ({ icon, name, url}) => /*html*/`
 
 module.exports = class Base {
 	async render(data) {
-		const twitchData = await this.getTwitchData();
 		const ogTitle = this.metaEncode(data.ogTitle ?? data.title);
 		const ogAuthor = this.metaEncode(data.ogAuthor ?? data.metaDefaults.author);
 		const ogType = data.ogType ?? data.metaDefaults.openGraphType;
@@ -124,7 +123,7 @@ module.exports = class Base {
 							</div>
 							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
-									${!twitchData.live ? ''
+									${!data.twitch?.live ? ''
 										: /*html*/`
 											<div class="alert alert-primary text-center mb-20" id="twitch-live">
 													I'm streaming on Twitch <em><strong>right now</strong></em>.  You should stop by.

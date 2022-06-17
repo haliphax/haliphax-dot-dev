@@ -2,3 +2,5 @@
 .vscode/
 docs/
 node_modules/
+twitch.json
+youtube.json

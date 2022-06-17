@@ -1,18 +1,16 @@
-name: Publish site
+name: Check external content sources
 
 on:
-
-  push:
-    branches: [ master ]
-
   workflow_dispatch:
 
 jobs:
-  publish:
+  check:
     runs-on: ubuntu-latest
     steps:
 
     - uses: actions/checkout@v2
+      with:
+        ref: gh-pages
 
     - uses: actions/setup-node@v2
       with:
@@ -22,19 +20,17 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Publish site
+    - name: Check sources
       env:
         TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
         TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
         TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
         YT_API_KEY: ${{ secrets.YT_API_KEY }}
       run: |
-        mkdir docs
-        node tasks/checkTwitch.mjs || true
-        node tasks/checkYouTube.mjs || true
+        node tasks/checkTwitch.mjs && node tasks/checkYouTube.mjs && exit 0
         npx @11ty/eleventy
         git config user.email git@github.com
         git config user.name 'GitHub Actions'
         git add -f docs twitch.json youtube.json
-        git commit -m 'publish site'
-        git push -f -u origin master:gh-pages
+        git commit -m 'external content update'
+        git push -f -u origin gh-pages
