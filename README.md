@@ -75,6 +75,8 @@ node tasks/checkTwitch.mjs
 
 Uses the Twitch API to retrieve live stream and VOD information
 
+- Task: [checkTwitch.mjs]
+
 ### YouTube data
 
 ```shell
@@ -82,6 +84,8 @@ node tasks/checkYouTube.mjs
 ```
 
 Uses the YouTube Data API to retrieve latest video information
+
+- Task: [checkYouTube.mjs]
 
 ## Automatic publish on merge
 
@@ -104,6 +108,8 @@ data since the last execution of the workflow, the site will be re-published
 
 
 [Eleventy]: https://11ty.dev
+[checkTwitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/checkTwitch.mjs
+[checkYouTube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/checkYouTube.mjs
 [publish-site.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/publish-site.yml
 [hosted cronjob]: https://cron-job.org
 [check-externals.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/check-externals.yml
