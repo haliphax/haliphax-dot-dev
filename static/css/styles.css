@@ -188,8 +188,13 @@ samp:not([class*="language-"])
 	text-rendering: auto;
 }
 
+/* align-items: center */
+.ai-center {
+	align-items: center !important;
+}
+
 /* screen reader only */
-.visually-hidden {
+.sr-only {
 	display: block;
 	position: absolute;
 	left: -100%;
