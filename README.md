@@ -90,6 +90,8 @@ regenerate the site and update the `gh-pages` branch. This causes the GitHub
 Pages publishing workflow to activate, which will update the live site with any
 new content.
 
+- Workflow: [publish-site.yml]
+
 ## Periodic updates
 
 This site is periodically updated by way of a [hosted cronjob] and a GitHub
@@ -98,6 +100,10 @@ polling external data sources. If any of the external sources have updated
 data since the last execution of the workflow, the site will be re-published
 (along with the new data).
 
+- Workflow: [check-externals.yml]
+
 
 [Eleventy]: https://11ty.dev
+[publish-site.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/publish-site.yml
 [hosted cronjob]: https://cron-job.org
+[check-externals.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/check-externals.yml
