@@ -43,9 +43,9 @@ together and to expose a single function to the main Eleventy configuration
 function. In this way, the complexity of the category's setup is abstracted
 from the main configuration and it makes for less clutter.
 
-An example: All of your layout templates are under `layouts`, and a single
-function in `layouts/_config.js` is used by the main Eleventy configuration
-function to assign each of them an alias. They are loaded like so:
+> **Example:** All of your layout templates are under `layouts`, and a single
+> function in `layouts/_config.js` is used by the main Eleventy configuration
+> function to assign each of them an alias. They are loaded like so:
 
 ```js
 // .eleventy.js
@@ -57,10 +57,10 @@ module.exports = cfg => {
 };
 ```
 
-When you need to make modifications to your layout setup, you will be working
-strictly with the files contained in this directory. Similar mechanisms exist
-for each of the other categories, though their configuration functions' content
-may differ slightly.
+> When you need to make modifications to your layout setup, you will be working
+> strictly with the files contained in this directory. Similar mechanisms exist
+> for each of the other categories, though their configuration functions'
+> content may differ slightly.
 
 ## Environment variables
 
