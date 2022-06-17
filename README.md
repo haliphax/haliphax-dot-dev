@@ -1,6 +1,7 @@
 # haliphax.dev
 
-The source code for https://haliphax.dev and its accompanying processes
+The source code for https://haliphax.dev and its accompanying processes;
+proudly built with [Eleventy]!
 
 ## Directory structure
 
@@ -78,4 +79,5 @@ data since the last execution of the workflow, the site will be re-published
 (along with the new data).
 
 
+[Eleventy]: https://11ty.dev
 [hosted cronjob]: https://cron-job.org
