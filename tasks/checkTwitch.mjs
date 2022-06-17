@@ -55,8 +55,8 @@ for (let vod of vods) {
 }
 
 const difference = twitchData?.live !== cached?.live
-	|| !twitchData?.latestVod.thumbnail_url.localeCompare(
-		cached?.latestVod.thumbnail_url);
+	|| twitchData?.latestVod.thumbnail_url.localeCompare(
+		cached?.latestVod.thumbnail_url) !== 0;
 
 if (difference) {
 	console.log('Updating Twitch data...');
