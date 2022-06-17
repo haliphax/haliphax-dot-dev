@@ -8,7 +8,7 @@ dotenv.config();
 var cached = null;
 
 try {
-	cached = fs.readFileSync('twitch.json');
+	cached = JSON.parse(fs.readFileSync('twitch.json', { encoding: 'utf-8' }));
 }
 catch (e) {
 	//
@@ -17,6 +17,7 @@ catch (e) {
 const twitchData = {
 	live: false,
 	latestVod: {
+		id: null,
 		image: null,
 		title: null,
 		description: null,
@@ -55,8 +56,7 @@ for (let vod of vods) {
 }
 
 const difference = twitchData?.live !== cached?.live
-	|| twitchData?.latestVod.thumbnail_url.localeCompare(
-		cached?.latestVod.thumbnail_url) !== 0;
+	|| twitchData?.latestVod.id !== cached?.latestVod.id;
 
 if (difference) {
 	console.log('Updating Twitch data...');

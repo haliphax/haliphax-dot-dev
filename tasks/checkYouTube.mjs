@@ -9,7 +9,7 @@ const apiKey = process.env.YT_API_KEY;
 var cached = null;
 
 try {
-	cached = JSON.parse(fs.readFileSync('youtube.json'));
+	cached = JSON.parse(fs.readFileSync('youtube.json', { encoding: 'utf-8' }));
 }
 catch (e) {
 	//
