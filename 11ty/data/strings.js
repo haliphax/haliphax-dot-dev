@@ -1,4 +1,5 @@
 module.exports = {
+	githubRoot: 'https://github.com/haliphax/haliphax-dot-dev/edit/master',
 	header: 'haliphax',
 	siteMenuHeader: 'Site',
 	siteName: 'haliphax.dev',

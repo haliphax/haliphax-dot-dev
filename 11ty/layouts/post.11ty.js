@@ -44,13 +44,23 @@ module.exports = class Post {
 			data.content.replace(/<\/?h\d+[^>]*>/ig, x =>
 				x.replace(/\d/, d => parseInt(d) + 3)));
 		const posted = this.page.date.toISOString().replace(/T.*$/, '');
+		const path = this.page.inputPath.substring(1);
 
 		return /*html*/`
 			${this.renderTags(data.tags)}
-			<small class="d-block text-muted mb-10">
-				<i class="fa fa-book"></i>
-				Reading time: ${data.readingTime}
-			</small>
+			<div class="d-block mb-10 d-sm-flex flex-row flex-grow-1">
+				<small class="d-block text-muted d-sm-flex flex-fill ai-center">
+					<i class="fa fa-clock" aria-hidden="true">&nbsp;</i>
+					Reading time: ${data.readingTime}
+				</small>
+				<small class="d-block d-sm-flex">
+					<a href="${data.strings.githubRoot}${path}"
+						class="no-external">
+						<i class="fa fa-edit" aria-hidden="true"></i>
+						Suggest an edit
+					</a>
+				</small>
+			</div>
 			<div class="card border mx-0 pb-0 pt-5 mt-0 mb-0">
 				${reformatted}
 			</div>
