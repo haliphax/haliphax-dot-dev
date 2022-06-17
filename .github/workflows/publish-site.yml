@@ -29,14 +29,14 @@ jobs:
         TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
         YT_API_KEY: ${{ secrets.YT_API_KEY }}
       run: |
-        #--- pull external data ---#
+        #--- pull external data
         node tasks/checkTwitch.mjs || true
         node tasks/checkYouTube.mjs || true
 
-        #--- build site ---#
+        #--- build site
         npx @11ty/eleventy
 
-        #--- publish to GitHub Pages ---#
+        #--- publish to GitHub Pages
         git config user.email git@github.com
         git config user.name 'GitHub Actions'
         git add -f docs 11ty/data/external/*.json

@@ -27,16 +27,16 @@ jobs:
         TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
         YT_API_KEY: ${{ secrets.YT_API_KEY }}
       run: |
-        #--- compare API response with locally cached JSON data ---#
+        #--- compare API response with locally cached JSON data
         DIFF=0
         node tasks/checkTwitch.mjs || DIFF=1
         node tasks/checkYouTube.mjs || DIFF=1
         [ $DIFF == 0 ] && exit 0
 
-        #--- data is different; rebuild the site ---#
+        #--- data is different; rebuild the site
         npx @11ty/eleventy
 
-        #--- publish to GitHub Pages ---#
+        #--- publish to GitHub Pages
         git config user.email git@github.com
         git config user.name 'GitHub Actions'
         git add -f docs 11ty/data/external/*.json

@@ -1,5 +1,5 @@
 .env
 .vscode/
-11ty/data/external/
+11ty/data/external/*.json
 docs/
 node_modules/
