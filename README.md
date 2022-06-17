@@ -146,9 +146,9 @@ new content.
 
 This site is periodically updated by way of a [hosted cronjob] and a GitHub
 workflow. Every 5 minutes, the cronjob runs the workflow responsible for
-polling external data sources. If any of the external sources have updated
-data since the last execution of the workflow, the site will be re-published
-(along with the new data).
+polling external data sources by using a [workflow dispatch event]. If any of
+the external sources have updated data since the last execution of the
+workflow, the site will be re-published (along with the new data).
 
 - Workflow: [check-externals.yml]
 
@@ -158,4 +158,5 @@ data since the last execution of the workflow, the site will be re-published
 [checkYouTube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/checkYouTube.mjs
 [publish-site.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/publish-site.yml
 [hosted cronjob]: https://cron-job.org
+[workflow dispatch event]: https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event
 [check-externals.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/check-externals.yml
