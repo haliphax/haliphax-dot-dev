@@ -27,7 +27,10 @@ jobs:
         TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
         YT_API_KEY: ${{ secrets.YT_API_KEY }}
       run: |
-        node tasks/checkTwitch.mjs && node tasks/checkYouTube.mjs && exit 0
+        DIFF=0
+        node tasks/checkTwitch.mjs || DIFF=1
+        node tasks/checkYouTube.mjs || DIFF=1
+        [ $DIFF == 0 ] && exit 0
         npx @11ty/eleventy
         git config user.email git@github.com
         git config user.name 'GitHub Actions'
