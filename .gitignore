@@ -1,6 +1,5 @@
 .env
 .vscode/
+11ty/data/external/
 docs/
 node_modules/
-twitch.json
-youtube.json

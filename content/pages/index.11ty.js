@@ -11,10 +11,10 @@ module.exports = class Index {
 	}
 
 	async render(data) {
-		const vod = data.twitch?.latestVod;
+		const vod = data.external.twitch?.latestVod;
 		const vodDescription =
 			this.getDescription(vod?.description, data.misc.blurbLength);
-		const yt = data.youTube;
+		const yt = data.external.youtube;
 		const ytDescription =
 			this.getDescription(yt?.snippet.description, data.misc.blurbLength);
 

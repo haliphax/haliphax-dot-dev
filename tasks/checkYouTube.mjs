@@ -9,7 +9,8 @@ const apiKey = process.env.YT_API_KEY;
 var cached = null;
 
 try {
-	cached = JSON.parse(fs.readFileSync('youtube.json', { encoding: 'utf-8' }));
+	cached = JSON.parse(
+		fs.readFileSync('11ty/data/external/youtube.json', { encoding: 'utf-8' }));
 }
 catch (e) {
 	//
@@ -30,7 +31,9 @@ const difference = youtubeData?.id !== cached?.id;
 
 if (difference) {
 	console.log('Updating YouTube data...');
-	fs.writeFileSync('youtube.json', JSON.stringify(youtubeData));
+	fs.writeFileSync(
+		'11ty/data/external/youtube.json',
+		JSON.stringify(youtubeData));
 	process.exit(1);
 }
 

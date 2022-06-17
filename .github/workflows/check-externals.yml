@@ -31,6 +31,6 @@ jobs:
         npx @11ty/eleventy
         git config user.email git@github.com
         git config user.name 'GitHub Actions'
-        git add -f docs twitch.json youtube.json
+        git add -f docs 11ty/data/external/*.json
         git commit -m 'external content update'
         git push -f -u origin gh-pages

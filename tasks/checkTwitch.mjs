@@ -8,7 +8,8 @@ dotenv.config();
 var cached = null;
 
 try {
-	cached = JSON.parse(fs.readFileSync('twitch.json', { encoding: 'utf-8' }));
+	cached = JSON.parse(
+		fs.readFileSync('11ty/data/external/twitch.json', { encoding: 'utf-8' }));
 }
 catch (e) {
 	//
@@ -60,7 +61,9 @@ const difference = twitchData?.live !== cached?.live
 
 if (difference) {
 	console.log('Updating Twitch data...');
-	fs.writeFileSync('twitch.json', JSON.stringify(twitchData));
+	fs.writeFileSync(
+		'11ty/data/external/twitch.json',
+		JSON.stringify(twitchData));
 	process.exit(1);
 }
 

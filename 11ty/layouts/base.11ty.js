@@ -123,11 +123,11 @@ module.exports = class Base {
 							</div>
 							<div class="container px-20 pb-10">
 								<main id="main-content" class="pt-10">
-									${!data.twitch?.live ? ''
+									${!data.external.twitch?.live ? ''
 										: /*html*/`
 											<div class="alert alert-primary text-center mb-20" id="twitch-live">
 													I'm streaming on Twitch <em><strong>right now</strong></em>.  You should stop by.
-													<a href="https://www.twitch.tv/${data.twitch.username}"
+													<a href="https://www.twitch.tv/${process.env.TWITCH_USERNAME}"
 														class="btn btn-sm btn-primary ml-10 no-external">
 														<span class="fab fa-twitch"></span>
 														Let's go!
