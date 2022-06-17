@@ -1,5 +1,5 @@
-const fs = require('fs'),
-	md = require('../lib/markdownIt');
+const fs = require('fs');
+const md = require('../libraries/markdownIt');
 
 const getContent = data => fs.readFileSync(data.page.inputPath, 'utf8')
 	.replace(/^(.|\n)+?---\n/m, '')
