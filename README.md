@@ -26,6 +26,42 @@ I personally find it much easier to reason with.
   - `img` Images
 - `tasks` Node scripts for out-of-band tasks
 
+## Configuration structure
+
+In addition to a nonstandard directory structure, I have built my own
+configuration structure in an effort to wrangle the many pieces'
+responsibilities.
+
+The various pieces Eleventy needs to consume during
+its configuration phase are all divided into their own categorical folders
+beneath the `11ty` directory. Each of these folders contains a `_config.js`
+file (with the exception of the `data` folder, which is automatically parsed by
+Eleventy).
+
+The `_config.js` file is used to collate all of that category's members
+together and to expose a single function to the main Eleventy configuration
+function. In this way, the complexity of the category's setup is abstracted
+from the main configuration and it makes for less clutter.
+
+An example: All of your layout templates are under `layouts`, and a single
+function in `layouts/_config.js` is used by the main Eleventy configuration
+function to assign each of them an alias. They are loaded like so:
+
+```js
+// .eleventy.js
+const cfgLayouts = require('./11ty/layouts/_config');
+
+module.exports = cfg => {
+	cfgLayouts(cfg);
+	// ...
+};
+```
+
+When you need to make modifications to your layout setup, you will be working
+strictly with the files contained in this directory. Similar mechanisms exist
+for each of the other categories, though their configuration functions' content
+may differ slightly.
+
 ## Environment variables
 
 There are several environment variables required for the site to operate. These
