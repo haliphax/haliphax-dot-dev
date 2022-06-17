@@ -5,6 +5,10 @@ proudly built with [Eleventy]!
 
 ## Directory structure
 
+The directory structure used by this site may be considered "nonstandard" when
+compared to the Eleventy documentation and various starter site templates, but
+I personally find it much easier to reason with.
+
 - `.github` Definitions for GitHub actions
 - `11ty` Eleventy code and data
   - `data` Global data
