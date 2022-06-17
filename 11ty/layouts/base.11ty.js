@@ -22,7 +22,6 @@ const generateSidebarLink = ({ icon, name, url}) => /*html*/`
 	</a>
 	`;
 
-
 module.exports = class Base {
 	async render(data) {
 		const ogTitle = this.metaEncode(data.ogTitle ?? data.title);
