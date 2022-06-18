@@ -4,7 +4,7 @@ const anchor = require('markdown-it-anchor');
 
 const md = markdownIt({
 	html: true,
-	linkify: true,
+	linkify: false,
 	xhtmlOut: true,
 });
 
