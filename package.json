@@ -20,7 +20,7 @@
     "serve": "npx @11ty/eleventy --serve",
 		"check": "npm run check-twitch && npm run check-youtube",
 		"check-all": "npm run check-twitch; npm run check-youtube; true",
-		"check-twitch": "node tasks/checkTwitch.mjs",
-		"check-youtube": "node tasks/checkYouTube.mjs"
+		"check-twitch": "node tasks/check-twitch.mjs",
+		"check-youtube": "node tasks/check-youtube.mjs"
   }
 }

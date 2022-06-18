@@ -115,7 +115,7 @@ npm run check-twitch
 
 Uses the Twitch API to retrieve live stream and VOD information
 
-- Task: [checkTwitch.mjs]
+- Task: [check-twitch.mjs]
 
 ### YouTube data
 
@@ -125,7 +125,7 @@ npm run check-youtube
 
 Uses the YouTube Data API to retrieve latest video information
 
-- Task: [checkYouTube.mjs]
+- Task: [check-youtube.mjs]
 
 ## Workflows
 
@@ -154,8 +154,8 @@ workflow, the site will be re-published (along with the new data).
 
 
 [Eleventy]: https://11ty.dev
-[checkTwitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/checkTwitch.mjs
-[checkYouTube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/checkYouTube.mjs
+[check-twitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-twitch.mjs
+[check-youtube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-youtube.mjs
 [GitHub Pages]: https://pages.github.com
 [GitHub Actions]: https://github.com/features/actions
 [publish-site.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/publish-site.yml
