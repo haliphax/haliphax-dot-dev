@@ -50,11 +50,11 @@ counterparts. It can also be used to turn radio button lists into an image-based
 			$(this).css("display", "none");
 			// hide the label (if any)
 			$("label[for=\"" + radioid + "\"]").css("display", "none");
-			// inject the &lt;span /&gt; for our image replacement
-			var html = "&lt;span class=\"radio_img"
+			// inject the <span /> for our image replacement
+			var html = "<span class=\"radio_img"
 				+ ($(this).is(":checked") ? " checked" : "")
 				+ "\" id=\"" + imgid + "\" data-imgradiogroup=\""
-				+ $(this).attr("name") + "\"&gt;&lt;/span&gt;";
+				+ $(this).attr("name") + "\"></span>";
 			$(html).insertAfter($("#" + radioid));
 			$("#" + imgid)
 				// remember underlying element

@@ -27,7 +27,7 @@ try
 	bool failed = true;
 	int failedCount = 0;
 
-	while(failed && failedCount &lt; 30)
+	while(failed && failedCount < 30)
 	try
 	{
 	s = System.IO.File.Create(YourMutexFileName, 1,

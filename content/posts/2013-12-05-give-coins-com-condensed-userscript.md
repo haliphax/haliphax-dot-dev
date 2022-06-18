@@ -42,7 +42,7 @@ setTimeout(function(){
 	rows[0].parentNode.removeChild(rows[0]);
 	var els = rows[1].querySelectorAll('.widget');
 
-	for(var i = 0; i &lt; els.length; i++) {
+	for(var i = 0; i < els.length; i++) {
 		if(! els.hasOwnProperty(i)) continue;
 
 		var widget = els[i].parentNode;

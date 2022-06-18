@@ -35,7 +35,7 @@ row's `CheckBox` control:
 Obviously, the `chkAll` item needs some client-side script before it's
 going to do anything meaningful. You could either place the following
 jQuery code into the `onchange` event for `chkAll`, or we can wire up an
-event handler in a `&gt;script />` block:
+event handler in a `<script>` block:
 
 **Javascript (jQuery) code:**
 
