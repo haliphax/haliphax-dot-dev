@@ -16,20 +16,21 @@ row's `CheckBox` control:
 
 **ASP.NET Code:**
 
-    #!xml
-    <asp:GridView ID="myGridView" runat="server">
-        <Columns>
-            <asp:TemplateField>
-                <HeaderTemplate>
-                    <input type="checkbox" id="chkAll" />
-                </HeaderTemplate>
-                <ItemTemplate>
-                    <asp:CheckBox ID="myCheckBox" runat="server" />
-                </ItemTemplate>
-            </asp:TemplateField>
-            <!-- other fields here ... -->
-        </Columns>
-    </asp:GridView>
+```xml
+<asp:GridView ID="myGridView" runat="server">
+	<Columns>
+		<asp:TemplateField>
+			<HeaderTemplate>
+				<input type="checkbox" id="chkAll" />
+			</HeaderTemplate>
+			<ItemTemplate>
+				<asp:CheckBox ID="myCheckBox" runat="server" />
+			</ItemTemplate>
+		</asp:TemplateField>
+		<!-- other fields here ... -->
+	</Columns>
+</asp:GridView>
+```
 
 Obviously, the `chkAll` item needs some client-side script before it's
 going to do anything meaningful. You could either place the following
@@ -38,11 +39,12 @@ event handler in a `&gt;script />` block:
 
 **Javascript (jQuery) code:**
 
-    #!js
-    $('#chkAll').change(function() {
-        $('#<%=myGridView.ClientID%> input[type=checkbox]')
-            .attr('checked', $(this).attr('checked'));
-    });
+```js
+$('#chkAll').change(function() {
+	$('#<%=myGridView.ClientID%> input[type=checkbox]')
+		.attr('checked', $(this).attr('checked'));
+});
+```
 
 It's as simple as that! Checking or un-checking `chkAll` will cause each
 `CheckBox` control within the `GridView` to inherit its value. If you've

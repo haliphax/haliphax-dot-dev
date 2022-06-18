@@ -13,8 +13,9 @@ development environment (you must keep in mind that this method will not work
 with
 [encrypted configuration files](https://docs.microsoft.com/en-us/previous-versions/aspnet/dtkwfdky%28v=vs.100%29)).
 
-	#!powershell
-	$conf = [XML](Get-Content 'App_Config/ConnectionStrings.config')
-	$constr = $conf.SelectSingleNode('connectionStrings/add[@name="MyConnectionString"]').connectionString
-	$con = New-Object System.Data.SqlClient.SqlConnection($constr)
-	# etc.
+```powershell
+$conf = [XML](Get-Content 'App_Config/ConnectionStrings.config')
+$constr = $conf.SelectSingleNode('connectionStrings/add[@name="MyConnectionString"]').connectionString
+$con = New-Object System.Data.SqlClient.SqlConnection($constr)
+# etc.
+```

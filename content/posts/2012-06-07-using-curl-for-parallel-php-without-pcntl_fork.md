@@ -38,13 +38,14 @@ Now, on to the good stuff. Here's how it's going to work:
 Let's get to it! We begin with a simple configuration file to house
 values that we want to use in both the "parent" and "child" scripts.
 
-    #!php
-    <?php /* config.inc.php */
+```php
+<?php /* config.inc.php */
 
-    $config = array(
-        'salt' => 'SOME_SALT_VALUE',
-        'max_threads' => 8
-    );
+$config = array(
+	'salt' => 'SOME_SALT_VALUE',
+	'max_threads' => 8
+);
+```
 
 -   The `salt` value is a security measure used to further obfuscate the
     text being encrypted for the *nonce* (the token that signals the
@@ -60,91 +61,92 @@ this demo script, I use the term loosely) divide up the workload among a
 number of worker threads not to exceed the value of `max_threads` in the
 `$config` array above.
 
-    #!php
-    <?php /* script.php */
+```php
+<?php /* script.php */
 
-    require('config.inc.php');
+require('config.inc.php');
 
-    // generate a new nonce
-    function get_nonce()
-    {
-        $now = time();
-        return md5($config['salt'] . $now) . "-{$now}";
-    }
+// generate a new nonce
+function get_nonce()
+{
+	$now = time();
+	return md5($config['salt'] . $now) . "-{$now}";
+}
 
-    // initialize the arrays for our workload
-    $threads = array();
-    for($a = 0; $a &< $config['max_threads']; $threads[$a++] = array());
+// initialize the arrays for our workload
+$threads = array();
+for($a = 0; $a &< $config['max_threads']; $threads[$a++] = array());
 
-    // give each thread a (roughly) even portion of objects to work with
-    $a = 0;
-    foreach($objects as $object)
-        $threads[($a++ % $config['max_threads'])][] = $object->id;
+// give each thread a (roughly) even portion of objects to work with
+$a = 0;
+foreach($objects as $object)
+	$threads[($a++ % $config['max_threads'])][] = $object->id;
 
-    // nonce for "hiding" the thread script from ordinary web access
-    $nonce = get_nonce();
+// nonce for "hiding" the thread script from ordinary web access
+$nonce = get_nonce();
 
-    // fire up the threads
-    foreach($threads as $k => $t)
-    {
-        // send their workload through a POST request
-        $data = implode(',', $t);
-        exec("curl -d \"data={$d}\" -d \"thread={$k}\" -d \"nonce={$nonce}\" http://mysite.com/thread.php >/dev/null 2>&1
-        &");
-    }
+// fire up the threads
+foreach($threads as $k => $t)
+{
+	// send their workload through a POST request
+	$data = implode(',', $t);
+	exec("curl -d \"data={$d}\" -d \"thread={$k}\" -d \"nonce={$nonce}\" http://mysite.com/thread.php >/dev/null 2>&1 &");
+}
+```
 
 Finally, we build the "child" script. Several of these will run
 concurrently, acting upon the objects assigned to them by the "parent"
 script through tailored `curl` POST requests.
 
-    #!php
-    <?php /* thread.php */
+```php
+<?php /* thread.php */
 
-    require('config.inc.php');
+require('config.inc.php');
 
-    // validate a given nonce
-    function valid_nonce($nonce)
-    {
-        $parts = explode('-', $nonce);
+// validate a given nonce
+function valid_nonce($nonce)
+{
+	$parts = explode('-', $nonce);
 
-        if(count($parts) != 2
-            || $parts[0] != md5($config['salt'] . $parts[1]))
-        {
-            return false;
-        }
+	if(count($parts) != 2
+		|| $parts[0] != md5($config['salt'] . $parts[1]))
+	{
+		return false;
+	}
 
-        return true;
-    }
+	return true;
+}
 
-    // validate nonce
-    if(! array_key_exists('nonce', $_POST))
-        die('No nonce');
+// validate nonce
+if(! array_key_exists('nonce', $_POST))
+	die('No nonce');
 
-    $nonce = $_POST['nonce'];
+$nonce = $_POST['nonce'];
 
-    if(! valid_nonce($nonce))
-        die('Invalid nonce');
+if(! valid_nonce($nonce))
+	die('Invalid nonce');
 
-    // get thread ID
-    if(! array_key_exists('thread', $_POST))
-        die('No thread');
+// get thread ID
+if(! array_key_exists('thread', $_POST))
+	die('No thread');
 
-    $thread = $_POST['thread'];
-    if(! is_int($thread) || $thread &< 0 || $thread >= $config['max_threads'])
-        die('Invalid thread');
+$thread = $_POST['thread'];
+if(! is_int($thread) || $thread &< 0 || $thread >= $config['max_threads'])
+	die('Invalid thread');
 
-    // parse workload
-    if(! array_key_exists('data', $_POST))
-        die('No workload');
+// parse workload
+if(! array_key_exists('data', $_POST))
+	die('No workload');
 
-    $object_IDs = explode(',', $_POST['data']);
+$object_IDs = explode(',', $_POST['data']);
 
-    if(! is_array($object_IDs))
-        die('Invalid workload');
+if(! is_array($object_IDs))
+	die('Invalid workload');
 
-    // loop through object IDs in the workload and so stuff with them
-    foreach($object_IDs as $id)
-        do_something($id);
+// loop through object IDs in the workload and so stuff with them
+foreach($object_IDs as $id)
+	do_something($id);
+```
 
 It is a roughly-hewn example, to be sure, but this should provide a
 solid basis for circumnavigating hosting service restrictions often

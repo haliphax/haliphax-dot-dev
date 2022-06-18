@@ -17,44 +17,45 @@ the XML document:
 
 **Javascript code:**
 
-    #!js
-    function loadXML(dname)  
-    {  
-        var xmlDoc;
+```js
+function loadXML(dname)
+{
+	var xmlDoc;
 
-        // IE ActiveX  
-        try {  
-            xmlDoc = new ActiveXObject("Microsoft.XMLDOM");  
-        } catch(e) {  
-            // Mozilla/Firefox, Opera (Also WebKit fallthrough)  
-            try {  
-                xmlDoc = document.implementation.createDocument("", "", null);  
-            } catch(e) {  
-                // Error  
-                alert("Cannot instantiate XMLDOM object\\n\\nError:\\n" + e.message);  
-                return(false);  
-            }  
-        }
+	// IE ActiveX
+	try {
+		xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+	} catch(e) {
+		// Mozilla/Firefox, Opera (Also WebKit fallthrough)
+		try {
+			xmlDoc = document.implementation.createDocument("", "", null);
+		} catch(e) {
+			// Error
+			alert("Cannot instantiate XMLDOM object\\n\\nError:\\n" + e.message);
+			return(false);
+		}
+	}
 
-        try {  
-            xmlDoc.async = false;  
-            xmlDoc.load(dname);  
-            return(xmlDoc);  
-        } catch(e) {  
-            // WebKit (Safari, Chrome) - AJAX fallback  
-            try {  
-                var xhr = new XMLHttpRequest();  
-                xhr.open("GET", dname, false);  
-                xhr.send(null);  
-                xmlDoc = xhr.responseXML;  
-                if(!xmlDoc) return(false);  
-                return(xmlDoc);  
-            } catch(e) {  
-                alert("Cannot instantiate XMLDOM object\\n\\nError:\\n" +  e.message);  
-                return(false);  
-            }  
-        }  
-    }
+	try {
+		xmlDoc.async = false;
+		xmlDoc.load(dname);
+		return(xmlDoc);
+	} catch(e) {
+		// WebKit (Safari, Chrome) - AJAX fallback
+		try {
+			var xhr = new XMLHttpRequest();
+			xhr.open("GET", dname, false);
+			xhr.send(null);
+			xmlDoc = xhr.responseXML;
+			if(!xmlDoc) return(false);
+			return(xmlDoc);
+		} catch(e) {
+			alert("Cannot instantiate XMLDOM object\\n\\nError:\\n" +  e.message);
+			return(false);
+		}
+	}
+}
+```
 
 True, you could use an AJAX call instead of creating an XMLDOM object
 (or using createDocument)... but the example serves a second purpose for

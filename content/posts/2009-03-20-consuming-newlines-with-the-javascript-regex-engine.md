@@ -30,10 +30,11 @@ pack it into a capture group along with the newline character (like so:
 
 **Javascript code:**
 
-    #!js
-    var pattern = /<p class="someClass"(.|\n)*<\/p>/g;  
-    var body = document.getElementsByTagName('body')[0];  
-    body.innerHTML = body.innerHTML.replace(pattern, '');
+```js
+var pattern = /<p class="someClass"(.|\n)*<\/p>/g;
+var body = document.getElementsByTagName('body')[0];
+body.innerHTML = body.innerHTML.replace(pattern, '');
+```
 
 In the example above, all instances of paragraph tags within the page's
 source that have the class *"someClass"* will be removed. *Note: To
@@ -54,10 +55,11 @@ Here is an example of the negated character set method:
 
 **Javascript code:**
 
-    #!js
-    var pattern = /<p class="someClass"[^<]*<\/p>/g;  
-    var body = document.getElementsByTagName('body')[0];  
-    body.innerHTML = body.innerHTML.replace(pattern, '');
+```js
+var pattern = /<p class="someClass"[^<]*<\/p>/g;
+var body = document.getElementsByTagName('body')[0];
+body.innerHTML = body.innerHTML.replace(pattern, '');
+```
 
 As you can see, it is nearly identical to the first example (except for
 the absence of the matching group and the presence of the negated

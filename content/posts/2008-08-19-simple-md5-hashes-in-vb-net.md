@@ -16,46 +16,48 @@ an MD5 hash for a given string...<!--more-->
 
 **VB.NET 3.5 Code:**
 
-    #!vbnet
-    Public Function hashGen( _  
-    ByVal sourceText As String) _  
-    As String  
-        ' retrieve byte array based on source text, then  
-        ' compute hash and convert to string  
-        Return Convert.ToBase64String(New MD5CryptoServiceProvider(). _  
-            ComputeHash(New UnicodeEncoding().GetBytes(sourceText)))  
-    End Function
+```vb
+Public Function hashGen( _
+ByVal sourceText As String) _
+As String
+	' retrieve byte array based on source text, then
+	' compute hash and convert to string
+	Return Convert.ToBase64String(New MD5CryptoServiceProvider(). _
+		ComputeHash(New UnicodeEncoding().GetBytes(sourceText)))
+End Function
+```
 
 In order to effectively use this hash value for verification, you will
 need a function that compares two hash values...
 
 **VB.NET 3.5 Code:**
 
-    #!vbnet
-    Public Function hashCompare( _  
-    ByVal firstHash As String, _  
-    ByVal compareText As String) _  
-    As Boolean  
-        ' generate hash for compareText  
-        Dim compareHash = hashGen(compareText)
+```vb
+Public Function hashCompare( _
+ByVal firstHash As String, _
+ByVal compareText As String) _
+As Boolean
+	' generate hash for compareText
+	Dim compareHash = hashGen(compareText)
 
-        ' if lengths are different, fail  
-        If firstHash.Length <> compareHash.Length Then  
-            Return False  
-        Else  
-            ' otherwise, compare value of each character  
-            Dim intCount As Integer = 0  
+	' if lengths are different, fail
+	If firstHash.Length <> compareHash.Length Then
+		Return False
+	Else
+		' otherwise, compare value of each character
+		Dim intCount As Integer = 0
 
-            For intCount = 0 To firstHash.Length - 1  
-                ' fail if different  
-                If firstHash(intCount) <> compareHash(intCount) Then  
-                    Return False  
-                End If  
-            Next
+		For intCount = 0 To firstHash.Length - 1
+			' fail if different
+			If firstHash(intCount) <> compareHash(intCount) Then
+				Return False
+			End If
+		Next
 
-            Return True  
-        End If  
-    End Function
+		Return True
+	End If
+End Function
+```
 
 These functions' place in an authentication procedure would involve
 hashing a user's entered password, for instance, and then comparing it

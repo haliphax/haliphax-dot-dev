@@ -24,8 +24,9 @@ applications and see if it doesn't make your life a whole lot easier:
 
 **Javascript bookmarklet:**
 
-    #!js
-    javascript:w=window.open();void(w.document.write('<pre>'+document.body.parentNode.innerHTML.replace(/</g,'<')+'</pre>'));
+```js
+javascript:w=window.open();void(w.document.write('<pre>'+document.body.parentNode.innerHTML.replace(/</g,'<')+'</pre>'));
+```
 
 That's all there is to it! Here's the procedure in a nutshell:
 

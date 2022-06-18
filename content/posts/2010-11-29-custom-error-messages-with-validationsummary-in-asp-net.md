@@ -16,15 +16,16 @@ for displaying custom error messages.<!--more-->
 
 **C# code:**
 
-    #!csharp
-    public class ValidationError : IValidator {
-        private string _ErrorMessage;
-        private bool _IsValid;
-        public string ErrorMessage { get { return this._ErrorMessage; } set { this._ErrorMessage = value; } }
-        public bool IsValid { get { return this._IsValid; } set { this._IsValid = value; } }
-        public ValidationError(string message) { this.ErrorMessage = message; }
-        public void Validate() { this.IsValid = false; }
-    }
+```cs
+public class ValidationError : IValidator {
+	private string _ErrorMessage;
+	private bool _IsValid;
+	public string ErrorMessage { get { return this._ErrorMessage; } set { this._ErrorMessage = value; } }
+	public bool IsValid { get { return this._IsValid; } set { this._IsValid = value; } }
+	public ValidationError(string message) { this.ErrorMessage = message; }
+	public void Validate() { this.IsValid = false; }
+}
+```
 
 In order to use the class in your code-behind, you just add a new
 instance of the `ValidationError` class to the `Validators` member of
@@ -32,9 +33,10 @@ your container.
 
 **C# code:**
 
-    #!csharp
-    Validators.Add(new ValidationError("There was a problem.  Everybody freak out!"));
-    Validate();
+```cs
+Validators.Add(new ValidationError("There was a problem.  Everybody freak out!"));
+Validate();
+```
 
 I suppose you could use this code to add the `CustomValidator` control
 anywhere you wanted to, but I generally add it to the `Page`'s

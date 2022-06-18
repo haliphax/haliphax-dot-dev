@@ -19,10 +19,12 @@ Have a look at the code yourself:<!--more-->
 
 **bbCode Thumbnailer:**
 
-    #!js
-    javascript:i=prompt('Photobucket URL');void(prompt('Copy and paste this','[url='+i+'][img]'+i.replace(/\/([\^./]+?\.[\^./]+?)$/,'/th_$1')+'[/img][/url]'));[/js]
+```js
+javascript:i=prompt('Photobucket URL');void(prompt('Copy and paste this','[url='+i+'][img]'+i.replace(/\/([\^./]+?\.[\^./]+?)$/,'/th_$1')+'[/img][/url]'));[/js]
+```
 
 **HTML Thumbnailer:**
 
-    #!js
-    javascript:i=prompt('Photobucket URL');void(prompt('Copy and paste this','<a href=\''+i+'\'><img src=\''+i.replace(/\/([\^./]+?\.[\^./]+?)$/,'/th_$1')+'\' \/><\/a>'));
+```js
+javascript:i=prompt('Photobucket URL');void(prompt('Copy and paste this','<a href=\''+i+'\'><img src=\''+i.replace(/\/([\^./]+?\.[\^./]+?)$/,'/th_$1')+'\' \/><\/a>'));
+```

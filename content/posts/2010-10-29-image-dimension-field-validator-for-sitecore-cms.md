@@ -13,83 +13,84 @@ height).<!--more-->
 *Note: In the code below, replace `your.namespace.validators` with
 something more suited to your particular project.*
 
-    #!csharp
-    using System.Runtime.Serialization;
-    using Sitecore.Data.Validators;
-    using System;
-    using Sitecore.Data.Items;
-    using System.Text;
+```cs
+using System.Runtime.Serialization;
+using Sitecore.Data.Validators;
+using System;
+using Sitecore.Data.Items;
+using System.Text;
 
-    namespace your.namespace.validators
-    {
-        [Serializable]
-        public class ImageDimensionValidator : Sitecore.Data.Validators.StandardValidator
-        {
-            public ImageDimensionValidator() { }
+namespace your.namespace.validators
+{
+	[Serializable]
+	public class ImageDimensionValidator : Sitecore.Data.Validators.StandardValidator
+	{
+		public ImageDimensionValidator() { }
 
-            public ImageDimensionValidator(SerializationInfo info, StreamingContext
-            context)
-            : base(info, context)
-            { }
+		public ImageDimensionValidator(SerializationInfo info, StreamingContext
+		context)
+		: base(info, context)
+		{ }
 
-            public override string Name
-            {
-                get
-                {
-                    return ("ImageDimensionValidator");
-                }
-            }
+		public override string Name
+		{
+			get
+			{
+				return ("ImageDimensionValidator");
+			}
+		}
 
-            protected override ValidatorResult GetMaxValidatorResult()
-            {
-                return (GetFailedResult(ValidatorResult.Error));
-            }
+		protected override ValidatorResult GetMaxValidatorResult()
+		{
+			return (GetFailedResult(ValidatorResult.Error));
+		}
 
-            protected override ValidatorResult Evaluate()
-            {
-                // set initial return value
-                ValidatorResult result = ValidatorResult.Valid;
-                // grab the target ImageField
-                Sitecore.Data.Fields.ImageField img = GetField();
-                /* ignore blank fields
-                 * (use the Sitecore-supplied Required validator if you want blank fields to fail) */
-                if(img.Value == "") return result;
-                // use a StringBuilder for constructing the result Text
-                StringBuilder txt = new StringBuilder("The image must be ");
+		protected override ValidatorResult Evaluate()
+		{
+			// set initial return value
+			ValidatorResult result = ValidatorResult.Valid;
+			// grab the target ImageField
+			Sitecore.Data.Fields.ImageField img = GetField();
+			/* ignore blank fields
+				* (use the Sitecore-supplied Required validator if you want blank fields to fail) */
+			if(img.Value == "") return result;
+			// use a StringBuilder for constructing the result Text
+			StringBuilder txt = new StringBuilder("The image must be ");
 
-                // are we checking width?
-                if (Parameters.ContainsKey("w"))
-                    // mismatch
-                    if (img.Width != Parameters["w"])
-                    {
-                        // add to result Text and fail
-                        txt.Append(string.Format("{0} pixels wide", Parameters["w"]));
-                        result = ValidatorResult.Error;
-                    }
+			// are we checking width?
+			if (Parameters.ContainsKey("w"))
+				// mismatch
+				if (img.Width != Parameters["w"])
+				{
+					// add to result Text and fail
+					txt.Append(string.Format("{0} pixels wide", Parameters["w"]));
+					result = ValidatorResult.Error;
+				}
 
-                // are we checking height?
-                if (Parameters.ContainsKey("h"))
-                    // mismatch
-                    if (img.Height != Parameters["h"])
-                    {
-                        // already failed width? if so, add separator text
-                        if(result == ValidatorResult.Error) txt.Append(" and ");
-                        // add to result Text and fail
-                        txt.Append(string.Format("{0} pixels tall", Parameters["h"]));
-                        result = ValidatorResult.Error;
-                    }
+			// are we checking height?
+			if (Parameters.ContainsKey("h"))
+				// mismatch
+				if (img.Height != Parameters["h"])
+				{
+					// already failed width? if so, add separator text
+					if(result == ValidatorResult.Error) txt.Append(" and ");
+					// add to result Text and fail
+					txt.Append(string.Format("{0} pixels tall", Parameters["h"]));
+					result = ValidatorResult.Error;
+				}
 
-                // failure - set Text to the StringBuilder value
-                if (result == ValidatorResult.Error)
-                {
-                    txt.Append(".");
-                    Text = txt.ToString();
-                }
+			// failure - set Text to the StringBuilder value
+			if (result == ValidatorResult.Error)
+			{
+				txt.Append(".");
+				Text = txt.ToString();
+			}
 
-                return result;
-            }
-        }
-    }
+			return result;
+		}
+	}
+}
+```
 
 Create a new field-level `Validation Rule` item in your *sitecore* tree
 (wherever you store your rules—in this particular project, they are

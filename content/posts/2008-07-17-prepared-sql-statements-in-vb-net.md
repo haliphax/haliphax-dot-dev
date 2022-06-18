@@ -18,33 +18,34 @@ prepared statement that will resist SQL injection techniques:
 
 **VB.NET 3.5 code:**
 
-    #!vbnet
-    Dim conn As SqlConnection ' Connection to SQL database server
-    Dim cmd As SqlCommand ' Command object to build + execute prepared statement
-    Dim dr As SqlDataReader ' Data reader object to retrieve query results
+```vb
+Dim conn As SqlConnection ' Connection to SQL database server
+Dim cmd As SqlCommand ' Command object to build + execute prepared statement
+Dim dr As SqlDataReader ' Data reader object to retrieve query results
 
-    Try
-        ' Connect to database using ConnectionStrings key
-        conn = New SqlConnection(ConfigurationManager.ConnectionStrings("databaseReader").ConnectionString)
-        ' Construct command object with parameterized query string
-        cmd = New SqlCommand("select Name from Locations where Code = @code and Active = 1", conn)
-        ' Add parameter and associated value to the command object
-        cmd.Parameters.AddWithValue("@code", Request.QueryString("code"))
-        ' Open the database connection and execute the command object's prepared statement
-        conn.Open()
-        ' The result set is aggregated into the DataReader object
-        dr = cmd.ExecuteReader()
+Try
+	' Connect to database using ConnectionStrings key
+	conn = New SqlConnection(ConfigurationManager.ConnectionStrings("databaseReader").ConnectionString)
+	' Construct command object with parameterized query string
+	cmd = New SqlCommand("select Name from Locations where Code = @code and Active = 1", conn)
+	' Add parameter and associated value to the command object
+	cmd.Parameters.AddWithValue("@code", Request.QueryString("code"))
+	' Open the database connection and execute the command object's prepared statement
+	conn.Open()
+	' The result set is aggregated into the DataReader object
+	dr = cmd.ExecuteReader()
 
-        ' Read the first result and display the value
-        If (dr.Read()) Then
-            Response.Write(dr("Name") + "<br />")
-        Else
-            Response.Write("Query returned empty result set.<br />")
-        End If
-    Catch ex As Exception
-        ' Handle exceptions that have been raised during query instantiation/execution
-        Response.Write("An error has occurred.<br />")
-    End Try
+	' Read the first result and display the value
+	If (dr.Read()) Then
+		Response.Write(dr("Name") + "<br />")
+	Else
+		Response.Write("Query returned empty result set.<br />")
+	End If
+Catch ex As Exception
+	' Handle exceptions that have been raised during query instantiation/execution
+	Response.Write("An error has occurred.<br />")
+End Try
+```
 
 The *Request.QueryString("code")*
 variable can contain SQL injection attempts, but the prepared statement

@@ -13,11 +13,12 @@ rewrote it in pure Javascript.<!--more-->
 
 **Javascript:**
 
-	#!js
-    if(!(!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect)){
-        var imgs = document.getElementsByTagName('img');
+```js
+if(!(!!document.createElementNS && !!document.createElementNS('http://www.w3.org/2000/svg', "svg").createSVGRect)){
+	var imgs = document.getElementsByTagName('img');
 
-        for(var i = 0; i &lt; imgs.length; i++) {
-            imgs[i].setAttribute('src', imgs[i].getAttribute('src').replace(/\.svg/, '.png'));
-        }
-    }
+	for(var i = 0; i &lt; imgs.length; i++) {
+		imgs[i].setAttribute('src', imgs[i].getAttribute('src').replace(/\.svg/, '.png'));
+	}
+}
+```

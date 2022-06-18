@@ -12,20 +12,21 @@ Whatever the reason, the following **C#** code example shows how to
 modify a file's access permissions using the `System.Security.Principal`
 and `System.Security.AccessControl` namespaces.<!--more-->
 
-**C# code:**  
+**C# code:**
 
-    #!csharp
-    using System.Security.Principal;  
-    using System.Security.AccessControl;
+```cs
+using System.Security.Principal;
+using System.Security.AccessControl;
 
-    // ...
+// ...
 
-    // deny WRITE permission to DOMAIN\user  
-    string fileLocation = "c:\\temp.txt";  
-    NTAccount acct = new NTAccount("DOMAIN", "user");  
-    FileSecurity sec = System.IO.File.GetAccessControl(fileLocation);  
-    sec.AddAccessRule(new FileSystemAccessRule(acct, FileSystemRights.Write, AccessControlType.Deny));  
-    System.IO.File.SetAccessControl(fileLocation, sec);
+// deny WRITE permission to DOMAIN\user
+string fileLocation = "c:\\temp.txt";
+NTAccount acct = new NTAccount("DOMAIN", "user");
+FileSecurity sec = System.IO.File.GetAccessControl(fileLocation);
+sec.AddAccessRule(new FileSystemAccessRule(acct, FileSystemRights.Write, AccessControlType.Deny));
+System.IO.File.SetAccessControl(fileLocation, sec);
+```
 
 In the example, the `Write` permission is being denied to the
 `DOMAIN\user`. Different combinations of the `FileSystemRights` and

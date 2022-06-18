@@ -17,27 +17,28 @@ transform an XML tree using an XMLDOM object as your XSL.*
 
 **Javascript code:**
 
-    #!js
-    function loadXSL(dname)
-    {
-        if(window.ActiveXObject) {
-            // Internet Explorer
-            try {
-                var xslDoc = new
-                ActiveXObject("Msxml2.FreeThreadedDOMDocument");
-                xslDoc.async = false;
-                xslDoc.resolveExternals = false;
-                xslDoc.load(dname);
-                return(xslDoc);
-            } catch(e) {
-                alert("Cannot load XSL stylesheet\\n\\nError:\\n" + e.message);
-                return(false);
-            }
-        } else {
-            // Everything else
-            return(loadXML(dname));
-        }
-    }
+```js
+function loadXSL(dname)
+{
+	if(window.ActiveXObject) {
+		// Internet Explorer
+		try {
+			var xslDoc = new
+			ActiveXObject("Msxml2.FreeThreadedDOMDocument");
+			xslDoc.async = false;
+			xslDoc.resolveExternals = false;
+			xslDoc.load(dname);
+			return(xslDoc);
+		} catch(e) {
+			alert("Cannot load XSL stylesheet\\n\\nError:\\n" + e.message);
+			return(false);
+		}
+	} else {
+		// Everything else
+		return(loadXML(dname));
+	}
+}
+```
 
 Next, we will need a function for applying the XSL stylesheet to the XML
 tree. The following function does just that--browser-agnostic, of
@@ -46,34 +47,35 @@ course--and sends the resulting formatted XML to a given container
 
 **Javascript code:**
 
-    #!js
-    function xslTransform(xml, xsl, div, par)
-    {
-        if(typeof par == "undefined") par = null;
-        div.innerHTML = "";
+```js
+function xslTransform(xml, xsl, div, par)
+{
+	if(typeof par == "undefined") par = null;
+	div.innerHTML = "";
 
-        if(window.ActiveXObject) {
-            // Internet Explorer
-            var xslt = new ActiveXObject("Msxml2.XSLTemplate");
-            xslt.stylesheet = xsl;
-            var xsltProc = xslt.createProcessor();
-            xsltProc.input = xml;
-            for(var a = 0; a < par.length; a++)
-                xsltProc.addParameter(par[a].pname, par[a].pval);
-            xsltProc.transform();
-            div.innerHTML = xsltProc.output;
-        }
-        else if(document.implementation
-            && document.implementation.createDocument)
-        {
-            // Mozilla/Firefox, Opera, WebKit (Safari, Chrome), etc.
-            var xsltProc = new XSLTProcessor();
-            xsltProc.importStylesheet(xsl);
-            for(var a = 0; a < par.length; a++)
-                xsltProc.setParameter(null, par[a].pname, par[a].pval);
-            div.appendChild(xsltProc.transformToFragment(xml, document));
-        }
-    }
+	if(window.ActiveXObject) {
+		// Internet Explorer
+		var xslt = new ActiveXObject("Msxml2.XSLTemplate");
+		xslt.stylesheet = xsl;
+		var xsltProc = xslt.createProcessor();
+		xsltProc.input = xml;
+		for(var a = 0; a < par.length; a++)
+			xsltProc.addParameter(par[a].pname, par[a].pval);
+		xsltProc.transform();
+		div.innerHTML = xsltProc.output;
+	}
+	else if(document.implementation
+		&& document.implementation.createDocument)
+	{
+		// Mozilla/Firefox, Opera, WebKit (Safari, Chrome), etc.
+		var xsltProc = new XSLTProcessor();
+		xsltProc.importStylesheet(xsl);
+		for(var a = 0; a < par.length; a++)
+			xsltProc.setParameter(null, par[a].pname, par[a].pval);
+		div.appendChild(xsltProc.transformToFragment(xml, document));
+	}
+}
+```
 
 XSL parameters are a handy way for Javascript to influence the XSL
 stylesheet's behavior during transformation. The *par* parameter is used

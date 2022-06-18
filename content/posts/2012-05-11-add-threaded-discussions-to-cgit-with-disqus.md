@@ -24,25 +24,26 @@ decides whether or not the current page warrants the injection of the
 disqus platform (be sure to replace
 **REPLACE-WITH-YOUR-DISQUS-SHORTNAME** in the code below):
 
-    #!html
-    <script type="text/javascript">
-        window.onload = function() {
-            if((window.location.href.match(/\/tree\/.*[?&]id=/)
-                && document.querySelector('table.blob'))
-                || window.location.href.match(/\/commit\/.*[?&]id=(?!.+&ss=1\$)/))
-            {
-                var d = document.createElement('div');
-                d.id = 'disqus_thread';
-                document.querySelector('div.content').appendChild(d);
-                var disqus_shortname = 'REPLACE-WITH-YOUR-DISQUS-SHORTNAME';
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-                document.body.appendChild(dsq);
-            }
-        };
-    </script>
+```html
+<script type="text/javascript">
+	window.onload = function() {
+		if((window.location.href.match(/\/tree\/.*[?&]id=/)
+			&& document.querySelector('table.blob'))
+			|| window.location.href.match(/\/commit\/.*[?&]id=(?!.+&ss=1\$)/))
+		{
+			var d = document.createElement('div');
+			d.id = 'disqus_thread';
+			document.querySelector('div.content').appendChild(d);
+			var disqus_shortname = 'REPLACE-WITH-YOUR-DISQUS-SHORTNAME';
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript';
+			dsq.async = true;
+			dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+			document.body.appendChild(dsq);
+		}
+	};
+</script>
+```
 
 The code above will only inject the disqus platform on
 *version-specific* commit summaries and individual file views. (Without
@@ -55,7 +56,9 @@ To include this newly-fashioned header in your cgit system, add the
 following line to your `cgitrc` file (with the appropriate path, of
 course):
 
-    header=/path/to/your.html
+```
+header=/path/to/your.html
+```
 
 That's it! The next time you visit a version-specific commit or file in
 your cgit system, the disqus comment thread should be injected at the

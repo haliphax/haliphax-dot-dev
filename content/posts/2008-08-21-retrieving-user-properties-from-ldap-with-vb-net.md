@@ -17,42 +17,43 @@ the command line:
 
 **VB.NET 3.5 Code:**
 
-	#!vbnet
-    Imports System.DirectoryServices
+```vb
+Imports System.DirectoryServices
 
-    Module ldapTest
-        Sub Main()
-            ' pull uid to search for from command line
-            Dim uidToSearch As String = Command()
-            ' uid with sufficient access to "browse" directory
-            Dim uid As String = "uid=some_admin,ou=ExternalAdmins,dc=example,dc=com"
-            ' password for browser
-            Dim password As String = "AdminPasswordGoesHere"
-            ' build directory entry with browser's credentials
-            Dim root As DirectoryEntry = New DirectoryEntry( _
-                "LDAP://directory.example.com/ou=people,dc=example,dc=com", uid, _
-                password, AuthenticationTypes.None)
-            ' build directory searcher for root entry
-            Dim searcher As DirectorySearcher = New DirectorySearcher(root)
-            ' filter down to requested uid
-            searcher.Filter = "(uid=" & uidToSearch & ")"
+Module ldapTest
+	Sub Main()
+		' pull uid to search for from command line
+		Dim uidToSearch As String = Command()
+		' uid with sufficient access to "browse" directory
+		Dim uid As String = "uid=some_admin,ou=ExternalAdmins,dc=example,dc=com"
+		' password for browser
+		Dim password As String = "AdminPasswordGoesHere"
+		' build directory entry with browser's credentials
+		Dim root As DirectoryEntry = New DirectoryEntry( _
+			"LDAP://directory.example.com/ou=people,dc=example,dc=com", uid, _
+			password, AuthenticationTypes.None)
+		' build directory searcher for root entry
+		Dim searcher As DirectorySearcher = New DirectorySearcher(root)
+		' filter down to requested uid
+		searcher.Filter = "(uid=" & uidToSearch & ")"
 
-            ' iterate through found record's properties
-            For Each prop As DictionaryEntry In searcher.FindOne().Properties
-                Console.Write(prop.Key.ToString & " = ")
+		' iterate through found record's properties
+		For Each prop As DictionaryEntry In searcher.FindOne().Properties
+			Console.Write(prop.Key.ToString & " = ")
 
-                ' iterate through property's values
-                For Each propVal In prop.Value
-                    If TypeOf propVal Is Byte() Then
-                        ' convert byte arrays to strings (password hashes, etc.)
-                        Console.WriteLine(Convert.ToBase64String(propVal))
-                    Else
-                        Console.WriteLine(propVal)
-                    End If
-                Next
-            Next
-        End Sub
-    End Module
+			' iterate through property's values
+			For Each propVal In prop.Value
+				If TypeOf propVal Is Byte() Then
+					' convert byte arrays to strings (password hashes, etc.)
+					Console.WriteLine(Convert.ToBase64String(propVal))
+				Else
+					Console.WriteLine(propVal)
+				End If
+			Next
+		Next
+	End Sub
+End Module
+```
 
 With a little bit of work, this could easily be adapted to glean
 information about other Active Directory objects. The source may also

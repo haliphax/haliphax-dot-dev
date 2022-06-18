@@ -27,30 +27,33 @@ simple web application that verifies a user's password--effectively
 
 **ASP.NET 2.0 Code:**
 
-    #!xml
-    <%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="ldapLogin"  %>
+```xml
+<%@ Page Language="VB" AutoEventWireup="false" CodeFile="Default.aspx.vb" Inherits="ldapLogin"  %>
 
-    <!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml">
-    <head runat="server">
-        <title>LDAP Login</title>
-    </head>
-    <body>
-        <form id="form1" runat="server">
-            <div id="loginForm" runat="server" visible="false">
-                Username:
-                <br />
-                <asp:TextBox ID="txtUsername" runat="server" />
-                <p />
-                Password:
-                <br />
-                <asp:TextBox TextMode="Password" ID="txtPassword" runat="server" />
-                <p />
-                <asp:Button ID="btnLogin" runat="server" Text="Login" />
-            </div>
-        </form>
-    </body>
-    </html>
+<!DOCTYPE html PUBLIC  "-//W3C//DTD XHTML 1.0 Transitional//EN"  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title>LDAP Login</title>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div id="loginForm" runat="server" visible="false">
+			<p>
+				Username:
+				<br />
+				<asp:TextBox ID="txtUsername" runat="server" />
+			</p>
+			<p>
+				Password:
+				<br />
+				<asp:TextBox TextMode="Password" ID="txtPassword" runat="server" />
+			</p>
+			<asp:Button ID="btnLogin" runat="server" Text="Login" />
+		</div>
+	</form>
+</body>
+</html>
+```
 
 The code-behind file for this page attempts to connect to the Active
 Directory server using the supplied user credentials, and responds with
@@ -58,53 +61,54 @@ a respective message:
 
 **VB.NET 3.5 Code:**
 
-    #!vbnet
-    Imports System.DirectoryServices
+```vb
+Imports System.DirectoryServices
 
-    Partial Class ldapLogin
-        Inherits System.Web.UI.Page
+Partial Class ldapLogin
+	Inherits System.Web.UI.Page
 
-        ' "login" button clicked
-        Protected Sub btnLogin_Click( _
-        ByVal sender As Object, _
-        ByVal e As System.EventArgs) _
-        Handles btnLogin.Click
-            ' build UID string
-            Dim uid As String = "uid=" & txtUsername.Text & ",ou=people,dc=example,dc=com"
-            ' assign password
-            Dim password As String = txtPassword.Text
-            ' define LDAP connection
-            Dim root As DirectoryEntry = New DirectoryEntry( _
-                "LDAP://directory.example.com", uid, password, _
-                AuthenticationTypes.None)
+	' "login" button clicked
+	Protected Sub btnLogin_Click( _
+	ByVal sender As Object, _
+	ByVal e As System.EventArgs) _
+	Handles btnLogin.Click
+		' build UID string
+		Dim uid As String = "uid=" & txtUsername.Text & ",ou=people,dc=example,dc=com"
+		' assign password
+		Dim password As String = txtPassword.Text
+		' define LDAP connection
+		Dim root As DirectoryEntry = New DirectoryEntry( _
+			"LDAP://directory.example.com", uid, password, _
+			AuthenticationTypes.None)
 
-            Try
-                ' attempt to use LDAP connection
-                Dim connected As Object = root.NativeObject
-                ' no exception, login successful
-                Response.Write( "<span style=""color:green;"">Login successful.</span>")
-            Catch ex As Exception
-                ' exception thrown, login failed
-                Response.Write( "<span style=""color:red;"">Login failed.</span>")
-            End Try
+		Try
+			' attempt to use LDAP connection
+			Dim connected As Object = root.NativeObject
+			' no exception, login successful
+			Response.Write( "<span style=""color:green;"">Login successful.</span>")
+		Catch ex As Exception
+			' exception thrown, login failed
+			Response.Write( "<span style=""color:red;"">Login failed.</span>")
+		End Try
 
-            Response.Write("<p />")
-        End Sub
+		Response.Write("<p />")
+	End Sub
 
-        ' page load event
-        Protected Sub Page_Load( _
-        ByVal sender As Object, _
-        ByVal e As System.EventArgs) _
-        Handles Me.Load
-            If Page.IsPostBack Then
-                ' form submitted, hide login form
-                loginForm.Visible = False
-            Else
-                ' first page load, show login form
-                loginForm.Visible = True
-            End If
-        End Sub
-    End Class
+	' page load event
+	Protected Sub Page_Load( _
+	ByVal sender As Object, _
+	ByVal e As System.EventArgs) _
+	Handles Me.Load
+		If Page.IsPostBack Then
+			' form submitted, hide login form
+			loginForm.Visible = False
+		Else
+			' first page load, show login form
+			loginForm.Visible = True
+		End If
+	End Sub
+End Class
+```
 
 The code makes a connection to the LDAP server using the supplied user
 credentials and domain information. The actual test for authentication

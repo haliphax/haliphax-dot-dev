@@ -15,14 +15,15 @@ you add the `-Properties Members` flag. Then, using `Get-ADUser` and
 passing the DN as a parameter, you can get a user object for each member
 and then handle them as you wish:
 
-	#!powershell
-    Import-Module ActiveDirectory -ErrorAction SilentlyContinue
+```powershell
+Import-Module ActiveDirectory -ErrorAction SilentlyContinue
 
-    $group = Get-ADGroup "group name goes here" -Properties Members
+$group = Get-ADGroup "group name goes here" -Properties Members
 
-    $group.Members | % {
-        $user = Get-ADUser $_
-        # Do something with the $user object here
-    }
+$group.Members | % {
+	$user = Get-ADUser $_
+	# Do something with the $user object here
+}
+```
 
 It's that simple!

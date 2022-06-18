@@ -17,23 +17,26 @@ names. If there is a match, the connection is redirected to an
 The following nginx `location` configuration directive will provide this
 behavior:
 
-    #!text
-    location / {
-        # force ssl
-        location \~ ^/([^/]+)(/.*)? {
-            if (-f /var/www/$1.ssl) {
-                rewrite ^(.*)$ https://myserver.com$1 permanent;
-                break;
-            }
-        }
-    }
+```
+location / {
+	# force ssl
+	location \~ ^/([^/]+)(/.*)? {
+		if (-f /var/www/$1.ssl) {
+			rewrite ^(.*)$ https://myserver.com$1 permanent;
+			break;
+		}
+	}
+}
+	```
 
 Consider this scenario: You have *phpMyAdmin* installed under
 `/var/www/phpmyadmin`, and you keep your `*.ssl` files in `/var/www`
 (though you could just as easily place them elsewhere, perhaps outside
 of the document root). You would just create the `phpmyadmin.ssl` file:
 
-    $ touch /var/www/phpmyadmin.ssl
+```shell
+touch /var/www/phpmyadmin.ssl
+```
 
 nginx's `location` directive listed above will match `/phpmyadmin` from
 the URL to `/var/www/phpmyadmin.ssl`. Since that file does exist, nginx
