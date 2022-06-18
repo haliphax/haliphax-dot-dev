@@ -3,6 +3,107 @@
 The source code for https://haliphax.dev and its accompanying processes;
 proudly built with [Eleventy]!
 
+## Features
+
+### Data
+
+#### ignoreTags
+
+List of post tags that should be ignored when building tag pages or displaying
+a post's associated tags
+
+#### links
+
+List of objects for use in the **Site** navigation menu. Their format is as
+follows:
+
+| Field | Description |
+|---|---|
+| `name` | Name to display in the menu |
+| `url` | URL for the generated link tag |
+| `icon` | CSS classes for the link's FontAwesome icon |
+
+#### metaDefaults
+
+Default values for page metadata
+
+| Field | Description |
+|---|---|
+| `author` | Author of the post/page |
+| `description` | Meta description |
+| `generator` | Eleventy package name and version |
+| `openGraphImageUrl` | URL to use for `og:image` OpenGraph tag |
+| `openGraphType` | Type of page for `og:type` tag |
+
+#### misc
+
+Miscellaneous values that don't belong elsewhere
+
+| Field | Description |
+|---|---|
+| `blurbLength` | Maximum length allowed for post blurbs |
+| `jumboBlurbLength` | Maximum length allowed for primary post's blurb |
+| `readingTimeWpm` | Words-per-minute for calculating reading time |
+| `ytPlaylistId` | YouTube playlist ID for retrieving latest video |
+
+#### socials
+
+List of links for populating the **Social** navigation menu. Object format is
+the same as that of [links](#links).
+
+#### strings
+
+List of string values used throughout the site and its templates
+
+| Field | Description |
+|---|---|
+| `githubRoot` | GitHub project root for "Suggest an edit" post links |
+| `header` | Text for site header |
+| `siteMenuHeader` | Text for **Site** navigation menu header |
+| `siteName` | Text for site name (used in `<title>`) |
+| `siteRoot` | Root URL of the site |
+| `socialMenuHeader` | Text for **Social** navigation menu header |
+| `twitter` | Twitter handle (used in meta tags) |
+
+### Functions
+
+| Function | Description |
+|---|---|
+| `getDescription(content, limit)` | Produce a trimmed blurb for the given content |
+| `htmlEntities(text)` | Replace certain character combinations with HTML entity equivalents |
+| `metaEncode(text)` | Replace illegal characters to produce usable text for meta tags |
+| `renderCollection(items, limit, jumboFirst)` | Render a collection of pages |
+| `renderTags(tags)` | Render a collection of tags |
+
+### Layouts
+
+All layout templates are built using the [`11ty.js`] (JavaScript) template
+language.
+
+| Key | Description |
+|---|---|
+| `base` | The base layout, which includes the outer document shell and site navigation |
+| `withHeader` _(inherits from `base`)_ | Reads `data.header` for use in an `<h1>` element |
+| `post` _(inherits from `withHeader`)_ | Used for blog posts; includes reading time, edit link, etc. |
+
+### Libraries
+
+| ID | Description |
+|---|---|
+| [`markdown-it`] | Used for generating HTML content from Markdown files |
+
+### Plugins
+
+| ID | Description |
+|---|---|
+| [`@11ty/eleventy-plugin-syntaxhighlight`] | Syntax highlighting for code blocks in blog posts |
+
+### Transforms
+
+| Name | Description |
+|---|---|
+| `htmlMinify` | Minifies HTML output using [`html-minifier`] |
+
 ## Directory structure
 
 The directory structure used by this site may be considered "nonstandard" when
@@ -154,6 +255,10 @@ workflow, the site will be re-published (along with the new data).
 
 
 [Eleventy]: https://11ty.dev
+[`11ty.js`]: https://www.11ty.dev/docs/languages/javascript/
+[`markdown-it`]: https://www.npmjs.com/package/markdown-it
+[`@11ty/eleventy-plugin-syntaxhighlight`]: https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight
+[`html-minifier`]: https://www.npmjs.com/package/html-minifier
 [check-twitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-twitch.mjs
 [check-youtube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-youtube.mjs
 [GitHub Pages]: https://pages.github.com
