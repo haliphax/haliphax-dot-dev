@@ -79,7 +79,7 @@ module.exports = class Base {
 							`).join('')}
 					<meta name="generator" content="${data.metaDefaults.generator}" />
 					<link rel="icon" href="/img/favicon.gif" />
-					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" media="screen" />
+					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
 					<link href="/css/styles.css" rel="stylesheet" />
 					${preloads}
 				</head>
