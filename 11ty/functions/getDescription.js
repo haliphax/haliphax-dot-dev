@@ -14,8 +14,8 @@ const getDescription = (content, limit = 160) => {
 	return plain
 		.slice(0, limit - 1)
 		.replace(/\s+[^ ]*$/, '')
-		.replace(/([^ ]) ([^ ]+)$/, '$1&nbsp;$2')
-		.replace(/\s+[^ ]*$/, '') + '&nbsp;&hellip;';
+		// avoid "hanging" words at end of blurb
+		.replace(/([^ ]) ([^ ]+)$/, '$1&nbsp;$2&nbsp;&hellip;');
 };
 
 module.exports = getDescription;
