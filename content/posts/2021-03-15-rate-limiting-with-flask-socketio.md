@@ -86,11 +86,12 @@ def limit_socketio(key: str = 'socketio', window: int = 1,
     return wrapper
 ```
 
-While I am only using this for Socket.IO rate-limiting, the code actually has
-nothing to do with sockets. It could just as easily be used for rate limiting
-_any_ function execution within a variety of contexts. The "rate limit" action
-here is effectively a no-op, whereas you may want to disconnect the offending
-user, instead (which _would_ make this particular to web sockets).
+While I am only using this for Socket.IO rate-limiting, the code actually
+has nothing to do with sockets. It could just as easily be used for rate
+limiting _any_ function execution within a variety of contexts. The "rate
+limit" action here is effectively a no-op, whereas you may want to disconnect
+the offending user, instead (which _would_ make this particular to web
+sockets).
 
 
 [flask-limiter]: https://pypi.org/project/Flask-Limiter/

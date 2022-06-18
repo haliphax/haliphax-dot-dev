@@ -41,7 +41,7 @@ bots out there like [sesh] use post reactions as input, so I'll probably be
 experimenting with something like that. I'm looking forward to it!
 
 
-[Aethersprite documentation]: https://haliphax.github.io/aethersprite
+[Aethersprite documentation]: https://haliphax.github.io/aethersprite/
 [Aethersprite]: https://github.com/haliphax/aethersprite
 [discord.py]: https://discordpy.readthedocs.io
 [ncfacbot]: https://github.com/haliphax/ncfacbot

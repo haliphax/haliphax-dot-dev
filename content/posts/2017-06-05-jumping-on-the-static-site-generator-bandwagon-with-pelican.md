@@ -10,5 +10,4 @@ Python-based solution. I've settled on [Pelican](https://blog.getpelican.com/).
 I'm already resting easier knowing that my blog isn't a potential attack
 vector, and I'm experimenting with changes to the templates for the theme I've
 picked. I may go so far as to make the blog into a git repository and host
-copies on my [private server](https://git.oddnetwork.org/) and
-[GitHub](https://github.com/haliphax/).
+copies on my private server and [GitHub](https://github.com/haliphax).

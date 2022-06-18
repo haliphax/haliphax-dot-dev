@@ -15,7 +15,7 @@ Visual Studio 2008 and the .NET 3.5 platform.<!--more-->
 
 1. First, download and install the *WSE 3.0 for Microsoft .NET* package
   from the following url:
-  <https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=14089>
+  <https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=14089>
 2. Now, change each instance of *8.0* to *9.0* in the
   *WSESettingsVS3.Addin* file, which should be located here:
   `C:\Documents and Settings\All Users\Application Data\Microsoft\MSEnvShared\Addins\WSESettingsVS3.Addin`
@@ -43,7 +43,7 @@ Visual Studio 2008 and the .NET 3.5 platform.<!--more-->
 1. Download and install the *.NET Framework 2.0 SDK (x86)*—which is
   necessary for creating the *WebClient*-type proxy/wrapper class—from
   the following url:
-  <https://www.microsoft.com/download/en/details.aspx?displaylang=en&id=19988>
+  <https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=19988>
 2. Use the `WseWsdl3.exe` tool with the `/type:webClient` switch to
   generate a *WebClient*-based proxy class for your web service:
   `"c:\Program Files\Microsoft WSE\v3.0\Tools\WseWsdl3.exe" /nologo /type:webClient /out:c:\ProjectFolder\MyWebService.cs http://addres.of/my/webservice?wsdl`

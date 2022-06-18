@@ -5,7 +5,7 @@ layout: post
 ---
 
 The train keeps rolling. I've been busying myself with more
-[FlaskBB](https://github.com/sh4nks/flaskbb) development lately. I took the
+[FlaskBB](https://github.com/flaskbb/flaskbb) development lately. I took the
 Docker image and expanded it into a `docker-compose` example. I've also
 built a plugin for managing email and RSS notifications and another for
 adding a dice-rolling macro to the forum. The `dicebot` plugin is _incredibly_

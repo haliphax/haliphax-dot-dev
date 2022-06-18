@@ -10,7 +10,7 @@ gitolite. I then [modded cgit with some password maintenance
 features](/2012/07/add-password-maintenance-feature-to-cgit-with-php/).
 After a while, I tried using several more "modern" git repo hosting
 solutions, and I've finally settled on
-[gogs](https://github.com/gogits/gogs), the **Go** **G**it
+[gogs](https://github.com/gogs/gogs), the **Go** **G**it
 **S**ervice.<!--more-->
 
 The reasons I've landed on gogs include:

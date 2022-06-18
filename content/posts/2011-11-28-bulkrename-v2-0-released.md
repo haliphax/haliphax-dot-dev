@@ -4,10 +4,10 @@ tags: ['post', 'c-sharp', 'my-software', 'tool']
 layout: post
 ---
 
-I've converted my bulk file renaming utility from VB.NET to C\# and made
-use of a [command line arguments parsing
-library](https://www.codeproject.com/KB/recipes/command_line.aspx) so
-that it will accept folders and regex patterns with spaces in them. It
+I've converted my bulk file renaming utility from VB.NET to C\# and made use
+of a
+[command line arguments parsing library](https://www.codeproject.com/Articles/3111/C-NET-Command-Line-Arguments-Parser)
+so that it will accept folders and regex patterns with spaces in them. It
 behaves a bit weird if you don't encapsulate your arguments in quotation
 marks (") or if you forgo the use of an equals sign (=) between the
 parameter flag and its argument, but those are small concessions to

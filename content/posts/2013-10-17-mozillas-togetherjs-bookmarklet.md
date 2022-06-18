@@ -5,7 +5,7 @@ layout: post
 ---
 
 Mozilla recently introduced
-[TogetherJS](https://hacks.mozilla.org/2013/10/introducing-togetherjs),
+[TogetherJS](https://hacks.mozilla.org/2013/10/introducing-togetherjs/),
 a succession of their TowTruck service. Being that it is so similar to
 TowTruck, I went ahead and made a bookmarklet for it.<!--more-->
 

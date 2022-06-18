@@ -5,7 +5,7 @@ layout: post
 ---
 
 Lately, I've been getting involved with some Python-based forum software,
-[FlaskBB](https://github.com/sh4nks/flaskbb). I had been running phpBB for one
+[FlaskBB](https://github.com/flaskbb/flaskbb). I had been running phpBB for one
 of my web games' forums, and it became overrun with bots. Given my attraction
 to Python over the last few years, I began searching for a new solution written
 in Python. FlaskBB seemed like a good fit, and it came with reCAPTCHA support

@@ -17,5 +17,5 @@ results, so it shouldn't step on anyone's toes with regard to API access
 limits.<!--more-->
 
 Grab it over at
-[wordpress.org](https://wordpress.org/extend/plugins/whats-my-status) or
+[wordpress.org](https://wordpress.org/plugins/whats-my-status) or
 search for it in your WordPress installation under *Plugins » Add New*.

@@ -26,7 +26,7 @@ will be able to build something neat using the same pattern. Good luck!
 
 
 [Events]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
-[my Twitch stream]: https://twitch.tv/haliphax
+[my Twitch stream]: https://www.twitch.tv/haliphax
 [MutationObserver]: https://developer.mozilla.org/en-US/docs/Web/API/MutationObserver
 [UserScript]: https://en.wikipedia.org/wiki/Userscript
 [yt-siren]: https://github.com/haliphax/yt-siren

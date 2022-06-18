@@ -29,8 +29,8 @@ all-encompassing, manageable scroll bar for perusal.<!--more-->
     };
 
 The script is [available for
-download](https://greasyfork.org/scripts/4654-tv-guide-tidy) at
-[greasyfork.org](https://greasyfork.org/).
+download](https://greasyfork.org/en/scripts/4654-tv-guide-tidy) at
+[greasyfork.org](https://greasyfork.org/en).
 
 *Note: To install this UserScript in Chrome, you will have to download
 the file, open `chrome://extensions` (Settings icon → Tools →

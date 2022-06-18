@@ -5,8 +5,7 @@ layout: post
 ---
 
 I wrote a (*really*) simple [userscript](https://greasyfork.org) today
-that reloads Lifehacker pages under
-[uk.lifehacker.com](https://uk.lifehacker.com). Why did I do this?
+that reloads Lifehacker pages under uk.lifehacker.com. Why did I do this?
 Because the Lifehacker UK site doesn't have the trendy new (horrendous)
 AJAXified layout. Maybe using a `hosts` redirect instead of a userscript
 is a better way to handle it (since you're still going to see a flash of

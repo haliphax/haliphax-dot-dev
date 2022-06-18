@@ -25,6 +25,6 @@ https://github.com/haliphax/hxavatars/
 
 
 [experimenting]: /2021/09/a-chat-bot-in-your-browser/
-[Twitch]: https://twitch.tv
+[Twitch]: https://www.twitch.tv
 [TMI]: https://github.com/tmijs/tmi.js
 [PhaserJS]: https://phaser.io

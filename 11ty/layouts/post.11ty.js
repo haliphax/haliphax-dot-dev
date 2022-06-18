@@ -44,7 +44,9 @@ module.exports = class Post {
 			data.content.replace(/<\/?h\d+[^>]*>/ig, x =>
 				x.replace(/\d/, d => parseInt(d) + 3)));
 		const posted = this.page.date.toISOString().replace(/T.*$/, '');
-		const path = this.page.inputPath.substring(1);
+		const encodedPath = encodeURIComponent(
+			[data.strings.githubRoot, this.page.inputPath.substring(1)].join(''));
+		const githubLink = `https://github.com/login?return_to=${encodedPath}`;
 
 		return /*html*/`
 			${this.renderTags(data.tags)}
@@ -54,8 +56,7 @@ module.exports = class Post {
 					Reading time: ${data.readingTime}
 				</small>
 				<small class="d-block d-sm-flex">
-					<a href="${data.strings.githubRoot}${path}"
-						class="no-external">
+					<a href="${githubLink}" class="no-external">
 						<i class="fa fa-edit" aria-hidden="true"></i>
 						Suggest an edit
 					</a>

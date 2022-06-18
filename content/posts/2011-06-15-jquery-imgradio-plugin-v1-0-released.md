@@ -23,7 +23,7 @@ or the [minified
 version](https://github.com/haliphax/jquery.imgradio/raw/master/jquery.imgradio.min.js)
 for use on your site.
 
-I have also created a [demonstration page](https://haliphax.github.io/jquery.imgradio)
+I have also created a [demonstration page](https://haliphax.github.io/jquery.imgradio/)
 so you can see the plugin in action.
 
 In the interest of transparency, here is the original source:
