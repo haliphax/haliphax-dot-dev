@@ -138,7 +138,7 @@ live site automatically when new content or data is available.
 When the `master` branch of this repository is updated, a GitHub workflow will
 regenerate the site and update the `gh-pages` branch. This causes the GitHub
 Pages publishing workflow to activate, which will update the live site with any
-new content.
+new content. External data is also refreshed as part of this process.
 
 - Workflow: [publish-site.yml]
 
