@@ -2,8 +2,8 @@
   "name": "haliphax-dot-dev",
   "version": "1.0.0",
   "description": "haliphax.dev source code and content",
-	"repository": "github:haliphax/haliphax-dot-dev",
-	"private": true,
+  "repository": "github:haliphax/haliphax-dot-dev",
+  "private": true,
   "author": "haliphax",
   "license": "MIT",
   "devDependencies": {
@@ -11,6 +11,7 @@
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
     "dotenv": "^16.0.1",
     "html-minifier": "^4.0.0",
+    "json-diff": "^0.9.0",
     "markdown-it-anchor": "^8.6.4",
     "node-twitch": "^0.4.5"
   },
@@ -18,9 +19,9 @@
     "build": "npx @11ty/eleventy",
 		"full": "npm run check-all && npm run build",
     "serve": "npx @11ty/eleventy --serve",
-		"check": "npm run check-twitch && npm run check-youtube",
-		"check-all": "npm run check-twitch; npm run check-youtube; true",
-		"check-twitch": "node tasks/check-twitch.mjs",
-		"check-youtube": "node tasks/check-youtube.mjs"
+    "check": "npm run check-twitch && npm run check-youtube",
+    "check-all": "npm run check-twitch; npm run check-youtube; true",
+    "check-twitch": "node tasks/check-twitch.mjs",
+    "check-youtube": "node tasks/check-youtube.mjs"
   }
 }

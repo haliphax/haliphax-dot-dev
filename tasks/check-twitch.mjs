@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import fs from 'fs';
+import { diff } from 'json-diff';
 import twitch from 'node-twitch';
 
 const TwitchApi = twitch.default;
@@ -56,10 +57,7 @@ for (let vod of vods) {
 	break;
 }
 
-const difference = twitchData?.live !== cached?.live
-	|| twitchData?.latestVod.id !== cached?.latestVod.id;
-
-if (difference) {
+if (diff(twitchData, cached)) {
 	console.log('Updating Twitch data...');
 	fs.writeFileSync(
 		'11ty/data/external/twitch.json',

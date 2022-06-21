@@ -1,5 +1,6 @@
 import dotenv from 'dotenv';
 import fs from 'fs';
+import { diff } from 'json-diff';
 import pkg from '../11ty/data/misc.js';
 const { ytPlaylistId } = pkg;
 
@@ -27,9 +28,7 @@ const youtubeData = await fetch(
 			.then(d => d.items[0]);
 	});
 
-const difference = youtubeData?.id !== cached?.id;
-
-if (difference) {
+if (diff(youtubeData, cached)) {
 	console.log('Updating YouTube data...');
 	fs.writeFileSync(
 		'11ty/data/external/youtube.json',
