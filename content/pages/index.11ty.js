@@ -74,7 +74,7 @@ module.exports = class Index {
 						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 							<div class="mr-sm-10">
 								<a href="https://youtu.be/${yt.id}" class="no-external">
-									<img src="${yt.snippet.thumbnails.maxres.url}" width="1280" height="720"
+									<img src="${yt.snippet.thumbnails.high.url}" width="1280" height="720"
 										class="w-full h-auto border-0" alt="Video thumbnail" />
 								</a>
 							</div>
