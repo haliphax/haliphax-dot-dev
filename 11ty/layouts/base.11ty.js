@@ -149,7 +149,7 @@ module.exports = class Base {
 							</footer>
 						</div>
 					</div>
-					<script>
+					<script id="sidebar-script">
 						(() => {
 							// Sidebar management
 							const wrapper = document.querySelector('.page-wrapper');
