@@ -102,7 +102,7 @@ language.
 
 | Name | Description |
 |---|---|
-| `htmlMinify` | Minifies HTML output using [`html-minifier`] |
+| `htmlMinify` | Minifies HTML output using [`html-minifier`] and [`esbuild`] |
 
 ## Directory structure
 
@@ -259,6 +259,7 @@ workflow, the site will be re-published (along with the new data).
 [`markdown-it`]: https://www.npmjs.com/package/markdown-it
 [`@11ty/eleventy-plugin-syntaxhighlight`]: https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight
 [`html-minifier`]: https://www.npmjs.com/package/html-minifier
+[`esbuild`]: https://www.npmjs.com/package/esbuild
 [check-twitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-twitch.mjs
 [check-youtube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-youtube.mjs
 [GitHub Pages]: https://pages.github.com
