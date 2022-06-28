@@ -18,12 +18,10 @@ const htmlMinify = cfg =>
 
 		for (let script of scripts) {
 			if (script.id && scriptCache.hasOwnProperty(script.id)) {
-				console.log(`Cached: ${script.id}`);
 				script.textContent = scriptCache[script.id];
 				continue;
 			}
 
-			script.id && console.log(`Building cache for: ${script.id}`)
 			script.textContent =
 				transformSync(script.textContent, { minify: true }).code;
 			scriptCache[script.id] = script.textContent;
