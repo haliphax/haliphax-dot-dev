@@ -169,10 +169,12 @@ There are several environment variables required for the site to operate. These
 may be exposed as GitHub environment secrets, standard environment variables,
 or by creating a `.env` file in the root of the project.
 
-- `TWITCH_USERNAME` Your Twitch username
-- `TWITCH_CLIENT_ID` Twitch API client ID
-- `TWITCH_CLIENT_SECRET` Twitch API client secret
-- `YT_API_KEY` YouTube Data API key
+| Name | Description |
+|---|---|
+| `TWITCH_USERNAME` | Your Twitch username |
+| `TWITCH_CLIENT_ID` | Twitch API client ID |
+| `TWITCH_CLIENT_SECRET` | Twitch API client secret |
+| `YT_API_KEY` | YouTube Data API key |
 
 ## Tasks
 
