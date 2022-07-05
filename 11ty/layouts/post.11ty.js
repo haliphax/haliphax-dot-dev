@@ -50,12 +50,12 @@ module.exports = class Post {
 
 		return /*html*/`
 			${this.renderTags(data.tags)}
-			<div class="d-block mb-10 d-sm-flex flex-row flex-grow-1">
-				<small class="d-block text-muted d-sm-flex flex-fill ai-center">
+			<div class="mb-10 d-flex flex-row flex-grow-1">
+				<small class="text-muted flex-fill ai-center">
 					<i class="fa fa-clock" aria-hidden="true">&nbsp;</i>
 					Reading time: ${data.readingTime}
 				</small>
-				<small class="d-block d-sm-flex">
+				<small>
 					<a href="${githubLink}" class="no-external">
 						<i class="fa fa-edit" aria-hidden="true"></i>
 						Suggest an edit
