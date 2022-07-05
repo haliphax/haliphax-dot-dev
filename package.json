@@ -8,9 +8,9 @@
   "license": "MIT",
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
-    "@11ty/eleventy-plugin-syntaxhighlight": "^4.0.0",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^4.1.0",
     "dotenv": "^16.0.1",
-    "esbuild": "^0.14.47",
+    "esbuild": "^0.14.48",
     "html-minifier": "^4.0.0",
     "jsdom": "^20.0.0",
     "json-diff": "^0.9.0",

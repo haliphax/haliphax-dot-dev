@@ -1,11 +1,11 @@
-# haliphax.dev
+# 🎈 haliphax.dev
 
 The source code for https://haliphax.dev and its accompanying processes;
 proudly built with [Eleventy]!
 
 ## Features
 
-### Data
+### 🗒 Data
 
 #### ignoreTags
 
@@ -65,7 +65,7 @@ List of string values used throughout the site and its templates
 | `socialMenuHeader` | Text for **Social** navigation menu header |
 | `twitter` | Twitter handle (used in meta tags) |
 
-### Functions
+### ⚡ Functions
 
 | Function | Description |
 |---|---|
@@ -75,7 +75,7 @@ List of string values used throughout the site and its templates
 | `renderCollection(items, limit, jumboFirst)` | Render a collection of pages |
 | `renderTags(tags)` | Render a collection of tags |
 
-### Layouts
+### 🖼️ Layouts
 
 All layout templates are built using the [`11ty.js`] (JavaScript) template
 language.
@@ -86,25 +86,25 @@ language.
 | `withHeader` _(inherits from `base`)_ | Reads `data.header` for use in an `<h1>` element |
 | `post` _(inherits from `withHeader`)_ | Used for blog posts; includes reading time, edit link, etc. |
 
-### Libraries
+### 📚 Libraries
 
 | ID | Description |
 |---|---|
 | [`markdown-it`] | Used for generating HTML content from Markdown files |
 
-### Plugins
+### 🔌 Plugins
 
 | ID | Description |
 |---|---|
 | [`@11ty/eleventy-plugin-syntaxhighlight`] | Syntax highlighting for code blocks in blog posts |
 
-### Transforms
+### 🤖 Transforms
 
 | Name | Description |
 |---|---|
-| `htmlMinify` | Minifies HTML output using [`html-minifier`] |
+| `htmlMinify` | Minifies HTML output using [`html-minifier`] and [`esbuild`] |
 
-## Directory structure
+## 🌳 Directory structure
 
 The directory structure used by this site may be considered "nonstandard" when
 compared to the Eleventy documentation and various starter site templates, but
@@ -127,7 +127,7 @@ I personally find it much easier to reason with.
   - `img` Images
 - `tasks` Node scripts for out-of-band tasks
 
-## Configuration structure
+## 🛠️ Configuration structure
 
 In addition to a nonstandard directory structure, I have built my own
 configuration structure in an effort to wrangle the many pieces'
@@ -163,18 +163,20 @@ module.exports = cfg => {
 > for each of the other categories, though their configuration functions'
 > content may differ slightly.
 
-## Environment variables
+## 🌐 Environment variables
 
 There are several environment variables required for the site to operate. These
 may be exposed as GitHub environment secrets, standard environment variables,
 or by creating a `.env` file in the root of the project.
 
-- `TWITCH_USERNAME` Your Twitch username
-- `TWITCH_CLIENT_ID` Twitch API client ID
-- `TWITCH_CLIENT_SECRET` Twitch API client secret
-- `YT_API_KEY` YouTube Data API key
+| Name | Description |
+|---|---|
+| `TWITCH_USERNAME` | Your Twitch username |
+| `TWITCH_CLIENT_ID` | Twitch API client ID |
+| `TWITCH_CLIENT_SECRET` | Twitch API client secret |
+| `YT_API_KEY` | YouTube Data API key |
 
-## Tasks
+## ⏯️ Tasks
 
 There are tasks which are run directly with `node`, outside of the scope of the
 the Eleventy system. These will each output a JSON file in the
@@ -228,7 +230,7 @@ Uses the YouTube Data API to retrieve latest video information
 
 - Task: [check-youtube.mjs]
 
-## Workflows
+## 🔄 Workflows
 
 This site is hosted entirely on [GitHub Pages]. Both its main publishing and
 periodic update methods make use of [GitHub Actions] workflows to update the
@@ -259,6 +261,7 @@ workflow, the site will be re-published (along with the new data).
 [`markdown-it`]: https://www.npmjs.com/package/markdown-it
 [`@11ty/eleventy-plugin-syntaxhighlight`]: https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight
 [`html-minifier`]: https://www.npmjs.com/package/html-minifier
+[`esbuild`]: https://www.npmjs.com/package/esbuild
 [check-twitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-twitch.mjs
 [check-youtube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-youtube.mjs
 [GitHub Pages]: https://pages.github.com
