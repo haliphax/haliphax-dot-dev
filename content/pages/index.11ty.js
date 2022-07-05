@@ -50,16 +50,16 @@ module.exports = class Index {
 							<div class="ml-sm-10">
 								<h3 class="card-title mb-5">${vod.title}</h3>
 								<hr />
-								<p class="text-muted">${vodDescription}</p>
-								<div class="text-right">
-									<a href="${vod.url}"
-										class="btn btn-secondary d-inline-block no-external">
-										<span class="far fa-eye"></span>
-										<span aria-hidden="true">Watch VOD</span>
-										<span class="sr-only">Watch VOD: ${vod.title}</span>
-									</a>
-								</div>
+								<p class="text-muted pb-20">${vodDescription}</p>
 							</div>
+						</div>
+						<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
+							<a href="${vod.url}"
+								class="btn btn-secondary d-inline-block no-external">
+								<span class="far fa-eye"></span>
+								<span aria-hidden="true">Watch VOD</span>
+								<span class="sr-only">Watch VOD: ${vod.title}</span>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -83,16 +83,16 @@ module.exports = class Index {
 							<div class="ml-sm-10">
 								<h3 class="card-title mb-5">${yt.snippet.title}</h3>
 								<hr />
-								<p class="text-muted">${ytDescription}</p>
-								<div class="text-right">
-									<a href="https://youtu.be/${yt.id}"
-										class="btn btn-secondary d-inline-block no-external">
-										<span class="fa fa-play"></span>
-										<span aria-hidden="true">Watch video</span>
-										<span class="sr-only">Watch video: ${yt.snippet.title}</span>
-									</a>
-								</div>
+								<p class="text-muted pb-20">${ytDescription}</p>
 							</div>
+						</div>
+						<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
+							<a href="https://youtu.be/${yt.id}"
+								class="btn btn-secondary d-inline-block no-external">
+								<span class="fa fa-play"></span>
+								<span aria-hidden="true">Watch video</span>
+								<span class="sr-only">Watch video: ${yt.snippet.title}</span>
+							</a>
 						</div>
 					</div>
 				</div>

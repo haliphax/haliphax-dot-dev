@@ -28,9 +28,8 @@ const renderCollection = (items, limit, jumboFirst = false) => /*html*/`
 							<h3 class="card-title mb-5">${p.data.title}</h3>
 							<hr />
 							<article aria-labelledby="${slug}">
-								<p class="text-muted">${summary}</p>
+								<p class="text-muted pb-20">${summary}</p>
 							</article>
-							<div class="d-block h-20 mb-20 pb-5"></div>
 							<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
 								<a href="${p.url}" id="${slug}"
 									class="btn btn-secondary d-inline-block">
