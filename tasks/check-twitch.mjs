@@ -53,6 +53,7 @@ for (let vod of vods) {
 	twitchData.latestVod.thumbnail_url = vod.thumbnail_url
 		.replace('%{width}', '640')
 		.replace('%{height}', '360');
+	twitchData.latestVod.view_count = null;
 
 	break;
 }
