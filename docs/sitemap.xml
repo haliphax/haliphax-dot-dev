@@ -1,0 +1,682 @@
+<?xml version="1.0" encoding="utf-8"?>
+			<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+				
+						<url>
+							<loc>https://haliphax.dev/2008/07/central-repository/</loc>
+							<lastmod>2008-07-14T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/07/prepared-sql-statements-in-vb-net/</loc>
+							<lastmod>2008-07-17T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/07/wipe-all-elements-in-a-form-with-javascript/</loc>
+							<lastmod>2008-07-18T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/07/using-the-connectionstrings-element-in-asp-net-web-config/</loc>
+							<lastmod>2008-07-21T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/08/simple-md5-hashes-in-vb-net/</loc>
+							<lastmod>2008-08-19T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/08/ldap-authentication-with-vb-net/</loc>
+							<lastmod>2008-08-21T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/08/retrieving-user-properties-from-ldap-with-vb-net/</loc>
+							<lastmod>2008-08-21T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/09/browser-independent-xml-load-with-javascript/</loc>
+							<lastmod>2008-09-24T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/09/browser-independent-xpath-with-javascript/</loc>
+							<lastmod>2008-09-24T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/09/browser-independent-xslt-with-javascript/</loc>
+							<lastmod>2008-09-24T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/10/rexcrawler-release/</loc>
+							<lastmod>2008-10-29T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2008/11/chud-greasemonkey-script-for-urban-dead/</loc>
+							<lastmod>2008-11-14T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/01/rexcrawler-v2-4-5-0-released/</loc>
+							<lastmod>2009-01-14T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/01/files-as-resources-in-net-projects/</loc>
+							<lastmod>2009-01-19T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/02/udinventory-greasemonkey-script-for-urban-dead/</loc>
+							<lastmod>2009-02-05T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/02/urban-dead-greasemonkey-scripts/</loc>
+							<lastmod>2009-02-19T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/03/rexcrawler-v2-5-0-0-released/</loc>
+							<lastmod>2009-03-11T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/03/consuming-newlines-with-the-javascript-regex-engine/</loc>
+							<lastmod>2009-03-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/04/help-kb932091-broke-my-sharepoint-installation/</loc>
+							<lastmod>2009-04-17T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/05/view-live-page-source-with-javascript/</loc>
+							<lastmod>2009-05-19T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/07/linux-get-size-of-sub-directores-in-current-directory/</loc>
+							<lastmod>2009-07-17T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/07/photobucket-thumbnail-bookmarklet/</loc>
+							<lastmod>2009-07-17T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/08/webfocus-impact-analysis-report-compactor/</loc>
+							<lastmod>2009-08-07T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/09/redirect-tomcat-to-fqdn/</loc>
+							<lastmod>2009-09-02T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/11/pdf-to-tiff-batch-conversion-with-imagemagick/</loc>
+							<lastmod>2009-11-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/12/backup-automation-and-emailing-attachments-in-linux/</loc>
+							<lastmod>2009-12-09T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2009/12/url-rewriting-template-engine/</loc>
+							<lastmod>2009-12-10T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/05/replacing-ms-words-quotation-marks-in-vb-net/</loc>
+							<lastmod>2010-05-10T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/06/query-across-servers-in-microsoft-sql-server-2005/</loc>
+							<lastmod>2010-06-04T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/07/bulkrename-v1-0/</loc>
+							<lastmod>2010-07-02T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/09/new-wordpress-blog/</loc>
+							<lastmod>2010-09-08T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/10/fix-codeigniter-ip-address-detection-on-lighttpd/</loc>
+							<lastmod>2010-10-18T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/10/currency-validator-for-sitecore-cms/</loc>
+							<lastmod>2010-10-22T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/10/image-dimension-field-validator-for-sitecore-cms/</loc>
+							<lastmod>2010-10-29T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/11/programmatically-modifying-file-permissions-in-net/</loc>
+							<lastmod>2010-11-05T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/11/custom-error-messages-with-validationsummary-in-asp-net/</loc>
+							<lastmod>2010-11-29T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2010/12/check-all-checkboxes-in-a-gridview-using-jquery/</loc>
+							<lastmod>2010-12-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/02/help-i-cant-delete-phpmyadmins-setup-php/</loc>
+							<lastmod>2011-02-04T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/03/create-anchor-links-in-twitter-status-text-with-javascript/</loc>
+							<lastmod>2011-03-17T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/03/whats-my-status-v1-0-0-released/</loc>
+							<lastmod>2011-03-22T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/04/create-anchor-links-in-twitter-status-text-with-php/</loc>
+							<lastmod>2011-04-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/04/send-xmpp-messages-with-perl-from-the-command-line-too/</loc>
+							<lastmod>2011-04-22T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/05/forward-lifehacker-links-to-the-uk-site-for-a-better-layout/</loc>
+							<lastmod>2011-05-09T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/05/jquery-noflickerslide-plugin-v1-0-0-released/</loc>
+							<lastmod>2011-05-13T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/06/jquery-imgradio-plugin-v1-0-released/</loc>
+							<lastmod>2011-06-15T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/09/kill-all-shared-memory-segments-in-linux/</loc>
+							<lastmod>2011-09-07T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/09/using-wse-3-0-with-visual-studio-2008-and-net-3-5/</loc>
+							<lastmod>2011-09-08T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/09/simple-file-access-concurrency-in-c/</loc>
+							<lastmod>2011-09-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/10/selective-backupcopy-script-for-moving-files-into-production/</loc>
+							<lastmod>2011-10-03T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/11/bulkrename-v2-0-released/</loc>
+							<lastmod>2011-11-28T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2011/12/whats-my-status-v1-1-released/</loc>
+							<lastmod>2011-12-19T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/01/whats-my-status-v1-2-released/</loc>
+							<lastmod>2012-01-04T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/05/posts-to-resume-shortly/</loc>
+							<lastmod>2012-05-02T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/05/add-threaded-discussions-to-cgit-with-disqus/</loc>
+							<lastmod>2012-05-11T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/05/easy-ssl-redirection-for-select-folders-in-nginx/</loc>
+							<lastmod>2012-05-24T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/06/using-curl-for-parallel-php-without-pcntl_fork/</loc>
+							<lastmod>2012-06-07T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/07/add-password-maintenance-feature-to-cgit-with-php/</loc>
+							<lastmod>2012-07-28T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/08/javascript-challenge-2-whac-a-moo/</loc>
+							<lastmod>2012-08-05T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/08/wordpress-plugin-minify-makefile/</loc>
+							<lastmod>2012-08-10T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/08/programmatically-compile-audiences-in-sharepoint-2010/</loc>
+							<lastmod>2012-08-31T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/09/rexcrawler-and-helpfulhighlighter-are-now-open-source/</loc>
+							<lastmod>2012-09-05T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/10/userscript-tidy-up-tvguide-com-listings/</loc>
+							<lastmod>2012-10-13T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/11/javascript-document-write-alternative/</loc>
+							<lastmod>2012-11-10T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/11/batch-convert-audio-files-to-mp3-with-powershell-and-vlc-player/</loc>
+							<lastmod>2012-11-23T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2012/12/staggr-featured-on-freewaregenius-com/</loc>
+							<lastmod>2012-12-02T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/01/resilient-ubuntu-boot-to-ram-usb-stick/</loc>
+							<lastmod>2013-01-23T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/04/ldap-authentication-with-c-sharp/</loc>
+							<lastmod>2013-04-05T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/04/add-desktop-version-and-mark-all-as-read-links-to-tiny-tiny-rss-mobile-plugin/</loc>
+							<lastmod>2013-04-08T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/04/scrollfollow-an-auto-scrolling-extender-for-knockout-js/</loc>
+							<lastmod>2013-04-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/04/ascii-js-a-font-based-rendering-engine-for-ascii-artwork/</loc>
+							<lastmod>2013-04-30T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/05/browsercache-php-a-simple-browser-cache-handling-library-for-codeigniter/</loc>
+							<lastmod>2013-05-08T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/07/truck-it-mozilla-towtruck-in-a-bookmarklet/</loc>
+							<lastmod>2013-07-11T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/09/bulk-rename-subversion-files-powershell/</loc>
+							<lastmod>2013-09-13T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/10/mozillas-togetherjs-bookmarklet/</loc>
+							<lastmod>2013-10-17T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/11/tribute-homage-ascii-heroes/</loc>
+							<lastmod>2013-11-13T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2013/12/give-coins-com-condensed-userscript/</loc>
+							<lastmod>2013-12-05T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2014/01/svg-polyfill-pure-javascript/</loc>
+							<lastmod>2014-01-13T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2014/10/disable-sslv3-avoid-poodle-attack-web-py/</loc>
+							<lastmod>2014-10-15T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2014/11/validating-file-uploads-sitecore-wffm/</loc>
+							<lastmod>2014-11-17T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2015/09/circumvent-get-adgroupmember-limit-in-powershell/</loc>
+							<lastmod>2015-09-26T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2015/12/dynamic-gridview-rows-asp-net/</loc>
+							<lastmod>2015-12-23T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2016/01/twitter-acro-bot/</loc>
+							<lastmod>2016-01-30T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2016/04/my-text-editor-configuration/</loc>
+							<lastmod>2016-04-09T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2016/04/jquery-visibility-pseudo-selectors/</loc>
+							<lastmod>2016-04-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2016/05/lower-case-query-string-iis-url-rewrite/</loc>
+							<lastmod>2016-05-11T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2016/06/quick-shell-script-wine-prefixes/</loc>
+							<lastmod>2016-06-16T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2016/09/asp-net-c-sharp-image-resizer-for-responsive-layouts/</loc>
+							<lastmod>2016-09-27T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2016/10/repo2site/</loc>
+							<lastmod>2016-10-05T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2016/10/hosting-git-repositories/</loc>
+							<lastmod>2016-10-06T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2017/06/jumping-on-the-static-site-generator-bandwagon-with-pelican/</loc>
+							<lastmod>2017-06-05T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2017/12/flaskbb-development/</loc>
+							<lastmod>2017-12-25T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2018/03/more-flaskbb-development/</loc>
+							<lastmod>2018-03-29T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2018/08/playing-with-dungeon-painter-studio/</loc>
+							<lastmod>2018-08-01T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2019/12/the-sound-of-silence/</loc>
+							<lastmod>2019-12-08T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2020/01/using-aspnet-connection-strings-in-powershell-scripts/</loc>
+							<lastmod>2020-01-30T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2020/01/userscripts-for-urban-dead/</loc>
+							<lastmod>2020-01-31T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2020/02/browser-access-keys/</loc>
+							<lastmod>2020-02-06T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2020/02/tail-for-browser-windows/</loc>
+							<lastmod>2020-02-13T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2020/04/nexus-clash-userscripts/</loc>
+							<lastmod>2020-04-02T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2020/09/nexus-clash-dev-team/</loc>
+							<lastmod>2020-09-11T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2020/09/minifying-javascript-using-esbuild-with-flask-assets/</loc>
+							<lastmod>2020-09-22T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2020/10/halfmoon-css-framework/</loc>
+							<lastmod>2020-10-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2021/01/vuejs-long-press-directive/</loc>
+							<lastmod>2021-01-06T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2021/03/aethersprite-a-discord-bot-framework/</loc>
+							<lastmod>2021-03-04T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2021/03/rate-limiting-with-flask-socketio/</loc>
+							<lastmod>2021-03-15T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2021/04/track-change-events-for-youtube-with-mutationobserver/</loc>
+							<lastmod>2021-04-20T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2021/05/my-daughter-deserves-better/</loc>
+							<lastmod>2021-05-22T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2021/09/a-chat-bot-in-your-browser/</loc>
+							<lastmod>2021-09-29T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2021/11/animated-css-border/</loc>
+							<lastmod>2021-11-03T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2022/03/avatars-for-twitch/</loc>
+							<lastmod>2022-03-28T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2022/06/ko-fi-icon-for-fontawesome/</loc>
+							<lastmod>2022-06-08T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/2022/06/blog-documented/</loc>
+							<lastmod>2022-06-17T00:00:00.000Z</lastmod>
+							<changefreq>never</changefreq>
+						</url>
+						
+						<url>
+							<loc>https://haliphax.dev/</loc>
+							<lastmod>2022-07-27T03:09:23.088Z</lastmod>
+							<changefreq>weekly</changefreq>
+						</url>
+						
+			</urlset>
