@@ -49,6 +49,7 @@ module.exports = class Post {
 		const githubLink = `https://github.com/login?return_to=${encodedPath}`;
 
 		return /*html*/`
+			${this.renderArchivedNotice(data.tags)}
 			${this.renderTags(data.tags)}
 			<div class="mb-10 d-flex flex-row flex-grow-1">
 				<small class="text-muted flex-fill ai-center">

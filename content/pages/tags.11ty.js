@@ -13,7 +13,10 @@ module.exports = class Tags {
 
 	render(data) {
 		const tags = Object.keys(data.collections)
-			.filter(t => data.ignoreTags.indexOf(t) < 0)
+			.filter(t =>
+				data.ignoreTags.indexOf(t) < 0
+					&& data.collections[t].some(p => p.data.tags?.includes('archived') === false)
+			)
 			.sort((a, b) => a.localeCompare(b));
 
 		return /*html*/`

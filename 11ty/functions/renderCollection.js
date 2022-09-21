@@ -5,7 +5,10 @@ const slugify = require('slugify');
 
 const renderCollection = (items, limit, jumboFirst = false) => /*html*/`
 	<ul class="list-unstyled row d-flex flex-row">
-		${Array.from(items).reverse().slice(0, limit)
+		${Array.from(items)
+			.filter(p => p.data.tags?.includes('archived') === false)
+			.reverse()
+			.slice(0, limit)
 			.map((p, i) => {
 				const cutoff = jumboFirst && i === 0 ? jumboBlurbLength : blurbLength;
 				const slug = slugify(p.url);
