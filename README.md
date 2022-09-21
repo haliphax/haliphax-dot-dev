@@ -72,6 +72,7 @@ List of string values used throughout the site and its templates
 | `getDescription(content, limit)` | Produce a trimmed blurb for the given content |
 | `htmlEntities(text)` | Replace certain character combinations with HTML entity equivalents |
 | `metaEncode(text)` | Replace illegal characters to produce usable text for meta tags |
+| `renderArchivedNotice(tags)` | Used by the `post` layout to display an archived notice (if applicable) |
 | `renderCollection(items, limit, jumboFirst)` | Render a collection of pages |
 | `renderTags(tags)` | Render a collection of tags |
 
@@ -85,6 +86,14 @@ language.
 | `base` | The base layout, which includes the outer document shell and site navigation |
 | `withHeader` _(inherits from `base`)_ | Reads `data.header` for use in an `<h1>` element |
 | `post` _(inherits from `withHeader`)_ | Used for blog posts; includes reading time, edit link, etc. |
+
+### 🔖 Special tags
+
+Some tags may confer special behavior to the post they are attached to.
+
+| Key | Description |
+|---|---|
+| `archived` | Removes the post from tag lists and displays a notice explaining to the viewer that the page has been archived |
 
 ### 📚 Libraries
 
