@@ -73,7 +73,7 @@ module.exports = class Index {
 					<div class="card m-5 p-20 w-full row">
 						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 							<div class="mr-sm-10">
-								<a href="https://youtu.be/${yt.id}" class="no-external">
+								<a href="https://youtu.be/${yt.snippet.resourceId.videoId}" class="no-external">
 									<img src="${yt.snippet.thumbnails.high.url}" width="1280" height="720"
 										class="w-full h-auto border-0" alt="Video thumbnail" />
 								</a>
@@ -87,7 +87,7 @@ module.exports = class Index {
 							</div>
 						</div>
 						<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
-							<a href="https://youtu.be/${yt.id}"
+							<a href="https://youtu.be/${yt.snippet.resourceId.videoId}"
 								class="btn btn-secondary d-inline-block no-external">
 								<span class="fa fa-play"></span>
 								<span aria-hidden="true">Watch video</span>
