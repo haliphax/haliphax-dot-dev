@@ -167,13 +167,19 @@ samp:not([class*="language-"])
 }
 
 /* card image link hover */
-.card a > img {
+.card a.img-wrap {
+	display: flex;
+	overflow: hidden;
 	transition-duration: .5s;
 	transition-property: transform;
 }
-.card a > img:hover {
+.card a.img-wrap:hover {
 	transform-origin: 50% 50%;
 	transform: scale(1.05);
+}
+/* youtube video thumbnail cropping */
+.card a.img-wrap img.yt-thumbnail {
+	margin: -9.4% 0 -9.4% 0;
 }
 
 /* external links */
