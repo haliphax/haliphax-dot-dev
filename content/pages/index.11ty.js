@@ -40,7 +40,7 @@ module.exports = class Index {
 					<div class="card m-5 p-20 w-full row">
 						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 							<div class="mr-sm-10">
-								<a href="${vod.url}" class="no-external img-wrap">
+								<a href="${vod.url}" class="no-external img-wrap mb-5">
 									<img src="${vod.thumbnail_url}" width="640" height="360"
 										class="w-full h-auto border-0" alt="Video thumbnail" />
 								</a>
@@ -73,7 +73,7 @@ module.exports = class Index {
 					<div class="card m-5 p-20 w-full row">
 						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 							<div class="mr-sm-10">
-								<a href="https://youtu.be/${yt.snippet.resourceId.videoId}" class="no-external img-wrap">
+								<a href="https://youtu.be/${yt.snippet.resourceId.videoId}" class="no-external img-wrap mb-5">
 									<img src="${yt.snippet.thumbnails.standard.url}" width="1280" height="720"
 										class="w-full h-auto border-0 yt-thumbnail" alt="Video thumbnail" />
 								</a>
