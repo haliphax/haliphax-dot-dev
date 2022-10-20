@@ -7,7 +7,7 @@ module.exports = class Post {
 				},
 			},
 			layout: 'withHeader',
-			ogType: 'page',
+			ogType: 'website',
 		};
 	}
 
