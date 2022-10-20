@@ -70,10 +70,12 @@ List of string values used throughout the site and its templates
 | Function | Description |
 |---|---|
 | `getDescription(content, limit)` | Produce a trimmed blurb for the given content |
+| `getMetaDescription(content, limit)` | Same as getDescription, but encoded for &lt;meta /&gt; usage |
 | `htmlEntities(text)` | Replace certain character combinations with HTML entity equivalents |
 | `metaEncode(text)` | Replace illegal characters to produce usable text for meta tags |
 | `renderArchivedNotice(tags)` | Used by the `post` layout to display an archived notice (if applicable) |
 | `renderCollection(items, limit, jumboFirst)` | Render a collection of pages |
+| `renderReadingTime(data)` | Render the reading time information for a page/post |
 | `renderTags(tags)` | Render a collection of tags |
 
 ### 🖼️ Layouts
@@ -85,7 +87,8 @@ language.
 |---|---|
 | `base` | The base layout, which includes the outer document shell and site navigation |
 | `withHeader` _(inherits from `base`)_ | Reads `data.header` for use in an `<h1>` element |
-| `post` _(inherits from `withHeader`)_ | Used for blog posts; includes reading time, edit link, etc. |
+| `page` _(inherits from `withHeader`)_ | Used for Markdown pages; includes reading time, edit link, etc. |
+| `post` _(inherits from `withHeader`)_ | Like `page`, but includes posted timestamp |
 
 ### 🔖 Special tags
 
