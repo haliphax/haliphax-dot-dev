@@ -75,6 +75,7 @@ List of string values used throughout the site and its templates
 | `metaEncode(text)` | Replace illegal characters to produce usable text for meta tags |
 | `renderArchivedNotice(tags)` | Used by the `post` layout to display an archived notice (if applicable) |
 | `renderCollection(items, limit, jumboFirst)` | Render a collection of pages |
+| `renderGitHubLink(data)` | Render link to GitHub for editing the current page |
 | `renderReadingTime(data)` | Render the reading time information for a page/post |
 | `renderTags(tags)` | Render a collection of tags |
 
