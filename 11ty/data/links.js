@@ -14,4 +14,9 @@ module.exports = [
 		url: 'https://duckduckgo.com/?q=site:haliphax.dev',
 		icon: 'fa fa-search',
 	},
+	{
+		name: 'License',
+		url: '/license-info/',
+		icon: 'fa fa-key',
+	},
 ];

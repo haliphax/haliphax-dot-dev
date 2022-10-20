@@ -136,17 +136,6 @@ module.exports = class Base {
 									${data.content}
 								</main>
 							</div>
-							<hr />
-							<footer class="d-flex mt-auto mx-20 my-20">
-								<span class="m-auto">
-									This site's
-									<a href="https://github.com/haliphax/haliphax-dot-dev">source code</a>
-									is licensed under the permissive
-									<a href="https://github.com/haliphax/haliphax-dot-dev/blob/master/LICENSE">MIT license</a>.
-									Content is licensed under the
-									<a href="https://github.com/haliphax/haliphax-dot-dev/tree/master/content/posts/LICENSE">Creative Commons Attribution-ShareAlike International 4.0 license</a>.
-								</small>
-							</footer>
 						</div>
 					</div>
 					<script id="sidebar-script">
