@@ -114,6 +114,12 @@ h1 a:hover {
 .card.intro {
 	border-color: var(--primary-color-dark);
 }
+.card.intro summary {
+	cursor: pointer;
+}
+.card.intro summary:hover {
+	color: var(--pink-color);
+}
 
 /* homepage section heading icons */
 h2 > span {

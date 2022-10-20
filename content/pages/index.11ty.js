@@ -20,8 +20,10 @@ module.exports = class Index {
 
 		return /*html*/`
 			<div class="row d-flex">
-				<div class="intro card m-5 p-20 w-full row">
+				<details class="intro card m-5 py-5 px-20 w-full row">
+					<summary class="w-full">About me</summary>
 					<div class="col">
+						<hr />
 						I am a software engineer and
 						<a href="https://oddnetwork.org/ascii/">textmode artist</a>. I
 						worked as a web developer in higher education for almost 15 years,
@@ -29,7 +31,7 @@ module.exports = class Index {
 						microservices and cloud-native solutions. I enjoy solving problems
 						and sharing what I have learned with others.
 					</div>
-				</div>
+				</details>
 			</div>
 			${!vod ? '' : /*html*/`
 				<h2 class="mb-0">
