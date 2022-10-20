@@ -3,7 +3,7 @@
 The source code for https://haliphax.dev and its accompanying processes;
 proudly built with [Eleventy]!
 
-## Features
+## 🎉 Features
 
 ### 🗒 Data
 
