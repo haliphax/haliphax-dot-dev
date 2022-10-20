@@ -1,5 +1,5 @@
 ---
-title: "License information"
+title: License information
 layout: page
 permalink: license-info/index.html
 ---
