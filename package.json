@@ -13,7 +13,7 @@
     "esbuild": "^0.15.11",
     "html-minifier": "^4.0.0",
     "jsdom": "^20.0.1",
-    "json-diff": "^0.9.0",
+    "json-diff": "^0.9.1",
     "markdown-it-anchor": "^8.6.5",
     "node-twitch": "^0.4.7"
   },
