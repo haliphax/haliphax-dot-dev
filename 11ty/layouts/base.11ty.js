@@ -15,12 +15,20 @@ const preloads =
 	.join('');
 
 /** generate sidebar link for given object */
-const generateSidebarLink = ({ icon, name, url}) => /*html*/`
-	<a href="${url}" class="sidebar-link">
-		<span class="${icon}"></span>
-		${name}
-	</a>
-	`;
+const generateSidebarLink = (opts) => {
+	let attrs = '';
+
+	if (opts.hasOwnProperty('attributes')) {
+		attrs = Object.entries(opts.attributes).map(v => `${v[0]}="${v[1]}"`);
+	}
+
+	return /*html*/`
+		<a href="${opts.url}" class="sidebar-link" ${attrs}>
+			<span class="${opts.icon}"></span>
+			${opts.name}
+		</a>
+		`;
+}
 
 module.exports = class Base {
 	async render(data) {

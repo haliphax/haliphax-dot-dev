@@ -15,6 +15,14 @@ module.exports = [
 		icon: 'fab fa-youtube',
 	},
 	{
+		name: 'Mastodon',
+		url: 'https://hachyderm.io/@haliphax',
+		icon: 'fas fa-comment-dots',
+		attributes: {
+			rel: 'me',
+		},
+	},
+	{
 		name: 'Twitter',
 		url: 'https://twitter.com/hxdev',
 		icon: 'fab fa-twitter',
