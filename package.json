@@ -25,5 +25,8 @@
     "check-all": "npm run check-twitch; npm run check-youtube; true",
     "check-twitch": "node tasks/check-twitch.mjs",
     "check-youtube": "node tasks/check-youtube.mjs"
+  },
+  "dependencies": {
+    "qs": "^6.11.0"
   }
 }
