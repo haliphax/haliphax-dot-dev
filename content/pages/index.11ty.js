@@ -33,7 +33,7 @@ module.exports = class Index {
 					</div>
 				</details>
 			</div>
-			${!vod ? '' : /*html*/`
+			${!vod.url ? '' : /*html*/`
 				<h2 class="mb-0">
 					<span class="fa fa-eye text-primary mr-5"></span>
 					Latest stream

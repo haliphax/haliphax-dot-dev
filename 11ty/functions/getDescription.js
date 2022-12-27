@@ -1,6 +1,10 @@
 const htmlEntities = require('./htmlEntities');
 
 const getDescription = (content, limit = 160) => {
+	if (!content) {
+		return;
+	}
+
 	const plain = htmlEntities(content)
 		.replace(/<[^>]+>/g, '')
 		.replace(/\s{2,}/g, ' ')

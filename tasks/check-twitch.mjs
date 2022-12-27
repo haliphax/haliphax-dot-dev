@@ -44,6 +44,11 @@ if (streams > 0) {
 const vods = (await api.getVideos({ first: 2, user_id: userId })).data;
 
 for (let vod of vods) {
+	// expired VOD; don't bother going further
+	if (!vod.thumbnail_url) {
+		break;
+	}
+
 	// VOD of live stream; skip it
 	if (!vod.thumbnail_url.length) {
 		continue;
