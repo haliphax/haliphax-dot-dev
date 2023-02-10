@@ -10,7 +10,7 @@
     "@11ty/eleventy": "^1.0.2",
     "@11ty/eleventy-plugin-syntaxhighlight": "^4.2.0",
     "dotenv": "^16.0.3",
-    "esbuild": "^0.16.16",
+    "esbuild": "^0.17.7",
     "html-minifier": "^4.0.0",
     "jsdom": "^21.0.0",
     "json-diff": "^1.0.0",
