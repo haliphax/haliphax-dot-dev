@@ -23,11 +23,6 @@ module.exports = [
 		},
 	},
 	{
-		name: 'Twitter',
-		url: 'https://twitter.com/hxdev',
-		icon: 'fab fa-twitter',
-	},
-	{
 		name: 'Ko-fi',
 		url: 'https://ko-fi.com/haliphax',
 		icon: 'fas fa-ko-fi',
