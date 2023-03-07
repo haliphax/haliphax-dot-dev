@@ -27,6 +27,6 @@
     "check-youtube": "node tasks/check-youtube.mjs"
   },
   "dependencies": {
-    "qs": "^6.11.0"
+    "qs": "^6.11.1"
   }
 }
