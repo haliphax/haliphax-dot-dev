@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/haliphax
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://haliphax.dev
+  * I am haliphax (https://keybase.io/haliphax) on keybase.
+  * I have a public key ASC0LFekXGTz3OedyiQZMCgD_CiApPRAvykdZJCJsqv5wgo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0120b42c57a45c64f3dce79dca2419302803fc2880a4f440bf291d649089b2abf9c20a",
+      "host": "keybase.io",
+      "kid": "0120b42c57a45c64f3dce79dca2419302803fc2880a4f440bf291d649089b2abf9c20a",
+      "uid": "340d35dda6deee5b8fc3195d5c80ad19",
+      "username": "haliphax"
+    },
+    "merkle_root": {
+      "ctime": 1683081400,
+      "hash": "440d4270481ce517072fb09934f1f0c99cbe13b8efbdc62973fed04b694fe6cd51cca20dfc2d24e8afe19d0dbff96e18e0ce7ed46a385d9bc67c187333c04086",
+      "hash_meta": "99ad456fbb015257ab5343e4dc574657394a1d5f93bd68fa49ae3939c235c7e1",
+      "seqno": 24405961
+    },
+    "service": {
+      "entropy": "NqG/4lbKfxWN5G4IjxUR+1RM",
+      "hostname": "haliphax.dev",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "6.0.2"
+  },
+  "ctime": 1683081437,
+  "expire_in": 504576000,
+  "prev": "02013c7b469729f94a04d65b26e5afa8eb26d24d8c2b7c854245152bd068f612",
+  "seqno": 5,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgtCxXpFxk89znncokGTAoA/wogKT0QL8pHWSQibKr+cIKp3BheWxvYWTESpcCBcQgAgE8e0aXKflKBNZbJuWvqOsm0k2MK3yFQkUVK9Bo9hLEIEDWNGkSZLnWWrCfbiNPoP0plMmnQW+2O9eeRPeB3EnSAgHCo3NpZ8RAh7mdWS5kFegWxJrDgo2KmTQUO+XFK3snBbtqaxdk5tUDoltUeTWlP+2XkOzb++jUN9xowvsEHKVrX3K8Kf5rCahzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIGUmvqLxHMmphiSGm2Yfx1Kv4b5pcJ1q6Dy/ykR+N62Qo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/haliphax
+
+==================================================================
