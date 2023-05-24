@@ -19,7 +19,7 @@ module.exports = class Post {
 	}
 
 	render(data) {
-		const posted = this.page.date.toISOString().replace(/T.*$/, '');
+		const posted = data.page.date.toISOString().replace(/T.*$/, '');
 
 		return /*html*/`
 			${this.renderArchivedNotice(data.tags)}
