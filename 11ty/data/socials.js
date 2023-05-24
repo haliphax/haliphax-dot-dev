@@ -11,7 +11,7 @@ module.exports = [
 	},
 	{
 		name: 'YouTube',
-		url: 'https://www.youtube.com/c/haliphaxyt',
+		url: 'https://www.youtube.com/@haliphax-',
 		icon: 'fab fa-youtube',
 	},
 	{
