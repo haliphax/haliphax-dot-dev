@@ -1,6 +1,6 @@
 function renderGitHubLink(data) {
 	const encodedPath = encodeURIComponent(
-		[data.strings.githubRoot, this.page.inputPath.substring(1)].join(''));
+		[data.strings.githubRoot, data.page.inputPath.substring(1)].join(''));
 	const githubLink = `https://github.com/login?return_to=${encodedPath}`;
 
 	return /*html*/`
