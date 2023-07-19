@@ -1,16 +1,9 @@
-const cfgFunctions = require('./11ty/functions/_config');
-const cfgLayouts = require('./11ty/layouts/_config');
-const cfgLibraries = require('./11ty/libraries/_config');
-const cfgPlugins = require('./11ty/plugins/_config');
-const cfgTransforms = require('./11ty/transforms/_config');
 const fs = require('fs');
 
 module.exports = cfg => {
-	cfgFunctions(cfg);
-	cfgLayouts(cfg);
-	cfgLibraries(cfg);
-	cfgPlugins(cfg);
-	cfgTransforms(cfg);
+	// load the various packages that make up the site and its functionality
+	['functions', 'layouts', 'libraries', 'plugins', 'transforms']
+		.map(p => require(`./11ty/${p}/_config`)(cfg));
 
 	cfg.addPassthroughCopy({ 'static': '/' });
 
