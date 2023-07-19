@@ -76,6 +76,7 @@ List of string values used throughout the site and its templates
 | `renderArchivedNotice(tags)` | Used by the `post` layout to display an archived notice (if applicable) |
 | `renderCollection(items, limit, jumboFirst)` | Render a collection of pages |
 | `renderGitHubLink(data)` | Render link to GitHub for editing the current page |
+| `renderIcon(icon)` | Render the provided [Feather Icons] sprite |
 | `renderReadingTime(data)` | Render the reading time information for a page/post |
 | `renderTags(tags)` | Render a collection of tags |
 
@@ -277,6 +278,7 @@ workflow, the site will be re-published (along with the new data).
 [`esbuild`]: https://www.npmjs.com/package/esbuild
 [check-twitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-twitch.mjs
 [check-youtube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-youtube.mjs
+[Feather Icons]: https://feathericons.com
 [GitHub Pages]: https://pages.github.com
 [GitHub Actions]: https://github.com/features/actions
 [publish-site.yml]: https://github.com/haliphax/haliphax-dot-dev/blob/master/.github/workflows/publish-site.yml
