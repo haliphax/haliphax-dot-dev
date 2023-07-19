@@ -7,7 +7,7 @@ const { ytPlaylistId } = pkg;
 dotenv.config();
 
 const apiKey = process.env.YT_API_KEY;
-var cached = null;
+let cached = null;
 
 try {
 	cached = JSON.parse(
