@@ -35,7 +35,7 @@ module.exports = class Index {
 			</div>
 			${!vod.url ? '' : /*html*/`
 				<h2 class="mb-0">
-					<span class="text-primary mr-5">${this.renderIcon('cast')}</span>
+					<span class="text-primary mr-5">${this.renderIcon('tv')}</span>
 					Latest stream
 				</h2>
 				<div class="row d-flex">
@@ -68,7 +68,7 @@ module.exports = class Index {
 				`}
 			${!yt ? '' : /*html*/`
 				<h2 class="mb-0">
-					<span class="text-primary mr-5">${this.renderIcon('video')}</span>
+					<span class="text-primary mr-5">${this.renderIcon('film')}</span>
 					Latest video
 				</h2>
 				<div class="row d-flex">
@@ -100,7 +100,7 @@ module.exports = class Index {
 				</div>
 				`}
 			<h2 class="mb-0">
-				<span class="text-primary mr-5">${this.renderIcon('send')}</span>
+				<span class="text-primary mr-5">${this.renderIcon('book-open')}</span>
 				Recent posts
 			</h2>
 			${this.renderCollection(data.collections.post, 3, true)}
