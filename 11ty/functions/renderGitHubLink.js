@@ -1,3 +1,5 @@
+const renderIcon = require('./renderIcon');
+
 function renderGitHubLink(data) {
 	const encodedPath = encodeURIComponent(
 		[data.strings.githubRoot, data.page.inputPath.substring(1)].join(''));
@@ -6,7 +8,7 @@ function renderGitHubLink(data) {
 	return /*html*/`
 			<small>
 				<a href="${githubLink}" class="no-external">
-					<i class="fa fa-edit" aria-hidden="true"></i>
+					${renderIcon('edit')}
 					Suggest an edit
 				</a>
 			</small>

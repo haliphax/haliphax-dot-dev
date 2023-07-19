@@ -1,3 +1,5 @@
+const renderIcon = require('./renderIcon');
+
 function renderReadingTime(data) {
 	if (!(data.layout == 'page' || data.tags.includes('post')))
 		return null;
@@ -13,7 +15,7 @@ function renderReadingTime(data) {
 
 	return /*html*/`
 		<small class="text-muted flex-fill ai-center">
-			<i class="fa fa-clock" aria-hidden="true">&nbsp;</i>
+			${renderIcon('clock')}
 			Reading time: ${readTime} minute${readTime !== 1 ? 's' : ''}
 		</small>
 		`;

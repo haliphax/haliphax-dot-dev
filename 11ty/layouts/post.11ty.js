@@ -32,7 +32,7 @@ module.exports = class Post {
 				${data.content}
 			</div>
 			<p class="text-muted" role="contentinfo">
-				<span class="fa fa-calendar"></span>
+				${this.renderIcon('calendar')}
 				Posted: <time datetime="${posted}">${posted}</time>
 			</p>
 			`;

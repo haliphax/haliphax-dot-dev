@@ -2,35 +2,31 @@
 const preloads =
 	[
 		'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/regular.min.css',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/solid.min.css',
-		'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/brands.min.css',
 		'/css/prism-synthwave84.css',
 	]
 	.map(p => /*html*/`
-		<link rel="preload" href="${p}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+		<link rel="preload" href="${p}" as="style"
+			onload="this.onload=null;this.rel='stylesheet'">
 		<noscript><link rel="stylesheet" href="${p}"></noscript>
 	`)
 	.join('');
 
-/** generate sidebar link for given object */
-const generateSidebarLink = (opts) => {
-	let attrs = '';
+module.exports = class Base {
+	/** generate sidebar link for given object */
+	generateSidebarLink(opts) {
+		let attrs = '';
 
-	if (opts.hasOwnProperty('attributes')) {
-		attrs = Object.entries(opts.attributes).map(v => `${v[0]}="${v[1]}"`);
+		if (opts.hasOwnProperty('attributes')) {
+			attrs = Object.entries(opts.attributes).map(v => `${v[0]}="${v[1]}"`);
+		}
+
+		return /*html*/`
+			<a href="${opts.url}" class="sidebar-link" ${attrs}>
+				${this.renderIcon(opts.icon)} ${opts.name}
+			</a>
+			`;
 	}
 
-	return /*html*/`
-		<a href="${opts.url}" class="sidebar-link" ${attrs}>
-			<span class="${opts.icon}"></span>
-			${opts.name}
-		</a>
-		`;
-}
-
-module.exports = class Base {
 	async render(data) {
 		const ogTitle = this.metaEncode(data.ogTitle ?? data.title);
 		const ogAuthor = this.metaEncode(data.ogAuthor ?? data.metaDefaults.author);
@@ -93,7 +89,7 @@ module.exports = class Base {
 				</head>
 				<body class="dark-mode mh-full h-full">
 					<a class="btn btn-primary" id="skip-nav" href="#main-content">
-						<span class="fas fa-forward"></span>
+						${this.renderIcon('fast-forward')}
 						Skip to main content
 					</a>
 					<div class="page-wrapper with-sidebar"
@@ -101,7 +97,7 @@ module.exports = class Base {
 						data-sidebar-type="overlayed-sm-and-down" >
 						<button id="btn-sidebar-toggle" type="button"
 							class="btn btn-action position-absolute t-0 l-0 m-5">
-							<span class="fa fa-bars"></span>
+							${this.renderIcon('menu')}
 							<span class="sr-only">Toggle sidebar menu</span>
 						</button>
 						<div class="sidebar">
@@ -109,11 +105,11 @@ module.exports = class Base {
 								<nav class="sidebar-content">
 									<h5 class="sidebar-title">${data.strings.siteMenuHeader}</h5>
 									<div class="sidebar-divider"></div>
-									${data.links.map(generateSidebarLink).join('')}
+									${data.links.map(this.generateSidebarLink.bind(this)).join('')}
 									<br />
 									<h5 class="sidebar-title">${data.strings.socialMenuHeader}</h5>
 									<div class="sidebar-divider"></div>
-									${data.socials.map(generateSidebarLink).join('')}
+									${data.socials.map(this.generateSidebarLink.bind(this)).join('')}
 								</nav>
 							</div>
 						</div>
@@ -136,7 +132,7 @@ module.exports = class Base {
 													I'm streaming on Twitch <em><strong>right now</strong></em>.  You should stop by.
 													<a href="https://www.twitch.tv/${process.env.TWITCH_USERNAME}"
 														class="btn btn-sm btn-primary ml-10 no-external">
-														<span class="fab fa-twitch"></span>
+														${this.renderIcon('twitch')}
 														Let's go!
 													</a>
 											</div>

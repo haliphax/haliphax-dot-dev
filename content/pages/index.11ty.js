@@ -35,7 +35,7 @@ module.exports = class Index {
 			</div>
 			${!vod.url ? '' : /*html*/`
 				<h2 class="mb-0">
-					<span class="fa fa-eye text-primary mr-5"></span>
+					<span class="text-primary mr-5">${this.renderIcon('cast')}</span>
 					Latest stream
 				</h2>
 				<div class="row d-flex">
@@ -58,7 +58,7 @@ module.exports = class Index {
 						<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
 							<a href="${vod.url}"
 								class="btn btn-secondary d-inline-block no-external">
-								<span class="far fa-eye"></span>
+								${this.renderIcon('play')}
 								<span aria-hidden="true">Watch VOD</span>
 								<span class="sr-only">Watch VOD: ${vod.title}</span>
 							</a>
@@ -68,7 +68,7 @@ module.exports = class Index {
 				`}
 			${!yt ? '' : /*html*/`
 				<h2 class="mb-0">
-					<span class="fa fa-play text-primary mr-5"></span>
+					<span class="text-primary mr-5">${this.renderIcon('video')}</span>
 					Latest video
 				</h2>
 				<div class="row d-flex">
@@ -91,7 +91,7 @@ module.exports = class Index {
 						<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
 							<a href="https://youtu.be/${yt.snippet.resourceId.videoId}"
 								class="btn btn-secondary d-inline-block no-external">
-								<span class="fa fa-play"></span>
+								${this.renderIcon('play')}
 								<span aria-hidden="true">Watch video</span>
 								<span class="sr-only">Watch video: ${yt.snippet.title}</span>
 							</a>
@@ -100,7 +100,7 @@ module.exports = class Index {
 				</div>
 				`}
 			<h2 class="mb-0">
-				<span class="fa fa-sticky-note text-primary mr-5"></span>
+				<span class="text-primary mr-5">${this.renderIcon('send')}</span>
 				Recent posts
 			</h2>
 			${this.renderCollection(data.collections.post, 3, true)}

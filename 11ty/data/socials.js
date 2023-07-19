@@ -2,22 +2,22 @@ module.exports = [
 	{
 		name: 'Twitch',
 		url: 'https://www.twitch.tv/haliphax',
-		icon: 'fab fa-twitch',
+		icon: 'twitch',
 	},
 	{
 		name: 'GitHub',
 		url: 'https://github.com/haliphax',
-		icon: 'fab fa-github',
+		icon: 'github',
 	},
 	{
 		name: 'YouTube',
 		url: 'https://www.youtube.com/@haliphax-',
-		icon: 'fab fa-youtube',
+		icon: 'youtube',
 	},
 	{
 		name: 'Mastodon',
 		url: 'https://hachyderm.io/@haliphax',
-		icon: 'fas fa-comment-dots',
+		icon: 'message-circle',
 		attributes: {
 			rel: 'me',
 		},
@@ -25,6 +25,6 @@ module.exports = [
 	{
 		name: 'Ko-fi',
 		url: 'https://ko-fi.com/haliphax',
-		icon: 'fas fa-ko-fi',
+		icon: 'coffee',
 	},
 ];

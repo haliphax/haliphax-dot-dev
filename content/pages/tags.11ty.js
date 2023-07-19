@@ -25,8 +25,7 @@ module.exports = class Tags {
 					${tags.map(t => /*html*/`
 						<li class="d-inline-block mr-5 mb-10">
 							<a href="/tags/${t}/" class="btn btn-secondary">
-								<span class="fas fa-tag"></span>
-								${t}
+								${this.renderIcon('tag')} ${t}
 							</a>
 						</li>
 						`).join('')}

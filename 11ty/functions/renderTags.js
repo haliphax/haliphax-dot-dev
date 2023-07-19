@@ -1,4 +1,5 @@
 const ignoreTags = require('../data/ignoreTags');
+const renderIcon = require('./renderIcon');
 
 const renderTags = tags => {
 	const filtered = tags.filter(t => ignoreTags.indexOf(t) < 0);
@@ -14,7 +15,7 @@ const renderTags = tags => {
 								<li class="d-inline-block mr-1">
 									<a href="/tags/${t}/"
 										class="badge badge-secondary">
-										<span class="fas fa-tag"></span>
+										${renderIcon('tag')}
 										${t}
 									</a>
 									&nbsp;

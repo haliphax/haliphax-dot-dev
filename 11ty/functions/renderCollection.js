@@ -1,6 +1,7 @@
 const { blurbLength, jumboBlurbLength } = require('../data/misc');
 const getDescription = require('./getDescription');
 const md = require('../libraries/markdownIt');
+const renderIcon = require('./renderIcon');
 const slugify = require('slugify');
 
 const renderCollection = (items, limit, jumboFirst = false) => /*html*/`
@@ -36,7 +37,7 @@ const renderCollection = (items, limit, jumboFirst = false) => /*html*/`
 							<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
 								<a href="${p.url}" id="${slug}"
 									class="btn btn-secondary d-inline-block">
-									<span class="far fa-sticky-note"></span>
+									${renderIcon('bookmark')}
 									<span aria-hidden="true">Read more</span>
 									<span class="sr-only">Read article: ${p.data.title}</span>
 								</a>

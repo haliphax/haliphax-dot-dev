@@ -30,8 +30,7 @@ module.exports = class Tag {
 			${this.renderCollection(collections[tag])}
 			<p>
 				<a href="/tags/">
-					<span class="fas fa-tags"></span>
-					View all tags
+					${this.renderIcon('tag')} View all tags
 				</a>
 			</p>
 			`;

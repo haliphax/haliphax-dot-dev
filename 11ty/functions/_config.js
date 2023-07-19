@@ -6,6 +6,7 @@ const metaEncode = require('./metaEncode');
 const renderArchivedNotice = require('./renderArchivedNotice');
 const renderCollection = require('./renderCollection');
 const renderGitHubLink = require('./renderGitHubLink');
+const renderIcon = require('./renderIcon');
 const renderReadingTime = require('./renderReadingTime');
 const renderTags = require('./renderTags');
 
@@ -18,6 +19,7 @@ const config = cfg => {
 	cfg.addJavaScriptFunction('renderArchivedNotice', renderArchivedNotice);
 	cfg.addJavaScriptFunction('renderCollection', renderCollection);
 	cfg.addJavaScriptFunction('renderGitHubLink', renderGitHubLink);
+	cfg.addJavaScriptFunction('renderIcon', renderIcon);
 	cfg.addJavaScriptFunction('renderReadingTime', renderReadingTime);
 	cfg.addJavaScriptFunction('renderTags', renderTags);
 };

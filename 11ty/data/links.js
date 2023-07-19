@@ -2,21 +2,21 @@ module.exports = [
 	{
 		name: 'Home',
 		url: '/',
-		icon: 'fa fa-home',
+		icon: 'home',
 	},
 	{
 		name: 'Tags',
 		url: '/tags/',
-		icon: 'fa fa-tags',
+		icon: 'tag',
 	},
 	{
 		name: 'Search',
 		url: 'https://duckduckgo.com/?q=site:haliphax.dev',
-		icon: 'fa fa-search',
+		icon: 'search',
 	},
 	{
 		name: 'License',
 		url: '/license-info/',
-		icon: 'fa fa-key',
+		icon: 'key',
 	},
 ];
