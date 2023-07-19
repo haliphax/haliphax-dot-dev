@@ -60,7 +60,13 @@ Some caveats:
 - The `::after` element's color is set to black in this example, which may not
   work with the color scheme for your site.
 
+# Update
 
+I have since retired the use of FontAwesome icons on the site. I am now using
+[Feather Icons], instead.
+
+
+[Feather Icons]: https://feathericons.com
 [FontAwesome]: https://fontawesome.com
 [pretty extensive process]: https://fontawesome.com/community/leaderboard/new#faqs
 [Ko-fi]: https://ko-fi.com
