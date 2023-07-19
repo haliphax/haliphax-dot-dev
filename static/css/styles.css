@@ -216,19 +216,15 @@ samp:not([class*="language-"])
 
 /* feather icons */
 svg.feather {
-  fill: none;
-  height: 1.1em;
+	fill: none;
+	height: 1.2em;
 	position: relative;
-	top: .2em;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
-  stroke: currentColor;
-  width: 1.1em;
-}
-
-h2 svg.feather {
-	margin-left: -.2em;
+	top: .25em;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+	stroke-width: 2;
+	stroke: currentColor;
+	width: 1.2em;
 }
 
 /* screen reader only */
@@ -249,7 +245,7 @@ h2 svg.feather {
 	}
 	.page-wrapper[data-sidebar-hidden] > .content-wrapper {
 		left: var(--sidebar-width) !important;
-    width: calc(100% - var(--sidebar-width)) !important;
+		width: calc(100% - var(--sidebar-width)) !important;
 	}
 }
 
