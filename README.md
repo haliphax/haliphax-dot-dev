@@ -85,12 +85,12 @@ List of string values used throughout the site and its templates
 All layout templates are built using the [`11ty.js`] (JavaScript) template
 language.
 
-| Key | Description |
-|---|---|
-| `base` | The base layout, which includes the outer document shell and site navigation |
-| `withHeader` _(inherits from `base`)_ | Reads `data.header` for use in an `<h1>` element |
-| `page` _(inherits from `withHeader`)_ | Used for Markdown pages; includes reading time, edit link, etc. |
-| `post` _(inherits from `withHeader`)_ | Like `page`, but includes posted timestamp |
+| Key | Parent | Description |
+|---|---|---|
+| `base` | _none_ | The base layout, which includes the outer document shell and site navigation |
+| `withHeader` | `base` | Reads `data.header` for use in an `<h1>` element |
+| `page` | `withHeader` | Used for Markdown pages; includes reading time, edit link, etc. |
+| `post` | `withHeader` | Like `page`, but includes posted timestamp |
 
 ### 🔖 Special tags
 
