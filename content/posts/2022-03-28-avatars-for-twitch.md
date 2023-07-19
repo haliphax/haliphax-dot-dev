@@ -21,10 +21,11 @@ hard-coded to 1920x1080 and expects to be rendered full-screen. There is also a
 "demo mode" available if you want to see how it looks/operates before going
 through the OAuth flow to get an authentication token.
 
-https://github.com/haliphax/hxavatars/
+[hxavatars GitHub repository]
 
 
 [experimenting]: /2021/09/a-chat-bot-in-your-browser/
 [Twitch]: https://www.twitch.tv
 [TMI]: https://github.com/tmijs/tmi.js
 [PhaserJS]: https://phaser.io
+[hxavatars github repository]: https://github.com/haliphax/hxavatars/
