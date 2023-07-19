@@ -1,4 +1,4 @@
-const jsdom = require("jsdom");
+const jsdom = require('jsdom');
 const { JSDOM } = jsdom;
 const min = require('html-minifier');
 const esbuild = require('esbuild');
