@@ -189,18 +189,13 @@ samp:not([class*="language-"])
 }
 
 /* external links */
-.content-wrapper a[href*='://']:not(.no-external) {
-	padding-right: 1.6rem;
-}
 .content-wrapper a[href*='://']:not(.no-external)::after {
-	content: '\f35d';
+	content: '\2197\fe0f';
 	display: inline-block;
-	font-family: 'Font Awesome 5 Free';
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 900;
-	margin-left: .4rem;
-	margin-right: -1.8rem;
+	margin-left: .2rem;
 	text-rendering: auto;
 	width: 1.8rem;
 }
