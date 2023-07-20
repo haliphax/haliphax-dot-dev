@@ -135,6 +135,19 @@ h1 a:hover {
 .card.intro summary:hover {
 	color: var(--pink-color);
 }
+.card.intro[open] > div {
+	transition:
+		font-size .25s,
+		margin  .25s,
+		opacity .25s .25s,
+		padding .25s;
+}
+.card.intro:not([open]) > div {
+	font-size: 0;
+	margin: 0;
+	opacity: 0;
+	padding: 0;
+}
 
 /* homepage section heading icons */
 h2 > span {
