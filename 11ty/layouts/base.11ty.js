@@ -22,7 +22,7 @@ module.exports = class Base {
 
 		return /*html*/`
 			<a href="${opts.url}" class="sidebar-link" ${attrs}>
-				${this.renderIcon(opts.icon)} ${opts.name}
+				<span>${this.renderIcon(opts.icon)} ${opts.name}</span>
 			</a>
 			`;
 	}
