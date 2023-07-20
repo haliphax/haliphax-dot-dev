@@ -33,8 +33,8 @@ jobs:
         npm run full
 
         #--- publish to GitHub Pages
-        git config user.email git@github.com
-        git config user.name 'GitHub Actions'
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git add -f docs 11ty/data/external/*.json
         git commit -m 'publish site'
         git push -f -u origin master:gh-pages
