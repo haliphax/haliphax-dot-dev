@@ -1,4 +1,4 @@
-const scripts = [
+const functions = [
 	'getContent',
 	'getDescription',
 	'getMetaDescription',
@@ -14,6 +14,6 @@ const scripts = [
 ];
 
 const config = cfg =>
-	scripts.map(s => cfg.addJavaScriptFunction(s, require(`./${s}`)));
+	functions.map(s => cfg.addJavaScriptFunction(s, require(`./${s}`)));
 
 module.exports = config;

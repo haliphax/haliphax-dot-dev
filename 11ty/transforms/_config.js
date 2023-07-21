@@ -1,7 +1,7 @@
-const htmlMinify = require('./htmlMinify');
+const transforms = [
+	'htmlMinify',
+]
 
-const config = cfg => {
-	htmlMinify(cfg);
-};
+const config = cfg => transforms.map(t => require(`./${t}`)(cfg));
 
 module.exports = config;

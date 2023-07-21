@@ -1,8 +1,11 @@
-const config = cfg => {
-	cfg.addLayoutAlias('base', 'layouts/base.11ty.js');
-	cfg.addLayoutAlias('page', 'layouts/page.11ty.js');
-	cfg.addLayoutAlias('post', 'layouts/post.11ty.js');
-	cfg.addLayoutAlias('withHeader', 'layouts/withHeader.11ty.js');
-}
+const layouts = [
+	'base',
+	'page',
+	'post',
+	'withHeader',
+];
+
+const config = cfg =>
+	layouts.map(l => cfg.addLayoutAlias(l, `layouts/${l}.11ty.js`));
 
 module.exports = config;

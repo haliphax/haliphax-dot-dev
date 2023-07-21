@@ -2,7 +2,13 @@ const fs = require('fs');
 
 module.exports = cfg => {
 	// load the various packages that make up the site and its functionality
-	['functions', 'layouts', 'libraries', 'plugins', 'transforms']
+	[
+		'functions',
+		'layouts',
+		'libraries',
+		'plugins',
+		'transforms',
+	]
 		.map(p => require(`./11ty/${p}/_config`)(cfg));
 
 	cfg.addPassthroughCopy({ 'static': '/' });

@@ -1,7 +1,7 @@
-const syntaxHighlight = require('@11ty/eleventy-plugin-syntaxhighlight');
+plugins = [
+	'@11ty/eleventy-plugin-syntaxhighlight',
+];
 
-const config = cfg => {
-	cfg.addPlugin(syntaxHighlight);
-}
+const config = cfg => plugins.map(p => cfg.addPlugin(require(p)));
 
 module.exports = config;
