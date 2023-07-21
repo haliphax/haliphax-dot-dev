@@ -1,27 +1,19 @@
-const getContent = require('./getContent');
-const getDescription = require('./getDescription');
-const getMetaDescription = require('./getMetaDescription');
-const htmlEntities = require('./htmlEntities');
-const metaEncode = require('./metaEncode');
-const renderArchivedNotice = require('./renderArchivedNotice');
-const renderCollection = require('./renderCollection');
-const renderGitHubLink = require('./renderGitHubLink');
-const renderIcon = require('./renderIcon');
-const renderReadingTime = require('./renderReadingTime');
-const renderTags = require('./renderTags');
+const scripts = [
+	'getContent',
+	'getDescription',
+	'getMetaDescription',
+	'htmlEntities',
+	'inlineScript',
+	'metaEncode',
+	'renderArchivedNotice',
+	'renderCollection',
+	'renderGitHubLink',
+	'renderIcon',
+	'renderReadingTime',
+	'renderTags',
+];
 
-const config = cfg => {
-	cfg.addJavaScriptFunction('getContent', getContent);
-	cfg.addJavaScriptFunction('getDescription', getDescription);
-	cfg.addJavaScriptFunction('getMetaDescription', getMetaDescription);
-	cfg.addJavaScriptFunction('htmlEntities', htmlEntities);
-	cfg.addJavaScriptFunction('metaEncode', metaEncode);
-	cfg.addJavaScriptFunction('renderArchivedNotice', renderArchivedNotice);
-	cfg.addJavaScriptFunction('renderCollection', renderCollection);
-	cfg.addJavaScriptFunction('renderGitHubLink', renderGitHubLink);
-	cfg.addJavaScriptFunction('renderIcon', renderIcon);
-	cfg.addJavaScriptFunction('renderReadingTime', renderReadingTime);
-	cfg.addJavaScriptFunction('renderTags', renderTags);
-};
+const config = cfg =>
+	scripts.map(s => cfg.addJavaScriptFunction(s, require(`./${s}`)));
 
 module.exports = config;
