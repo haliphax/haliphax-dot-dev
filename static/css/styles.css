@@ -54,6 +54,9 @@ html {
 .container {
 	max-width: 960px;
 }
+::marker {
+	color: var(--pink-color-light);
+}
 
 /* skip navigation */
 #skip-nav {
@@ -129,24 +132,36 @@ h1 a:hover {
 .card.intro {
 	border-color: var(--primary-color-dark);
 }
-.card.intro summary {
-	cursor: pointer;
-}
-.card.intro summary:hover {
-	color: var(--pink-color);
-}
-.card.intro[open] > div {
+
+/* details elements */
+details > :not(summary) {
 	transition:
-		font-size .25s,
-		margin  .25s,
-		opacity .25s .25s,
-		padding .25s;
+		font-size .2s,
+		margin .2s,
+		opacity .2s .3s,
+		padding .2s;
 }
-.card.intro:not([open]) > div {
+details:not([open]) > :not(summary),
+details.closing > :not(summary)
+{
+	transition:
+		font-size .2s .3s,
+		margin .2s .3s,
+		opacity .2s,
+		padding .2s .3s;
 	font-size: 0;
 	margin: 0;
 	opacity: 0;
 	padding: 0;
+}
+details.loading > :not(summary) {
+	display: none;
+}
+summary {
+	cursor: pointer;
+}
+summary:hover {
+	color: var(--pink-color);
 }
 
 /* homepage section heading icons */
