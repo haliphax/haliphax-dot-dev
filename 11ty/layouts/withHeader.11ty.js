@@ -9,7 +9,7 @@ module.exports = class Base {
 		const classes = [];
 
 		if (data.layout == 'post') {
-			classes.push('mb-0');
+			classes.push('mb-10');
 		}
 
 		// renumber headers so that lowest possible is h3
