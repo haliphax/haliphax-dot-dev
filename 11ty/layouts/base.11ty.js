@@ -2,7 +2,6 @@
 const preloads =
 	[
 		'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap',
-		'/css/prism-synthwave84.css',
 	]
 	.map(p => /*html*/`
 		<link rel="preload" href="${p}" as="style"
@@ -83,9 +82,8 @@ module.exports = class Base {
 							`).join('')}
 					<meta name="generator" content="${data.metaDefaults.generator}" />
 					<link rel="icon" href="/img/favicon.gif" />
-					<link href="https://cdn.jsdelivr.net/npm/halfmoon@1.1.1/css/halfmoon-variables.min.css" rel="stylesheet" />
-					<link href="/css/styles.css" rel="stylesheet" />
 					${preloads}
+					<link href="/css/styles.min.css" rel="stylesheet" />
 				</head>
 				<body class="dark-mode mh-full h-full">
 					<a class="btn btn-primary" id="skip-nav" href="#main-content">
