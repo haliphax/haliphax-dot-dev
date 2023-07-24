@@ -47,7 +47,7 @@ module.exports = cfg => {
 		const clean = new CleanCSS();
 		const purged = await new PurgeCSS().purge({
 			content: [`${dir.output}/**/*.html`, `${dir.output}/*.html`],
-			css: [`${dir.output}/**/*.css`],
+			css: [`${dir.output}/css/*.css`],
 		});
 		const files = {};
 		const combo = [
