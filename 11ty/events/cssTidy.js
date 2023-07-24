@@ -2,6 +2,7 @@ const CleanCSS = require('clean-css');
 const fs = require('fs');
 const { PurgeCSS } = require('purgecss');
 
+/** purge unused rules and combine/minify stylesheets */
 const cssTidy = (cfg) => {
 	cfg.on('eleventy.after', async ({ dir }) => {
 		const clean = new CleanCSS();
