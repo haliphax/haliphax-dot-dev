@@ -13,13 +13,20 @@ const writeFile = promisify(fs.writeFile);
 /** purge unused rules and combine/minify stylesheets */
 const cssTidy = (cfg) => {
 	cfg.on('eleventy.after', async ({ dir }) => {
+		const opts = { encoding: 'utf-8' };
 		const stylesheet = `${dir.output}/css/styles.min.css`;
+		const keepDir = 'static/css/keep';
 
 		const clean = new CleanCSS();
 		const combo = [
 			await readFile('node_modules/halfmoon/css/halfmoon-variables.min.css'),
+			clean.minify(await readFile(`${dir.output}/css/keep.css`)).styles,
 		];
-		const files = { 'docs/css/styles.min.css': true };
+
+		const files = {
+			'docs/css/keep.css': true,
+			'docs/css/styles.min.css': true,
+		};
 		const purged = await new PurgeCSS().purge({
 			content: [`${dir.output}/**/*.html`, `${dir.output}/*.html`],
 			css: [`${dir.output}/css/*.css`],
@@ -39,7 +46,7 @@ const cssTidy = (cfg) => {
 
 		if (! await exists(fontDest)) await mkdir(fontDest);
 
-		const fonts = await readdir(fontSource, { encoding: 'utf-8' });
+		const fonts = await readdir(fontSource, opts);
 
 		for (let font of fonts) {
 			await cp(`${fontSource}/${font}`, `${fontDest}/${font}`);
