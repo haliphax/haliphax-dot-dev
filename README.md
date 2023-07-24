@@ -129,6 +129,7 @@ I personally find it much easier to reason with.
 - `11ty` Eleventy code and data
   - `data` Global data
     - `external` Data from external sources
+	- `events` Eleventy engine event handlers
   - `functions` Global functions (filters)
   - `layouts` Template layouts
   - `libraries` Libraries used by the engine
