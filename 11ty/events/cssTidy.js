@@ -3,6 +3,10 @@ const fs = require('fs');
 const { promisify } = require('util');
 const { PurgeCSS } = require('purgecss');
 
+const cp = promisify(fs.cp);
+const exists = promisify(fs.exists);
+const mkdir = promisify(fs.mkdir);
+const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
@@ -29,6 +33,17 @@ const cssTidy = (cfg) => {
 		}
 
 		await writeFile(stylesheet, combo.join('\n'));
+
+		const fontDest = `${dir.output}/fonts`
+		const fontSource = 'node_modules/@fontsource/shrikhand/files';
+
+		if (! await exists(fontDest)) await mkdir(fontDest);
+
+		const fonts = await readdir(fontSource, { encoding: 'utf-8' });
+
+		for (let font of fonts) {
+			await cp(`${fontSource}/${font}`, `${fontDest}/${font}`);
+		}
 	});
 };
 

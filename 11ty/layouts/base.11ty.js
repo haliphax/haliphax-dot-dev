@@ -1,15 +1,3 @@
-/** CSS preload markup */
-const preloads =
-	[
-		'https://fonts.googleapis.com/css2?family=Shrikhand&display=swap',
-	]
-	.map(p => /*html*/`
-		<link rel="preload" href="${p}" as="style"
-			onload="this.onload=null;this.rel='stylesheet'">
-		<noscript><link rel="stylesheet" href="${p}"></noscript>
-	`)
-	.join('');
-
 module.exports = class Base {
 	/** generate sidebar link for given object */
 	generateSidebarLink(opts) {
@@ -82,9 +70,8 @@ module.exports = class Base {
 							`).join('')}
 					<meta name="generator" content="${data.metaDefaults.generator}" />
 					<link rel="icon" href="/img/favicon.gif" />
-					${preloads}
 					<link href="/css/styles.min.css" rel="stylesheet" />
-					<noscript><style>image[data-src]{display:none}</style></noscript>
+					<noscript><style>img[data-src]{display:none}</style></noscript>
 				</head>
 				<body class="dark-mode mh-full h-full">
 					<a class="btn btn-primary" id="skip-nav" href="#main-content">
