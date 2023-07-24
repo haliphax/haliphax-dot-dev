@@ -1,14 +1,12 @@
-const jsdom = require('jsdom');
-const { JSDOM } = jsdom;
-const min = require('html-minifier');
-const esbuild = require('esbuild');
-const { transformSync } = esbuild;
+const { JSDOM } = require('jsdom');
+const { minify } = require('html-minifier');
+const { transform } = require('esbuild');
 
 const scriptCache = {};
 
 const htmlMinify = cfg =>
-	cfg.addTransform('htmlMinify', function(content) {
-		if (!this.outputPath || !this.outputPath.endsWith('.html')) {
+	cfg.addTransform('htmlMinify', async (content, outputPath) => {
+		if (!outputPath?.endsWith('.html')) {
 			return content;
 		}
 
@@ -23,7 +21,7 @@ const htmlMinify = cfg =>
 			}
 
 			script.textContent =
-				transformSync(script.textContent, { minify: true }).code;
+				(await transform(script.textContent, { minify: true })).code;
 			scriptCache[script.id] = script.textContent;
 		}
 
@@ -37,13 +35,12 @@ const htmlMinify = cfg =>
 		dtd.systemId && doctype.push(dtd.systemId);
 
 		const output = `<!DOCTYPE ${doctype.join(' ')}>${html}`;
-		const minifiedHtml = min.minify(output, {
+
+		return minify(output, {
 			useShortDoctype: true,
 			removeComments: true,
 			collapseWhitespace: true,
 		});
-
-		return minifiedHtml;
   });
 
 module.exports = htmlMinify;
