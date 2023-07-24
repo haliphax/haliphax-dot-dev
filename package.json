@@ -18,7 +18,8 @@
     "json-diff": "^1.0.3",
     "markdown-it-anchor": "^8.6.7",
     "node-twitch": "^0.5.0",
-    "purgecss": "^5.0.0"
+    "purgecss": "^5.0.0",
+    "svgson": "^5.3.1"
   },
   "scripts": {
     "build": "npx @11ty/eleventy",
