@@ -23,7 +23,7 @@ module.exports = class Base {
 		const metaLabels = [];
 		const ogImage = data.metaDefaults.openGraphImageUrl.replace(
 			'{title}', encodeURIComponent(data.ogTitle ?? data.title));
-		const canonicalUrl = `${data.strings.siteRoot}${this.page.url}`;
+		const canonicalUrl = `${data.strings.siteRoot}${data.page.url}`;
 
 		if (data.tags)
 			metaLabels.push(["Tags", data.tags.join(', ')]);
@@ -40,7 +40,8 @@ module.exports = class Base {
 					${data.robots == undefined ? ''
 						: /*html*/`<meta name="robots" content="${data.robots}" />`}
 					<title>${data.title} | ${data.strings.siteName}</title>
-					<link rel="canonical" href="${canonicalUrl}" />
+					${data.page.url.endsWith('/404.html') ? ''
+						: /*html*/`<link rel="canonical" href="${canonicalUrl}" />`}
 					<meta property="og:description" name="description" content="${metaDescription}" />
 					<meta property="og:image:alt" content="${ogTitle}" />
 					<meta property="og:image:height" content="600" />
