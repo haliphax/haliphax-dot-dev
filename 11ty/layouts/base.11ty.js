@@ -84,6 +84,7 @@ module.exports = class Base {
 					<link rel="icon" href="/img/favicon.gif" />
 					${preloads}
 					<link href="/css/styles.min.css" rel="stylesheet" />
+					<noscript><style>image[data-src]{display:none}</style></noscript>
 				</head>
 				<body class="dark-mode mh-full h-full">
 					<a class="btn btn-primary" id="skip-nav" href="#main-content">
@@ -140,8 +141,9 @@ module.exports = class Base {
 							</div>
 						</div>
 					</div>
-					<script id="global-scripts">
+					<script id="scripts">
 						${this.inlineScript('11ty/layouts/base/details.js')}
+						${this.inlineScript('11ty/layouts/base/lazy.js')}
 						${this.inlineScript('11ty/layouts/base/sidebar.js')}
 					</script>
 				</body>
