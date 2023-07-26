@@ -1,7 +1,7 @@
-const svgson = require('svgson');
+const fs = require('fs');
 const path = require('path');
 const { promisify } = require('util');
-const fs = require('fs');
+const svgson = require('svgson');
 
 const readdir = promisify(fs.readdir);
 const readFile = promisify(fs.readFile);
