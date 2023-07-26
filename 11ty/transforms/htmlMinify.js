@@ -11,7 +11,6 @@ const htmlMinify = cfg =>
 			return content;
 		}
 
-		// note: this is _incredibly_ slow :(
 		const doc = parser.parseFromString(content, 'text/html');
 		const scripts = Array.from(doc.getElementsByTagName('script'))
 			.filter(v => !v.src);
