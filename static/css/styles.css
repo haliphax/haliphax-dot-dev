@@ -51,6 +51,9 @@ html {
 }
 
 /* style overrides */
+a.badge {
+	margin-bottom: .5rem;
+}
 .container {
 	max-width: 960px;
 }
@@ -127,6 +130,9 @@ h1 a:hover {
 	-webkit-text-fill-color: var(--pink-color);
 	-webkit-text-stroke: 1px var(--pink-color-dark);
 }
+.card h3:not(.card-title) {
+	margin-bottom: 0;
+}
 
 /* intro */
 .card.intro {
@@ -191,11 +197,19 @@ ol:not(.d-inline):not(.d-inline-block):not(.d-flex) {
 	list-style: decimal outside;
 }
 
+/* list items */
+ul:not(.d-inline):not(.d-inline-block):not(.d-flex) li,
+ol:not(.d-inline):not(.d-inline-block):not(.d-flex) li
+{
+	margin-bottom: 0;
+}
+
 /* unstyled list */
 ul.list-unstyled {
 	list-style-type: none;
 	margin: 0;
 }
+
 ul.list-unstyled > li {
 	margin: 0;
 	padding: 0;

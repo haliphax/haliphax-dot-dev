@@ -109,7 +109,10 @@ module.exports = class Index {
 				<span class="text-primary mr-5">${this.renderIcon('book-open')}</span>
 				Recent posts
 			</h2>
-			${this.renderCollection(data.collections.post, 3, true)}
+			${this.renderCollection(data.collections.post, 3, {
+				inline: true,
+				jumboFirst: true,
+			})}
 			`;
 	}
 };

@@ -2,34 +2,39 @@ const { blurbLength, jumboBlurbLength } = require('../data/misc');
 const getDescription = require('./getDescription');
 const md = require('../libraries/markdownIt');
 const renderIcon = require('./renderIcon');
+const renderTags = require('./renderTags');
 const slugify = require('slugify');
 
-const renderCollection = (items, limit, jumboFirst = false) => /*html*/`
+const renderCollection = (items, limit, opts = null) => /*html*/`
 	<ul class="list-unstyled row d-flex flex-row">
 		${Array.from(items)
 			.filter(p => p.data.tags?.includes('archived') === false)
 			.reverse()
 			.slice(0, limit)
 			.map((p, i) => {
-				const cutoff = jumboFirst && i === 0 ? jumboBlurbLength : blurbLength;
+				const cutoff = opts?.jumboFirst && i === 0
+					? jumboBlurbLength : blurbLength;
 				const slug = slugify(p.url);
 				const content = md.render(
 					p.template.frontMatter.excerpt || p.template.frontMatter.content);
 				const summary = getDescription(content, cutoff);
 				const classes = [];
 
-				if (i > 0 || !jumboFirst) {
+				if (i > 0 || !opts?.jumboFirst) {
 					classes.push('col-md-6');
 				}
 
-				if (!jumboFirst) {
+				if (!opts?.jumboFirst) {
 					classes.push('col-lg-4');
 				}
 
 				return /*html*/`
 					<li class="col-12 ${classes.join(' ')} d-flex">
 						<div class="card m-5 p-20 w-full">
-							<h3 class="card-title mb-5">${p.data.title}</h3>
+							<h3 class="card-title mb-0">
+								${p.data.title}
+							</h3>
+							${renderTags(p.data.tags, true)}
 							<hr />
 							<article aria-labelledby="${slug}">
 								<p class="text-muted pb-20">${summary}</p>
