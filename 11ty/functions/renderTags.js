@@ -10,7 +10,7 @@ const renderTags = (tags, inline = false) => {
 				<span class="sr-only">Tags:</span>
 				${renderIcon('tag', 'text-secondary')}
 				<ul class="list-unstyled d-inline mb-5">
-				${tags.map(t => /*html*/`
+				${filtered.map(t => /*html*/`
 					<li class="d-inline-block ml-5">
 						<a href="/tags/${t}/" class="text-secondary">${t}</a>
 					</li>
