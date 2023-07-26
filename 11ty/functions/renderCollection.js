@@ -5,27 +5,27 @@ const renderIcon = require('./renderIcon');
 const renderTags = require('./renderTags');
 const slugify = require('slugify');
 
-const renderCollection = (items, limit, opts = null) => /*html*/`
+const renderCollection = (items, limit, jumboFirst = false) => /*html*/`
 	<ul class="list-unstyled row d-flex flex-row">
 		${Array.from(items)
 			.filter(p => p.data.tags?.includes('archived') === false)
 			.reverse()
 			.slice(0, limit)
 			.map((p, i) => {
-				const cutoff = opts?.jumboFirst && i === 0
+				const cutoff = jumboFirst && i === 0
 					? jumboBlurbLength : blurbLength;
 				const slug = slugify(p.url);
 				const content = md.render(
 					p.template.frontMatter.excerpt || p.template.frontMatter.content);
 				const summary = getDescription(content, cutoff);
 				const classes = [];
-				const jumbo = i === 0 && opts?.jumboFirst;
+				const jumbo = i === 0 && jumboFirst;
 
 				if (!jumbo) {
 					classes.push('col-md-6');
 				}
 
-				if (!opts?.jumboFirst) {
+				if (!jumboFirst) {
 					classes.push('col-lg-4');
 				}
 
