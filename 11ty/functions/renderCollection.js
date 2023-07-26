@@ -19,8 +19,9 @@ const renderCollection = (items, limit, opts = null) => /*html*/`
 					p.template.frontMatter.excerpt || p.template.frontMatter.content);
 				const summary = getDescription(content, cutoff);
 				const classes = [];
+				const jumbo = i === 0 && opts?.jumboFirst;
 
-				if (i > 0 || !opts?.jumboFirst) {
+				if (!jumbo) {
 					classes.push('col-md-6');
 				}
 
@@ -30,7 +31,7 @@ const renderCollection = (items, limit, opts = null) => /*html*/`
 
 				return /*html*/`
 					<li class="col-12 ${classes.join(' ')} d-flex">
-						<div class="card m-5 p-20 w-full">
+						<div class="card m-5 p-20 w-full ${jumbo ? 'border' : ''}">
 							<h3 class="card-title mb-0">
 								${p.data.title}
 							</h3>
