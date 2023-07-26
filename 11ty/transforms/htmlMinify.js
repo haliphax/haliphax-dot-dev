@@ -1,8 +1,9 @@
-const { JSDOM } = require('jsdom');
+const { DOMParser } = require('@xmldom/xmldom');
 const { minify } = require('html-minifier');
 const { transform } = require('esbuild');
 
 const scriptCache = {};
+const parser = new DOMParser({ errorHandler: { warning: () => { } } });
 
 const htmlMinify = cfg =>
 	cfg.addTransform('htmlMinify', async (content, outputPath) => {
@@ -11,8 +12,9 @@ const htmlMinify = cfg =>
 		}
 
 		// note: this is _incredibly_ slow :(
-		const doc = new JSDOM(content).window.document;
-		const scripts = Array.from(doc.scripts).filter(v => !v.src);
+		const doc = parser.parseFromString(content, 'text/html');
+		const scripts = Array.from(doc.getElementsByTagName('script'))
+			.filter(v => !v.src);
 
 		for (let script of scripts) {
 			if (script.id && scriptCache.hasOwnProperty(script.id)) {
@@ -25,18 +27,7 @@ const htmlMinify = cfg =>
 			scriptCache[script.id] = script.textContent;
 		}
 
-		const html = doc.children[0].outerHTML;
-		const dtd = doc.doctype;
-		const doctype = [];
-
-		dtd.name && doctype.push(dtd.name);
-		dtd.internalSubset && doctype.push(dtd.internalSubset);
-		dtd.publicId && doctype.push(dtd.publicId);
-		dtd.systemId && doctype.push(dtd.systemId);
-
-		const output = `<!DOCTYPE ${doctype.join(' ')}>${html}`;
-
-		return minify(output, {
+		return minify(doc.toString(), {
 			useShortDoctype: true,
 			removeComments: true,
 			collapseWhitespace: true,
