@@ -8,8 +8,11 @@ const readFile = promisify(fs.readFile);
 const stat = promisify(fs.stat);
 const writeFile = promisify(fs.writeFile);
 
+/** file operation options */
+const opts = { encoding: 'utf-8' };
+
 const getHtmlFiles = async dir => {
-	const entries = await readdir(dir, { encoding: 'utf-8' });
+	const entries = await readdir(dir, opts);
 	const files = await Promise.all(entries.map(async entry => {
 		const resolved = path.resolve(dir, entry);
 
@@ -29,7 +32,6 @@ const iconPurge = (cfg) => {
 		const files = await getHtmlFiles(dir.output);
 		const iconRegex = /<use href="\/img\/feather-sprite\.svg#([^"]+)"/gi;
 		const iconsUsed = {};
-		const opts = { encoding: 'utf-8' };
 
 		for (let f of files) {
 			const content = await readFile(f, opts);
