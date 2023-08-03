@@ -1,5 +1,5 @@
 import { UserConfig } from "@11ty/eleventy";
-import * as fs from "fs";
+import fs from "fs";
 import path from "path";
 import { parse, stringify } from "svgson";
 import { promisify } from "util";

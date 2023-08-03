@@ -1,6 +1,6 @@
 import { UserConfig } from "@11ty/eleventy";
 import CleanCSS from "clean-css";
-import * as fs from "fs";
+import fs from "fs";
 import { PurgeCSS } from "purgecss";
 import { promisify } from "util";
 import { EleventyDir, fileOpts } from "../misc";

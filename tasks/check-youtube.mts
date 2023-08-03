@@ -1,10 +1,9 @@
 import dotenv from "dotenv";
-import * as fs from "fs";
+import fs from "fs";
 import { diff } from "json-diff";
 import { promisify } from "util";
-import pkg from "../11ty/data/misc.js";
+import { ytPlaylistId } from "../11ty/data/misc.js";
 import { fileOpts } from "../11ty/misc.js";
-const { ytPlaylistId } = pkg;
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);

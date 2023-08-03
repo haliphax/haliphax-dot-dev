@@ -1,10 +1,9 @@
 import dotenv from "dotenv";
-import * as fs from "fs";
+import fs from "fs";
 import { diff } from "json-diff";
 import { TwitchApi } from "node-twitch";
 import { promisify } from "util";
-import misc from "../11ty/misc.js";
-const { fileOpts } = misc;
+import { fileOpts } from "../11ty/misc.js";
 
 const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
