@@ -1,5 +1,8 @@
+*.js
+*.mjs
 .env
 .vscode/
-11ty/data/external/*.json
-docs/
-node_modules/
+/11ty/data/external/*.json
+/docs/
+/node_modules/
+!/11ty/layouts/base/*.js

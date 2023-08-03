@@ -6,10 +6,15 @@
   "private": true,
   "author": "haliphax",
   "license": "MIT",
+  "main": "index.ts",
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
     "@fontsource/shrikhand": "^5.0.5",
+    "@types/clean-css": "^4.2.6",
+    "@types/html-minifier": "^4.0.2",
+    "@types/json-diff": "^1.0.0",
+    "@types/node": "^20.4.6",
     "@xmldom/xmldom": "^0.8.10",
     "clean-css": "^5.3.2",
     "dotenv": "^16.0.3",
@@ -19,19 +24,36 @@
     "json-diff": "^1.0.3",
     "markdown-it-anchor": "^8.6.7",
     "node-twitch": "^0.5.0",
+    "nodemon": "^3.0.1",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^3.0.0",
+    "prettier-plugin-organize-imports": "^3.2.3",
     "purgecss": "^5.0.0",
-    "svgson": "^5.3.1"
+    "rimraf": "^5.0.1",
+    "svgson": "^5.3.1",
+    "typescript": "^5.1.6"
+  },
+  "overrides": {
+    "devDependencies": {
+      "qs": "^6.11.1"
+    }
   },
   "scripts": {
-    "build": "npx @11ty/eleventy",
-    "full": "npm run check-all && npm run build",
-    "serve": "npx @11ty/eleventy --serve",
-    "check": "npm run check-twitch && npm run check-youtube",
-    "check-all": "npm run check-twitch; npm run check-youtube; true",
-    "check-twitch": "node tasks/check-twitch.mjs",
-    "check-youtube": "node tasks/check-youtube.mjs"
+    "all": "npm-run-all",
+    "build": "npm-run-all build:ts build:11ty",
+    "build:11ty": "eleventy --quiet",
+    "build:ts": "tsc && tsc -p tasks",
+    "check": "npm-run-all -c -p check:*",
+    "check:twitch": "node tasks/check-twitch.mjs",
+    "check:youtube": "node tasks/check-youtube.mjs",
+    "clean": "rm 11ty/data/external/*.json 2>/dev/null; find . -type f -name '*.js' -not -wholename '**/node_modules/**' -not -wholename './11ty/layouts/**/*.js' -delete",
+    "full": "npm-run-all clean build:ts check build:11ty",
+    "serve": "npx eleventy --serve --quiet",
+    "watch": "nodemon -w .eleventy.ts -w 11ty -w content -w static --exec 'npm run serve'"
   },
-  "dependencies": {
-    "qs": "^6.11.1"
+  "prettier": {
+    "plugins": [
+      "prettier-plugin-organize-imports"
+    ]
   }
 }
