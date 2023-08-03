@@ -2,7 +2,7 @@ import dotenv from "dotenv";
 import fs from "fs";
 import { diff } from "json-diff";
 import { promisify } from "util";
-import { ytPlaylistId } from "../11ty/data/misc.js";
+import misc from "../11ty/data/misc.js";
 import { fileOpts } from "../11ty/misc.js";
 
 const readFile = promisify(fs.readFile);
@@ -22,7 +22,7 @@ try {
 }
 
 const youtubeData = await fetch(
-	`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${ytPlaylistId}&maxResults=3&key=${apiKey}`,
+	`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=${misc.ytPlaylistId}&maxResults=3&key=${apiKey}`,
 )
 	.then((r) => r.json())
 	.then(
