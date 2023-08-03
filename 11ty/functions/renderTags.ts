@@ -10,13 +10,15 @@ const renderTags = (tags: string[], inline = false) => {
 				<span class="sr-only">Tags:</span>
 				${renderIcon("tag", "text-secondary")}
 				<ul class="list-unstyled d-inline mb-5">
-				${filtered.map(
-					(t) => /*html*/ `
-					<li class="d-inline-block ml-5">
-						<a href="/tags/${t}/" class="text-secondary">${t}</a>
-					</li>
-				`,
-				)}
+				${filtered
+					.map(
+						(t) => /*html*/ `
+							<li class="d-inline-block ml-5">
+								<a href="/tags/${t}/" class="text-secondary">${t}</a>
+							</li>
+							`,
+					)
+					.join("")}
 				</ul>
 			</small>
 			`
@@ -39,7 +41,7 @@ const renderTags = (tags: string[], inline = false) => {
 										</a>
 										&nbsp;
 									</li>
-								`,
+									`,
 								)
 								.join("")}
 						</ul>`
