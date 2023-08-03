@@ -4,30 +4,30 @@ import renderIcon from "../../11ty/functions/renderIcon";
 import renderLazyImage from "../../11ty/functions/renderLazyImage";
 
 export = class Index {
-  get data() {
-    return {
-      changeFreq: "weekly",
-      layout: "base",
-      ogTitle: "haliphax.dev",
-      ogType: "website",
-      permalink: "/index.html",
-      title: "Home",
-    };
-  }
+	get data() {
+		return {
+			changeFreq: "weekly",
+			layout: "base",
+			ogTitle: "haliphax.dev",
+			ogType: "website",
+			permalink: "/index.html",
+			title: "Home",
+		};
+	}
 
-  render(data: any) {
-    const vod = data.external?.twitch?.latestVod;
-    const vodDescription = getDescription(
-      vod?.description,
-      data.misc.blurbLength,
-    );
-    const yt = data.external?.youtube;
-    const ytDescription = getDescription(
-      yt?.snippet.description,
-      data.misc.blurbLength,
-    );
+	render(data: any) {
+		const vod = data.external?.twitch?.latestVod;
+		const vodDescription = getDescription(
+			vod?.description,
+			data.misc.blurbLength,
+		);
+		const yt = data.external?.youtube;
+		const ytDescription = getDescription(
+			yt?.snippet.description,
+			data.misc.blurbLength,
+		);
 
-    return /*html*/ `
+		return /*html*/ `
 			<div class="row d-flex">
 				<details class="intro card m-5 py-5 px-20 w-full row">
 					<summary class="w-full">About me</summary>
@@ -43,9 +43,9 @@ export = class Index {
 				</details>
 			</div>
 			${
-        !vod?.url
-          ? ""
-          : /*html*/ `
+				!vod?.url
+					? ""
+					: /*html*/ `
 				<h2 class="mb-0">
 					<span class="text-primary mr-5">${renderIcon("tv")}</span>
 					Latest stream
@@ -81,11 +81,11 @@ export = class Index {
 					</div>
 				</div>
 				`
-      }
+			}
 			${
-        !yt
-          ? ""
-          : /*html*/ `
+				!yt
+					? ""
+					: /*html*/ `
 				<h2 class="mb-0">
 					<span class="text-primary mr-5">${renderIcon("film")}</span>
 					Latest video
@@ -95,8 +95,8 @@ export = class Index {
 						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 							<div class="mr-sm-10">
 								<a href="https://youtu.be/${
-                  yt.snippet.resourceId.videoId
-                }" class="no-external img-wrap mb-5">
+									yt.snippet.resourceId.videoId
+								}" class="no-external img-wrap mb-5">
 									${renderLazyImage(/*html*/ `
 										<img src="${yt.snippet.thumbnails.standard.url}"
 											width="1280" height="720" alt="Video thumbnail"
@@ -123,12 +123,12 @@ export = class Index {
 					</div>
 				</div>
 				`
-      }
+			}
 			<h2 class="mb-0">
 				<span class="text-primary mr-5">${renderIcon("book-open")}</span>
 				Recent posts
 			</h2>
 			${renderCollection(data.collections.post, 3, true)}
 			`;
-  }
+	}
 };

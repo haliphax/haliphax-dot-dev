@@ -43,7 +43,7 @@ their containers, and you're cooking with gas!<!--more-->
 
 ```js
 (function () {
-  document.cookie = "screendim=" + screen.width + "x" + screen.height;
+	document.cookie = "screendim=" + screen.width + "x" + screen.height;
 })();
 ```
 
@@ -168,17 +168,17 @@ public class ImageResizeHandler : IHttpHandler
 ```html
 <!doctype html>
 <html lang="en-US">
-  <head>
-    <meta charset="utf-8" />
-    <script type="text/javascript" src="/js/screen-dimensions.js"></script>
-  </head>
-  <body>
-    <p>This here image is responsive, y'all!</p>
-    <img src="/img/some-image.png?r" />
+	<head>
+		<meta charset="utf-8" />
+		<script type="text/javascript" src="/js/screen-dimensions.js"></script>
+	</head>
+	<body>
+		<p>This here image is responsive, y'all!</p>
+		<img src="/img/some-image.png?r" />
 
-    <p>This one ain't.</p>
-    <img src="/img/some-image.png" />
-  </body>
+		<p>This one ain't.</p>
+		<img src="/img/some-image.png" />
+	</body>
 </html>
 ```
 

@@ -170,8 +170,8 @@ from the main configuration and it makes for less clutter.
 const cfgLayouts = require("./11ty/layouts/_config");
 
 module.exports = (cfg) => {
-  cfgLayouts(cfg);
-  // ...
+	cfgLayouts(cfg);
+	// ...
 };
 ```
 

@@ -6,29 +6,29 @@ import renderReadingTime from "../functions/renderReadingTime";
 import renderTags from "../functions/renderTags";
 
 export = class Post {
-  get data() {
-    return {
-      eleventyComputed: {
-        async metaDescription(data: any) {
-          return await getMetaDescription(data);
-        },
-      },
-      layout: "withHeader",
-      ogType: "article",
-      permalink(data: any) {
-        const y = data.page.date.getFullYear(),
-          m = data.page.date.getMonth() + 1,
-          m0 = m < 10 ? `0${m}` : m;
+	get data() {
+		return {
+			eleventyComputed: {
+				async metaDescription(data: any) {
+					return await getMetaDescription(data);
+				},
+			},
+			layout: "withHeader",
+			ogType: "article",
+			permalink(data: any) {
+				const y = data.page.date.getFullYear(),
+					m = data.page.date.getMonth() + 1,
+					m0 = m < 10 ? `0${m}` : m;
 
-        return `/${y}/${m0}/${data.page.fileSlug}/`;
-      },
-    };
-  }
+				return `/${y}/${m0}/${data.page.fileSlug}/`;
+			},
+		};
+	}
 
-  async render(data: any) {
-    const posted = data.page.date.toISOString().replace(/T.*$/, "");
+	async render(data: any) {
+		const posted = data.page.date.toISOString().replace(/T.*$/, "");
 
-    return /*html*/ `
+		return /*html*/ `
 			${renderArchivedNotice(data.tags)}
 			${renderTags(data.tags)}
 			<div class="mb-10 d-flex flex-row flex-grow-1">
@@ -43,5 +43,5 @@ export = class Post {
 				Posted: <time datetime="${posted}">${posted}</time>
 			</p>
 			`;
-  }
+	}
 };

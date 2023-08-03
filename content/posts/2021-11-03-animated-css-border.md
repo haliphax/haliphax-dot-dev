@@ -27,41 +27,41 @@ For the sake of posterity, here is the HTML and CSS source code:
 ```html
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Tron border demo</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="tron">
-      <div>
-        <div class="example">Hover over me!</div>
-      </div>
-    </div>
-  </body>
+	<head>
+		<meta charset="utf-8" />
+		<title>Tron border demo</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="tron">
+			<div>
+				<div class="example">Hover over me!</div>
+			</div>
+		</div>
+	</body>
 </html>
 ```
 
 ```css
 html {
-  font-family: Arial, Helvetica, sans-serif;
+	font-family: Arial, Helvetica, sans-serif;
 }
 
 body,
 body * {
-  display: flex;
+	display: flex;
 }
 
 .example {
-  border: 1px solid #aaa;
-  padding: 0.25em;
+	border: 1px solid #aaa;
+	padding: 0.25em;
 }
 
 /* ✨ special stuff */
 
 /* main wrapper */
 .tron {
-  flex-direction: row;
+	flex-direction: row;
 }
 
 /* universal styles */
@@ -69,121 +69,121 @@ body * {
 .tron::after,
 .tron > div::before,
 .tron > div::after {
-  animation-fill-mode: forwards;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
-  background-repeat: no-repeat;
-  content: "";
+	animation-fill-mode: forwards;
+	animation-iteration-count: 1;
+	animation-timing-function: linear;
+	background-repeat: no-repeat;
+	content: "";
 }
 
 /* vertical borders */
 .tron::before,
 .tron::after {
-  animation-duration: 0.0625s;
-  background-size: 100% 200%;
-  width: 4px;
+	animation-duration: 0.0625s;
+	background-size: 100% 200%;
+	width: 4px;
 }
 
 /* left border animation */
 @keyframes tron-before {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 0 100%;
-  }
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 0 100%;
+	}
 }
 
 /* left border hover */
 .tron:hover::before {
-  animation-name: tron-before;
-  background-image: linear-gradient(
-    to top,
-    #f0f 50%,
-    transparent 50%,
-    transparent 100%
-  );
+	animation-name: tron-before;
+	background-image: linear-gradient(
+		to top,
+		#f0f 50%,
+		transparent 50%,
+		transparent 100%
+	);
 }
 
 /* right border animation */
 @keyframes tron-after {
-  0% {
-    background-position: 0 100%;
-  }
-  100% {
-    background-position: 0 0;
-  }
+	0% {
+		background-position: 0 100%;
+	}
+	100% {
+		background-position: 0 0;
+	}
 }
 
 /* right border hover */
 .tron:hover::after {
-  animation-delay: 0.1875s;
-  animation-name: tron-after;
-  background-image: linear-gradient(
-    to bottom,
-    #f0f 50%,
-    transparent 50%,
-    transparent 100%
-  );
-  background-position: 0 100%;
+	animation-delay: 0.1875s;
+	animation-name: tron-after;
+	background-image: linear-gradient(
+		to bottom,
+		#f0f 50%,
+		transparent 50%,
+		transparent 100%
+	);
+	background-position: 0 100%;
 }
 
 /* internal wrapper */
 .tron > div {
-  flex-direction: column;
+	flex-direction: column;
 }
 
 /* horizontal borders */
 .tron > div::before,
 .tron > div::after {
-  animation-duration: 0.125s;
-  background-size: 200% 100%;
-  height: 4px;
+	animation-duration: 0.125s;
+	background-size: 200% 100%;
+	height: 4px;
 }
 
 /* top border animation */
 @keyframes tron-inner-before {
-  0% {
-    background-position: 100% 0;
-  }
-  100% {
-    background-position: 0 0;
-  }
+	0% {
+		background-position: 100% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
 }
 
 /* top border hover */
 .tron:hover > div::before {
-  animation-delay: 0.0625s;
-  animation-name: tron-inner-before;
-  background-image: linear-gradient(
-    to right,
-    #f0f 50%,
-    transparent 50%,
-    transparent 100%
-  );
-  background-position: 100% 0;
+	animation-delay: 0.0625s;
+	animation-name: tron-inner-before;
+	background-image: linear-gradient(
+		to right,
+		#f0f 50%,
+		transparent 50%,
+		transparent 100%
+	);
+	background-position: 100% 0;
 }
 
 /* bottom border animation */
 @keyframes tron-inner-after {
-  0% {
-    background-position: 0% 0;
-  }
-  100% {
-    background-position: 100% 0;
-  }
+	0% {
+		background-position: 0% 0;
+	}
+	100% {
+		background-position: 100% 0;
+	}
 }
 
 /* bottom border hover */
 .tron:hover > div::after {
-  animation-delay: 0.25s;
-  animation-name: tron-inner-after;
-  background-image: linear-gradient(
-    to left,
-    #f0f 50%,
-    transparent 50%,
-    transparent 100%
-  );
+	animation-delay: 0.25s;
+	animation-name: tron-inner-after;
+	background-image: linear-gradient(
+		to left,
+		#f0f 50%,
+		transparent 50%,
+		transparent 100%
+	);
 }
 ```
 

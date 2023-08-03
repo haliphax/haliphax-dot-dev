@@ -1,14 +1,14 @@
 {
-  "include": ["*.mts"],
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "rootDir": "..",
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "ES2017"
-  }
+	"include": ["*.mts"],
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"forceConsistentCasingInFileNames": true,
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"rootDir": "..",
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ES2017"
+	}
 }

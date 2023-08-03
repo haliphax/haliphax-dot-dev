@@ -127,12 +127,12 @@ need to add a javascript snippet to cgit's header file:
 
 ```html
 <script type="text/javascript">
-  window.onload = function () {
-    var p = document.createElement("a");
-    p.href = "/git/passwd.php";
-    p.innerHTML = "passwd";
-    document.querySelector("table.tabs td:first-child").appendChild(p);
-  };
+	window.onload = function () {
+		var p = document.createElement("a");
+		p.href = "/git/passwd.php";
+		p.innerHTML = "passwd";
+		document.querySelector("table.tabs td:first-child").appendChild(p);
+	};
 </script>
 ```
 

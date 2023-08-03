@@ -27,7 +27,7 @@ applications and see if it doesn't make your life a whole lot easier:
 ```js
 javascript: w = window.open();
 void w.document.write(
-  "<pre>" + document.body.parentNode.innerHTML.replace(/</g, "<") + "</pre>",
+	"<pre>" + document.body.parentNode.innerHTML.replace(/</g, "<") + "</pre>",
 );
 ```
 

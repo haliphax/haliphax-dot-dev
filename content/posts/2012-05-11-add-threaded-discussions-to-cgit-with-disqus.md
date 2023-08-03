@@ -26,23 +26,23 @@ disqus platform (be sure to replace
 
 ```html
 <script type="text/javascript">
-  window.onload = function () {
-    if (
-      (window.location.href.match(/\/tree\/.*[?&]id=/) &&
-        document.querySelector("table.blob")) ||
-      window.location.href.match(/\/commit\/.*[?&]id=(?!.+&ss=1\$)/)
-    ) {
-      var d = document.createElement("div");
-      d.id = "disqus_thread";
-      document.querySelector("div.content").appendChild(d);
-      var disqus_shortname = "REPLACE-WITH-YOUR-DISQUS-SHORTNAME";
-      var dsq = document.createElement("script");
-      dsq.type = "text/javascript";
-      dsq.async = true;
-      dsq.src = "https://" + disqus_shortname + ".disqus.com/embed.js";
-      document.body.appendChild(dsq);
-    }
-  };
+	window.onload = function () {
+		if (
+			(window.location.href.match(/\/tree\/.*[?&]id=/) &&
+				document.querySelector("table.blob")) ||
+			window.location.href.match(/\/commit\/.*[?&]id=(?!.+&ss=1\$)/)
+		) {
+			var d = document.createElement("div");
+			d.id = "disqus_thread";
+			document.querySelector("div.content").appendChild(d);
+			var disqus_shortname = "REPLACE-WITH-YOUR-DISQUS-SHORTNAME";
+			var dsq = document.createElement("script");
+			dsq.type = "text/javascript";
+			dsq.async = true;
+			dsq.src = "https://" + disqus_shortname + ".disqus.com/embed.js";
+			document.body.appendChild(dsq);
+		}
+	};
 </script>
 ```
 

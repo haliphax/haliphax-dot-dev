@@ -6,34 +6,34 @@ import renderIcon from "./renderIcon";
 import renderTags from "./renderTags";
 
 const renderCollection = (
-  items: any[],
-  limit: number | undefined = undefined,
-  jumboFirst = false,
+	items: any[],
+	limit: number | undefined = undefined,
+	jumboFirst = false,
 ) => /*html*/ `
 	<ul class="list-unstyled row d-flex flex-row">
 		${Array.from(items)
-      .filter((p) => p.data.tags?.includes("archived") === false)
-      .reverse()
-      .slice(0, limit)
-      .map((p, i) => {
-        const cutoff = jumboFirst && i === 0 ? jumboBlurbLength : blurbLength;
-        const slug = slugify(p.url);
-        const content = md.render(
-          p.template.frontMatter.excerpt || p.template.frontMatter.content,
-        );
-        const summary = getDescription(content, cutoff);
-        const classes = [];
-        const jumbo = i === 0 && jumboFirst;
+			.filter((p) => p.data.tags?.includes("archived") === false)
+			.reverse()
+			.slice(0, limit)
+			.map((p, i) => {
+				const cutoff = jumboFirst && i === 0 ? jumboBlurbLength : blurbLength;
+				const slug = slugify(p.url);
+				const content = md.render(
+					p.template.frontMatter.excerpt || p.template.frontMatter.content,
+				);
+				const summary = getDescription(content, cutoff);
+				const classes = [];
+				const jumbo = i === 0 && jumboFirst;
 
-        if (!jumbo) {
-          classes.push("col-md-6");
-        }
+				if (!jumbo) {
+					classes.push("col-md-6");
+				}
 
-        if (!jumboFirst) {
-          classes.push("col-lg-4");
-        }
+				if (!jumboFirst) {
+					classes.push("col-lg-4");
+				}
 
-        return /*html*/ `
+				return /*html*/ `
 					<li class="col-12 ${classes.join(" ")} d-flex">
 						<div class="card m-5 p-20 w-full ${jumbo ? "border" : ""}">
 							<h3 class="card-title mb-0">
@@ -55,8 +55,8 @@ const renderCollection = (
 						</div>
 					</li>
 					`;
-      })
-      .join("")}
+			})
+			.join("")}
 	</ul>
 	`;
 

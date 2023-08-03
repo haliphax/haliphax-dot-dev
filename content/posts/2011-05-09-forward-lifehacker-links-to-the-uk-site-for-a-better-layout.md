@@ -45,18 +45,18 @@ script:
 // ==/UserScript==
 
 (function () {
-  var loc =
-    /^(https?:\/\/)(deadspin|gizmodo|gawker|kotaku|lifehacker|jezebel|io9|jalopnik)\.com(.+)$/i;
-  var match = loc.exec(window.location);
+	var loc =
+		/^(https?:\/\/)(deadspin|gizmodo|gawker|kotaku|lifehacker|jezebel|io9|jalopnik)\.com(.+)$/i;
+	var match = loc.exec(window.location);
 
-  if (match) {
-    try {
-      window.stop();
-    } catch (ex) {
-      document.execCommand("Stop");
-    }
+	if (match) {
+		try {
+			window.stop();
+		} catch (ex) {
+			document.execCommand("Stop");
+		}
 
-    window.location.href = match[1] + "uk." + match[2] + ".com" + match[3];
-  }
+		window.location.href = match[1] + "uk." + match[2] + ".com" + match[3];
+	}
 })();
 ```

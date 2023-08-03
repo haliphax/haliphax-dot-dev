@@ -21,21 +21,21 @@ able to combine the `coffee` and `heart` icons to act as a stand-in:
 ```css
 /* ko-fi icon */
 .fa-ko-fi::before {
-  content: "\f0f4";
-  display: inline-block;
-  font-size: 1.1em;
-  line-height: 0.45em;
-  margin: -0.45em 0 0 -0.2em;
-  overflow-y: hidden;
-  padding-top: 0.45em;
+	content: "\f0f4";
+	display: inline-block;
+	font-size: 1.1em;
+	line-height: 0.45em;
+	margin: -0.45em 0 0 -0.2em;
+	overflow-y: hidden;
+	padding-top: 0.45em;
 }
 .fa-ko-fi::after {
-  color: #000;
-  content: "\f004";
-  font-size: 50%;
-  font-weight: 900;
-  margin: 0.5em 0 0 -2em;
-  position: absolute;
+	color: #000;
+	content: "\f004";
+	font-size: 50%;
+	font-weight: 900;
+	margin: 0.5em 0 0 -2em;
+	position: absolute;
 }
 ```
 

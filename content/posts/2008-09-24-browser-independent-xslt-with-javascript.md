@@ -19,22 +19,22 @@ transform an XML tree using an XMLDOM object as your XSL._
 
 ```js
 function loadXSL(dname) {
-  if (window.ActiveXObject) {
-    // Internet Explorer
-    try {
-      var xslDoc = new ActiveXObject("Msxml2.FreeThreadedDOMDocument");
-      xslDoc.async = false;
-      xslDoc.resolveExternals = false;
-      xslDoc.load(dname);
-      return xslDoc;
-    } catch (e) {
-      alert("Cannot load XSL stylesheet\\n\\nError:\\n" + e.message);
-      return false;
-    }
-  } else {
-    // Everything else
-    return loadXML(dname);
-  }
+	if (window.ActiveXObject) {
+		// Internet Explorer
+		try {
+			var xslDoc = new ActiveXObject("Msxml2.FreeThreadedDOMDocument");
+			xslDoc.async = false;
+			xslDoc.resolveExternals = false;
+			xslDoc.load(dname);
+			return xslDoc;
+		} catch (e) {
+			alert("Cannot load XSL stylesheet\\n\\nError:\\n" + e.message);
+			return false;
+		}
+	} else {
+		// Everything else
+		return loadXML(dname);
+	}
 }
 ```
 
@@ -47,30 +47,30 @@ course--and sends the resulting formatted XML to a given container
 
 ```js
 function xslTransform(xml, xsl, div, par) {
-  if (typeof par == "undefined") par = null;
-  div.innerHTML = "";
+	if (typeof par == "undefined") par = null;
+	div.innerHTML = "";
 
-  if (window.ActiveXObject) {
-    // Internet Explorer
-    var xslt = new ActiveXObject("Msxml2.XSLTemplate");
-    xslt.stylesheet = xsl;
-    var xsltProc = xslt.createProcessor();
-    xsltProc.input = xml;
-    for (var a = 0; a < par.length; a++)
-      xsltProc.addParameter(par[a].pname, par[a].pval);
-    xsltProc.transform();
-    div.innerHTML = xsltProc.output;
-  } else if (
-    document.implementation &&
-    document.implementation.createDocument
-  ) {
-    // Mozilla/Firefox, Opera, WebKit (Safari, Chrome), etc.
-    var xsltProc = new XSLTProcessor();
-    xsltProc.importStylesheet(xsl);
-    for (var a = 0; a < par.length; a++)
-      xsltProc.setParameter(null, par[a].pname, par[a].pval);
-    div.appendChild(xsltProc.transformToFragment(xml, document));
-  }
+	if (window.ActiveXObject) {
+		// Internet Explorer
+		var xslt = new ActiveXObject("Msxml2.XSLTemplate");
+		xslt.stylesheet = xsl;
+		var xsltProc = xslt.createProcessor();
+		xsltProc.input = xml;
+		for (var a = 0; a < par.length; a++)
+			xsltProc.addParameter(par[a].pname, par[a].pval);
+		xsltProc.transform();
+		div.innerHTML = xsltProc.output;
+	} else if (
+		document.implementation &&
+		document.implementation.createDocument
+	) {
+		// Mozilla/Firefox, Opera, WebKit (Safari, Chrome), etc.
+		var xsltProc = new XSLTProcessor();
+		xsltProc.importStylesheet(xsl);
+		for (var a = 0; a < par.length; a++)
+			xsltProc.setParameter(null, par[a].pname, par[a].pval);
+		div.appendChild(xsltProc.transformToFragment(xml, document));
+	}
 }
 ```
 

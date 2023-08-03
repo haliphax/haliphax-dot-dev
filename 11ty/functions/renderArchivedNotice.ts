@@ -1,11 +1,11 @@
 import renderIcon from "./renderIcon";
 
 const renderArchivedNotice = (tags: string[]) => {
-  if (!tags.includes("archived")) {
-    return "";
-  }
+	if (!tags.includes("archived")) {
+		return "";
+	}
 
-  return /*html*/ `
+	return /*html*/ `
 		<div class="archived-notice alert alert-primary mb-10" role="contentinfo">
 			<small>
 				${renderIcon("alert-triangle")}

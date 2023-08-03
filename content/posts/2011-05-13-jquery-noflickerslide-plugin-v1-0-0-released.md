@@ -38,93 +38,93 @@ This jQuery plugin is used to eliminate the flicker caused by
 $.fn.slideUp and $.fn.slideDown in Internet Explorer.
 */
 (function ($) {
-  // replace the .slideUp() function
-  $.fn.slideUp = function (a, b, c) {
-    // check for optional arguments to pass to .animate()
-    var dur, cb, ease;
+	// replace the .slideUp() function
+	$.fn.slideUp = function (a, b, c) {
+		// check for optional arguments to pass to .animate()
+		var dur, cb, ease;
 
-    if (typeof c == "undefined") {
-      dur = a;
-      cb = b;
-    } else {
-      dur = a;
-      ease = b;
-      cb = c;
-    }
+		if (typeof c == "undefined") {
+			dur = a;
+			cb = b;
+		} else {
+			dur = a;
+			ease = b;
+			cb = c;
+		}
 
-    // add the animation sequence to the animation queue rather than fire immediately
-    var opts = { queue: true };
+		// add the animation sequence to the animation queue rather than fire immediately
+		var opts = { queue: true };
 
-    if (typeof dur != "undefined") opts.duration = dur;
-    if (typeof ease != "undefined") opts.easing = ease;
-    if (typeof cb != "undefined") opts.complete = cb;
+		if (typeof dur != "undefined") opts.duration = dur;
+		if (typeof ease != "undefined") opts.easing = ease;
+		if (typeof cb != "undefined") opts.complete = cb;
 
-    $(this)
-      .animate(
-        {
-          height: 1, // min height of 1px to avoid IE flicker
-          paddingTop: "hide", // collapse padding
-          paddingBottom: "hide",
-        },
-        { queue: true },
-      )
-      .animate({ display: "hide" }, opts); // hide after sliding
+		$(this)
+			.animate(
+				{
+					height: 1, // min height of 1px to avoid IE flicker
+					paddingTop: "hide", // collapse padding
+					paddingBottom: "hide",
+				},
+				{ queue: true },
+			)
+			.animate({ display: "hide" }, opts); // hide after sliding
 
-    return $(this);
-  };
+		return $(this);
+	};
 
-  // replace the .slideDown() function
-  $.fn.slideDown = function (a, b, c) {
-    // check for optional arguments to pass to .animate()
-    var dur, cb, ease;
+	// replace the .slideDown() function
+	$.fn.slideDown = function (a, b, c) {
+		// check for optional arguments to pass to .animate()
+		var dur, cb, ease;
 
-    if (typeof c == "undefined") {
-      dur = a;
-      cb = b;
-    } else {
-      dur = a;
-      ease = b;
-      cb = c;
-    }
+		if (typeof c == "undefined") {
+			dur = a;
+			cb = b;
+		} else {
+			dur = a;
+			ease = b;
+			cb = c;
+		}
 
-    // add the animation sequence to the animation queue rather than fire immediately
-    var opts = { queue: true };
+		// add the animation sequence to the animation queue rather than fire immediately
+		var opts = { queue: true };
 
-    if (typeof dur != "undefined") opts.duration = dur;
-    if (typeof ease != "undefined") opts.easing = ease;
-    if (typeof cb != "undefined") opts.complete = cb;
-    // set initial height to 1px to avoid flicker and then stretch
-    $(this)
-      .height(1)
-      .show()
-      .animate({ height: $(this).data("h") }, opts);
+		if (typeof dur != "undefined") opts.duration = dur;
+		if (typeof ease != "undefined") opts.easing = ease;
+		if (typeof cb != "undefined") opts.complete = cb;
+		// set initial height to 1px to avoid flicker and then stretch
+		$(this)
+			.height(1)
+			.show()
+			.animate({ height: $(this).data("h") }, opts);
 
-    return $(this);
-  };
+		return $(this);
+	};
 
-  // fix flicker (one-time call)
-  $.fn.noFlickerSlide = function () {
-    // set global flag
-    $(document).data("noflickerslide", true);
+	// fix flicker (one-time call)
+	$.fn.noFlickerSlide = function () {
+		// set global flag
+		$(document).data("noflickerslide", true);
 
-    // grab height of each element and append a padding <div> to retain padding-bottom
-    return $(this).each(function () {
-      $(this)
-        .append($("<div>").css("height", $(this).css("padding-bottom")))
-        .data("h", $(this).height());
-    });
-  };
+		// grab height of each element and append a padding <div> to retain padding-bottom
+		return $(this).each(function () {
+			$(this)
+				.append($("<div>").css("height", $(this).css("padding-bottom")))
+				.data("h", $(this).height());
+		});
+	};
 
-  // back-up default .hide() function
-  $.fn.noFlickerSlide_hide = $.fn.hide;
+	// back-up default .hide() function
+	$.fn.noFlickerSlide_hide = $.fn.hide;
 
-  // replace the .hide() function
-  $.fn.hide = function (a, b, c) {
-    // check for global flag to see if we already grabbed element heights
-    if ($(document).data("noflickerslide"))
-      return $(this).noFlickerSlide_hide(a, b, c);
-    else return $(this).noFlickerSlide().noFlickerSlide_hide(a, b, c);
-  };
+	// replace the .hide() function
+	$.fn.hide = function (a, b, c) {
+		// check for global flag to see if we already grabbed element heights
+		if ($(document).data("noflickerslide"))
+			return $(this).noFlickerSlide_hide(a, b, c);
+		else return $(this).noFlickerSlide().noFlickerSlide_hide(a, b, c);
+	};
 })(jQuery);
 ```
 

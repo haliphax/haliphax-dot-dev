@@ -42,10 +42,10 @@ event handler in a `<script>` block:
 
 ```js
 $("#chkAll").change(function () {
-  $("#<%=myGridView.ClientID%> input[type=checkbox]").attr(
-    "checked",
-    $(this).attr("checked"),
-  );
+	$("#<%=myGridView.ClientID%> input[type=checkbox]").attr(
+		"checked",
+		$(this).attr("checked"),
+	);
 });
 ```
 

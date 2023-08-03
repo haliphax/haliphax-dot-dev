@@ -38,92 +38,92 @@ counterparts. It can also be used to turn radio button lists into an image-based
 "rating" system.
 */
 (function ($) {
-  // extend jQuery object
-  $.fn.imgradio = function (ratings) {
-    // affect all objects in the selector array
-    this.each(function () {
-      // get IDs
-      var radioid = $(this).attr("id");
-      var imgid = radioid + "_img";
-      // hide the original inputs
-      $(this).css("display", "none");
-      // hide the label (if any)
-      $('label[for="' + radioid + '"]').css("display", "none");
-      // inject the <span /> for our image replacement
-      var html =
-        '<span class="radio_img' +
-        ($(this).is(":checked") ? " checked" : "") +
-        '" id="' +
-        imgid +
-        '" data-imgradiogroup="' +
-        $(this).attr("name") +
-        '"></span>';
-      $(html).insertAfter($("#" + radioid));
-      $("#" + imgid)
-        // remember underlying element
-        .data("imgradio_el", radioid)
-        // handle clicks (check/uncheck)
-        .click(function () {
-          var el = $("#" + $(this).data("imgradio_el"));
+	// extend jQuery object
+	$.fn.imgradio = function (ratings) {
+		// affect all objects in the selector array
+		this.each(function () {
+			// get IDs
+			var radioid = $(this).attr("id");
+			var imgid = radioid + "_img";
+			// hide the original inputs
+			$(this).css("display", "none");
+			// hide the label (if any)
+			$('label[for="' + radioid + '"]').css("display", "none");
+			// inject the <span /> for our image replacement
+			var html =
+				'<span class="radio_img' +
+				($(this).is(":checked") ? " checked" : "") +
+				'" id="' +
+				imgid +
+				'" data-imgradiogroup="' +
+				$(this).attr("name") +
+				'"></span>';
+			$(html).insertAfter($("#" + radioid));
+			$("#" + imgid)
+				// remember underlying element
+				.data("imgradio_el", radioid)
+				// handle clicks (check/uncheck)
+				.click(function () {
+					var el = $("#" + $(this).data("imgradio_el"));
 
-          // unchecking
-          if ($(el).is(":checked")) {
-            $(el).removeAttr("checked");
-            var form = $(el).parents("form:first");
-            if (!form) form = $(document);
+					// unchecking
+					if ($(el).is(":checked")) {
+						$(el).removeAttr("checked");
+						var form = $(el).parents("form:first");
+						if (!form) form = $(document);
 
-            // ratings system
-            if (typeof ratings != "undefined") {
-              // uncheck all others in our group in the form
-              form
-                .find(
-                  '[data-imgradiogroup="' +
-                    $(this).attr("data-imgradiogroup") +
-                    '"]',
-                )
-                .removeClass("checked");
-            } else $(this).removeClass("checked");
-          }
-          // checking
-          else {
-            // checkbox lists don"t uncheck each other, only radios
-            if ($(el).attr("type") != "checkbox") {
-              var that = this;
-              var form = $(el).parents("form:first");
-              if (!form) form = $(document);
-              // first uncheck all others in the list
-              form
-                .find('[name="' + $(el).attr("name") + '"]')
-                .removeAttr("checked");
-              var radiogroup = form.find(
-                '[data-imgradiogroup="' +
-                  $(this).attr("data-imgradiogroup") +
-                  '"]',
-              );
-              radiogroup.removeClass("checked");
+						// ratings system
+						if (typeof ratings != "undefined") {
+							// uncheck all others in our group in the form
+							form
+								.find(
+									'[data-imgradiogroup="' +
+										$(this).attr("data-imgradiogroup") +
+										'"]',
+								)
+								.removeClass("checked");
+						} else $(this).removeClass("checked");
+					}
+					// checking
+					else {
+						// checkbox lists don"t uncheck each other, only radios
+						if ($(el).attr("type") != "checkbox") {
+							var that = this;
+							var form = $(el).parents("form:first");
+							if (!form) form = $(document);
+							// first uncheck all others in the list
+							form
+								.find('[name="' + $(el).attr("name") + '"]')
+								.removeAttr("checked");
+							var radiogroup = form.find(
+								'[data-imgradiogroup="' +
+									$(this).attr("data-imgradiogroup") +
+									'"]',
+							);
+							radiogroup.removeClass("checked");
 
-              // ratings system
-              if (typeof ratings != "undefined") {
-                var stop = false;
+							// ratings system
+							if (typeof ratings != "undefined") {
+								var stop = false;
 
-                // check previous elements
-                radiogroup.each(function () {
-                  if (this === that || stop) {
-                    stop = true;
-                    return;
-                  }
+								// check previous elements
+								radiogroup.each(function () {
+									if (this === that || stop) {
+										stop = true;
+										return;
+									}
 
-                  $(this).addClass("checked");
-                });
-              }
-            }
+									$(this).addClass("checked");
+								});
+							}
+						}
 
-            // check this element
-            $(el).attr("checked", "checked");
-            $(this).addClass("checked");
-          }
-        });
-    });
-  };
+						// check this element
+						$(el).attr("checked", "checked");
+						$(this).addClass("checked");
+					}
+				});
+		});
+	};
 })(jQuery);
 ```
