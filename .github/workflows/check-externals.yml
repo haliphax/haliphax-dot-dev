@@ -28,16 +28,17 @@ jobs:
         run: |
           #--- compare API response with locally cached JSON data
           DIFF=0
-          npm run check-twitch || DIFF=1
-          npm run check-youtube || DIFF=1
+          npm run build:ts
+          npm run check:twitch || DIFF=1
+          npm run check:youtube || DIFF=1
           [ $DIFF == 0 ] && exit 0
 
           #--- data is different; rebuild the site
-          npm run build
+          npm run build:11ty
 
           #--- publish to GitHub Pages
-          git config user.email git@github.com
-          git config user.name 'GitHub Actions'
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -f docs 11ty/data/external/*.json
           git commit -m 'external content update'
           git push -f -u origin gh-pages
