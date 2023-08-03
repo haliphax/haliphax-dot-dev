@@ -67,6 +67,9 @@ List of string values used throughout the site and its templates
 
 ### ⚡ Functions
 
+> These are equivalent to _filters_ in other templating languages (e.g.
+> nunjucks).
+
 | Function                                     | Description                                                                            |
 | -------------------------------------------- | -------------------------------------------------------------------------------------- |
 | `getDescription(content, limit)`             | Produce a trimmed blurb for the given content                                          |
@@ -81,6 +84,13 @@ List of string values used throughout the site and its templates
 | `renderLazyImage(html)`                      | Render a lazy loaded image of the provided &lt;img&gt; element                         |
 | `renderReadingTime(data)`                    | Render the reading time information for a page/post                                    |
 | `renderTags(tags)`                           | Render a collection of tags                                                            |
+
+### ☎️ Event handlers
+
+| Handler     | Event            | Description                                                    |
+| ----------- | ---------------- | -------------------------------------------------------------- |
+| `cssTidy`   | `eleventy.after` | Purges unused rules, minifies and combines stylesheets         |
+| `iconPurge` | `eleventy.after` | Removes unused SVG icons from `feather-icons.svg` sprite sheet |
 
 ### 🖼️ Layouts
 
