@@ -1,6 +1,6 @@
 ---
 title: "Redirect Tomcat to FQDN"
-tags: ['post', 'security', 'tomcat']
+tags: ["post", "security", "tomcat"]
 layout: post
 ---
 
@@ -18,12 +18,12 @@ little while... that is, until now.<!--more-->
 Rather than leave my coding comrades in arms out in the cold night, I
 figured I would post what I've found here. It's not terribly
 well-documented for the purpose I have chosen to leverage the feature,
-but it works like a charm. What is it, you ask? **The *proxyName*
+but it works like a charm. What is it, you ask? **The _proxyName_
 attribute.**
 
-Set the *proxyName* attribute of your *Connector* elements to the FQDN
-for your server. Once you've done that, add an *alias* element to your
-*Host* elements, and you're good to go! No messy Java, no page editing,
+Set the _proxyName_ attribute of your _Connector_ elements to the FQDN
+for your server. Once you've done that, add an _alias_ element to your
+_Host_ elements, and you're good to go! No messy Java, no page editing,
 no fuss. Now that you can safely assume that users will not be accessing
 your site using any shortcut host names, you can install your SSL
 certificates with confidence.

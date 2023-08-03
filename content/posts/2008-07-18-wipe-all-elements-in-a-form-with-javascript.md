@@ -1,14 +1,14 @@
 ---
 title: "Wipe all elements in a form with Javascript"
-tags: ['post', 'forms', 'javascript']
+tags: ["post", "forms", "javascript"]
 layout: post
 ---
 
 Javascript has a nifty method associated with the
-*form* DOM object called *reset()*. Using this method will revert all
+_form_ DOM object called _reset()_. Using this method will revert all
 values of the form's associated input controls to the values they
 contained when the page was last sent to the user's browser. That's
-great... but if you want to revert the values to *nothing*, then some
+great... but if you want to revert the values to _nothing_, then some
 scripting is required:<!--more-->
 
 **Javascript code:**
@@ -65,4 +65,4 @@ function clearForm(formId)
 
 If you are using the hidden input controls for something other than
 tracking user input on the form, you may want to comment out the line
-*case "hidden":* in the *switch(elementType)* block.
+_case "hidden":_ in the _switch(elementType)_ block.

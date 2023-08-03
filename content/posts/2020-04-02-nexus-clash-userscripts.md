@@ -1,6 +1,6 @@
 ---
 title: "Nexus Clash UserScripts"
-tags: ['post', 'javascript', 'userscript']
+tags: ["post", "javascript", "userscript"]
 layout: post
 ---
 

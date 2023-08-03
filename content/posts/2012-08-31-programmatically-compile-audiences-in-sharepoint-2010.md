@@ -1,14 +1,14 @@
 ---
 title: "Programmatically compile Audiences in SharePoint 2010"
-tags: ['post', 'aspx', 'c-sharp', 'powershell', 'sharepoint', 'tool']
+tags: ["post", "aspx", "c-sharp", "powershell", "sharepoint", "tool"]
 layout: post
 ---
 
 According to the documentation for the SharePoint 2010 SDK, you cannot
 trigger Audience compilation programmatically. Well—that's not true. It
-isn't documented, but it *is* possible. The painful thing about it is
+isn't documented, but it _is_ possible. The painful thing about it is
 that you must know the `ApplicationId` of the `UserProfileService`
-application. This is where reflection comes in *extremely*
+application. This is where reflection comes in _extremely_
 handy!<!--more-->
 
 Below, you will find two incredibly similar snippets of code: one C#
@@ -57,8 +57,8 @@ SPSecurity.RunWithElevatedPrivileges(delegate()
 });
 ```
 
-*Note: You must run the PowerShell script as a Farm Administrator user,
-or you will be unsuccessful!*
+_Note: You must run the PowerShell script as a Farm Administrator user,
+or you will be unsuccessful!_
 
 **PowerShell command-line code:**
 

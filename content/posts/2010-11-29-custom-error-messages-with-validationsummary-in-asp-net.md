@@ -1,6 +1,6 @@
 ---
 title: "Custom error messages with ValidationSummary in ASP.NET"
-tags: ['post', 'aspx', 'c-sharp', 'dot net', 'forms', 'my-software']
+tags: ["post", "aspx", "c-sharp", "dot net", "forms", "my-software"]
 layout: post
 ---
 

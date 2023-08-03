@@ -1,6 +1,6 @@
 ---
 title: "Browser access keys"
-tags: ['post', 'accessibility']
+tags: ["post", "accessibility"]
 layout: post
 ---
 

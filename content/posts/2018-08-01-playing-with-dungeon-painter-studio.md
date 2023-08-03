@@ -1,6 +1,6 @@
 ---
 title: "Playing with Dungeon Painter Studio"
-tags: ['post', 'dnd', 'games', 'hobby']
+tags: ["post", "dnd", "games", "hobby"]
 layout: post
 ---
 

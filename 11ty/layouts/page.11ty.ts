@@ -3,20 +3,20 @@ import renderGitHubLink from "../functions/renderGitHubLink";
 import renderReadingTime from "../functions/renderReadingTime";
 
 export = class Post {
-	get data() {
-		return {
-			eleventyComputed: {
-				async metaDescription(data: any) {
-					return await getMetaDescription(data);
-				},
-			},
-			layout: 'withHeader',
-			ogType: 'website',
-		};
-	}
+  get data() {
+    return {
+      eleventyComputed: {
+        async metaDescription(data: any) {
+          return await getMetaDescription(data);
+        },
+      },
+      layout: "withHeader",
+      ogType: "website",
+    };
+  }
 
-	async render(data: any) {
-		return /*html*/`
+  async render(data: any) {
+    return /*html*/ `
 			<div class="mb-10 d-flex flex-row flex-grow-1">
 				${await renderReadingTime(data)}
 				${renderGitHubLink(data)}
@@ -25,5 +25,5 @@ export = class Post {
 				${data.content}
 			</div>
 			`;
-	}
+  }
 };

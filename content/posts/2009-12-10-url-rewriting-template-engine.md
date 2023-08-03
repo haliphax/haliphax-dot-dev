@@ -1,6 +1,6 @@
 ---
 title: "URL rewriting template engine"
-tags: ['post', 'apache', 'lighttpd', 'my-software', 'php', 'regex', 'tool']
+tags: ["post", "apache", "lighttpd", "my-software", "php", "regex", "tool"]
 layout: post
 ---
 
@@ -11,7 +11,7 @@ first—a metric tonne of possible URL redirects necessary. Since the
 majority of these will fall into a handful of categories, I began
 creating IIRF (Ionic ISAPI Rewrite Filter) URL rewriting rules that would,
 for instance, move a particular list of "Offices" from
-*/offices/officename* to *http://newserver/offices/officename*. **(Note:
+_/offices/officename_ to _http://newserver/offices/officename_. **(Note:
 These directives should be compatible with Apache's mod_rewrite, and
 even lighttpd's url.rewrite, as well.)**<!--more-->
 
@@ -19,7 +19,7 @@ There is a specific list of sites that exist on our old server and a
 specific list of those that exist on the new server (or at least, there
 is until the migration is complete). Once I started plugging in a
 [regular expression](https://www.regular-expressions.info) "selection
-structure" (i.e., *(one|two|three)* meaning "one or two or three"), it
+structure" (i.e., _(one|two|three)_ meaning "one or two or three"), it
 became painfully obvious that this format would quickly spiral into a
 maintenance nightmare. As such, I have created a small script for
 building IIRF "templates" that can use placeholders for these mammoth
@@ -27,7 +27,7 @@ lists of "Offices".
 
 Here's the gist: You create a template file identical to your IIRF INI
 file, except that you replace those cumbersome regex selection
-structures with placeholders (i.e., *{MY_PLACEHOLDER}*). Then, for each
+structures with placeholders (i.e., _{MY_PLACEHOLDER}_). Then, for each
 placeholder you've used in your template, you create a map file. This
 map file contains a list of all the possibilities to be included in the
 selection structure, each on a new line of the file. The first line of
@@ -61,9 +61,9 @@ RewriteCond %{HTTP_URL} ^/offices/(one|two|three).* [I]
 RedirectRule ^/offices/(.+) http://newserver/offices/$1
 ```
 
-With that in place, *http://oldserver/offices/one/anypage* will redirect
-to *http://newserver/offices/one/anypage* (and so on), while
-*http://oldserver/offices/four/anypage* will not be redirected at all.
+With that in place, _http://oldserver/offices/one/anypage_ will redirect
+to _http://newserver/offices/one/anypage_ (and so on), while
+_http://oldserver/offices/four/anypage_ will not be redirected at all.
 
 Without further adieu, here's the logic:
 

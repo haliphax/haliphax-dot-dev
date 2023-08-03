@@ -1,6 +1,6 @@
 ---
 title: "Tribute: An Homage to My ASCII Heroes"
-tags: ['post', 'my-software']
+tags: ["post", "my-software"]
 layout: post
 ---
 
@@ -11,8 +11,8 @@ development. That being said, I am so incredibly proud of this thing
 that I've made—I can't help but shout about it from the
 mountaintops.<!--more-->
 
-*(TL;DR - Here's a [link to the
-colly](https://16colo.rs/pack/blocktronics_acid_trip/r-tribut.xb))*
+_(TL;DR - Here's a [link to the
+colly](https://16colo.rs/pack/blocktronics_acid_trip/r-tribut.xb))_
 
 ANSI and [ASCII art](https://en.wikipedia.org/wiki/ASCII_art) have been
 a personal hobby of mine for about 20 years now. I first got involved

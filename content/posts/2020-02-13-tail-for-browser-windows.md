@@ -1,6 +1,6 @@
 ---
 title: "Tail for browser windows"
-tags: ['post', 'bookmarklets', 'javascript', 'tool']
+tags: ["post", "bookmarklets", "javascript", "tool"]
 layout: post
 ---
 
@@ -17,9 +17,9 @@ variable, ending the scrolling behavior.
 Here's the raw `javascript:` URL if you want to paste it into your browser
 manually:
 
-````text
+```text
 javascript:(function(d){if(window.hasOwnProperty('hx_tail')){clearInterval(hx_tail);delete hx_tail;alert('Disabled')}else{window.hx_tail=setInterval(function(){d.scrollTop=d.scrollTopMax},1000)}})(document.scrollingElement)
-````
+```
 
 You may also drag 'n drop the following link to your bookmarks toolbar:
 

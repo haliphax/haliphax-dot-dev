@@ -1,6 +1,6 @@
 ---
 title: "New WordPress blog"
-tags: ['post', 'blog news', 'archived']
+tags: ["post", "blog news", "archived"]
 layout: post
 ---
 

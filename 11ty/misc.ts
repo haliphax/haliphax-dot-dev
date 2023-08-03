@@ -1,5 +1,5 @@
 export interface EleventyDir {
-	output: string;
+  output: string;
 }
 
-export const fileOpts: { encoding: BufferEncoding; } = { encoding: 'utf-8' };
+export const fileOpts: { encoding: BufferEncoding } = { encoding: "utf-8" };

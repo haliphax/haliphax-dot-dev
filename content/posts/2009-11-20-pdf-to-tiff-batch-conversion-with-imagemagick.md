@@ -1,6 +1,6 @@
 ---
 title: "PDF to TIFF batch conversion with ImageMagick"
-tags: ['post', 'image-editing', 'my-software', 'vbscript']
+tags: ["post", "image-editing", "my-software", "vbscript"]
 layout: post
 ---
 
@@ -8,11 +8,12 @@ I have recently been tasked at work to create a script that will convert
 PDF files to TIFF files to be used for annotation within our document
 imaging service. The script is responsible for the following process:
 
--   Create back-up copies of each PDF
--   Time-stamp those back-up copies
--   Convert each PDF to a LZW-compressed TIFF image
+- Create back-up copies of each PDF
+- Time-stamp those back-up copies
+- Convert each PDF to a LZW-compressed TIFF image
 
 <!--more-->
+
 For posterity's sake, I figured I would go ahead and post an example
 version of the script here, in case it might be useful to anyone else.
 

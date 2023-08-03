@@ -1,6 +1,6 @@
 ---
 title: "Dynamic GridView rows in ASP.NET"
-tags: ['post', 'ajax', 'aspx', 'c-sharp', 'dot net', 'forms']
+tags: ["post", "ajax", "aspx", "c-sharp", "dot net", "forms"]
 layout: post
 ---
 

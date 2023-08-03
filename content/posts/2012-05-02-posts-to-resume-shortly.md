@@ -1,13 +1,13 @@
 ---
 title: "Posts to resume shortly"
-tags: ['post', 'blog']
+tags: ["post", "blog"]
 layout: post
 ---
 
 I've migrated the blog back over to my VPS, as my hosting provider has
 been trying to blame me for the poor performance of my scripts on their
 hosting platform. I've got everything running on my VPS machine now (and
-I do mean *everything*) thanks to nginx, php5-fpm, and 752MB of RAM (of
+I do mean _everything_) thanks to nginx, php5-fpm, and 752MB of RAM (of
 which I am only using 49% on average).
 
 I've got some posts in the hopper that I will be releasing soon that

@@ -1,6 +1,6 @@
 ---
 title: "My text editor configuration"
-tags: ['post', 'my-software', 'plugin', 'tool', 'vim']
+tags: ["post", "my-software", "plugin", "tool", "vim"]
 layout: post
 ---
 

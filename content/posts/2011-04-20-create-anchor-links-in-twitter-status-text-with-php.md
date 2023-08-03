@@ -1,7 +1,7 @@
 ---
 title: "Create anchor links in Twitter status text with PHP"
 layout: post
-tags: ['post', 'php', 'my-software']
+tags: ["post", "php", "my-software"]
 ---
 
 In a previous blog post, I outlined how to [convert Twitter @mentions,

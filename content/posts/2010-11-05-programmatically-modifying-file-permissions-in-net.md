@@ -1,6 +1,6 @@
 ---
 title: "Programmatically modifying file permissions in .NET"
-tags: ['post', 'c-sharp', 'dot net', 'security']
+tags: ["post", "c-sharp", "dot net", "security"]
 layout: post
 ---
 
@@ -31,4 +31,4 @@ System.IO.File.SetAccessControl(fileLocation, sec);
 In the example, the `Write` permission is being denied to the
 `DOMAIN\user`. Different combinations of the `FileSystemRights` and
 `AccessControlType` options available could be leveraged for different
-results (i.e., *allowing* `Read` access).
+results (i.e., _allowing_ `Read` access).

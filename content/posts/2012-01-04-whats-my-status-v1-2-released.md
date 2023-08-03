@@ -1,6 +1,7 @@
 ---
 title: "What's My Status v1.2 released"
-tags: ['post', 'my-software', 'php', 'plugin', 'statusnet', 'twitter', 'wordpress']
+tags:
+  ["post", "my-software", "php", "plugin", "statusnet", "twitter", "wordpress"]
 layout: post
 ---
 

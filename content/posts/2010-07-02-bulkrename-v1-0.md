@@ -1,6 +1,6 @@
 ---
 title: "bulkRename v1.1"
-tags: ['post', 'dot net', 'my-software', 'regex', 'tool', 'vbnet']
+tags: ["post", "dot net", "my-software", "regex", "tool", "vbnet"]
 layout: post
 ---
 
@@ -15,7 +15,7 @@ software is supposed to be all about, right?<!--more-->
 The syntax is simple: You specify the root folder to traverse, the
 current naming convention, and the *re-*naming convention. There's even
 a flag for testing your expressions with a "dry run", which won't
-actually rename anything, but instead just shows you what *would*
+actually rename anything, but instead just shows you what _would_
 happen. (The flag is "**-t**".)
 
     bulkRename.exe <root folder> -c <current convention> -r <renaming convention>]
@@ -26,7 +26,7 @@ mind that you should "escape" any reserved characters (such as the
 backslashes must also be preceded by a backslash.
 
 <s>Download a copy of bulkRename
-v1.1 for yourself.</s> *See [v2.0](/2011/11/bulkrename-v2-0-released/), instead!*
+v1.1 for yourself.</s> _See [v2.0](/2011/11/bulkrename-v2-0-released/), instead!_
 
 To show my support for open source software, I am also releasing the
 code for this nifty little tool. See below.
@@ -125,3 +125,4 @@ Module bulkRename
 		Console.WriteLine("* Files renamed: " & counter)
 	End Sub
 End Module
+```

@@ -1,6 +1,6 @@
 ---
 title: "Easy SSL redirection for select folders in nginx"
-tags: ['post', 'nginx', 'regex', 'security']
+tags: ["post", "nginx", "regex", "security"]
 layout: post
 ---
 
@@ -17,7 +17,7 @@ names. If there is a match, the connection is redirected to an
 The following nginx `location` configuration directive will provide this
 behavior:
 
-```
+````
 location / {
 	# force ssl
 	location \~ ^/([^/]+)(/.*)? {
@@ -36,7 +36,7 @@ of the document root). You would just create the `phpmyadmin.ssl` file:
 
 ```shell
 touch /var/www/phpmyadmin.ssl
-```
+````
 
 nginx's `location` directive listed above will match `/phpmyadmin` from
 the URL to `/var/www/phpmyadmin.ssl`. Since that file does exist, nginx

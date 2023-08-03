@@ -1,6 +1,6 @@
 ---
 title: "Simple MD5 hashes in VB.NET"
-tags: ['post', 'dot net', 'encryption', 'vbnet']
+tags: ["post", "dot net", "encryption", "vbnet"]
 layout: post
 ---
 

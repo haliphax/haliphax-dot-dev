@@ -1,6 +1,6 @@
 ---
 title: "FlaskBB development"
-tags: ['post', 'my-software', 'python', 'flaskbb', 'plugin']
+tags: ["post", "my-software", "python", "flaskbb", "plugin"]
 layout: post
 ---
 
@@ -19,9 +19,9 @@ middleware. On top of that, I wanted the memberlist, user profiles, and search
 functionality to be restricted to logged-in users on one of my forum installs.
 As such, I wrote some plugins to accomplish that.
 
-* [Dockerfile](https://github.com/haliphax/flaskbb-dockerfile/)
-* [Docker image](https://hub.docker.com/r/haliphax/flaskbb/)
-* [ProxyFix plugin](https://github.com/haliphax/flaskbb-plugin-proxyfix/)
-* [Private memberlist plugin](https://github.com/haliphax/flaskbb-plugin-private-memberlist/)
+- [Dockerfile](https://github.com/haliphax/flaskbb-dockerfile/)
+- [Docker image](https://hub.docker.com/r/haliphax/flaskbb/)
+- [ProxyFix plugin](https://github.com/haliphax/flaskbb-plugin-proxyfix/)
+- [Private memberlist plugin](https://github.com/haliphax/flaskbb-plugin-private-memberlist/)
 
 If they sound useful then please give them a whirl. Enjoy!

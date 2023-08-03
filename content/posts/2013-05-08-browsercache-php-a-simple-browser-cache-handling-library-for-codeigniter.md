@@ -1,11 +1,11 @@
 ---
 title: "Browsercache.php: A simple browser-cache-handling library for CodeIgniter"
-tags: ['post', 'codeigniter', 'my-software', 'php']
+tags: ["post", "codeigniter", "my-software", "php"]
 layout: post
 ---
 
 While [CodeIgniter](https://codeigniter.com) provides a disk caching
-mechanism, it lacks a *browser* caching mechanism. Without a lengthy
+mechanism, it lacks a _browser_ caching mechanism. Without a lengthy
 introduction, here's one.<!--more-->
 
 **Browsercache.php**

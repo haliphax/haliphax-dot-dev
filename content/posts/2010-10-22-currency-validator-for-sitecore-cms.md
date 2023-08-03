@@ -1,6 +1,6 @@
 ---
 title: "Currency Field Validator for Sitecore CMS"
-tags: ['post', 'c-sharp', 'dot net', 'my-software', 'sitecore']
+tags: ["post", "c-sharp", "dot net", "my-software", "sitecore"]
 layout: post
 ---
 
@@ -16,8 +16,8 @@ case, it works for my project (which does not require localization). The
 code could easily be customized to accommodate additional
 formats.<!--more-->
 
-*Note: In the code below, replace `your.namespace.validators` with
-something more suited to your particular project.*
+_Note: In the code below, replace `your.namespace.validators` with
+something more suited to your particular project._
 
 **C# code:**
 
@@ -74,15 +74,15 @@ namespace your.namespace.validators
 }
 ```
 
-Create a new field-level `Validation Rule` item in your *sitecore* tree
+Create a new field-level `Validation Rule` item in your _sitecore_ tree
 (wherever you store your rules—in this particular project, they are
-stored in */sitecore/System/Settings/Validation Rules/Field Rules*), and
-set the *Type* field for your new rule to:
+stored in _/sitecore/System/Settings/Validation Rules/Field Rules_), and
+set the _Type_ field for your new rule to:
 
 `your.namespace.validators.CurrencyValidator,your.namespace.validators`
 
 Remember to swap the namespace with whatever you've chosen for your
 project.
 
-*Note: The version of Sitecore CMS this validator was built and tested
-on is 6.2.*
+_Note: The version of Sitecore CMS this validator was built and tested
+on is 6.2._

@@ -1,11 +1,11 @@
 ---
 title: 'Add "desktop version" and "mark all as read" links to Tiny Tiny RSS mobile plugin'
-tags: ['post', 'php', 'plugin', 'tool']
+tags: ["post", "php", "plugin", "tool"]
 layout: post
 ---
 
 I installed Tiny Tiny RSS on a server of mine, and after tinkering
-around with it for a little while, I turned on the built-in *mobile*
+around with it for a little while, I turned on the built-in _mobile_
 plugin. It's a wonderful little thing; it uses the iUI library to
 present a slick, single page application; it strips images out of the
 article bodies; and it automatically forwards you to the mobile version
@@ -14,7 +14,7 @@ is no way to mark articles as read in bulk from the interface… so I
 added some tweaks.<!--more-->
 
 I started just by putting in a link to the "desktop version" of TTRSS
-from the *preferences* menu in the mobile interface, since the desktop
+from the _preferences_ menu in the mobile interface, since the desktop
 version has a "mark all as read" button (and I was looking for a quick
 'n dirty solution). Now that I've had more time to investigate the guts
 of the TTRSS architecture (and the mobile plugin architecture, for that
@@ -29,7 +29,7 @@ edits to two files:
 
 The `backend.php` file is an AJAX controller that receives calls from
 the interface and acts on its behalf. The `prefs.php` file is the
-*preferences* menu for the mobile interface. I decided to put both of
+_preferences_ menu for the mobile interface. I decided to put both of
 the links here, but it should be simple enough to move them elsewhere;
 their functionality is self-contained.
 

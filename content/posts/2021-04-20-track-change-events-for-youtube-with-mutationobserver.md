@@ -1,6 +1,6 @@
 ---
 title: "Track change events for YouTube with MutationObserver"
-tags: ['post', 'my-software', 'javascript', 'userscript']
+tags: ["post", "my-software", "javascript", "userscript"]
 layout: post
 ---
 
@@ -23,7 +23,6 @@ less-than-elegant solutions.
 The project I'm using this in is [yt-siren]; the companion [UserScript] has the
 logic mentioned above, and it's been working wonderfully thus far. Maybe you
 will be able to build something neat using the same pattern. Good luck!
-
 
 [Events]: https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Building_blocks/Events
 [my Twitch stream]: https://www.twitch.tv/haliphax

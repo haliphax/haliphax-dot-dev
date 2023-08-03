@@ -1,6 +1,6 @@
 ---
 title: "Help! I can't delete phpMyAdmin's setup.php"
-tags: ['post', 'linux', 'php', 'shell']
+tags: ["post", "linux", "php", "shell"]
 layout: post
 ---
 
@@ -12,7 +12,7 @@ package continually failed, stating that it was unable to remove
 given the file permissions mask of "000", which essentially denies any
 sort of action being taken against the file. "No problem," I thought,
 "I'll just chmod it to allow deletion and be on my merry way!" Well...
-it *was* a problem.<!--more-->
+it _was_ a problem.<!--more-->
 
 I was unable to change any of the file permissions or its
 owner/group—even with superuser privileges (and even under the `root`

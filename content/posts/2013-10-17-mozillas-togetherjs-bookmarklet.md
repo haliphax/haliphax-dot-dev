@@ -1,6 +1,6 @@
 ---
 title: "Mozilla's TogetherJS in a bookmarklet"
-tags: ['post', 'bookmarklets', 'javascript', 'tool']
+tags: ["post", "bookmarklets", "javascript", "tool"]
 layout: post
 ---
 
@@ -14,5 +14,4 @@ collaborators to do the same. When you're on a page you want to
 collaborate on, both of you just need to fire off the bookmarklet to get
 started.
 
--   <a href="javascript:(function(d,s)%7Bs=d.createElement('script');s.setAttribute('src',%20'https://togetherjs.com/togetherjs.js');d.body.appendChild(s);s.onload=function()%7BTogetherJS();%7D;%7D(document))">TogetherJS</a>
-
+- <a href="javascript:(function(d,s)%7Bs=d.createElement('script');s.setAttribute('src',%20'https://togetherjs.com/togetherjs.js');d.body.appendChild(s);s.onload=function()%7BTogetherJS();%7D;%7D(document))">TogetherJS</a>

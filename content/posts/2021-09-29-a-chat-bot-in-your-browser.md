@@ -1,6 +1,6 @@
 ---
 title: A chat bot in your browser
-tags: ['post', 'my-software', 'twitch', 'bot', 'javascript']
+tags: ["post", "my-software", "twitch", "bot", "javascript"]
 layout: post
 ---
 
@@ -23,7 +23,6 @@ tested it myself, and it works surprisingly well for ~30 lines of actual logic.
 This is admittedly a small and inconsequential thing that I've built... but it
 is a proof of concept that has some very powerful suggestions as to what could
 be built next. Until then!
-
 
 [tmi.js]: https://tmijs.com
 [Stream Raiders]: https://streamraiders.com

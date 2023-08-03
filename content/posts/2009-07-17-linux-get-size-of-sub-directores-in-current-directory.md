@@ -1,6 +1,6 @@
 ---
 title: "Linux: Get size of sub-directores in current directory"
-tags: ['post', 'linux', 'shell', 'tool']
+tags: ["post", "linux", "shell", "tool"]
 layout: post
 ---
 
@@ -30,22 +30,22 @@ du -sh `ls -l | grep '^d' | awk '{print $9}'`
 <s>Here's how it works:</s><!--more-->
 
 - <s>**du** is the main command, which is used to list the size of the
-	current directory tree. The **-sh** flags state that only the
-	current-level sub-directories are to be listed, and that they should
-	be listed in kilobytes (K).</s>
+  current directory tree. The **-sh** flags state that only the
+  current-level sub-directories are to be listed, and that they should
+  be listed in kilobytes (K).</s>
 - <s>The "back-ticks" (`) execute commands inline, within the context
-	of the current command. This means that everything inside these
-	back-ticks will be used on the command-line parameters for **du**.</s>
+  of the current command. This means that everything inside these
+  back-ticks will be used on the command-line parameters for **du**.</s>
 - <s>**ls -l** lists files and directories with additional information
-	(security flags, size, owner, group, etc.). This is the main command
-	of the inline command string delineated by the back-ticks.</s>
+  (security flags, size, owner, group, etc.). This is the main command
+  of the inline command string delineated by the back-ticks.</s>
 - <s>**grep** is a command-line utility for parsing text using
-	regular expressions. The **'^d'** parameter passed to it is a
-	regular expression pattern that only matches lines beginning with
-	"d" (which are directories, given the output of **ls -l**).</s>
+  regular expressions. The **'^d'** parameter passed to it is a
+  regular expression pattern that only matches lines beginning with
+  "d" (which are directories, given the output of **ls -l**).</s>
 - <s>**awk** is a different sort of parsing/formatting tool. **'{print
-	$9}'** sends it a command to print the 9th column of output it
-	receives (from **grep**).</s>
+  $9}'** sends it a command to print the 9th column of output it
+  receives (from **grep**).</s>
 
 <s>Put them all together, and they work like a well-oiled machine to
 produce a new, specific utility. The utility can become a part of your

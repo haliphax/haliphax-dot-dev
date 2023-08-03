@@ -1,6 +1,6 @@
 ---
 title: "rexCrawler release"
-tags: ['post', 'my-software']
+tags: ["post", "my-software"]
 layout: post
 ---
 
@@ -14,4 +14,4 @@ values) file, or both.
 You can download the file at the [rexCrawler
 homepage](https://sites.google.com/site/rexcrawler) on Google Sites.
 
-*Note: rexCrawler requires the Microsoft .NET Framework v3.5 or later.*
+_Note: rexCrawler requires the Microsoft .NET Framework v3.5 or later._

@@ -1,6 +1,17 @@
 ---
 title: "WordPress plugin minify Makefile"
-tags: ['post', 'javascript', 'linux', 'my-software', 'php', 'regex', 'shell', 'tool', 'wordpress']
+tags:
+  [
+    "post",
+    "javascript",
+    "linux",
+    "my-software",
+    "php",
+    "regex",
+    "shell",
+    "tool",
+    "wordpress",
+  ]
 layout: post
 ---
 
@@ -36,19 +47,20 @@ makes a handful of assumptions:
 
 The `Makefile` has several targets:
 
--   **css** - Minifies `*.css` files
--   **js** - Minfies `*.js` files
--   **minify** - Fires both the **css** and **js** targets
--   **zip** - Builds a version-appropriate `*.zip` archive
--   **all** - Fires the **minify** and **zip** targets
--   **clean** - Removes all minified scripts/stylesheets and archives
--   **help** - Displays list of targets
+- **css** - Minifies `*.css` files
+- **js** - Minfies `*.js` files
+- **minify** - Fires both the **css** and **js** targets
+- **zip** - Builds a version-appropriate `*.zip` archive
+- **all** - Fires the **minify** and **zip** targets
+- **clean** - Removes all minified scripts/stylesheets and archives
+- **help** - Displays list of targets
 
 It can no doubt be made even more universal—perhaps to work with
 WordPress themes, [CodeIgniter](https://codeigniter.com/) apps, and
 more—so tinker away!
 
 <script src="https://gist.github.com/haliphax/3315112.js"></script>
+
 <noscript><https://gist.github.com/haliphax/3315112></noscript>
 
 **Note:** You will need to make adjustments if you are using `*.mo` and

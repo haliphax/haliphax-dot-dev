@@ -1,10 +1,10 @@
 ---
 title: "Forward Gawker sites to their UK counterparts for a better layout"
-tags: ['post', 'javascript', 'lifehacker', 'my-software', 'tool', 'userscript']
+tags: ["post", "javascript", "lifehacker", "my-software", "tool", "userscript"]
 layout: post
 ---
 
-I wrote a (*really*) simple [userscript](https://greasyfork.org) today
+I wrote a (_really_) simple [userscript](https://greasyfork.org) today
 that reloads Lifehacker pages under uk.lifehacker.com. Why did I do this?
 Because the Lifehacker UK site doesn't have the trendy new (horrendous)
 AJAXified layout. Maybe using a `hosts` redirect instead of a userscript
@@ -14,9 +14,9 @@ with the userscript), but this method is far less intrusive—and less
 likely to break any pages on the UK site which may rely on resources
 from the naked domain.<!--more-->
 
-*(Edit: I have since modified the script to work with the entire bevy of
+_(Edit: I have since modified the script to work with the entire bevy of
 Gawker media sites—Lifehacker, Gizmodo, Gawker, Kotaku, io9, Jalopnik,
-Deadspin, and Jezebel.)*
+Deadspin, and Jezebel.)_
 
 ~~Install the script from userscripts.org</a> for Firefox (via the
 [GreaseMonkey](https://addons.mozilla.org/en-US/firefox/addon/greasemonkey/)
@@ -44,16 +44,19 @@ script:
 // @inlcude http://jezebel.com/*
 // ==/UserScript==
 
-(function() {
-	var loc = /^(https?:\/\/)(deadspin|gizmodo|gawker|kotaku|lifehacker|jezebel|io9|jalopnik)\.com(.+)$/i;
-	var match = loc.exec(window.location);
+(function () {
+  var loc =
+    /^(https?:\/\/)(deadspin|gizmodo|gawker|kotaku|lifehacker|jezebel|io9|jalopnik)\.com(.+)$/i;
+  var match = loc.exec(window.location);
 
-	if(match)
-	{
-		try { window.stop(); }
-		catch(ex) { document.execCommand("Stop"); }
+  if (match) {
+    try {
+      window.stop();
+    } catch (ex) {
+      document.execCommand("Stop");
+    }
 
-		window.location.href = match[1] + "uk." + match[2] + ".com" + match[3];
-	}
+    window.location.href = match[1] + "uk." + match[2] + ".com" + match[3];
+  }
 })();
 ```

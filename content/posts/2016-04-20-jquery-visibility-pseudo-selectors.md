@@ -1,6 +1,6 @@
 ---
 title: "jQuery visibility pseudo-selectors"
-tags: ['post', 'javascript', 'jquery', 'my-software', 'plugin']
+tags: ["post", "javascript", "jquery", "my-software", "plugin"]
 layout: post
 ---
 
@@ -17,4 +17,3 @@ Check them out:
 <p>
 <script src="https://gist.github.com/haliphax/a772a2f6d9760efb4f37eb6c2cba0710.js"></script>
 </p>
-

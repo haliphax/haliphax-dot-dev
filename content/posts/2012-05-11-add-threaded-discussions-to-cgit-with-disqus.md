@@ -1,6 +1,6 @@
 ---
 title: "Add threaded discussions to cgit with disqus"
-tags: ['post', 'git', 'javascript']
+tags: ["post", "git", "javascript"]
 layout: post
 ---
 
@@ -26,22 +26,23 @@ disqus platform (be sure to replace
 
 ```html
 <script type="text/javascript">
-	window.onload = function() {
-		if((window.location.href.match(/\/tree\/.*[?&]id=/)
-			&& document.querySelector('table.blob'))
-			|| window.location.href.match(/\/commit\/.*[?&]id=(?!.+&ss=1\$)/))
-		{
-			var d = document.createElement('div');
-			d.id = 'disqus_thread';
-			document.querySelector('div.content').appendChild(d);
-			var disqus_shortname = 'REPLACE-WITH-YOUR-DISQUS-SHORTNAME';
-			var dsq = document.createElement('script');
-			dsq.type = 'text/javascript';
-			dsq.async = true;
-			dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
-			document.body.appendChild(dsq);
-		}
-	};
+  window.onload = function () {
+    if (
+      (window.location.href.match(/\/tree\/.*[?&]id=/) &&
+        document.querySelector("table.blob")) ||
+      window.location.href.match(/\/commit\/.*[?&]id=(?!.+&ss=1\$)/)
+    ) {
+      var d = document.createElement("div");
+      d.id = "disqus_thread";
+      document.querySelector("div.content").appendChild(d);
+      var disqus_shortname = "REPLACE-WITH-YOUR-DISQUS-SHORTNAME";
+      var dsq = document.createElement("script");
+      dsq.type = "text/javascript";
+      dsq.async = true;
+      dsq.src = "https://" + disqus_shortname + ".disqus.com/embed.js";
+      document.body.appendChild(dsq);
+    }
+  };
 </script>
 ```
 
@@ -64,14 +65,14 @@ That's it! The next time you visit a version-specific commit or file in
 your cgit system, the disqus comment thread should be injected at the
 bottom of the page.
 
-*~~Caveat: Currently, disqus has problems serving its script over HTTPS.
+_~~Caveat: Currently, disqus has problems serving its script over HTTPS.
 If you're serving cgit over HTTPS (and I am), you will unfortunately be
 plagued by content security mismatches. They claim that they have
 already fixed disqus to work over HTTPS, but I have experienced the
-opposite.~~*
+opposite.~~_
 
 **Update (2012/6/6):** It looks like they've fixed the HTTPS problem.
 
-**Update (2012/7/24):** You must disable the new *Disqus 2012 features*
+**Update (2012/7/24):** You must disable the new _Disqus 2012 features_
 option if you're forcing SSL, since it includes resources which are not
 served over an HTTPS connection.

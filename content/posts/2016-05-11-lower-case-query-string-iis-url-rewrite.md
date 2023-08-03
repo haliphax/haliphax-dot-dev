@@ -1,6 +1,6 @@
 ---
 title: "Lower-case specific query string keys with IIS URL Rewrite"
-tags: ['post', 'fix', 'iis', 'regex', 'seo']
+tags: ["post", "fix", "iis", "regex", "seo"]
 layout: post
 ---
 
@@ -24,11 +24,11 @@ determine if that key contains any upper-case letters.
 To determine if there are any upper-case letters in the query string
 key:
 
-`{QUERY_STRING}` *contains* `\bsite=[^&]*[A-Z][^&]*`
+`{QUERY_STRING}` _contains_ `\bsite=[^&]*[A-Z][^&]*`
 
 To capture the target query string key (notice the 3 capture groups?):
 
-`{QUERY_STRING}` *contains* `(.*)\bsite=([^&]+)(.*)`
+`{QUERY_STRING}` _contains_ `(.*)\bsite=([^&]+)(.*)`
 
 Finally, we will need to **Redirect** the user to the following URL with
 **Include query string** *un*checked:
@@ -36,7 +36,7 @@ Finally, we will need to **Redirect** the user to the following URL with
 `{R:0}?{C:1}site={ToLower:{C:2}}{C:3}`
 
 That last pattern injects any leading query string parameters, then a
-lower-cased version of the *site* parameter, and finally, the remainder
+lower-cased version of the _site_ parameter, and finally, the remainder
 of the query string. This ensures that the query string key does not
 change position due to this rewrite rule—a must-have for our specific
 project.

@@ -1,6 +1,6 @@
 ---
 title: "staggr featured on freewaregenius.com"
-tags: ['post', 'facebook', 'my-software', 'press']
+tags: ["post", "facebook", "my-software", "press"]
 layout: post
 ---
 

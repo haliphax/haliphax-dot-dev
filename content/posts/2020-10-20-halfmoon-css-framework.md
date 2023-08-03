@@ -1,6 +1,6 @@
 ---
 title: "Halfmoon CSS framework"
-tags: ['post', 'css']
+tags: ["post", "css"]
 layout: post
 ---
 
@@ -22,7 +22,7 @@ The framework I have been excited about, after many hours of searching and
 testing, is not small. In fact, it's larger than Bootstrap, as far as I can
 tell. It's also not using anything like cssnext (though it _is_ driven entirely
 by CSS3 variables, which is neat). [Halfmoon] does imitate Bootstrap's naming
-conventions, though. It also has a *dark mode* (!!) and doesn't rely on jQuery
+conventions, though. It also has a _dark mode_ (!!) and doesn't rely on jQuery
 (or even Javascript, if you don't want it to) for its base functionality.
 
 I've been playing with it for (too many) hours tonight (if it still qualifies
@@ -33,7 +33,6 @@ that are worth sharing--both good and bad--after I've had some more time to get
 my hands dirty with it.
 
 - [Halfmoon CSS framework][Halfmoon]
-
 
 [cssnext]: https://cssnext.github.io/
 [Halfmoon]: https://www.gethalfmoon.com

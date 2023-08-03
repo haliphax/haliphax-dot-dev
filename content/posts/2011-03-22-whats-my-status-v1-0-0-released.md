@@ -1,6 +1,7 @@
 ---
 title: "What's My Status? v1.0.0 released"
-tags: ['post', 'my-software', 'php', 'plugin', 'statusnet', 'twitter', 'wordpress']
+tags:
+  ["post", "my-software", "php", "plugin", "statusnet", "twitter", "wordpress"]
 layout: post
 ---
 
@@ -18,4 +19,4 @@ limits.<!--more-->
 
 Grab it over at
 [wordpress.org](https://wordpress.org/plugins/whats-my-status) or
-search for it in your WordPress installation under *Plugins » Add New*.
+search for it in your WordPress installation under _Plugins » Add New_.

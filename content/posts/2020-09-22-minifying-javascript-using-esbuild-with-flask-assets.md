@@ -1,6 +1,6 @@
 ---
 title: "Minifying Javascript using ESBuild with Flask-Assets"
-tags: ['post', 'flask', 'javascript', 'python', 'tool']
+tags: ["post", "flask", "javascript", "python", "tool"]
 layout: post
 ---
 
@@ -56,14 +56,13 @@ filter reference to `jsmin` with `esbuild`, like so:
 
 ```html
 {% assets filters='esbuild', output='js/file.min.js', 'js/file.js' %}
-    <script src="{{ ASSET_URL }}" type="module"></script>
+<script src="{{ ASSET_URL }}" type="module"></script>
 {% endassets %}
 ```
 
 Note the `type="module"`, as this is necessary for testing and developing the
 scripts while they are un-minified. Otherwise, the use of the `import` keyword
 in the scripts will throw an error. Happy minifying!
-
 
 [Flask]: https://flask.palletsprojects.com
 [Flask-Assets]: https://flask-assets.readthedocs.io

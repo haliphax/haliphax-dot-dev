@@ -4,26 +4,30 @@ import renderIcon from "../../11ty/functions/renderIcon";
 import renderLazyImage from "../../11ty/functions/renderLazyImage";
 
 export = class Index {
-	get data() {
-		return {
-			changeFreq: 'weekly',
-			layout: 'base',
-			ogTitle: 'haliphax.dev',
-			ogType: 'website',
-			permalink: '/index.html',
-			title: 'Home',
-		};
-	}
+  get data() {
+    return {
+      changeFreq: "weekly",
+      layout: "base",
+      ogTitle: "haliphax.dev",
+      ogType: "website",
+      permalink: "/index.html",
+      title: "Home",
+    };
+  }
 
-	render(data: any) {
-		const vod = data.external?.twitch?.latestVod;
-		const vodDescription =
-			getDescription(vod?.description, data.misc.blurbLength);
-		const yt = data.external?.youtube;
-		const ytDescription =
-			getDescription(yt?.snippet.description, data.misc.blurbLength);
+  render(data: any) {
+    const vod = data.external?.twitch?.latestVod;
+    const vodDescription = getDescription(
+      vod?.description,
+      data.misc.blurbLength,
+    );
+    const yt = data.external?.youtube;
+    const ytDescription = getDescription(
+      yt?.snippet.description,
+      data.misc.blurbLength,
+    );
 
-		return /*html*/`
+    return /*html*/ `
 			<div class="row d-flex">
 				<details class="intro card m-5 py-5 px-20 w-full row">
 					<summary class="w-full">About me</summary>
@@ -38,9 +42,12 @@ export = class Index {
 					</div>
 				</details>
 			</div>
-			${!vod?.url ? '' : /*html*/`
+			${
+        !vod?.url
+          ? ""
+          : /*html*/ `
 				<h2 class="mb-0">
-					<span class="text-primary mr-5">${renderIcon('tv')}</span>
+					<span class="text-primary mr-5">${renderIcon("tv")}</span>
 					Latest stream
 				</h2>
 				<div class="row d-flex">
@@ -48,7 +55,7 @@ export = class Index {
 						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 							<div class="mr-sm-10">
 								<a href="${vod?.url}" class="no-external img-wrap mb-5">
-									${renderLazyImage(/*html*/`
+									${renderLazyImage(/*html*/ `
 										<img src="${vod.thumbnail_url}" width="640"
 											height="360" class="w-full h-auto border-0"
 											alt="Video thumbnail" />
@@ -66,25 +73,31 @@ export = class Index {
 						<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
 							<a href="${vod.url}"
 								class="btn btn-secondary d-inline-block no-external">
-								${renderIcon('play')}
+								${renderIcon("play")}
 								<span aria-hidden="true">Watch VOD</span>
 								<span class="sr-only">Watch VOD: ${vod.title}</span>
 							</a>
 						</div>
 					</div>
 				</div>
-				`}
-			${!yt ? '' : /*html*/`
+				`
+      }
+			${
+        !yt
+          ? ""
+          : /*html*/ `
 				<h2 class="mb-0">
-					<span class="text-primary mr-5">${renderIcon('film')}</span>
+					<span class="text-primary mr-5">${renderIcon("film")}</span>
 					Latest video
 				</h2>
 				<div class="row d-flex">
 					<div class="card m-5 p-20 w-full row">
 						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
 							<div class="mr-sm-10">
-								<a href="https://youtu.be/${yt.snippet.resourceId.videoId}" class="no-external img-wrap mb-5">
-									${renderLazyImage(/*html*/`
+								<a href="https://youtu.be/${
+                  yt.snippet.resourceId.videoId
+                }" class="no-external img-wrap mb-5">
+									${renderLazyImage(/*html*/ `
 										<img src="${yt.snippet.thumbnails.standard.url}"
 											width="1280" height="720" alt="Video thumbnail"
 											class="w-full h-auto border-0 yt-thumbnail" />
@@ -102,19 +115,20 @@ export = class Index {
 						<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
 							<a href="https://youtu.be/${yt.snippet.resourceId.videoId}"
 								class="btn btn-secondary d-inline-block no-external">
-								${renderIcon('play')}
+								${renderIcon("play")}
 								<span aria-hidden="true">Watch video</span>
 								<span class="sr-only">Watch video: ${yt.snippet.title}</span>
 							</a>
 						</div>
 					</div>
 				</div>
-				`}
+				`
+      }
 			<h2 class="mb-0">
-				<span class="text-primary mr-5">${renderIcon('book-open')}</span>
+				<span class="text-primary mr-5">${renderIcon("book-open")}</span>
 				Recent posts
 			</h2>
 			${renderCollection(data.collections.post, 3, true)}
 			`;
-	}
+  }
 };

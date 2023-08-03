@@ -1,6 +1,6 @@
 ---
 title: "UserScripts for Urban Dead"
-tags: ['post', 'urban-dead', 'userscript', 'javascript', 'plugin']
+tags: ["post", "urban-dead", "userscript", "javascript", "plugin"]
 layout: post
 ---
 

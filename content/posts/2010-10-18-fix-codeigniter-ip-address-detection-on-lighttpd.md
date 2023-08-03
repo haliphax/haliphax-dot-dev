@@ -1,10 +1,10 @@
 ---
 title: "Fix CodeIgniter IP address detection on lighttpd"
-tags: ['post', 'codeigniter', 'lighttpd', 'php']
+tags: ["post", "codeigniter", "lighttpd", "php"]
 layout: post
 ---
 
-If the results of a call to *$this->input->ip_address()* gives
+If the results of a call to _$this->input->ip_address()_ gives
 you "0.0.0.0" (the "invalid address" response) and you're running
 **lighttpd** as your web server, you may be able to fix it <s>with a
 minor tweak to</s> by extending one of the base **CodeIgniter** libraries.
@@ -13,7 +13,7 @@ and stripping it out before CodeIgniter considers the validity of your
 address should restore functionality without circumventing any of the
 logic.<!--more-->
 
-<s>Crack open the *system/libraries/Input.php* file and find the
+<s>Crack open the _system/libraries/Input.php_ file and find the
 following code:</s>
 
 **PHP code:**
@@ -32,14 +32,13 @@ $this->ip_address = preg_replace("#^[:a-z0-9]+:#i", "", $this->ip_address);
 if (!$this->valid_ip($this->ip_address))
 ```
 
-Update
-------
+## Update
 
 **As mentioned in Anthony's comment below, this edit requires that you
 modify a core CodeIgniter library. In order to avoid this, you can
-create a class definition in *system/application/libraries/Input.php*
-that extends the functionality of the *valid_ip()* function (which is
-used internally by *$this->input->ip_address()*). He has been so
+create a class definition in _system/application/libraries/Input.php_
+that extends the functionality of the _valid_ip()_ function (which is
+used internally by _$this->input->ip_address()_). He has been so
 kind as to provide a class-encapsulated version of my snippet <s>on
 github</s> which does just that. Thanks, Anthony!**
 

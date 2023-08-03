@@ -1,6 +1,6 @@
 ---
 title: My daughter deserves better
-tags: ['post', 'women-in-tech', 'industry']
+tags: ["post", "women-in-tech", "industry"]
 layout: post
 ---
 
@@ -82,7 +82,6 @@ of the post... I just want to reiterate that it doesn't matter. If anyone who
 reads this is given pause to take an inward look at their own behavior and an
 outward look at the behavior of those they associate with, then it is more than
 worth it.
-
 
 [whitep4nth3r]: https://twitter.com/whitep4nth3r
 [unbreak.tech]: https://unbreak.tech

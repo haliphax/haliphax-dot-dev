@@ -1,6 +1,6 @@
 ---
 title: "Urban Dead Greasemonkey Scripts"
-tags: ['post', 'javascript', 'my-software', 'userscript']
+tags: ["post", "javascript", "my-software", "userscript"]
 layout: post
 ---
 

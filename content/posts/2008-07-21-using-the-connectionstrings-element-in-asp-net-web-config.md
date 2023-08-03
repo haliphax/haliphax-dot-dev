@@ -1,6 +1,6 @@
 ---
 title: "Using the ConnectionStrings element in ASP.NET web.config"
-tags: ['post', 'aspx', 'dot net', 'sql']
+tags: ["post", "aspx", "dot net", "sql"]
 layout: post
 ---
 
@@ -9,14 +9,14 @@ may rely on duplicate data (such as connection strings for pages that
 query databases), or you want to separate certain constants from your
 other code, you need a centralized method for storing and referencing
 that data. In this case, the `ConnectionStrings` element in the
-*web.config* file of either your
+_web.config_ file of either your
 application's root directory, parent directory, or the web server root
 directory--depending on your application's inheritance--can prove
 incredibly useful.<!--more-->
 
 Keys can be created within the element and given values. These values
 can then be recalled by any web applications which inherit the settings
-from the particular *web.config*
+from the particular _web.config_
 file. This can be a particularly advantageous tool for recycling
 database connection strings in web application suites and web service
 frameworks.
@@ -35,10 +35,10 @@ frameworks.
 </configuration>
 ```
 
-The example given above is a stripped-down implementation of *web.config*, and particular to
+The example given above is a stripped-down implementation of _web.config_, and particular to
 database-driven web applications.
 
-Now that you've got your data tucked away in the *web.config* file, it's time to use it
+Now that you've got your data tucked away in the _web.config_ file, it's time to use it
 in your web application. We will make use of the `ConfigurationManager.ConnectionStrings`
 method in order to accomplish this:
 

@@ -1,6 +1,6 @@
 ---
 title: "chud - GreaseMonkey script for Urban Dead"
-tags: ['post', 'javascript', 'my-software', 'userscript']
+tags: ["post", "javascript", "my-software", "userscript"]
 layout: post
 ---
 

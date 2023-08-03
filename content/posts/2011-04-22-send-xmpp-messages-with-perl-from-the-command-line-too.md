@@ -1,12 +1,12 @@
 ---
 title: "Send XMPP messages with Perl (from the command line, too!)"
-tags: ['post', 'my-software', 'perl', 'shell', 'tool', 'xmpp']
+tags: ["post", "my-software", "perl", "shell", "tool", "xmpp"]
 layout: post
 ---
 
 I had been looking for a small, simple utility for Windows that could
 send XMPP messages from the command line for use in various automated
-tasks and notification processes. I came across *sendxmpp* as part of
+tasks and notification processes. I came across _sendxmpp_ as part of
 the [CygWin](https://cygwin.com) installation, but could not successfully
 install its dependencies with CygWin's CPAN port. I've been playing
 around with the `Net::XMPP` Perl library, and in spite of its poor
@@ -15,7 +15,7 @@ got something usable. I'm a programmer, after all—if a utility I need
 doesn't exist, why not make it myself?<!--more-->
 
 The following Perl script has been tested with ActiveState Perl on
-Windows 7, Vista, and XP, as well as the standard *apt*-installed Perl 5
+Windows 7, Vista, and XP, as well as the standard _apt_-installed Perl 5
 distribution for Debian Linux.
 
 **Perl code:**

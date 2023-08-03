@@ -1,6 +1,6 @@
 ---
 title: "LDAP authentication with C#"
-tags: ['post', 'aspx', 'c-sharp', 'dot net', 'encryption', 'ldap', 'security']
+tags: ["post", "aspx", "c-sharp", "dot net", "encryption", "ldap", "security"]
 layout: post
 ---
 
@@ -14,9 +14,9 @@ for replicating user information. John Doe only has to remember one
 password for all systems. When he changes it, those changes cascade
 across the board.<!--more-->
 
-*Note: This is a translation of my original post, [LDAP
+_Note: This is a translation of my original post, [LDAP
 authentication with VB.NET](/2008/08/ldap-authentication-with-vb-net/),
-into the C# language.*
+into the C# language._
 
 Using C#, you can easily implement LDAP queries and authentication in
 your applications and websites. In this example, I will be creating a
@@ -94,12 +94,12 @@ partial class ldapLogin : System.Web.UI.Page
 
 The code makes a connection to the LDAP server using the supplied user
 credentials and domain information. The actual test for authentication
-happens on line 19, where the *NativeObject* member of the *DirectoryEntry*
-object is assigned to *connected*. If this assignment
+happens on line 19, where the _NativeObject_ member of the _DirectoryEntry_
+object is assigned to _connected_. If this assignment
 fails, the login was not authenticated, and the program will react
 accordingly.
 
-Obviously, the *uid* and connection strings will have to be custom-tailored to
-your particular LDAP server. Also, the *AuthenticationType* property may need
+Obviously, the _uid_ and connection strings will have to be custom-tailored to
+your particular LDAP server. Also, the _AuthenticationType_ property may need
 to be assigned a different value, depending on... can you guess? That's
 right; the authentication method used by your LDAP server.

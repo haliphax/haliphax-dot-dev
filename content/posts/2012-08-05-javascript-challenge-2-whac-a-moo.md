@@ -1,6 +1,6 @@
 ---
 title: "JavaScript Challenge #2 (Whac-A-Moo)"
-tags: ['post', 'experiment', 'javascript', 'my-software']
+tags: ["post", "experiment", "javascript", "my-software"]
 layout: post
 ---
 

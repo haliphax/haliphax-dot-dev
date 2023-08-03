@@ -1,6 +1,6 @@
 ---
 title: Avatars for Twitch
-tags: ['post', 'twitch', 'my-software']
+tags: ["post", "twitch", "my-software"]
 layout: post
 ---
 
@@ -22,7 +22,6 @@ hard-coded to 1920x1080 and expects to be rendered full-screen. There is also a
 through the OAuth flow to get an authentication token.
 
 [hxavatars GitHub repository]
-
 
 [experimenting]: /2021/09/a-chat-bot-in-your-browser/
 [Twitch]: https://www.twitch.tv

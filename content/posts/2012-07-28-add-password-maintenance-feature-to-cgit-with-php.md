@@ -1,11 +1,11 @@
 ---
 title: "Add password maintenance feature to cgit with PHP"
-tags: ['post', 'git', 'javascript', 'php', 'security']
+tags: ["post", "git", "javascript", "php", "security"]
 layout: post
 ---
 
 Have you ever wanted to have a nifty, browser-driven password
-maintenance feature in your *htpasswd*-secured **cgit** site? I've been
+maintenance feature in your _htpasswd_-secured **cgit** site? I've been
 meaning to build this for a while—and I finally did it.<!--more-->
 Granted, this was not a difficult task, and I'm not expecting to bask in
 any glory for completing it, but hopefully, this will prove useful to
@@ -127,12 +127,12 @@ need to add a javascript snippet to cgit's header file:
 
 ```html
 <script type="text/javascript">
-	window.onload = function() {
-		var p = document.createElement('a');
-		p.href = '/git/passwd.php';
-		p.innerHTML = 'passwd';
-		document.querySelector('table.tabs td:first-child').appendChild(p);
-	};
+  window.onload = function () {
+    var p = document.createElement("a");
+    p.href = "/git/passwd.php";
+    p.innerHTML = "passwd";
+    document.querySelector("table.tabs td:first-child").appendChild(p);
+  };
 </script>
 ```
 
@@ -147,4 +147,4 @@ header=/var/www/git/include.html
 
 Presto, change-o! A butt-ugly (but functional) password maintenance page
 for a secure cgit instance. No more need to SSH into the server to
-change your *htpasswd* credentials!
+change your _htpasswd_ credentials!

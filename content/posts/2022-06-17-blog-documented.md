@@ -1,6 +1,6 @@
 ---
 title: Blog, documented
-tags: ['post', 'blog', 'my-software']
+tags: ["post", "blog", "my-software"]
 layout: post
 ---
 
@@ -16,7 +16,6 @@ of the accompanying processes that drive the site.
 
 It involves some pretty cool moving parts vis a vis GitHub Actions, GitHub
 Pages, and an external cron-job service. [Go check it out!]
-
 
 [Eleventy]: https://www.11ty.dev
 [Go check it out!]: https://github.com/haliphax/haliphax-dot-dev/blob/master/README.md

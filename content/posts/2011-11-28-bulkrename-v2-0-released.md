@@ -1,6 +1,6 @@
 ---
 title: "bulkRename v2.0 released"
-tags: ['post', 'c-sharp', 'my-software', 'tool']
+tags: ["post", "c-sharp", "my-software", "tool"]
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "LDAP authentication with VB.NET"
-tags: ['post', 'aspx', 'dot net', 'encryption', 'ldap', 'security', 'vbnet']
+tags: ["post", "aspx", "dot net", "encryption", "ldap", "security", "vbnet"]
 layout: post
 ---
 
@@ -14,11 +14,11 @@ for replicating user information. John Doe only has to remember one
 password for all systems. When he changes it, those changes cascade
 across the board.<!--more-->
 
-*~~**Update:** As this continues to be the most searched-for article on
+_~~**Update:** As this continues to be the most searched-for article on
 my site, I will be posting a C# version in the near future. Stay
 tuned!~~ The article is live! For an example in C#, see the other post:
 [LDAP authentication with
-C#](/2013/04/ldap-authentication-with-c-sharp/)*
+C#](/2013/04/ldap-authentication-with-c-sharp/)_
 
 Using VB.NET, you can easily implement LDAP queries and authentication
 in your applications and websites. In this example, I will be creating a
@@ -112,12 +112,12 @@ End Class
 
 The code makes a connection to the LDAP server using the supplied user
 credentials and domain information. The actual test for authentication
-happens on line 26, where the *NativeObject* member of the *DirectoryEntry*
-object is assigned to *connected*. If this assignment
+happens on line 26, where the _NativeObject_ member of the _DirectoryEntry_
+object is assigned to _connected_. If this assignment
 fails, the login was not authenticated, and the program will react
 accordingly.
 
-Obviously, the *uid* and connection strings will have to be custom-tailored to
-your particular LDAP server. Also, the *AuthenticationType* property may need
+Obviously, the _uid_ and connection strings will have to be custom-tailored to
+your particular LDAP server. Also, the _AuthenticationType_ property may need
 to be assigned a different value, depending on... can you guess? That's
 right; the authentication method used by your LDAP server.

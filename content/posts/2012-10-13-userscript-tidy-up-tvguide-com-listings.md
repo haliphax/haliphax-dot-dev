@@ -1,6 +1,6 @@
 ---
 title: "UserScript: Tidy up TVGuide.com listings"
-tags: ['post', 'javascript', 'my-software', 'userscript']
+tags: ["post", "javascript", "my-software", "userscript"]
 layout: post
 ---
 
@@ -18,14 +18,22 @@ all-encompassing, manageable scroll bar for perusal.<!--more-->
 // @version 1.0
 // ==/UserScript==
 
-window.onload = function(){
-	var l = document.querySelector(".listings-w");
-	var b = document.querySelector("body");
-	l.parentNode.removeChild(l);
-	b.innerHTML = "";
-	b.appendChild(l);
-	l.setAttribute("style", "position:absolute;top:0;left:0;width:100%;height:100%");
-	document.querySelector(".gridDiv").setAttribute("style", "height:auto;overflow-x:hidden;border-bottom:solid 1px #DCDDCB");
+window.onload = function () {
+  var l = document.querySelector(".listings-w");
+  var b = document.querySelector("body");
+  l.parentNode.removeChild(l);
+  b.innerHTML = "";
+  b.appendChild(l);
+  l.setAttribute(
+    "style",
+    "position:absolute;top:0;left:0;width:100%;height:100%",
+  );
+  document
+    .querySelector(".gridDiv")
+    .setAttribute(
+      "style",
+      "height:auto;overflow-x:hidden;border-bottom:solid 1px #DCDDCB",
+    );
 };
 ```
 
@@ -33,7 +41,7 @@ The script is [available for
 download](https://greasyfork.org/en/scripts/4654-tv-guide-tidy) at
 [greasyfork.org](https://greasyfork.org/en).
 
-*Note: To install this UserScript in Chrome, you will have to download
+_Note: To install this UserScript in Chrome, you will have to download
 the file, open `chrome://extensions` (Settings icon → Tools →
 Extensions) and drag the extension onto the page to avoid the web store
-requirement.*
+requirement._

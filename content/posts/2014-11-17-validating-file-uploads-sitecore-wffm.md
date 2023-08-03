@@ -1,6 +1,17 @@
 ---
 title: "Validating file uploads in Sitecore WFFM"
-tags: ['post', 'c-sharp', 'dot net', 'fix', 'forms', 'my-software', 'regex', 'security', 'sitecore']
+tags:
+  [
+    "post",
+    "c-sharp",
+    "dot net",
+    "fix",
+    "forms",
+    "my-software",
+    "regex",
+    "security",
+    "sitecore",
+  ]
 layout: post
 ---
 

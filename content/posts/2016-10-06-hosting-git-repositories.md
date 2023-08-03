@@ -1,6 +1,6 @@
 ---
 title: "Hosting my own git repositories"
-tags: ['post', 'git', 'my-software']
+tags: ["post", "git", "my-software"]
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Batch convert audio files to MP3 with PowerShell and VLC Player"
-tags: ['post', 'audio', 'my-software', 'powershell', 'tool', 'vlc']
+tags: ["post", "audio", "my-software", "powershell", "tool", "vlc"]
 layout: post
 ---
 
@@ -41,10 +41,10 @@ To use:
 ConvertAllToMp3 C:\Music
 ```
 
-*Note: If you're going to kill the process, **make sure you kill it from
+_Note: If you're going to kill the process, **make sure you kill it from
 the PowerShell environment, and not from the VLC environment!** If you
 kill it from the VLC environment and you've enabled the `Remove-Item`
-line, the file it's currently working on will be deleted!*
+line, the file it's currently working on will be deleted!_
 
 <s>If you want to take this process a step further and copy ID3 tags, check
 out Andrew Connell's blog post.</s>

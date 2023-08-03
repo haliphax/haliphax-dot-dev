@@ -17,34 +17,34 @@ a post's associated tags
 List of objects for use in the **Site** navigation menu. Their format is as
 follows:
 
-| Field | Description |
-|---|---|
-| `name` | Name to display in the menu |
-| `url` | URL for the generated link tag |
+| Field  | Description                                 |
+| ------ | ------------------------------------------- |
+| `name` | Name to display in the menu                 |
+| `url`  | URL for the generated link tag              |
 | `icon` | CSS classes for the link's FontAwesome icon |
 
 #### metaDefaults
 
 Default values for page metadata
 
-| Field | Description |
-|---|---|
-| `author` | Author of the post/page |
-| `description` | Meta description |
-| `generator` | Eleventy package name and version |
+| Field               | Description                             |
+| ------------------- | --------------------------------------- |
+| `author`            | Author of the post/page                 |
+| `description`       | Meta description                        |
+| `generator`         | Eleventy package name and version       |
 | `openGraphImageUrl` | URL to use for `og:image` OpenGraph tag |
-| `openGraphType` | Type of page for `og:type` tag |
+| `openGraphType`     | Type of page for `og:type` tag          |
 
 #### misc
 
 Miscellaneous values that don't belong elsewhere
 
-| Field | Description |
-|---|---|
-| `blurbLength` | Maximum length allowed for post blurbs |
+| Field              | Description                                     |
+| ------------------ | ----------------------------------------------- |
+| `blurbLength`      | Maximum length allowed for post blurbs          |
 | `jumboBlurbLength` | Maximum length allowed for primary post's blurb |
-| `readingTimeWpm` | Words-per-minute for calculating reading time |
-| `ytPlaylistId` | YouTube playlist ID for retrieving latest video |
+| `readingTimeWpm`   | Words-per-minute for calculating reading time   |
+| `ytPlaylistId`     | YouTube playlist ID for retrieving latest video |
 
 #### socials
 
@@ -55,69 +55,69 @@ the same as that of [links](#links).
 
 List of string values used throughout the site and its templates
 
-| Field | Description |
-|---|---|
-| `githubRoot` | GitHub project root for "Suggest an edit" post links |
-| `header` | Text for site header |
-| `siteMenuHeader` | Text for **Site** navigation menu header |
-| `siteName` | Text for site name (used in `<title>`) |
-| `siteRoot` | Root URL of the site |
-| `socialMenuHeader` | Text for **Social** navigation menu header |
-| `twitter` | Twitter handle (used in meta tags) |
+| Field              | Description                                          |
+| ------------------ | ---------------------------------------------------- |
+| `githubRoot`       | GitHub project root for "Suggest an edit" post links |
+| `header`           | Text for site header                                 |
+| `siteMenuHeader`   | Text for **Site** navigation menu header             |
+| `siteName`         | Text for site name (used in `<title>`)               |
+| `siteRoot`         | Root URL of the site                                 |
+| `socialMenuHeader` | Text for **Social** navigation menu header           |
+| `twitter`          | Twitter handle (used in meta tags)                   |
 
 ### ⚡ Functions
 
-| Function | Description |
-|---|---|
-| `getDescription(content, limit)` | Produce a trimmed blurb for the given content |
-| `getMetaDescription(content, limit)` | Same as getDescription, but encoded for &lt;meta /&gt; usage |
-| `htmlEntities(text)` | Replace certain character combinations with HTML entity equivalents |
-| `inlineScript(path)` | Return an auto-executing anonymous method for the given Javascript file for inline use |
-| `metaEncode(text)` | Replace illegal characters to produce usable text for meta tags |
-| `renderArchivedNotice(tags)` | Used by the `post` layout to display an archived notice (if applicable) |
-| `renderCollection(items, limit, jumboFirst)` | Render a collection of pages |
-| `renderGitHubLink(data)` | Render link to GitHub for editing the current page |
-| `renderIcon(icon)` | Render the provided [Feather Icons] sprite |
-| `renderLazyImage(html)` | Render a lazy loaded image of the provided &lt;img&gt; element |
-| `renderReadingTime(data)` | Render the reading time information for a page/post |
-| `renderTags(tags)` | Render a collection of tags |
+| Function                                     | Description                                                                            |
+| -------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `getDescription(content, limit)`             | Produce a trimmed blurb for the given content                                          |
+| `getMetaDescription(content, limit)`         | Same as getDescription, but encoded for &lt;meta /&gt; usage                           |
+| `htmlEntities(text)`                         | Replace certain character combinations with HTML entity equivalents                    |
+| `inlineScript(path)`                         | Return an auto-executing anonymous method for the given Javascript file for inline use |
+| `metaEncode(text)`                           | Replace illegal characters to produce usable text for meta tags                        |
+| `renderArchivedNotice(tags)`                 | Used by the `post` layout to display an archived notice (if applicable)                |
+| `renderCollection(items, limit, jumboFirst)` | Render a collection of pages                                                           |
+| `renderGitHubLink(data)`                     | Render link to GitHub for editing the current page                                     |
+| `renderIcon(icon)`                           | Render the provided [Feather Icons] sprite                                             |
+| `renderLazyImage(html)`                      | Render a lazy loaded image of the provided &lt;img&gt; element                         |
+| `renderReadingTime(data)`                    | Render the reading time information for a page/post                                    |
+| `renderTags(tags)`                           | Render a collection of tags                                                            |
 
 ### 🖼️ Layouts
 
 All layout templates are built using the [`11ty.js`] (JavaScript) template
 language.
 
-| Key | Parent | Description |
-|---|---|---|
-| `base` | _none_ | The base layout, which includes the outer document shell and site navigation |
-| `withHeader` | `base` | Reads `data.header` for use in an `<h1>` element |
-| `page` | `withHeader` | Used for Markdown pages; includes reading time, edit link, etc. |
-| `post` | `withHeader` | Like `page`, but includes posted timestamp |
+| Key          | Parent       | Description                                                                  |
+| ------------ | ------------ | ---------------------------------------------------------------------------- |
+| `base`       | _none_       | The base layout, which includes the outer document shell and site navigation |
+| `withHeader` | `base`       | Reads `data.header` for use in an `<h1>` element                             |
+| `page`       | `withHeader` | Used for Markdown pages; includes reading time, edit link, etc.              |
+| `post`       | `withHeader` | Like `page`, but includes posted timestamp                                   |
 
 ### 🔖 Special tags
 
 Some tags may confer special behavior to the post they are attached to.
 
-| Key | Description |
-|---|---|
+| Key        | Description                                                                                                    |
+| ---------- | -------------------------------------------------------------------------------------------------------------- |
 | `archived` | Removes the post from tag lists and displays a notice explaining to the viewer that the page has been archived |
 
 ### 📚 Libraries
 
-| ID | Description |
-|---|---|
+| ID              | Description                                          |
+| --------------- | ---------------------------------------------------- |
 | [`markdown-it`] | Used for generating HTML content from Markdown files |
 
 ### 🔌 Plugins
 
-| ID | Description |
-|---|---|
+| ID                                        | Description                                       |
+| ----------------------------------------- | ------------------------------------------------- |
 | [`@11ty/eleventy-plugin-syntaxhighlight`] | Syntax highlighting for code blocks in blog posts |
 
 ### 🤖 Transforms
 
-| Name | Description |
-|---|---|
+| Name         | Description                                                  |
+| ------------ | ------------------------------------------------------------ |
 | `htmlMinify` | Minifies HTML output using [`html-minifier`] and [`esbuild`] |
 
 ## 🌳 Directory structure
@@ -167,11 +167,11 @@ from the main configuration and it makes for less clutter.
 
 ```js
 // .eleventy.js
-const cfgLayouts = require('./11ty/layouts/_config');
+const cfgLayouts = require("./11ty/layouts/_config");
 
-module.exports = cfg => {
-	cfgLayouts(cfg);
-	// ...
+module.exports = (cfg) => {
+  cfgLayouts(cfg);
+  // ...
 };
 ```
 
@@ -186,12 +186,12 @@ There are several environment variables required for the site to operate. These
 may be exposed as GitHub environment secrets, standard environment variables,
 or by creating a `.env` file in the root of the project.
 
-| Name | Description |
-|---|---|
-| `TWITCH_USERNAME` | Your Twitch username |
-| `TWITCH_CLIENT_ID` | Twitch API client ID |
+| Name                   | Description              |
+| ---------------------- | ------------------------ |
+| `TWITCH_USERNAME`      | Your Twitch username     |
+| `TWITCH_CLIENT_ID`     | Twitch API client ID     |
 | `TWITCH_CLIENT_SECRET` | Twitch API client secret |
-| `YT_API_KEY` | YouTube Data API key |
+| `YT_API_KEY`           | YouTube Data API key     |
 
 ## ⏯️ Tasks
 
@@ -271,7 +271,6 @@ the external sources have updated data since the last execution of the
 workflow, the site will be re-published (along with the new data).
 
 - Workflow: [check-externals.yml]
-
 
 [Eleventy]: https://11ty.dev
 [`11ty.js`]: https://www.11ty.dev/docs/languages/javascript/

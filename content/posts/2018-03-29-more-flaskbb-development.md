@@ -1,6 +1,6 @@
 ---
 title: "More FlaskBB development"
-tags: ['post', 'my-software', 'python', 'flaskbb', 'plugin']
+tags: ["post", "my-software", "python", "flaskbb", "plugin"]
 layout: post
 ---
 

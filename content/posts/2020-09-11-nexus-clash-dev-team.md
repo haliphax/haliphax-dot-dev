@@ -1,6 +1,6 @@
 ---
 title: "Nexus Clash Dev Team"
-tags: ['post', 'blog']
+tags: ["post", "blog"]
 layout: post
 ---
 
@@ -14,6 +14,5 @@ far-flung, collaborative environment.
 There are some topics I will be writing about soon that I have gleaned from my
 work with the NC team, and there are a few others that have come from my
 renewed interest in several of my hobby projects. Stay tuned!
-
 
 [Nexus Clash]: https://www.nexusclash.com

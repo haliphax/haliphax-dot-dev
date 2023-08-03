@@ -1,6 +1,6 @@
 ---
 title: "The Sound of Silence"
-tags: ['post', 'blog']
+tags: ["post", "blog"]
 layout: post
 ---
 

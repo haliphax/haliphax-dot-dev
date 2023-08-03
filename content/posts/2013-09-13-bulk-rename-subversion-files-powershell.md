@@ -1,15 +1,15 @@
 ---
 title: "Bulk rename Subversion files with PowerShell"
-tags: ['post', 'fix', 'powershell', 'regex', 'svn', 'tool', 'webfocus']
+tags: ["post", "fix", "powershell", "regex", "svn", "tool", "webfocus"]
 layout: post
 ---
 
 Scenario: We're upgrading our reporting software at work, and the way
 that it used to integrate with SVN (through a terrible SCC bridge)
-involved arbitrarily placing "app_" at the head of the file names. Of
+involved arbitrarily placing "app*" at the head of the file names. Of
 course, in the new version, they no longer do this, and so all of our
 SVN references are out of whack. While renaming all of them to remove
-the "app_" at the beginning isn't the entire solution, it's one step I
+the "app*" at the beginning isn't the entire solution, it's one step I
 had to follow that I believe will be of benefit to others.<!--more-->
 
 I used the following PowerShell script to pull it off:

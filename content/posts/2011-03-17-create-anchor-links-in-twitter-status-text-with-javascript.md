@@ -1,13 +1,13 @@
 ---
 title: "Create anchor links in Twitter status text with JavaScript"
-tags: ['post', 'javascript', 'my-software', 'regex', 'twitter']
+tags: ["post", "javascript", "my-software", "regex", "twitter"]
 layout: post
 ---
 
-*Note: This also applies to any service using a
+_Note: This also applies to any service using a
 [Twitter](https://twitter.com)-compatible API, such as
 [StatusNet](https://status.net) (see: [identi.ca](https://identi.ca))
-with some minor configuration changes.*
+with some minor configuration changes._
 
 As a side project, I have been working on a StatusNet (specifically,
 identi.ca) status feed widget for the
@@ -17,8 +17,8 @@ amount of my time trying to convert the various tokens (such as
 into clickable links when I realized that StatusNet, being the cool
 folks that they are, provide HTML-rendered versions of status posts
 through their API. However, my work hasn't been for naught! Twitter uses
-an *incredibly* similar API—or rather, StatusNet's API is similar
-to/based off of Twitter's API—but does *not* provide HTML-rendered
+an _incredibly_ similar API—or rather, StatusNet's API is similar
+to/based off of Twitter's API—but does _not_ provide HTML-rendered
 versions of the status posts (to my knowledge). With this in mind, I've
 re-engineered the code to accept options for pointing the various token
 URLs to the particular service—whatever it may be.<!--more-->
@@ -42,42 +42,58 @@ suggested values for integrating with identi.ca (rather than Twitter).
 
 ```js
 // Convert URLs (w/ or w/o protocol), @mentions, and #hashtags into anchor links
-function twitterLinks(text)
-{
-	var base_url = 'http://twitter.com/'; // identica: 'http://identi.ca/'
-	var hashtag_part = 'search?q=#'; // identica: 'tag/'
-	// convert URLs into links
-	text = text.replace(
-		/(>|<a[^<>]+href=['"])?(https?:\/\/([-a-z0-9]+\.)+[a-z]{2,5}(\/[-a-z0-9!#()\/?&.,]*[^ !#?().,])?)/gi,
-		function($0, $1, $2) {
-			return ($1 ? $0 : '<a href="' + $2 + '" target="_blank">' + $2
-				+ '</a>');
-		});
-	// convert protocol-less URLs into links
-	text = text.replace(
-		/(:\/\/|>)?\b(([-a-z0-9]+\.)+[a-z]{2,5}(\/[-a-z0-9!#()\/?&.]*[^ !#?().,])?)/gi,
-		function($0, $1, $2) {
-			return ($1 ? $0 : '<a href="http://' + $2 + '">' + $2
-				+ '</a>');
-		});
-	// convert @mentions into follow links
-	text = text.replace(
-		/(:\/\/|>)?(@([_a-z0-9-]+))/gi,
-		function($0, $1, $2, $3) {
-			return ($1 ? $0 : '<a href="' + base_url + $3
-				+ '" title="Follow ' + $3 + '" target="_blank">@' + $3
-				+ '</a>');
-		});
-	// convert #hashtags into tag search links
-	text = text.replace(
-		/(:\/\/[^ <]*|>)?(\#([_a-z0-9-]+))/gi,
-		function($0, $1, $2, $3) {
-			return ($1 ? $0 : '<a href="' + base_url + hashtag_part + $3
-				+ '" title="Search tag: ' + $3 + '" target="_blank">#' + $3
-				+ '</a>');
-		});
+function twitterLinks(text) {
+  var base_url = "http://twitter.com/"; // identica: 'http://identi.ca/'
+  var hashtag_part = "search?q=#"; // identica: 'tag/'
+  // convert URLs into links
+  text = text.replace(
+    /(>|<a[^<>]+href=['"])?(https?:\/\/([-a-z0-9]+\.)+[a-z]{2,5}(\/[-a-z0-9!#()\/?&.,]*[^ !#?().,])?)/gi,
+    function ($0, $1, $2) {
+      return $1 ? $0 : '<a href="' + $2 + '" target="_blank">' + $2 + "</a>";
+    },
+  );
+  // convert protocol-less URLs into links
+  text = text.replace(
+    /(:\/\/|>)?\b(([-a-z0-9]+\.)+[a-z]{2,5}(\/[-a-z0-9!#()\/?&.]*[^ !#?().,])?)/gi,
+    function ($0, $1, $2) {
+      return $1 ? $0 : '<a href="http://' + $2 + '">' + $2 + "</a>";
+    },
+  );
+  // convert @mentions into follow links
+  text = text.replace(
+    /(:\/\/|>)?(@([_a-z0-9-]+))/gi,
+    function ($0, $1, $2, $3) {
+      return $1
+        ? $0
+        : '<a href="' +
+            base_url +
+            $3 +
+            '" title="Follow ' +
+            $3 +
+            '" target="_blank">@' +
+            $3 +
+            "</a>";
+    },
+  );
+  // convert #hashtags into tag search links
+  text = text.replace(
+    /(:\/\/[^ <]*|>)?(\#([_a-z0-9-]+))/gi,
+    function ($0, $1, $2, $3) {
+      return $1
+        ? $0
+        : '<a href="' +
+            base_url +
+            hashtag_part +
+            $3 +
+            '" title="Search tag: ' +
+            $3 +
+            '" target="_blank">#' +
+            $3 +
+            "</a>";
+    },
+  );
 
-	return text;
+  return text;
 }
 ```
 
@@ -85,7 +101,7 @@ Please forgive the lack of syntax highlighting in the pasted code;
 SyntaxHighlighter does not deal well with inline regular expression
 strings (such as those used in the `.replace` function calls). Since the
 syntax highlighting it was capable of in this scenario actually made it
-*more* difficult to read, I opted for no highlighting at all.
+_more_ difficult to read, I opted for no highlighting at all.
 
 As for the function itself… well, you can't argue with results! The
 replacement pattern is smart enough that it won't include trailing

@@ -1,6 +1,6 @@
 ---
 title: "Rate limiting with Flask-SocketIO"
-tags: ['post', 'python', 'my-software', 'flask', 'socket-io', 'websockets']
+tags: ["post", "python", "my-software", "flask", "socket-io", "websockets"]
 layout: post
 ---
 
@@ -92,7 +92,6 @@ limiting _any_ function execution within a variety of contexts. The "rate
 limit" action here is effectively a no-op, whereas you may want to disconnect
 the offending user, instead (which _would_ make this particular to web
 sockets).
-
 
 [flask-limiter]: https://pypi.org/project/Flask-Limiter/
 [flask-login]: https://pypi.org/project/Flask-Login/

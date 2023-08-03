@@ -1,6 +1,7 @@
 ---
 title: "WebFOCUS Impact Analysis report compactor"
-tags: ['post', 'business-intelligence', 'my-software', 'php', 'regex', 'webfocus']
+tags:
+  ["post", "business-intelligence", "my-software", "php", "regex", "webfocus"]
 layout: post
 ---
 

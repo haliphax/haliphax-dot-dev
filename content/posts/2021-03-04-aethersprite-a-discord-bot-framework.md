@@ -1,13 +1,13 @@
 ---
 title: "Aethersprite: a Discord bot framework"
-tags: ['post', 'python', 'bot', 'my-software']
+tags: ["post", "python", "bot", "my-software"]
 layout: post
 ---
 
 For some months, I had been tinkering with the [discord.py] library and slowly
 building up a bot for use in [Nexus Clash] faction servers. The more I added to
 it, the more I began to realize that what I was really building was a bot
-*framework*, and that framework just so happened to have some commands layered
+_framework_, and that framework just so happened to have some commands layered
 on top of it that served a niche. At that point, I split the project into an
 extensible bot framework and an "extension pack" of commands and settings
 particular to the web game I was initially targeting.
@@ -40,11 +40,9 @@ bot and a pretty flexible, easy framework thus far. I really like the way some
 bots out there like [sesh] use post reactions as input, so I'll probably be
 experimenting with something like that. I'm looking forward to it!
 
-
 [Aethersprite documentation]: https://haliphax.github.io/aethersprite/
 [Aethersprite]: https://github.com/haliphax/aethersprite
 [discord.py]: https://discordpy.readthedocs.io
 [ncfacbot]: https://github.com/haliphax/ncfacbot
 [Nexus Clash]: https://www.nexusclash.com
 [sesh]: https://sesh.fyi
-

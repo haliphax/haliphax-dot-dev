@@ -1,6 +1,6 @@
 ---
 title: "Simple file access concurrency in C#"
-tags: ['post', 'aspx', 'c-sharp', 'my-software', 'xml']
+tags: ["post", "aspx", "c-sharp", "my-software", "xml"]
 layout: post
 ---
 
@@ -60,8 +60,8 @@ finally
 }
 ```
 
-*Update: I've wrapped the entire thing in a `try-finally` block so that,
+_Update: I've wrapped the entire thing in a `try-finally` block so that,
 should an unexpected `Exception` occur, the mutex will still be
 released. The lack of a `catch` block ensures that the `Exception` will
 be propagated up the stack instead of handled, so that it can be dealt
-with elsewhere.*
+with elsewhere._

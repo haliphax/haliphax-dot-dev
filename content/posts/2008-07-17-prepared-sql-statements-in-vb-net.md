@@ -1,6 +1,6 @@
 ---
 title: "Prepared SQL statements in VB.NET"
-tags: ['post', 'dot net', 'security', 'sql', 'vbnet']
+tags: ["post", "dot net", "security", "sql", "vbnet"]
 layout: post
 ---
 
@@ -10,10 +10,10 @@ have a procedure for separating parameters from the query they augment
 in an effort to prevent SQL injection, and VB.NET is no
 different.<!--more-->
 
-Assuming you have stored the connection string for your *SqlConnection*
-object in a [*ConnectionString*
+Assuming you have stored the connection string for your _SqlConnection_
+object in a [_ConnectionString_
 key](/2008/07/using-the-connectionstrings-element-in-asp-net-web-config/)
-called *databaseReader*, the following code will build and execute a
+called _databaseReader_, the following code will build and execute a
 prepared statement that will resist SQL injection techniques:
 
 **VB.NET 3.5 code:**
@@ -47,27 +47,27 @@ Catch ex As Exception
 End Try
 ```
 
-The *Request.QueryString("code")*
+The _Request.QueryString("code")_
 variable can contain SQL injection attempts, but the prepared statement
-does not consider the parameter *@code* to be a part of the
+does not consider the parameter _@code_ to be a part of the
 query--rather, it is considered just what it should be: a parameter. If
-*@code* was assigned the value *"1 OR 1=1; --"*, the query would not
+_@code_ was assigned the value _"1 OR 1=1; --"_, the query would not
 return the first value from the database table being queried as it would
 under the deprecated, old-fashioned methodology of including the text
 directly in a query string. Instead, it will try to search for a record
-that literally matches *"1 OR 1=1; --"*, which it won't find (unless, of
+that literally matches _"1 OR 1=1; --"_, which it won't find (unless, of
 course, there **is** a column with this value for some strange reason).
 
 <u>P.S.</u> - If you're going
 to be doing a lot of code beyond this point that does not require the
-SqlConnection object, you should *.Close()* it.
+SqlConnection object, you should _.Close()_ it.
 
 <u>P.P.S.</u> - For those of
-you who are confused, *"1 OR 1=1; --"*, when supplanted into the query
-statement, would render the query thus: *"select Name from Locations
-where Code = 1 OR 1=1; -- and Active = 1"*. Since 1 is always equal to
-1, and the *"and Active = 1"* portion of the query has been removed
-using SQL commenting syntax (--), the query will select the *Name*
+you who are confused, _"1 OR 1=1; --"_, when supplanted into the query
+statement, would render the query thus: _"select Name from Locations
+where Code = 1 OR 1=1; -- and Active = 1"_. Since 1 is always equal to
+1, and the _"and Active = 1"_ portion of the query has been removed
+using SQL commenting syntax (--), the query will select the _Name_
 column from every row in the database table that is being queried. Not
 good. Not necessarily malicious, either, but it is a rather timid
 example of SQL injection techniques. Trust me, they get much, much

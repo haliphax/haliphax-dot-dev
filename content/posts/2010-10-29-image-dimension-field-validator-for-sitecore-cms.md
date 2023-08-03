@@ -1,6 +1,6 @@
 ---
 title: "Image dimension Field Validator for Sitecore CMS"
-tags: ['post', 'c-sharp', 'dot net', 'my-software', 'sitecore']
+tags: ["post", "c-sharp", "dot net", "my-software", "sitecore"]
 layout: post
 ---
 
@@ -10,8 +10,8 @@ parameters. Either parameter can be omitted if, for instance, you only
 care about validating the width of an image (or conversely, only the
 height).<!--more-->
 
-*Note: In the code below, replace `your.namespace.validators` with
-something more suited to your particular project.*
+_Note: In the code below, replace `your.namespace.validators` with
+something more suited to your particular project._
 
 ```cs
 using System.Runtime.Serialization;
@@ -92,19 +92,19 @@ namespace your.namespace.validators
 }
 ```
 
-Create a new field-level `Validation Rule` item in your *sitecore* tree
+Create a new field-level `Validation Rule` item in your _sitecore_ tree
 (wherever you store your rules—in this particular project, they are
-stored in */sitecore/System/Settings/Validation Rules/Field Rules*), and
-set the *Type* field for your new rule to:
+stored in _/sitecore/System/Settings/Validation Rules/Field Rules_), and
+set the _Type_ field for your new rule to:
 
 `your.namespace.validators.ImageDimensionValidator,your.namespace.validators`
 
-For the `Parameters` value, use *h* and/or *w* to pass through your
+For the `Parameters` value, use _h_ and/or _w_ to pass through your
 desired image dimensions (i.e., `w=320&h=240` will reject the image
 unless it is 320 pixels wide by 240 pixels tall).
 
 Remember to swap the namespace with whatever you've chosen for your
 project.
 
-*Note: The version of Sitecore CMS this validator was built and tested
-on is 6.2.*
+_Note: The version of Sitecore CMS this validator was built and tested
+on is 6.2._

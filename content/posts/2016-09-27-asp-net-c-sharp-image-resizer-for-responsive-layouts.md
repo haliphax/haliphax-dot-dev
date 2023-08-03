@@ -1,12 +1,23 @@
 ---
 title: "ASP.NET/C# image resizer for responsive layouts"
-tags: ['post', 'aspx', 'c-sharp', 'dot net', 'image-editing', 'javascript', 'my-software', 'regex', 'responsive']
+tags:
+  [
+    "post",
+    "aspx",
+    "c-sharp",
+    "dot net",
+    "image-editing",
+    "javascript",
+    "my-software",
+    "regex",
+    "responsive",
+  ]
 layout: post
 ---
 
 I will probably elaborate on this a bit further when I find some more
 time, but for now, this post is going to be mostly code. What I have
-here is a *relatively* simple way to generate images that are resized
+here is a _relatively_ simple way to generate images that are resized
 server-side based on the screen dimensions (note: not window dimensions)
 of the web browser requesting them. This way, you're not sending huge
 images to phones. Pair this with some CSS to scale your images to fit
@@ -31,7 +42,9 @@ their containers, and you're cooking with gas!<!--more-->
 **screen-dimensions.js**
 
 ```js
-(function(){ document.cookie = "screendim=" + screen.width + "x" + screen.height; }());
+(function () {
+  document.cookie = "screendim=" + screen.width + "x" + screen.height;
+})();
 ```
 
 **ImageResizer.ashx**
@@ -155,17 +168,17 @@ public class ImageResizeHandler : IHttpHandler
 ```html
 <!doctype html>
 <html lang="en-US">
-<head>
-	<meta charset="utf-8" />
-	<script type="text/javascript" src="/js/screen-dimensions.js"></script>
-</head>
-<body>
-	<p>This here image is responsive, y'all!</p>
-	<img src="/img/some-image.png?r" />
+  <head>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="/js/screen-dimensions.js"></script>
+  </head>
+  <body>
+    <p>This here image is responsive, y'all!</p>
+    <img src="/img/some-image.png?r" />
 
-	<p>This one ain't.</p>
-	<img src="/img/some-image.png" />
-</body>
+    <p>This one ain't.</p>
+    <img src="/img/some-image.png" />
+  </body>
 </html>
 ```
 

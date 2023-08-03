@@ -1,6 +1,6 @@
 ---
 title: "Photobucket thumbnail bookmarklet"
-tags: ['post', 'bookmarklets', 'javascript', 'my-software', 'tool']
+tags: ["post", "bookmarklets", "javascript", "my-software", "tool"]
 layout: post
 ---
 
@@ -11,7 +11,6 @@ mark-up, and one for building a basic HTML thumbnail link. Save the
 links below to use them:
 
 <a href="javascript:i=prompt('Photobucket%20URL');void(prompt('Copy%20and%20paste%20this','%5Burl='+i+'%5D%5Bimg%5D'+i.replace(/\/(%5B%5E./%5D+?\.%5B%5E./%5D+?)$/,'/th_$1')+'%5B/img%5D%5B/url%5D'));">bbCode Thumbnailer</a>
-
 
 <a href="javascript:i=prompt('Photobucket%20URL');void(prompt('Copy%20and%20paste%20this','%3Ca%20href=\''+i+'\'%3E%3Cimg%20src=\''+i.replace(/\/(%5B%5E./%5D+?\.%5B%5E./%5D+?)$/,'/th_$1')+'\'%20\/%3E%3C\/a%3E'));">HTML Thumbnailer</a>
 
@@ -26,5 +25,13 @@ javascript:i=prompt('Photobucket URL');void(prompt('Copy and paste this','[url='
 **HTML Thumbnailer:**
 
 ```js
-javascript:i=prompt('Photobucket URL');void(prompt('Copy and paste this','<a href=\''+i+'\'><img src=\''+i.replace(/\/([\^./]+?\.[\^./]+?)$/,'/th_$1')+'\' \/><\/a>'));
+javascript: i = prompt("Photobucket URL");
+void prompt(
+  "Copy and paste this",
+  "<a href='" +
+    i +
+    "'><img src='" +
+    i.replace(/\/([\^./]+?\.[\^./]+?)$/, "/th_$1") +
+    "' /></a>",
+);
 ```

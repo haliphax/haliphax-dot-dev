@@ -7,38 +7,37 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: gh-pages
 
-    - uses: actions/checkout@v3
-      with:
-        ref: gh-pages
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: npm
 
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18.x
-        cache: npm
+      - name: Install dependencies
+        run: npm ci
 
-    - name: Install dependencies
-      run: npm ci
+      - name: Check sources
+        env:
+          TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
+          TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
+          TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+        run: |
+          #--- compare API response with locally cached JSON data
+          DIFF=0
+          npm run check-twitch || DIFF=1
+          npm run check-youtube || DIFF=1
+          [ $DIFF == 0 ] && exit 0
 
-    - name: Check sources
-      env:
-        TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
-        TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
-        TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
-        YT_API_KEY: ${{ secrets.YT_API_KEY }}
-      run: |
-        #--- compare API response with locally cached JSON data
-        DIFF=0
-        npm run check-twitch || DIFF=1
-        npm run check-youtube || DIFF=1
-        [ $DIFF == 0 ] && exit 0
+          #--- data is different; rebuild the site
+          npm run build
 
-        #--- data is different; rebuild the site
-        npm run build
-
-        #--- publish to GitHub Pages
-        git config user.email git@github.com
-        git config user.name 'GitHub Actions'
-        git add -f docs 11ty/data/external/*.json
-        git commit -m 'external content update'
-        git push -f -u origin gh-pages
+          #--- publish to GitHub Pages
+          git config user.email git@github.com
+          git config user.name 'GitHub Actions'
+          git add -f docs 11ty/data/external/*.json
+          git commit -m 'external content update'
+          git push -f -u origin gh-pages

@@ -1,6 +1,7 @@
 ---
 title: "Check all CheckBoxes in a GridView using jQuery"
-tags: ['post', 'aspx', 'c-sharp', 'dot net', 'javascript', 'jquery', 'my-software']
+tags:
+  ["post", "aspx", "c-sharp", "dot net", "javascript", "jquery", "my-software"]
 layout: post
 ---
 
@@ -40,14 +41,16 @@ event handler in a `<script>` block:
 **Javascript (jQuery) code:**
 
 ```js
-$('#chkAll').change(function() {
-	$('#<%=myGridView.ClientID%> input[type=checkbox]')
-		.attr('checked', $(this).attr('checked'));
+$("#chkAll").change(function () {
+  $("#<%=myGridView.ClientID%> input[type=checkbox]").attr(
+    "checked",
+    $(this).attr("checked"),
+  );
 });
 ```
 
 It's as simple as that! Checking or un-checking `chkAll` will cause each
 `CheckBox` control within the `GridView` to inherit its value. If you've
-separated your *\*.js* files from your *\*.aspx* files, you can attach a
+separated your _\*.js_ files from your _\*.aspx_ files, you can attach a
 CSS class to your `GridView` and select based on that (rather than using
 the `GridView`'s `ClientID` property).

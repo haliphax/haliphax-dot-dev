@@ -1,6 +1,6 @@
 ---
 title: "View live page source with Javascript"
-tags: ['post', 'bookmarklets', 'javascript', 'my-software', 'tool']
+tags: ["post", "bookmarklets", "javascript", "my-software", "tool"]
 layout: post
 ---
 
@@ -16,7 +16,7 @@ AJAX.<!--more-->
 Well, fret no more! Using this simple Javascript bookmarklet creates a
 new window in your browser and then shoves the page's **current** state
 (as HTML source) into the new window. (The bookmarklet does not grab
-*<!DOCTYPE ... />* or *<html ... />* elements, however.)
+_<!DOCTYPE ... />_ or _<html ... />_ elements, however.)
 Give it a shot the next time you're manipulating AJAX-enabled web
 applications and see if it doesn't make your life a whole lot easier:
 
@@ -25,13 +25,16 @@ applications and see if it doesn't make your life a whole lot easier:
 **Javascript bookmarklet:**
 
 ```js
-javascript:w=window.open();void(w.document.write('<pre>'+document.body.parentNode.innerHTML.replace(/</g,'<')+'</pre>'));
+javascript: w = window.open();
+void w.document.write(
+  "<pre>" + document.body.parentNode.innerHTML.replace(/</g, "<") + "</pre>",
+);
 ```
 
 That's all there is to it! Here's the procedure in a nutshell:
 
 1.  Create a new window object
-2.  Write *body*'s parent node (*<head>*) to the new document
+2.  Write _body_'s parent node (_<head>_) to the new document
     1.  Replace all < with &lt;
     2.  Wrap the text in a `<pre>` element to preserve formatting
     3.  Do it all inside a `void()` to avoid touching the current window
@@ -42,5 +45,5 @@ the other is the result of your browser's DOM hierarchy.** I use this
 for things like determining AJAX-ified `<div />` contents and
 such—**not** for determining sequential dependence in the HTML.
 
-*Update: FYI, this is now a pretty standard feature in modern web
-browsers' own development tools.*
+_Update: FYI, this is now a pretty standard feature in modern web
+browsers' own development tools._
