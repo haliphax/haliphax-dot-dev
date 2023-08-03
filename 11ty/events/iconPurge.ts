@@ -10,6 +10,7 @@ const readFile = promisify(fs.readFile);
 const stat = promisify(fs.stat);
 const writeFile = promisify(fs.writeFile);
 
+/** helper method to recursively pull a list of all HTML files */
 const getHtmlFiles = async (dir: string): Promise<string[]> =>
 	(
 		await Promise.all(
@@ -34,13 +35,17 @@ const iconPurge = (cfg: UserConfig) => {
 		const iconRegex = /<use href="\/img\/feather-sprite\.svg#([^"]+)"/gi;
 		const iconsUsed = new Map<string, boolean>();
 
+		// find icons used in each file
 		for (let f of files) {
 			const content = await readFile(f, fileOpts);
-			let match;
+			let match: RegExpExecArray;
 
 			do {
 				match = iconRegex.exec(content);
-				if (match !== null) iconsUsed.set(match[1], true);
+
+				if (match !== null) {
+					iconsUsed.set(match[1], true);
+				}
 			} while (match);
 		}
 
@@ -49,6 +54,7 @@ const iconPurge = (cfg: UserConfig) => {
 		);
 		const defs = svg.children[0];
 
+		// loop through icons, removing unused
 		for (let i = 0; i < defs.children.length; i++) {
 			const icon = defs.children[i];
 			if (!iconsUsed.has(icon.attributes["id"])) delete defs.children[i];
