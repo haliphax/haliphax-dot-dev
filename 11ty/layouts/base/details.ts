@@ -5,15 +5,15 @@ let delay = 1;
 
 // manage fade-out of details content
 Array.from(document.querySelectorAll("summary")).map((s) => {
-	const d = s.parentNode;
+	const d = s.parentElement! as HTMLDetailsElement;
 
 	const close = () => {
 		d.classList.remove("closing");
 		s.dataset.close = "";
-		d.open = null;
+		d.open = false;
 	};
 
-	const click = (e) => {
+	const click = (e: Event) => {
 		if (!d.open) return true;
 
 		if (d.open && s.dataset.close !== "1") {

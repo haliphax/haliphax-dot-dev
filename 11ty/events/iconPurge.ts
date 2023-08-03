@@ -24,7 +24,7 @@ const getHtmlFiles = async (dir: string): Promise<string[]> =>
 			}),
 		)
 	)
-		.reduce((p: string[], c: string | string[]) => p.concat(c), [])
+		.reduce<string[]>((p: string[], c: string | string[]) => p.concat(c), [])
 		.filter((f: string) => f.endsWith(".html"));
 
 /** purge unused icons from Feather Icons sprite sheet */
