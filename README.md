@@ -152,24 +152,24 @@ responsibilities.
 
 The various pieces Eleventy needs to consume during
 its configuration phase are all divided into their own categorical folders
-beneath the `11ty` directory. Each of these folders contains a `_config.js`
+beneath the `11ty` directory. Each of these folders contains a `_config.ts`
 file (with the exception of the `data` folder, which is automatically parsed by
 Eleventy).
 
-The `_config.js` file is used to collate all of that category's members
+The `_config.ts` file is used to collate all of that category's members
 together and to expose a single function to the main Eleventy configuration
 function. In this way, the complexity of the category's setup is abstracted
 from the main configuration and it makes for less clutter.
 
 > **Example:** All of your layout templates are under `layouts`, and a single
-> function in `layouts/_config.js` is used by the main Eleventy configuration
+> function in `layouts/_config.ts` is used by the main Eleventy configuration
 > function to assign each of them an alias. They are loaded like so:
 
 ```js
-// .eleventy.js
+// .eleventy.ts
 const cfgLayouts = require("./11ty/layouts/_config");
 
-module.exports = (cfg) => {
+exports = (cfg: UserConfig) => {
 	cfgLayouts(cfg);
 	// ...
 };
@@ -235,7 +235,7 @@ npm run check-twitch
 
 Uses the Twitch API to retrieve live stream and VOD information
 
-- Task: [check-twitch.mjs]
+- Task: [check-twitch.mts]
 
 ### YouTube data
 
@@ -245,7 +245,7 @@ npm run check-youtube
 
 Uses the YouTube Data API to retrieve latest video information
 
-- Task: [check-youtube.mjs]
+- Task: [check-youtube.mts]
 
 ## 🔄 Workflows
 
@@ -278,8 +278,8 @@ workflow, the site will be re-published (along with the new data).
 [`@11ty/eleventy-plugin-syntaxhighlight`]: https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight
 [`html-minifier`]: https://www.npmjs.com/package/html-minifier
 [`esbuild`]: https://www.npmjs.com/package/esbuild
-[check-twitch.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-twitch.mjs
-[check-youtube.mjs]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-youtube.mjs
+[check-twitch.mts]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-twitch.mts
+[check-youtube.mts]: https://github.com/haliphax/haliphax-dot-dev/blob/master/tasks/check-youtube.mts
 [Feather Icons]: https://feathericons.com
 [GitHub Pages]: https://pages.github.com
 [GitHub Actions]: https://github.com/features/actions
