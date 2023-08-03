@@ -125,7 +125,7 @@ h1 a {
 	line-height: 8rem;
 	text-shadow: 0 0 16px var(--pink-color);
 	-webkit-text-fill-color: var(--pink-color-very-dark);
-	-webkit-text-stroke: 1px var(--pink-color);
+	-webkit-text-stroke: 2px var(--pink-color);
 }
 h1 a:hover {
 	color: var(--pink-color-dark);
