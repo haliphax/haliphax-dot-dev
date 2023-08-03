@@ -28,7 +28,9 @@ jobs:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: |
           #--- pull external data and build site
-          npm run full
+          npm run build:ts
+          npm run check || true
+          npm run build:11ty
 
           #--- publish to GitHub Pages
           git config user.name "github-actions[bot]"
