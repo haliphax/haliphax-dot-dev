@@ -146,7 +146,7 @@ export = class Base {
 							<div class="container px-0">
 								<div class="navbar-brand w-full">
 									<h1 class="text-center w-full">
-										<img src="/img/header.png" alt="Magenta skull on purple circuit board logo" class="align-bottom" />
+										<img src="/img/header.gif" alt="Magenta skull on purple circuit board logo" class="align-bottom" />
 										<a href="/" aria-label="Homepage">${data.strings.header}</a>
 									</h1>
 								</div>
