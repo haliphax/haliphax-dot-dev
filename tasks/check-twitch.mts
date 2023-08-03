@@ -11,7 +11,7 @@ const writeFile = promisify(fs.writeFile);
 
 dotenv.config();
 
-var cached = null;
+let cached = null;
 
 try {
 	cached = JSON.parse(
