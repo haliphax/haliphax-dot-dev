@@ -6,21 +6,22 @@ const renderTags = (tags: string[], inline = false) => {
 
 	return inline
 		? /*html*/ `
-			<small role="contentinfo">
+			<span role="contentinfo">
 				<span class="sr-only">Tags:</span>
-				${renderIcon("tag", "text-secondary")}
+				${renderIcon("tag", "text-secondary mr-5")}
 				<ul class="list-unstyled d-inline mb-5">
 				${filtered
 					.map(
 						(t) => /*html*/ `
-							<li class="d-inline-block ml-5">
+							<li class="d-inline-block">
 								<a href="/tags/${t}/" class="text-secondary">${t}</a>
+								&nbsp;
 							</li>
 							`,
 					)
 					.join("")}
 				</ul>
-			</small>
+			</span>
 			`
 		: /*html*/ `
 			<span role="contentinfo">
