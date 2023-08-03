@@ -46,7 +46,7 @@
 		"check:youtube": "node tasks/check-youtube.mjs",
 		"clean": "rm -rf ./docs/ ./11ty/data/external/*.json 2>/dev/null; find . -type f -name '*.js' -not -wholename '**/node_modules/**' -delete",
 		"full": "npm-run-all clean build:ts && (npm run check || true) && npm run build:11ty",
-		"serve": "npx eleventy --serve --quiet",
+		"serve": "eleventy --serve --quiet",
 		"watch": "nodemon -e css,json,md,ts -i docs -i node_modules --exec 'npm run build:ts && npm run serve'"
 	},
 	"prettier": {
