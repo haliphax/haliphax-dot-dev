@@ -2,12 +2,13 @@
 	"exclude": ["tasks/"],
 	"include": [".eleventy.ts", "**/*.ts"],
 	"compilerOptions": {
-		"target": "ESNext",
-		"module": "CommonJS",
 		"esModuleInterop": true,
-		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
+		"module": "CommonJS",
 		"resolveJsonModule": true,
-		"rootDir": "."
+		"rootDir": ".",
+		"skipLibCheck": true,
+		"strict": true,
+		"target": "ESNext"
 	}
 }

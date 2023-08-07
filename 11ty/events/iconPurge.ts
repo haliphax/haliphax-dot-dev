@@ -38,7 +38,7 @@ const iconPurge = (cfg: UserConfig) => {
 		// find icons used in each file
 		for (let f of files) {
 			const content = await readFile(f, fileOpts);
-			let match: RegExpExecArray;
+			let match: RegExpExecArray | null;
 
 			do {
 				match = iconRegex.exec(content);

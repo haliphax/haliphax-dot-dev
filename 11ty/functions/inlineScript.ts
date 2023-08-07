@@ -8,7 +8,8 @@ const readFile = promisify(fs.readFile);
 const inlineScript = async (...paths: string[]) =>
 	`(()=>{${(
 		await paths.reduce(
-			async (p, c) => (await p).concat(`{\n${await readFile(c, fileOpts)}\n}`),
+			async (p: Promise<string[]>, c: string) =>
+				(await p).concat(`{\n${await readFile(c, fileOpts)}\n}`),
 			Promise.resolve([]),
 		)
 	).join("")}})();`;
