@@ -175,7 +175,7 @@ These are equivalent to _filters_ in other templating languages (e.g. nunjucks).
 | `getDescription(content, limit)`             | Produce a trimmed blurb for the given content                                          |
 | `getMetaDescription(content, limit)`         | Same as getDescription, but encoded for &lt;meta /&gt; usage                           |
 | `htmlEntities(text)`                         | Replace certain character combinations with HTML entity equivalents                    |
-| `inlineScript(path)`                         | Return an auto-executing anonymous method for the given Javascript file for inline use |
+| `inlineScript(...paths)`                     | Return an auto-executing anonymous method for the given Javascript file for inline use |
 | `metaEncode(text)`                           | Replace illegal characters to produce usable text for meta tags                        |
 | `renderArchivedNotice(tags)`                 | Used by the `post` layout to display an archived notice (if applicable)                |
 | `renderCollection(items, limit, jumboFirst)` | Render a collection of pages                                                           |
