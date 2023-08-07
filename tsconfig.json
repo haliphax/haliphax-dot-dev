@@ -1,6 +1,4 @@
 {
-	"exclude": ["tasks/"],
-	"include": [".eleventy.ts", "**/*.ts"],
 	"compilerOptions": {
 		"esModuleInterop": true,
 		"forceConsistentCasingInFileNames": true,
@@ -10,5 +8,7 @@
 		"skipLibCheck": true,
 		"strict": true,
 		"target": "ESNext"
-	}
+	},
+	"exclude": ["tasks/"],
+	"include": [".eleventy.ts", "**/*.ts"]
 }
