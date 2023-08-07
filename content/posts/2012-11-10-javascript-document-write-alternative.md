@@ -11,7 +11,7 @@ need for `document.write`, a function which wreaks havoc where AJAX is
 involved (and flies in the face of modern web development best
 practices).<!--more-->
 
-````html
+```html
 <!doctype html>
 <html>
 	<head>
@@ -42,5 +42,6 @@ practices).<!--more-->
 		<p>Here is some more content.</p>
 	</body>
 </html>
-```html [View the demo on jsfiddle.net](https://jsfiddle.net/haliphax/2y4cx/)
-````
+```
+
+[View the demo on jsfiddle.net](https://jsfiddle.net/haliphax/2y4cx/)
