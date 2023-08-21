@@ -74,11 +74,12 @@ a.badge {
 
 /* sidebar */
 .page-wrapper[data-sidebar-hidden] > .sidebar {
-	display: none;
+	left: -100vw !important;
 }
 .page-wrapper > .sidebar {
 	left: 0 !important;
 	display: block;
+	transition: left 0.25s ease-in-out;
 }
 .page-wrapper > .sidebar .sidebar-link {
 	display: block;
