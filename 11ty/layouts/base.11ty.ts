@@ -125,7 +125,8 @@ export = class Base {
 					data-sidebar-type="overlayed-sm-and-down" >
 					<button id="btn-sidebar-toggle" type="button"
 						class="btn btn-action position-absolute t-0 l-0 m-5">
-						${renderIcon("menu")}
+						<span class="icon-sidebar-o">${renderIcon("menu")}</span>
+						<span class="icon-sidebar-x">${renderIcon("x")}</span>
 						<span class="sr-only">Toggle sidebar menu</span>
 					</button>
 					<div class="sidebar">

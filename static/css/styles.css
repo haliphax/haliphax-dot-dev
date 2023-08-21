@@ -81,6 +81,18 @@ a.badge {
 	display: block;
 	transition: left 0.25s ease-in-out;
 }
+.page-wrapper .icon-sidebar-o {
+	display: none;
+}
+.page-wrapper .icon-sidebar-x {
+	display: block;
+}
+.page-wrapper[data-sidebar-hidden] .icon-sidebar-o {
+	display: block;
+}
+.page-wrapper[data-sidebar-hidden] .icon-sidebar-x {
+	display: none;
+}
 .page-wrapper > .sidebar .sidebar-link {
 	display: block;
 }
