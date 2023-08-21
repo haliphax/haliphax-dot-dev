@@ -3,6 +3,7 @@ import CleanCSS from "clean-css";
 import fs from "fs";
 import { PurgeCSS } from "purgecss";
 import { promisify } from "util";
+import cssConfig from "../data/css";
 import { EleventyDir, fileOpts } from "../misc";
 
 const cp = promisify(fs.cp);
@@ -17,24 +18,24 @@ const cssTidy = (cfg: UserConfig) => {
 	cfg.on("eleventy.after", async ({ dir }: { dir: EleventyDir }) => {
 		const stylesheet = `${dir.output}/css/styles.min.css`;
 		const clean = new CleanCSS();
-
-		/** files to combine */
-		const combo = [
-			// preload contents of CSS framework
-			await readFile(
-				"node_modules/halfmoon/css/halfmoon-variables.min.css",
-				fileOpts,
-			),
+		const localStylesheets = [
 			// preload "keep file" styles
 			clean.minify(await readFile(`${dir.output}/css/keep.css`)).styles,
 		];
 
+		for (let fn of cssConfig.localStylesheets) {
+			localStylesheets.push(await readFile(fn, fileOpts));
+		}
+
+		/** files to combine */
+		const combo = [...localStylesheets];
+
 		/** files which have already been purged; used to avoid duplication */
 		const files: Map<string, boolean> = new Map([
-			// avoid purging "keep file"
-			["docs/css/keep.css", true],
-			// avoid purging destination file that may exist from previous runs
-			["docs/css/styles.min.css", true],
+			// avoid processing destination file that may exist from previous runs
+			[stylesheet, true],
+			// avoid processing "keep file"
+			[`${dir.output}/css/keep.css`, true],
 		]);
 
 		const purged = await new PurgeCSS().purge({
@@ -52,20 +53,22 @@ const cssTidy = (cfg: UserConfig) => {
 			files.set(p.file, true);
 		}
 
+		// write final stylesheet
 		await writeFile(stylesheet, combo.join("\n"));
 
 		// copy dependent font resources
-		const fontDest = `${dir.output}/fonts`;
-		const fontSource = "node_modules/@fontsource/shrikhand/files";
+		const fontDestination = `${dir.output}/${cssConfig.fontDestination}`;
 
-		if (!(await exists(fontDest))) {
-			await mkdir(fontDest);
+		if (!(await exists(fontDestination))) {
+			await mkdir(fontDestination);
 		}
 
-		const fonts = await readdir(fontSource, fileOpts);
+		for (let dir of cssConfig.fontSources) {
+			const fonts = await readdir(dir, fileOpts);
 
-		for (let font of fonts) {
-			await cp(`${fontSource}/${font}`, `${fontDest}/${font}`);
+			for (let font of fonts) {
+				await cp(`${dir}/${font}`, `${fontDestination}/${font}`);
+			}
 		}
 	});
 };

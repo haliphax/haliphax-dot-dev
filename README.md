@@ -94,6 +94,19 @@ Some tags may confer special behavior to the post they are attached to.
 
 - 🔍 Source folder: [`11ty/data`](11ty/data/)
 
+#### css
+
+- 🔍 Source: [`11ty/data/css.ts`](11ty/data/css.ts)
+
+CSS combine/minify configuration
+
+| Field                 | Description                                                             |
+| --------------------- | ----------------------------------------------------------------------- |
+| `externalStylesheets` | List of external stylesheet files to pull during build                  |
+| `fontDestination`     | Destination folder (relative to output folder) for font resources       |
+| `fontSources`         | List of folders that should be copied to `fontDestination` during build |
+| `localStylesheets`    | List of CSS files from the local filesystem to incoroporate             |
+
 #### ignoreTags
 
 - 🔍 Source: [`11ty/data/ignoreTags.ts`](11ty/data/ignoreTags.ts)
