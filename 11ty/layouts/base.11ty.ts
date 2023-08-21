@@ -1,3 +1,4 @@
+import getHashRef from "../functions/getHashRef";
 import inlineScript from "../functions/inlineScript";
 import metaEncode from "../functions/metaEncode";
 import renderIcon from "../functions/renderIcon";
@@ -21,6 +22,7 @@ export = class Base {
 	}
 
 	async render(data: any) {
+		const hashRef = await getHashRef();
 		const ogTitle = metaEncode(data.ogTitle ?? data.title);
 		const ogAuthor = metaEncode(data.ogAuthor ?? data.metaDefaults.author);
 		const ogType = data.ogType ?? data.metaDefaults.openGraphType;
@@ -112,7 +114,7 @@ export = class Base {
 				${labels}
 				<meta name="generator" content="${data.metaDefaults.generator}" />
 				<link rel="icon" href="/img/favicon.gif" />
-				<link href="/css/styles.min.css" rel="stylesheet" />
+				<link href="/css/styles.min.css?_=${hashRef}" rel="stylesheet" />
 				<noscript><style>img[data-src]{display:none}</style></noscript>
 			</head>
 			<body class="dark-mode mh-full h-full">

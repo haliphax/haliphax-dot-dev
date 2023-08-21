@@ -186,6 +186,7 @@ These are equivalent to _filters_ in other templating languages (e.g. nunjucks).
 | Function                                     | Description                                                                            |
 | -------------------------------------------- | -------------------------------------------------------------------------------------- |
 | `getDescription(content, limit)`             | Produce a trimmed blurb for the given content                                          |
+| `getHashRef()`                               | Get the hash ref of the latest commit in the repository                                |
 | `getMetaDescription(content, limit)`         | Same as getDescription, but encoded for &lt;meta /&gt; usage                           |
 | `htmlEntities(text)`                         | Replace certain character combinations with HTML entity equivalents                    |
 | `inlineScript(...paths)`                     | Return an auto-executing anonymous method for the given Javascript file for inline use |
