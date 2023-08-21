@@ -5,7 +5,6 @@ const data = {
 	siteName: "haliphax.dev",
 	siteRoot: "https://haliphax.dev",
 	socialMenuHeader: "Social",
-	twitter: "@hxdev",
 };
 
 export = data;

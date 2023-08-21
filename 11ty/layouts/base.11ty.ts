@@ -58,18 +58,6 @@ export = class Base {
 						)
 						.join("");
 
-		const labels =
-			metaLabels.length === 0
-				? ""
-				: metaLabels
-						.map(
-							(v, i) => /*html*/ `
-								<meta name="twitter:label${i + 1}" content="${v[0]}" />
-								<meta name="twitter:data${i + 1}" content="${v[1]}" />
-								`,
-						)
-						.join("");
-
 		const twitchLive = !data.external?.twitch?.live
 			? ""
 			: /*html*/ `
@@ -105,13 +93,6 @@ export = class Base {
 				<meta property="article:author" content="${ogAuthor}" />
 				<meta property="article:published_time" content="${data.page.date.toISOString()}" />
 				${tags}
-				<meta name="twitter:card" content="summary_large_image" />
-				<meta name="twitter:creator" content="${data.strings.twitter}" />
-				<meta name="twitter:description" content="${metaDescription}" />
-				<meta name="twitter:image" content="${ogImage}" />
-				<meta name="twitter:site" content="${data.strings.twitter}" />
-				<meta name="twitter:title" content="${ogTitle}" />
-				${labels}
 				<meta name="generator" content="${data.metaDefaults.generator}" />
 				<link rel="icon" href="/img/favicon.gif" />
 				<link rel="stylesheet" href="/css/styles.min.css?_=${hashRef}" />
