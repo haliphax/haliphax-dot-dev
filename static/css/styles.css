@@ -76,9 +76,9 @@ a.badge {
 .page-wrapper[data-sidebar-hidden] > .sidebar {
 	left: -100vw !important;
 }
-.page-wrapper > .sidebar {
+.page-wrapper > .sidebar,
+.page-wrapper > .sidebar:focus-within {
 	left: 0 !important;
-	display: block;
 }
 body.x .page-wrapper > .sidebar {
 	transition: left 0.25s ease-in-out;
