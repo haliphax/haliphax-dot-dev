@@ -114,8 +114,7 @@ export = class Base {
 				${labels}
 				<meta name="generator" content="${data.metaDefaults.generator}" />
 				<link rel="icon" href="/img/favicon.gif" />
-				<link rel="preload" href="/css/styles.min.css?_=${hashRef}" as="style" onload="this.rel='stylesheet'" />
-				<noscript><link rel="stylesheet" href="/css/styles.min.css?_=${hashRef}"></noscript>
+				<link rel="stylesheet" href="/css/styles.min.css?_=${hashRef}" />
 				<noscript><style>img[data-src]{display:none}</style></noscript>
 			</head>
 			<body class="dark-mode mh-full h-full">
