@@ -101,7 +101,7 @@ body.x .page-wrapper > .sidebar {
 .page-wrapper > .sidebar .sidebar-link > span {
 	display: inline-block;
 }
-body.x .sidebar-link > span {
+body.x .page-wrapper > .sidebar .sidebar-link > span {
 	transition: all 0.2s ease-in-out;
 }
 .page-wrapper > .sidebar .sidebar-link:hover > span {
