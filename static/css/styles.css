@@ -79,6 +79,8 @@ a.badge {
 .page-wrapper > .sidebar {
 	left: 0 !important;
 	display: block;
+}
+body.x .page-wrapper > .sidebar {
 	transition: left 0.25s ease-in-out;
 }
 .page-wrapper .icon-sidebar-o {
