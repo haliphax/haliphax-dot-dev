@@ -1,9 +1,10 @@
 /** CSS combine/minify supplemental configuration */
 const data = {
 	/** files to include from external resources, to be minified */
-	externalStylesheets: [
-		"https://raw.githubusercontent.com/themarcba/prism-themes/master/themes/prism-synthwave84.css",
-	],
+	externalStylesheets: {
+		synthwave:
+			"https://raw.githubusercontent.com/themarcba/prism-themes/master/themes/prism-synthwave84.css",
+	},
 	/** destination directory (relative to output folder) for font files */
 	fontDestination: "fonts",
 	/** source folders for font files */

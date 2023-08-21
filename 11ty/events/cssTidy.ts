@@ -27,6 +27,15 @@ const cssTidy = (cfg: UserConfig) => {
 			localStylesheets.push(await readFile(fn, fileOpts));
 		}
 
+		// download external stylesheets to destination folder
+		for (let [fn, url] of Object.entries(cssConfig.externalStylesheets)) {
+			await writeFile(
+				`${dir.output}/css/${fn}.css`,
+				await fetch(url).then((r) => r.text()),
+				fileOpts,
+			);
+		}
+
 		/** files to combine */
 		const combo = [...localStylesheets];
 
@@ -38,6 +47,7 @@ const cssTidy = (cfg: UserConfig) => {
 			[`${dir.output}/css/keep.css`, true],
 		]);
 
+		/** purged files */
 		const purged = await new PurgeCSS().purge({
 			content: [`${dir.output}/**/*.html`, `${dir.output}/*.html`],
 			css: [`${dir.output}/css/*.css`],
