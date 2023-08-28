@@ -70,7 +70,7 @@ export = (cfg: UserConfig) => {
 
 ### 🖼️ Layouts
 
-- 🔍 Source folder: [`11ty/layouts`](11ty/layouts/)
+> 🔍 Source folder: [`11ty/layouts`](11ty/layouts/)
 
 All layout templates are built using the [11ty.js][] (JavaScript) template
 language.
@@ -92,11 +92,11 @@ Some tags may confer special behavior to the post they are attached to.
 
 ### 🗒 Data
 
-- 🔍 Source folder: [`11ty/data`](11ty/data/)
+> 🔍 Source folder: [`11ty/data`](11ty/data/)
 
 #### css
 
-- 🔍 Source: [`11ty/data/css.ts`](11ty/data/css.ts)
+> 🔍 Source: [`11ty/data/css.ts`](11ty/data/css.ts)
 
 CSS combine/minify configuration
 
@@ -109,14 +109,14 @@ CSS combine/minify configuration
 
 #### ignoreTags
 
-- 🔍 Source: [`11ty/data/ignoreTags.ts`](11ty/data/ignoreTags.ts)
+> 🔍 Source: [`11ty/data/ignoreTags.ts`](11ty/data/ignoreTags.ts)
 
 List of post tags that should be ignored when building tag pages or displaying
 a post's associated tags
 
 #### links
 
-- 🔍 Source: [`11ty/data/links.ts`](11ty/data/links.ts)
+> 🔍 Source: [`11ty/data/links.ts`](11ty/data/links.ts)
 
 List of objects for use in the **Site** navigation menu. Their format is as
 follows:
@@ -129,7 +129,7 @@ follows:
 
 #### metaDefaults
 
-- 🔍 Source: [`11ty/data/metaDefaults.ts`](11ty/data/metaDefaults.ts)
+> 🔍 Source: [`11ty/data/metaDefaults.ts`](11ty/data/metaDefaults.ts)
 
 Default values for page metadata
 
@@ -143,7 +143,7 @@ Default values for page metadata
 
 #### misc
 
-- 🔍 Source: [`11ty/data/misc.ts`](11ty/data/misc.ts)
+> 🔍 Source: [`11ty/data/misc.ts`](11ty/data/misc.ts)
 
 Miscellaneous values that don't belong elsewhere
 
@@ -156,14 +156,14 @@ Miscellaneous values that don't belong elsewhere
 
 #### socials
 
-- 🔍 Source: [`11ty/data/socials.ts`](11ty/data/links.ts)
+> 🔍 Source: [`11ty/data/socials.ts`](11ty/data/links.ts)
 
 List of links for populating the **Social** navigation menu. Object format is
 the same as that of [links](#links).
 
 #### strings
 
-- 🔍 Source: [`11ty/data/strings.ts`](11ty/data/strings.ts)
+> 🔍 Source: [`11ty/data/strings.ts`](11ty/data/strings.ts)
 
 List of string values used throughout the site and its templates
 
@@ -179,7 +179,7 @@ List of string values used throughout the site and its templates
 
 ### ⚡ Functions
 
-- 🔍 Source folder: [`11ty/functions`](11ty/functions/)
+> 🔍 Source folder: [`11ty/functions`](11ty/functions/)
 
 These are equivalent to _filters_ in other templating languages (e.g. nunjucks).
 
@@ -201,7 +201,7 @@ These are equivalent to _filters_ in other templating languages (e.g. nunjucks).
 
 ### ⏰ Event handlers
 
-- 🔍 Source folder: [`11ty/events`](11ty/events/)
+> 🔍 Source folder: [`11ty/events`](11ty/events/)
 
 | Handler     | Event            | Description                                                                                 |
 | ----------- | ---------------- | ------------------------------------------------------------------------------------------- |
@@ -210,7 +210,7 @@ These are equivalent to _filters_ in other templating languages (e.g. nunjucks).
 
 ### 🤖 Transforms
 
-- 🔍 Source folder: [`11ty/transforms`](11ty/transforms/)
+> 🔍 Source folder: [`11ty/transforms`](11ty/transforms/)
 
 | Name         | Description                                                  |
 | ------------ | ------------------------------------------------------------ |
@@ -218,7 +218,7 @@ These are equivalent to _filters_ in other templating languages (e.g. nunjucks).
 
 ### 📚 Libraries
 
-- 🔍 Source folder: [`11ty/libraries`](11ty/libraries/)
+> 🔍 Source folder: [`11ty/libraries`](11ty/libraries/)
 
 | ID              | Description                                          |
 | --------------- | ---------------------------------------------------- |
@@ -226,7 +226,7 @@ These are equivalent to _filters_ in other templating languages (e.g. nunjucks).
 
 ### 🔌 Plugins
 
-- 🔍 Source folder: [`11ty/plugins`](11ty/plugins/)
+> 🔍 Source folder: [`11ty/plugins`](11ty/plugins/)
 
 | ID                                        | Description                                       |
 | ----------------------------------------- | ------------------------------------------------- |
@@ -247,7 +247,7 @@ or by creating a `.env` file in the root of the project.
 
 ## ⏯️ Tasks
 
-- 🔍 Source folder: [`tasks`](tasks/)
+> 🔍 Source folder: [`tasks`](tasks/)
 
 There are tasks which are run directly with `node`, outside of the scope of the
 the Eleventy system. These will each output a JSON file in the
@@ -299,7 +299,7 @@ npm run check
 
 ## 🏭 Workflows
 
-- 🔍 Source folder: [`.github/workflows`](.github/workflows/)
+> 🔍 Source folder: [`.github/workflows`](.github/workflows/)
 
 This site is hosted entirely on [GitHub Pages][]. Both its main publishing and
 periodic update methods make use of [GitHub Actions][] workflows to update the
@@ -307,8 +307,7 @@ live site automatically when new content or data is available.
 
 ### Automatic publish on merge
 
-- 🔍 Source:
-  [`.github/workflows/publish-site.yml`](.github/workflows/publish-site.yml)
+> 🔍 Source: [`.github/workflows/publish-site.yml`](.github/workflows/publish-site.yml)
 
 When the `master` branch of this repository is updated, a GitHub workflow will
 regenerate the site and update the `gh-pages` branch. This causes the GitHub
@@ -317,8 +316,7 @@ new content. External data is also refreshed as part of this process.
 
 ### Periodic updates
 
-- 🔍 Source:
-  [`.github/workflows/check-externals.yml`](.github/workflows/check-externals.yml)
+> 🔍 Source: [`.github/workflows/check-externals.yml`](.github/workflows/check-externals.yml)
 
 This site is periodically updated by way of a [hosted cronjob][] and a GitHub
 workflow. Every 5 minutes, the cronjob runs the workflow responsible for
