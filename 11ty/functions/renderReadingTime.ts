@@ -5,7 +5,7 @@ const renderReadingTime = async (data: any) => {
 	if (!(data.layout == "page" || data.tags.includes("post"))) return null;
 
 	const words = (await getContent(data))
-		.replace(/<[^>]*>|&\w+;/gi, "")
+		.replace(/<[^>]*>?|&\w+;/g, "")
 		.split(/\n+/)
 		.filter((s) => s)
 		.map((s) => s.split(/\s+/).length)

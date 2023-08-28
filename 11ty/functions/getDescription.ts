@@ -6,7 +6,7 @@ const getDescription = (content?: string, limit = 160) => {
 	}
 
 	const plain = htmlEntities(content)
-		.replace(/<[^>]+>/g, "")
+		.replace(/<[^>]*>?/g, "")
 		.replace(/\s{2,}/g, " ")
 		.replace(/\n/g, " ")
 		.trim();
