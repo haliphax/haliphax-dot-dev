@@ -5,11 +5,11 @@ on:
 
 jobs:
   check:
+    outputs:
+      diff: ${{ steps.diff.outputs.diff }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          ref: gh-pages
 
       - uses: actions/setup-node@v3
         with:
@@ -19,26 +19,39 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Check sources
+      - id: diff
+        name: Check sources
         env:
           TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
           TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
           TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: |
-          #--- compare API response with locally cached JSON data
-          DIFF=0
+          # compare API response with locally cached JSON data
           npm run build:ts
-          npm run check:twitch || DIFF=1
-          npm run check:youtube || DIFF=1
-          [ $DIFF == 0 ] && exit 0
 
-          #--- data is different; rebuild the site
+          if [[ $(npm run check) ]]; then
+            echo "diff=0" >> "$GITHUB_OUTPUT"
+            exit
+          fi
+
+          # data is different; rebuild the site
+          echo "diff=1" >> "$GITHUB_OUTPUT"
           npm run build:11ty
 
-          #--- publish to GitHub Pages
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add -f docs 11ty/data/external/*.json
-          git commit -m 'external content update'
-          git push -f -u origin gh-pages
+  deploy:
+    runs-on: ubuntu-latest
+    needs: check
+    if: needs.check.outputs.diff == '1'
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v2
