@@ -2,7 +2,7 @@ name: Publish site
 
 on:
   push:
-    branches: [master]
+    branches: [main]
 
   workflow_dispatch:
 
@@ -32,6 +32,6 @@ jobs:
           npm run check || true
           npm run build:11ty
 
-      - uses: actions/upload-pages-artifact
+      - uses: actions/upload-pages-artifact@v2
         with:
           path: docs/
