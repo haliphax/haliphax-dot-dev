@@ -17,7 +17,7 @@ const data = [
 	{
 		name: "License",
 		url: "/license-info/",
-		icon: "key",
+		icon: "lock",
 	},
 ];
 
