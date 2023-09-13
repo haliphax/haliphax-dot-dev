@@ -169,6 +169,7 @@ List of string values used throughout the site and its templates
 
 | Field              | Description                                          |
 | ------------------ | ---------------------------------------------------- |
+| `aboutMe`          | HTML for the "About me" section                      |
 | `githubRoot`       | GitHub project root for "Suggest an edit" post links |
 | `header`           | Text for site header                                 |
 | `siteMenuHeader`   | Text for **Site** navigation menu header             |
