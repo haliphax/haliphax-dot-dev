@@ -33,12 +33,7 @@ export = class Index {
 					<summary class="w-full">About me</summary>
 					<div class="col">
 						<hr />
-						I am a software engineer and
-						<a href="https://oddnetwork.org/ascii/">textmode artist</a>. I
-						worked as a web developer in higher education for almost 15 years,
-						but I have recently moved into the private sector to build
-						microservices and cloud-native solutions. I enjoy solving problems
-						and sharing what I have learned with others.
+						${data.strings.aboutMe}
 					</div>
 				</details>
 			</div>
@@ -52,7 +47,7 @@ export = class Index {
 				</h2>
 				<div class="row d-flex">
 					<div class="card m-5 p-20 w-full row">
-						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
+						<div class="col-12 col-sm-6 col-md-12 col-lg-6 thumbnail" aria-hidden="true">
 							<div class="mr-sm-10">
 								<a href="${vod?.url}" class="no-external img-wrap mb-5">
 									${renderLazyImage(/*html*/ `
@@ -92,7 +87,7 @@ export = class Index {
 				</h2>
 				<div class="row d-flex">
 					<div class="card m-5 p-20 w-full row">
-						<div class="col-12 col-sm-6 col-md-12 col-lg-6" aria-hidden="true">
+						<div class="col-12 col-sm-6 col-md-12 col-lg-6 thumbnail" aria-hidden="true">
 							<div class="mr-sm-10">
 								<a href="https://youtu.be/${
 									yt.snippet.resourceId.videoId

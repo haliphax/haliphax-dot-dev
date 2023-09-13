@@ -246,6 +246,11 @@ samp:not([class*="language-"]) {
 	padding-right: 0.15em;
 }
 
+/* card center image */
+.card .thumbnail {
+	display: grid;
+	place-content: center;
+}
 /* card image link hover */
 .card a.img-wrap {
 	display: flex;
