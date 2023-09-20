@@ -147,12 +147,14 @@ Default values for page metadata
 
 Miscellaneous values that don't belong elsewhere
 
-| Field              | Description                                     |
-| ------------------ | ----------------------------------------------- |
-| `blurbLength`      | Maximum length allowed for post blurbs          |
-| `jumboBlurbLength` | Maximum length allowed for primary post's blurb |
-| `readingTimeWpm`   | Words-per-minute for calculating reading time   |
-| `ytPlaylistId`     | YouTube playlist ID for retrieving latest video |
+| Field              | Description                                          |
+| ------------------ | ---------------------------------------------------- |
+| `blurbLength`      | Maximum length allowed for post blurbs               |
+| `githubRoot`       | GitHub project root for "Suggest an edit" post links |
+| `jumboBlurbLength` | Maximum length allowed for primary post's blurb      |
+| `readingTimeWpm`   | Words-per-minute for calculating reading time        |
+| `siteRoot`         | Root URL of the site                                 |
+| `ytPlaylistId`     | YouTube playlist ID for retrieving latest video      |
 
 #### socials
 
@@ -167,16 +169,13 @@ the same as that of [links](#links).
 
 List of string values used throughout the site and its templates
 
-| Field              | Description                                          |
-| ------------------ | ---------------------------------------------------- |
-| `aboutMe`          | HTML for the "About me" section                      |
-| `githubRoot`       | GitHub project root for "Suggest an edit" post links |
-| `header`           | Text for site header                                 |
-| `siteMenuHeader`   | Text for **Site** navigation menu header             |
-| `siteName`         | Text for site name (used in `<title>`)               |
-| `siteRoot`         | Root URL of the site                                 |
-| `socialMenuHeader` | Text for **Social** navigation menu header           |
-| `twitter`          | Twitter handle (used in meta tags)                   |
+| Field              | Description                                |
+| ------------------ | ------------------------------------------ |
+| `aboutMe`          | HTML for the "About me" section            |
+| `header`           | Text for site header                       |
+| `siteMenuHeader`   | Text for **Site** navigation menu header   |
+| `siteName`         | Text for site name (used in `<title>`)     |
+| `socialMenuHeader` | Text for **Social** navigation menu header |
 
 ### ⚡ Functions
 
