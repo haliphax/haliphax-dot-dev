@@ -47,17 +47,17 @@ tweaking here and there as I refine my process.)_
 
 **Overview:**
 
-1.  Pave your two VMs (Build Box & Thumb Box) and your destination
-    machine (Target)
-2.  Build a customized kernel with built-in AUFS and SquashFS support
-3.  Install the kernel to Thumb Box and Target
-4.  Add live-boot initrd images to Thumb Box and Target
-5.  Install/update software on Thumb Box as needed
-6.  Trim and squash the file system from Thumb Box into a squashfs image
-7.  Push the image down to Target
-8.  Reboot your destination machine into the updated image
-9.  Repeat steps 5-8 to modify the squashed Ubun2RAM file system
-    (configuration changes, update/add/remove software, etc.)
+1. Pave your two VMs (Build Box & Thumb Box) and your destination
+   machine (Target)
+2. Build a customized kernel with built-in AUFS and SquashFS support
+3. Install the kernel to Thumb Box and Target
+4. Add live-boot initrd images to Thumb Box and Target
+5. Install/update software on Thumb Box as needed
+6. Trim and squash the file system from Thumb Box into a squashfs image
+7. Push the image down to Target
+8. Reboot your destination machine into the updated image
+9. Repeat steps 5-8 to modify the squashed Ubun2RAM file system
+   (configuration changes, update/add/remove software, etc.)
 
 **Notes:**
 
@@ -126,8 +126,7 @@ fakeroot make-kpkg --initrd --append-to-version=-saucy-custom kernel-headers ker
 
 **Target:**
 
-    ```shell
-
+```shell
 # get live-boot and squashfs stuff
 
 sudo apt-get install live-boot live-boot-initramfs-tools squashfs-tools -y
@@ -152,12 +151,11 @@ sudo chmod +x /etc/grub.d/50_ramsession
 # rebuild the grub bootloader menu to include Ubun2RAM
 
 sudo update-grub
-
-````
+```
 
 **/etc/grub.d/50_ramsession (Target):**
 
-	```shell
+```shell
 #!/usr/bin/env bash
 cat <<EOF
 # ram session; disable apparmor and boot read/write squashfs/aufs combo from /live/filesystem.squashfs
@@ -166,7 +164,7 @@ menuentry 'Ubun2RAM' --class ubuntu --class gnu-linux --class gnu --class os {
 		initrd /boot/initrd.img-$(uname -r)
 }
 EOF
-````
+```
 
 **Thumb Box:**
 
