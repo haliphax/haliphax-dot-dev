@@ -7,11 +7,9 @@ const data = {
 		microservices and cloud-native solutions. I enjoy solving problems
 		and sharing what I have learned with others.
 	`,
-	githubRoot: "https://github.com/haliphax/haliphax-dot-dev/edit/master",
 	header: "haliphax",
 	siteMenuHeader: "Site",
 	siteName: "haliphax.dev",
-	siteRoot: "https://haliphax.dev",
 	socialMenuHeader: "Social",
 };
 

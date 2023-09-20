@@ -18,7 +18,7 @@ export = class SiteMap {
 					.map(
 						(page: any) => /*xml*/ `
 						<url>
-							<loc>${data.strings.siteRoot}${page.url}</loc>
+							<loc>${data.misc.siteRoot}${page.url}</loc>
 							<lastmod>${page.date.toISOString()}</lastmod>
 							<changefreq>${page.data.changeFreq ?? "never"}</changefreq>
 						</url>

@@ -34,7 +34,7 @@ export = class Base {
 			"{title}",
 			encodeURIComponent(data.ogTitle ?? data.title),
 		);
-		const canonicalUrl = `${data.strings.siteRoot}${data.page.url}`;
+		const canonicalUrl = `${data.misc.siteRoot}${data.page.url}`;
 
 		if (data.tags) metaLabels.push(["Tags", data.tags.join(", ")]);
 
