@@ -15,9 +15,11 @@ export = class Base {
 		}
 
 		return /*html*/ `
-			<a href="${opts.url}" class="sidebar-link" ${attrs}>
-				<span>${renderIcon(opts.icon)} ${opts.name}</span>
-			</a>
+			<li class="d-block">
+				<a href="${opts.url}" class="sidebar-link" ${attrs}>
+					<span>${renderIcon(opts.icon)} ${opts.name}</span>
+				</a>
+			</li>
 			`;
 	}
 
@@ -117,11 +119,14 @@ export = class Base {
 							<nav class="sidebar-content">
 								<h5 class="sidebar-title">${data.strings.siteMenuHeader}</h5>
 								<div class="sidebar-divider"></div>
-								${data.links.map(this.generateSidebarLink.bind(this)).join("")}
-								<br />
+								<ul class="list-unstyled d-flex flex-column mb-20">
+									${data.links.map(this.generateSidebarLink.bind(this)).join("")}
+								</ul>
 								<h5 class="sidebar-title">${data.strings.socialMenuHeader}</h5>
 								<div class="sidebar-divider"></div>
-								${data.socials.map(this.generateSidebarLink.bind(this)).join("")}
+								<ul class="list-unstyled d-flex flex-column">
+									${data.socials.map(this.generateSidebarLink.bind(this)).join("")}
+								</ul>
 							</nav>
 						</div>
 					</div>
