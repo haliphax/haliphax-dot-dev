@@ -30,7 +30,7 @@ jobs:
           # compare API response with locally cached JSON data
           npm run build:ts
 
-          if [[ $(npm run check) ]]; then
+          if [[ ! $(npm run check) ]]; then
             echo "diff=0" >> "$GITHUB_OUTPUT"
             exit
           fi
