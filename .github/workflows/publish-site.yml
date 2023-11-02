@@ -5,6 +5,10 @@ on:
     branches: [main]
 
   workflow_dispatch:
+    inputs:
+      manual:
+        default: "1"
+        description: "Manual"
 
 concurrency:
   group: publish
@@ -37,6 +41,7 @@ jobs:
   build:
     needs: changes
     if: |
+      github.event.inputs.manual != '' ||
       needs.changes.outputs.content == 'true' ||
       needs.changes.outputs.engine == 'true'
     runs-on: ubuntu-latest
