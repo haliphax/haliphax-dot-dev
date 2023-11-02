@@ -19,27 +19,40 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - uses: actions/cache/restore@v3
+        with:
+          key: external-data
+          path: 11ty/data/external
+
       - id: diff
         name: Check sources
         env:
+          GH_TOKEN: ${{ github.token }}
           TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
           TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
           TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: |
+          # clear cache
+          gh cache delete external-data || true
+
           # compare API response with locally cached JSON data
           npm run build:ts
+          diff=0
+          npm run check || diff=1
+          echo "diff=$diff" >> "$GITHUB_OUTPUT"
 
-          if [[ ! $(npm run check) ]]; then
-            echo "diff=0" >> "$GITHUB_OUTPUT"
-            exit
-          fi
+      - uses: actions/cache/save@v3
+        with:
+          key: external-data
+          path: 11ty/data/external
 
-          # data is different; rebuild the site
-          echo "diff=1" >> "$GITHUB_OUTPUT"
-          npm run build:11ty
+      - if: steps.diff.outputs.diff == '1'
+        name: Build site
+        run: npm run build:11ty
 
-      - uses: actions/upload-pages-artifact@v2
+      - if: steps.diff.outputs.diff == '1'
+        uses: actions/upload-pages-artifact@v2
         with:
           path: docs/
 
