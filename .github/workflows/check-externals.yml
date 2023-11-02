@@ -3,6 +3,9 @@ name: Check external data sources
 on:
   workflow_dispatch:
 
+concurrency:
+  group: publish
+
 jobs:
   check:
     outputs:

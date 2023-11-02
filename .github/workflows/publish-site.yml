@@ -6,6 +6,9 @@ on:
 
   workflow_dispatch:
 
+concurrency:
+  group: publish
+
 jobs:
   build:
     runs-on: ubuntu-latest
