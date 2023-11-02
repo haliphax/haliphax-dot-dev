@@ -1,11 +1,6 @@
 {
-	"name": "haliphax-dot-dev",
-	"version": "1.0.0",
-	"description": "haliphax.dev source code and content",
-	"repository": "github:haliphax/haliphax-dot-dev",
-	"private": true,
 	"author": "haliphax",
-	"license": "MIT",
+	"description": "haliphax.dev source code and content",
 	"devDependencies": {
 		"@11ty/eleventy": "^2.0.1",
 		"@11ty/eleventy-plugin-syntaxhighlight": "^5.0.0",
@@ -31,11 +26,23 @@
 		"svgson": "^5.3.1",
 		"typescript": "^5.1.6"
 	},
+	"engines": {
+		"node": "^18"
+	},
+	"license": "MIT",
+	"name": "haliphax-dot-dev",
 	"overrides": {
 		"devDependencies": {
 			"qs": "^6.11.1"
 		}
 	},
+	"prettier": {
+		"plugins": [
+			"prettier-plugin-organize-imports"
+		]
+	},
+	"private": true,
+	"repository": "github:haliphax/haliphax-dot-dev",
 	"scripts": {
 		"all": "npm-run-all",
 		"build": "npm-run-all build:ts build:11ty",
@@ -49,9 +56,5 @@
 		"serve": "eleventy --quiet --serve",
 		"watch": "nodemon -e css,json,md,ts -w 11ty -w content -w static --exec 'npm run build:ts && npm run serve -- --watch'"
 	},
-	"prettier": {
-		"plugins": [
-			"prettier-plugin-organize-imports"
-		]
-	}
+	"version": "1.0.0"
 }
