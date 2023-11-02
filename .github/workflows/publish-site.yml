@@ -10,7 +10,35 @@ concurrency:
   group: publish
 
 jobs:
+  changes:
+    name: Change detection
+    runs-on: ubuntu-latest
+    outputs:
+      content: ${{ steps.changes.outputs.content }}
+      engine: ${{ steps.changes.outputs.engine }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Detect changed files
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            content:
+              - "content/**"
+              - "data/**"
+              - "static/**"
+            engine:
+              - ".eleventy.ts"
+              - "11ty/**"
+              - "*.json"
+
   build:
+    needs: changes
+    if: |
+      needs.changes.outputs.content == 'true' ||
+      needs.changes.outputs.engine == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3

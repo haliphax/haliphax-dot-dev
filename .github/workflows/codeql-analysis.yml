@@ -14,7 +14,27 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.branch }}
 
 jobs:
+  changes:
+    name: Change detection
+    runs-on: ubuntu-latest
+    outputs:
+      code: ${{ steps.changes.outputs.code }}
+    steps:
+      - name: Check out
+        uses: actions/checkout@v4
+
+      - name: Detect changed files
+        id: changes
+        uses: dorny/paths-filter@v2
+        with:
+          filters: |
+            code:
+              - "**.ts"
+              - "*.json"
+
   analyze:
+    needs: changes
+    if: needs.changes.outputs.code == 'true'
     name: Analyze
     runs-on: ubuntu-latest
     permissions:
