@@ -29,10 +29,6 @@ const renderCollection = (
 					classes.push("col-md-6");
 				}
 
-				if (!jumboFirst) {
-					classes.push("col-lg-4");
-				}
-
 				return /*html*/ `
 					<li class="col-12 ${classes.join(" ")} d-flex">
 						<div class="card m-5 p-20 w-full ${jumbo ? "border" : ""}">
