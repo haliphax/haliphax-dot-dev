@@ -20,14 +20,14 @@ _<!DOCTYPE ... />_ or _<html ... />_ elements, however.)
 Give it a shot the next time you're manipulating AJAX-enabled web
 applications and see if it doesn't make your life a whole lot easier:
 
-<a href="(javascript:w=window.open();void(w.document.write('%3Cpre%3E'+document.body.parentNode.innerHTML.replace(/%3C/g,'<')+'%3C/pre%3E'));)">Live source</a>
+<a href="javascript:w=window.open();void(w.document.write('<pre>'+document.body.parentNode.innerHTML.replace(/</g,'&amp;lt;')+'</pre>'));">Live source</a>
 
 **Javascript bookmarklet:**
 
 ```js
 javascript: w = window.open();
 void w.document.write(
-	"<pre>" + document.body.parentNode.innerHTML.replace(/</g, "<") + "</pre>",
+  "<pre>" + document.body.parentNode.innerHTML.replace(/</g, "&lt;") + "</pre>",
 );
 ```
 
