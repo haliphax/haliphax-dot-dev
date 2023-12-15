@@ -42,7 +42,7 @@ experimenting with something like that. I'm looking forward to it!
 
 [Aethersprite documentation]: https://haliphax.github.io/aethersprite/
 [Aethersprite]: https://github.com/haliphax/aethersprite
-[discord.py]: https://discordpy.readthedocs.io
+[discord.py]: https://discordpy.readthedocs.io/en/stable/
 [ncfacbot]: https://github.com/haliphax/ncfacbot
 [Nexus Clash]: https://www.nexusclash.com
 [sesh]: https://sesh.fyi

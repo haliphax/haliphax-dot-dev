@@ -96,6 +96,6 @@ sockets).
 [flask-limiter]: https://pypi.org/project/Flask-Limiter/
 [flask-login]: https://pypi.org/project/Flask-Login/
 [Flask-SocketIO]: https://pypi.org/project/Flask-SocketIO/
-[Flask]: https://flask.palletsprojects.com
+[Flask]: https://flask.palletsprojects.com/en/3.0.x/
 [Redis]: https://redis.io
 [Socket.IO]: https://socket.io

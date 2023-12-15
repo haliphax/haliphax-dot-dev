@@ -64,7 +64,7 @@ Note the `type="module"`, as this is necessary for testing and developing the
 scripts while they are un-minified. Otherwise, the use of the `import` keyword
 in the scripts will throw an error. Happy minifying!
 
-[Flask]: https://flask.palletsprojects.com
-[Flask-Assets]: https://flask-assets.readthedocs.io
-[webassets]: https://webassets.readthedocs.io
+[Flask]: https://flask.palletsprojects.com/en/3.0.x/
+[Flask-Assets]: https://flask-assets.readthedocs.io/en/latest/
+[webassets]: https://webassets.readthedocs.io/en/latest/
 [ESBuild]: https://github.com/evanw/esbuild

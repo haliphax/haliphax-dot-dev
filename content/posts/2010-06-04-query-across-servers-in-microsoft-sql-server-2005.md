@@ -61,7 +61,7 @@ select * from OpenDataSource('SQLOLEDB', 'DataSource=secondserver;User ID=tester
 
 ...and there you have it: An ad-hoc, cross-server query. Should you wish
 to use this convention on a more permanent basis, you may consider adding a
-[Linked Server](https://docs.microsoft.com/en-us/sql/relational-databases/linked-servers/linked-servers-database-engine),
+[Linked Server](https://learn.microsoft.com/en-us/sql/relational-databases/linked-servers/linked-servers-database-engine),
 instead.
 
 One benefit to the _Linked Server_ approach: You can tweak the

@@ -14,8 +14,6 @@ Visual Studio 2008 and the .NET 3.5 platform.<!--more-->
 **Enabling the WSE Settings GUI tool in VS2008**
 
 1. First, download and install the _WSE 3.0 for Microsoft .NET_ package
-   from the following url:
-   <https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=14089>
 2. Now, change each instance of _8.0_ to _9.0_ in the
    _WSESettingsVS3.Addin_ file, which should be located here:
    `C:\Documents and Settings\All Users\Application Data\Microsoft\MSEnvShared\Addins\WSESettingsVS3.Addin`
@@ -40,10 +38,8 @@ Visual Studio 2008 and the .NET 3.5 platform.<!--more-->
 
 **Generating a WSE proxy class from a WSDL list**
 
-1. Download and install the _.NET Framework 2.0 SDK (x86)_—which is
-   necessary for creating the _WebClient_-type proxy/wrapper class—from
-   the following url:
-   <https://www.microsoft.com/en-us/download/details.aspx?displaylang=en&id=19988>
+1. Download and install the _.NET Framework 2.0 SDK (x86)_, which is
+   necessary for creating the _WebClient_-type proxy/wrapper class
 2. Use the `WseWsdl3.exe` tool with the `/type:webClient` switch to
    generate a _WebClient_-based proxy class for your web service:
    `"c:\Program Files\Microsoft WSE\v3.0\Tools\WseWsdl3.exe" /nologo /type:webClient /out:c:\ProjectFolder\MyWebService.cs http://addres.of/my/webservice?wsdl`

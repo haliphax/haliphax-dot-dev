@@ -5,7 +5,7 @@ tags:
 layout: post
 ---
 
-My first officially-recognized [WordPress](https://www.wordpress.org)
+My first officially-recognized [WordPress](https://wordpress.org)
 widget, <u>What's My Status?</u>, has been released! It is a widget for
 displaying a given user's status feed from
 [identi.ca](https://identi.ca), [Twitter](https://twitter.com), or any
@@ -18,5 +18,5 @@ results, so it shouldn't step on anyone's toes with regard to API access
 limits.<!--more-->
 
 Grab it over at
-[wordpress.org](https://wordpress.org/plugins/whats-my-status) or
+[wordpress.org](https://wordpress.org/plugins/whats-my-status/) or
 search for it in your WordPress installation under _Plugins » Add New_.

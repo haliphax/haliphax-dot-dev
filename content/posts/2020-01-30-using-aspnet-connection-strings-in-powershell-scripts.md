@@ -11,7 +11,7 @@ simply XML nodes in an XML document. This comes in pretty handy when you have
 scripts that you run against one or more databases that you want to use in a
 development environment (you must keep in mind that this method will not work
 with
-[encrypted configuration files](https://docs.microsoft.com/en-us/previous-versions/aspnet/dtkwfdky%28v=vs.100%29)).
+[encrypted configuration files](https://learn.microsoft.com/en-us/previous-versions/aspnet/dtkwfdky%28v=vs.100%29)).
 
 ```powershell
 $conf = [XML](Get-Content 'App_Config/ConnectionStrings.config')

@@ -25,6 +25,6 @@ is a proof of concept that has some very powerful suggestions as to what could
 be built next. Until then!
 
 [tmi.js]: https://tmijs.com
-[Stream Raiders]: https://streamraiders.com
+[Stream Raiders]: https://www.streamraiders.com
 [OBS Studio]: https://objsproject.com
 [Stream Raiders thank-you bot]: https://github.com/haliphax/stream-raiders-thanks

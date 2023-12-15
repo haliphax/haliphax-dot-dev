@@ -18,4 +18,4 @@ It involves some pretty cool moving parts vis a vis GitHub Actions, GitHub
 Pages, and an external cron-job service. [Go check it out!]
 
 [Eleventy]: https://www.11ty.dev
-[Go check it out!]: https://github.com/haliphax/haliphax-dot-dev/blob/master/README.md
+[Go check it out!]: https://github.com/haliphax/haliphax-dot-dev/blob/main/README.md
