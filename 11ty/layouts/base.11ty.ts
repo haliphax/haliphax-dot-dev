@@ -102,7 +102,6 @@ export = class Base {
 				<script defer type="module" src="https://unpkg.com/@zachleat/snow-fall@1.0.1/snow-fall.js"></script>
 			</head>
 			<body class="dark-mode mh-full h-full">
-				<snow-fall></snow-fall>
 				<a class="btn btn-primary" id="skip-nav" href="#main-content">
 					${renderIcon("fast-forward")}
 					Skip to main content
@@ -156,6 +155,7 @@ export = class Base {
 						</div>
 					</div>
 				</div>
+				<snow-fall></snow-fall>
 				<script id="scripts">
 					${await inlineScript(
 						"11ty/layouts/base/details.js",
