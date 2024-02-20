@@ -23,6 +23,11 @@ const data = [
 		},
 	},
 	{
+		name: "Instagram",
+		url: "https://www.instagram.com/haliphax",
+		icon: "instagram",
+	},
+	{
 		name: "Ko-fi",
 		url: "https://ko-fi.com/haliphax",
 		icon: "coffee",
