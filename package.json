@@ -27,15 +27,10 @@
 		"typescript": "^5.1.6"
 	},
 	"engines": {
-		"node": "^18"
+		"node": "^21"
 	},
 	"license": "MIT",
 	"name": "haliphax-dot-dev",
-	"overrides": {
-		"devDependencies": {
-			"qs": "^6.11.1"
-		}
-	},
 	"prettier": {
 		"plugins": [
 			"prettier-plugin-organize-imports"
