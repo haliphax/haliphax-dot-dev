@@ -1,7 +1,7 @@
-# 🎈 haliphax.dev
+# haliphax.dev
 
 The source code for https://haliphax.dev and its accompanying processes;
-proudly built with [Eleventy][]!
+proudly built with [🎈 Eleventy][]!
 
 ## 🌳 Directory structure
 
@@ -324,10 +324,10 @@ polling external data sources by using a [workflow dispatch event][]. If any of
 the external sources have updated data since the last execution of the
 workflow, the site will be re-published (along with the new data).
 
+[🎈 eleventy]: https://11ty.dev
 [11ty.js]: https://www.11ty.dev/docs/languages/javascript/
 [@11ty/eleventy-plugin-syntaxhighlight]: https://www.npmjs.com/package/@11ty/eleventy-plugin-syntaxhighlight
 [clean-css]: https://www.npmjs.com/package/clean-css
-[eleventy]: https://11ty.dev
 [feather icons]: https://feathericons.com
 [github actions]: https://github.com/features/actions
 [github pages]: https://pages.github.com
