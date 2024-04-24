@@ -309,10 +309,10 @@ live site automatically when new content or data is available.
 
 > 🔍 Source: [`.github/workflows/publish-site.yml`](.github/workflows/publish-site.yml)
 
-When the `main` branch of this repository is updated, a GitHub workflow will
-regenerate the site and update the `gh-pages` branch. This causes the GitHub
-Pages publishing workflow to activate, which will update the live site with any
-new content. External data is also refreshed as part of this process.
+When the `main` branch of this repository is updated, a GitHub workflow
+regenerates the site and delivers the artifact to a GitHub Pages publishing action,
+which will update the live site with any new content. External data is also
+refreshed as part of this process.
 
 ### Periodic updates
 
