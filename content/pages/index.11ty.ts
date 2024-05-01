@@ -69,8 +69,10 @@ export = class Index {
 							<a href="${vod.url}"
 								class="btn btn-secondary d-inline-block no-external">
 								${renderIcon("play")}
-								<span aria-hidden="true">Watch VOD</span>
-								<span class="sr-only">Watch VOD: ${vod.title}</span>
+								<span>
+									Watch VOD
+									<span class="sr-only">- ${vod.title}</span>
+								</span>
 							</a>
 						</div>
 					</div>
@@ -111,8 +113,10 @@ export = class Index {
 							<a href="https://youtu.be/${yt.snippet.resourceId.videoId}"
 								class="btn btn-secondary d-inline-block no-external">
 								${renderIcon("play")}
-								<span aria-hidden="true">Watch video</span>
-								<span class="sr-only">Watch video: ${yt.snippet.title}</span>
+								<span>
+									Watch video
+									<span class="sr-only">- ${yt.snippet.title}</span>
+								</span>
 							</a>
 						</div>
 					</div>
