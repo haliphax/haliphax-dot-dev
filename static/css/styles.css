@@ -266,6 +266,10 @@ samp:not([class*="language-"]) {
 .card a.img-wrap img.yt-thumbnail {
 	margin: -9.4% 0 -9.4% 0;
 }
+/* card image aspect ratio */
+.card .thumbnail img {
+	aspect-ratio: 16 / 9;
+}
 
 /* align-items: center */
 .ai-center {
