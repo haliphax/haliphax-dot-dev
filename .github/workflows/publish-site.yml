@@ -26,7 +26,7 @@ jobs:
 
       - name: Detect changed files
         id: changes
-        uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v3
         with:
           filters: |
             content:
@@ -46,9 +46,9 @@ jobs:
       needs.changes.outputs.engine == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -56,7 +56,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache/restore@v4
         with:
           key: external-data
           path: 11ty/data/external
@@ -77,12 +77,12 @@ jobs:
           npm run check || true
           npm run build:11ty
 
-      - uses: actions/cache/save@v3
+      - uses: actions/cache/save@v4
         with:
           key: external-data
           path: 11ty/data/external
 
-      - uses: actions/upload-pages-artifact@v2
+      - uses: actions/upload-pages-artifact@v3
         with:
           path: docs/
 
@@ -100,4 +100,4 @@ jobs:
 
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4

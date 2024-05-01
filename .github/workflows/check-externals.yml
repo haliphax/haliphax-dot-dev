@@ -12,9 +12,9 @@ jobs:
       diff: ${{ steps.diff.outputs.diff }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version-file: .nvmrc
           cache: npm
@@ -22,7 +22,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - uses: actions/cache/restore@v3
+      - uses: actions/cache/restore@v4
         with:
           key: external-data
           path: 11ty/data/external
@@ -45,7 +45,7 @@ jobs:
           npm run check || diff=1
           echo "diff=$diff" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/cache/save@v3
+      - uses: actions/cache/save@v4
         with:
           key: external-data
           path: 11ty/data/external
@@ -55,7 +55,7 @@ jobs:
         run: npm run build:11ty
 
       - if: steps.diff.outputs.diff == '1'
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: docs/
 
@@ -74,4 +74,4 @@ jobs:
 
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v4
