@@ -270,6 +270,10 @@ samp:not([class*="language-"]) {
 .card .thumbnail img {
 	aspect-ratio: 16 / 9;
 }
+/* youtube thumbnail aspect ratio */
+.card .thumbnail img.yt-thumbnail {
+	aspect-ratio: 4 / 3;
+}
 
 /* align-items: center */
 .ai-center {
