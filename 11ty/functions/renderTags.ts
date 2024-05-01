@@ -7,8 +7,8 @@ const renderTags = (tags: string[], inline = false) => {
 	return inline
 		? /*html*/ `
 			<span role="contentinfo">
-				<span class="sr-only">Tags:</span>
 				${renderIcon("tag", "text-secondary mr-5")}
+				<span class="sr-only">Tags:</span>
 				<ul class="list-unstyled d-inline mb-5">
 				${filtered
 					.map(
