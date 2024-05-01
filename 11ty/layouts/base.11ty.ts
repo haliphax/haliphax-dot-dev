@@ -107,7 +107,7 @@ export = class Base {
 				</a>
 				<div class="page-wrapper with-sidebar"
 					data-sidebar-hidden="true"
-					data-sidebar-type="overlayed-sm-and-down" >
+					data-sidebar-type="overlayed-sm-and-down">
 					<button id="btn-sidebar-toggle" type="button"
 						class="btn btn-action position-absolute t-0 l-0 m-5">
 						<span class="icon-sidebar-o">${renderIcon("menu")}</span>
@@ -137,8 +137,8 @@ export = class Base {
 									<h1 class="text-center w-full">
 										<img
 											src="/img/header.gif"
-											height="686"
-											width="415"
+											height="24"
+											width="40"
 											alt="Magenta skull on purple circuit board logo" class="align-bottom"
 										/>
 										<a href="/" aria-label="Homepage">${data.strings.header}</a>

@@ -44,8 +44,10 @@ const renderCollection = (
 								<a href="${p.url}" id="${slug}"
 									class="btn btn-secondary d-inline-block">
 									${renderIcon("bookmark")}
-									<span aria-hidden="true">Read more</span>
-									<span class="sr-only">Read article: ${p.data.title}</span>
+									<span>
+										Read more
+										<span class="sr-only">- ${p.data.title}</span>
+									</span>
 								</a>
 							</div>
 						</div>
