@@ -8,10 +8,17 @@ const toggle = () =>
 		? wrapper.removeAttribute(dsh)
 		: wrapper.setAttribute(dsh, "true");
 
-media.matches && wrapper.removeAttribute(dsh);
-document
-	.getElementById("btn-sidebar-toggle")!
-	.addEventListener("click", toggle);
+if (!media.matches) wrapper.setAttribute(dsh, "true");
+
+const placeholder = document.createElement("span");
+const template = document.getElementById("tp-btn-sidebar-toggle")!;
+
+placeholder.innerHTML = template.innerHTML;
+
+const button = placeholder.querySelector("button")!;
+
+template.replaceWith(button);
+button.addEventListener("click", toggle);
 document
 	.querySelector(".sidebar + .content-wrapper")!
 	.addEventListener(

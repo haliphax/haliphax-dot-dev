@@ -106,14 +106,15 @@ export = class Base {
 					Skip to main content
 				</a>
 				<div class="page-wrapper with-sidebar"
-					data-sidebar-hidden="true"
 					data-sidebar-type="overlayed-sm-and-down">
-					<button id="btn-sidebar-toggle" type="button"
-						class="btn btn-action position-absolute t-0 l-0 m-5">
-						<span class="icon-sidebar-o">${renderIcon("menu")}</span>
-						<span class="icon-sidebar-x">${renderIcon("x")}</span>
-						<span class="sr-only">Toggle sidebar menu</span>
-					</button>
+					<template type="text/html" id="tp-btn-sidebar-toggle">
+						<button id="btn-sidebar-toggle" type="button"
+							class="btn btn-action position-absolute t-0 l-0 m-5">
+							<span class="icon-sidebar-o">${renderIcon("menu")}</span>
+							<span class="icon-sidebar-x">${renderIcon("x")}</span>
+							<span class="sr-only">Toggle sidebar menu</span>
+						</button>
+					</template>
 					<div class="sidebar">
 						<div class="sidebar-menu">
 							<nav class="sidebar-content">
