@@ -23,10 +23,9 @@ execute it as expected. This is already taken care of in the link above, but
 is excluded from the source code below for formatting reasons._
 
 ```javascript
-((d) =>
-  document.querySelectorAll("video").forEach((v) => (v.playbackRate = d)))(
-  prompt("Playback rate", 3.0),
-);
+((d) => {
+  document.querySelectorAll("video").forEach((v) => (v.playbackRate = d));
+})(prompt("Playback rate", 3.0));
 ```
 
 [bookmarklet]: https://en.wikipedia.org/wiki/Bookmarklet
