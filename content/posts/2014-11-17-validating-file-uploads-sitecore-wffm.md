@@ -4,7 +4,7 @@ tags:
   [
     "post",
     "c-sharp",
-    "dot net",
+    "dot-net",
     "fix",
     "forms",
     "my-software",

@@ -1,6 +1,6 @@
 ---
 title: "Using ASP.NET connection strings in PowerShell scripts"
-tags: ["post", "powershell", "aspx", "dot net"]
+tags: ["post", "powershell", "aspx", "dot-net"]
 layout: post
 ---
 

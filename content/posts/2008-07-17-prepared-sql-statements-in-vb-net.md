@@ -1,6 +1,6 @@
 ---
 title: "Prepared SQL statements in VB.NET"
-tags: ["post", "dot net", "security", "sql", "vbnet"]
+tags: ["post", "dot-net", "security", "sql", "vbnet"]
 layout: post
 ---
 

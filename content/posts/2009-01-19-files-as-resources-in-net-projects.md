@@ -1,6 +1,6 @@
 ---
 title: "Files as Resources in .NET projects"
-tags: ["post", "dot net", "vbnet"]
+tags: ["post", "dot-net", "vbnet"]
 layout: post
 ---
 

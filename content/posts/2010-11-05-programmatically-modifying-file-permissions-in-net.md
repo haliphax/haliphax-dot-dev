@@ -1,6 +1,6 @@
 ---
 title: "Programmatically modifying file permissions in .NET"
-tags: ["post", "c-sharp", "dot net", "security"]
+tags: ["post", "c-sharp", "dot-net", "security"]
 layout: post
 ---
 

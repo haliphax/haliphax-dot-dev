@@ -1,6 +1,6 @@
 ---
 title: "LDAP authentication with C#"
-tags: ["post", "aspx", "c-sharp", "dot net", "encryption", "ldap", "security"]
+tags: ["post", "aspx", "c-sharp", "dot-net", "encryption", "ldap", "security"]
 layout: post
 ---
 

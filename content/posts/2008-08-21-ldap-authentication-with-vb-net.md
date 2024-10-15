@@ -1,6 +1,6 @@
 ---
 title: "LDAP authentication with VB.NET"
-tags: ["post", "aspx", "dot net", "encryption", "ldap", "security", "vbnet"]
+tags: ["post", "aspx", "dot-net", "encryption", "ldap", "security", "vbnet"]
 layout: post
 ---
 

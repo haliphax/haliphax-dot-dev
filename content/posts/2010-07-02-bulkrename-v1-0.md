@@ -1,6 +1,6 @@
 ---
 title: "bulkRename v1.1"
-tags: ["post", "dot net", "my-software", "regex", "tool", "vbnet"]
+tags: ["post", "dot-net", "my-software", "regex", "tool", "vbnet"]
 layout: post
 ---
 

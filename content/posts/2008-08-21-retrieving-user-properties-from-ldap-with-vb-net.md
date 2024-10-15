@@ -1,6 +1,6 @@
 ---
 title: "Retrieving user properties from LDAP with VB.NET"
-tags: ["post", "dot net", "ldap", "vbnet"]
+tags: ["post", "dot-net", "ldap", "vbnet"]
 layout: post
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Check all CheckBoxes in a GridView using jQuery"
 tags:
-  ["post", "aspx", "c-sharp", "dot net", "javascript", "jquery", "my-software"]
+  ["post", "aspx", "c-sharp", "dot-net", "javascript", "jquery", "my-software"]
 layout: post
 ---
 
@@ -42,10 +42,10 @@ event handler in a `<script>` block:
 
 ```js
 $("#chkAll").change(function () {
-	$("#<%=myGridView.ClientID%> input[type=checkbox]").attr(
-		"checked",
-		$(this).attr("checked"),
-	);
+  $("#<%=myGridView.ClientID%> input[type=checkbox]").attr(
+    "checked",
+    $(this).attr("checked"),
+  );
 });
 ```
 

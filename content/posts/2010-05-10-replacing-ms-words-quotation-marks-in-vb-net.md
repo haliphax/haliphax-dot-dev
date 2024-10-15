@@ -1,6 +1,6 @@
 ---
 title: "Replacing MS Word's quotation marks in VB.NET"
-tags: ["post", "dot net", "regex", "vbnet"]
+tags: ["post", "dot-net", "regex", "vbnet"]
 layout: post
 ---
 

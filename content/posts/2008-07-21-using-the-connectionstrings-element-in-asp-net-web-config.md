@@ -1,6 +1,6 @@
 ---
 title: "Using the ConnectionStrings element in ASP.NET web.config"
-tags: ["post", "aspx", "dot net", "sql"]
+tags: ["post", "aspx", "dot-net", "sql"]
 layout: post
 ---
 

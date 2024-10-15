@@ -1,6 +1,6 @@
 ---
 title: "Using WSE 3.0 with Visual Studio 2008 and .NET 3.5"
-tags: ["post", "dot net", "fix", "tool", "tutorial"]
+tags: ["post", "dot-net", "fix", "tool", "tutorial"]
 layout: post
 ---
 

@@ -4,7 +4,7 @@ tags:
   [
     "post",
     "c-sharp",
-    "dot net",
+    "dot-net",
     "git",
     "my-software",
     "open-source",
