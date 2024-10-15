@@ -169,7 +169,7 @@ details > :not(summary) {
 		padding 0.2s;
 }
 details:not([open]) > :not(summary),
-details.closing > :not(summary) {
+details.x > :not(summary) {
 	transition:
 		font-size 0.2s 0.3s,
 		margin 0.2s 0.3s,
@@ -180,7 +180,7 @@ details.closing > :not(summary) {
 	opacity: 0;
 	padding: 0;
 }
-details.loading > :not(summary) {
+details.l > :not(summary) {
 	display: none;
 }
 summary {
