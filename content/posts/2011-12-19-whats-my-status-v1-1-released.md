@@ -1,7 +1,16 @@
 ---
 title: "What's My Status? v1.1 released"
 tags:
-  ["post", "my-software", "php", "plugin", "statusnet", "twitter", "wordpress"]
+  [
+    "post",
+    "my-software",
+    "php",
+    "plugin",
+    "statusnet",
+    "twitter",
+    "wordpress",
+    "archived",
+  ]
 layout: post
 ---
 

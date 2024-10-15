@@ -1,6 +1,6 @@
 ---
 title: "Jumping on the static site generator bandwagon with Pelican"
-tags: ["post", "python"]
+tags: ["post", "python", "archived"]
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "UserScript: Tidy up TVGuide.com listings"
-tags: ["post", "javascript", "my-software", "userscript"]
+tags: ["post", "javascript", "my-software", "userscript", "archived"]
 layout: post
 ---
 
@@ -19,21 +19,21 @@ all-encompassing, manageable scroll bar for perusal.<!--more-->
 // ==/UserScript==
 
 window.onload = function () {
-	var l = document.querySelector(".listings-w");
-	var b = document.querySelector("body");
-	l.parentNode.removeChild(l);
-	b.innerHTML = "";
-	b.appendChild(l);
-	l.setAttribute(
-		"style",
-		"position:absolute;top:0;left:0;width:100%;height:100%",
-	);
-	document
-		.querySelector(".gridDiv")
-		.setAttribute(
-			"style",
-			"height:auto;overflow-x:hidden;border-bottom:solid 1px #DCDDCB",
-		);
+  var l = document.querySelector(".listings-w");
+  var b = document.querySelector("body");
+  l.parentNode.removeChild(l);
+  b.innerHTML = "";
+  b.appendChild(l);
+  l.setAttribute(
+    "style",
+    "position:absolute;top:0;left:0;width:100%;height:100%",
+  );
+  document
+    .querySelector(".gridDiv")
+    .setAttribute(
+      "style",
+      "height:auto;overflow-x:hidden;border-bottom:solid 1px #DCDDCB",
+    );
 };
 ```
 

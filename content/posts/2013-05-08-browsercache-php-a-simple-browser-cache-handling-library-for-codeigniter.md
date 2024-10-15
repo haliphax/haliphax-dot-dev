@@ -1,6 +1,6 @@
 ---
 title: "Browsercache.php: A simple browser-cache-handling library for CodeIgniter"
-tags: ["post", "codeigniter", "my-software", "php"]
+tags: ["post", "codeigniter", "my-software", "php", "archived"]
 layout: post
 ---
 

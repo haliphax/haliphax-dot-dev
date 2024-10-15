@@ -1,6 +1,6 @@
 ---
 title: "Truck It!: Mozilla TowTruck in a bookmarklet"
-tags: ["post", "bookmarklets", "javascript", "tool"]
+tags: ["post", "bookmarklets", "javascript", "tool", "archived"]
 layout: post
 ---
 

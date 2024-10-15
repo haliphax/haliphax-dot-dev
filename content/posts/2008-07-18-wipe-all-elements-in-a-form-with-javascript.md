@@ -1,6 +1,6 @@
 ---
 title: "Wipe all elements in a form with Javascript"
-tags: ["post", "forms", "javascript"]
+tags: ["post", "forms", "javascript", "archived"]
 layout: post
 ---
 

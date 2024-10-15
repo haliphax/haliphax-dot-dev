@@ -1,6 +1,6 @@
 ---
 title: "SVG polyfill in pure Javascript"
-tags: ["post", "javascript", "my-software", "polyfill", "svg"]
+tags: ["post", "javascript", "my-software", "polyfill", "svg", "archived"]
 layout: post
 ---
 
@@ -15,19 +15,19 @@ rewrote it in pure Javascript.<!--more-->
 
 ```js
 if (
-	!(
-		!!document.createElementNS &&
-		!!document.createElementNS("http://www.w3.org/2000/svg", "svg")
-			.createSVGRect
-	)
+  !(
+    !!document.createElementNS &&
+    !!document.createElementNS("http://www.w3.org/2000/svg", "svg")
+      .createSVGRect
+  )
 ) {
-	var imgs = document.getElementsByTagName("img");
+  var imgs = document.getElementsByTagName("img");
 
-	for (var i = 0; i < imgs.length; i++) {
-		imgs[i].setAttribute(
-			"src",
-			imgs[i].getAttribute("src").replace(/\.svg/, ".png"),
-		);
-	}
+  for (var i = 0; i < imgs.length; i++) {
+    imgs[i].setAttribute(
+      "src",
+      imgs[i].getAttribute("src").replace(/\.svg/, ".png"),
+    );
+  }
 }
 ```

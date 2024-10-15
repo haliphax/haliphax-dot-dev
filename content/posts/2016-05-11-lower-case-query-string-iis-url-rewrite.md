@@ -1,6 +1,6 @@
 ---
 title: "Lower-case specific query string keys with IIS URL Rewrite"
-tags: ["post", "fix", "iis", "regex", "seo"]
+tags: ["post", "fix", "iis", "regex", "seo", "archived"]
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "Disable SSLv3 to avoid POODLE attack in web.py"
-tags: ["post", "encryption", "my-software", "python", "security"]
+tags: ["post", "encryption", "my-software", "python", "security", "archived"]
 layout: post
 ---
 

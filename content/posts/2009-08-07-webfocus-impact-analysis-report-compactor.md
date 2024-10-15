@@ -1,7 +1,15 @@
 ---
 title: "WebFOCUS Impact Analysis report compactor"
 tags:
-  ["post", "business-intelligence", "my-software", "php", "regex", "webfocus"]
+  [
+    "post",
+    "business-intelligence",
+    "my-software",
+    "php",
+    "regex",
+    "webfocus",
+    "archived",
+  ]
 layout: post
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: "View live page source with Javascript"
-tags: ["post", "bookmarklets", "javascript", "my-software", "tool"]
+tags: ["post", "bookmarklets", "javascript", "my-software", "tool", "archived"]
 layout: post
 ---
 

@@ -57,6 +57,9 @@ a.badge {
 .container {
 	max-width: 960px;
 }
+.page-wrapper > .content-wrapper {
+	overflow-y: scroll;
+}
 ::marker {
 	color: var(--pink-color-light);
 }

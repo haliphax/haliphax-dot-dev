@@ -1,6 +1,7 @@
 ---
 title: "Programmatically compile Audiences in SharePoint 2010"
-tags: ["post", "aspx", "c-sharp", "powershell", "sharepoint", "tool"]
+tags:
+  ["post", "aspx", "c-sharp", "powershell", "sharepoint", "tool", "archived"]
 layout: post
 ---
 

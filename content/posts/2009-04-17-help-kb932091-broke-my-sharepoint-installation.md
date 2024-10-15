@@ -1,6 +1,6 @@
 ---
 title: "Help! KB932091 broke my SharePoint installation!"
-tags: ["post", "sharepoint"]
+tags: ["post", "sharepoint", "archived"]
 layout: post
 ---
 

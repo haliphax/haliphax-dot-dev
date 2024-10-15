@@ -1,6 +1,6 @@
 ---
 title: "Redirect Tomcat to FQDN"
-tags: ["post", "security", "tomcat"]
+tags: ["post", "security", "tomcat", "archived"]
 layout: post
 ---
 

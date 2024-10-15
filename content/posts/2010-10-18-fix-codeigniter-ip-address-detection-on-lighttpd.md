@@ -1,6 +1,6 @@
 ---
 title: "Fix CodeIgniter IP address detection on lighttpd"
-tags: ["post", "codeigniter", "lighttpd", "php"]
+tags: ["post", "codeigniter", "lighttpd", "php", "archived"]
 layout: post
 ---
 

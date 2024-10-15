@@ -1,6 +1,6 @@
 ---
 title: 'Add "desktop version" and "mark all as read" links to Tiny Tiny RSS mobile plugin'
-tags: ["post", "php", "plugin", "tool"]
+tags: ["post", "php", "plugin", "tool", "archived"]
 layout: post
 ---
 

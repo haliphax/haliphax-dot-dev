@@ -1,6 +1,6 @@
 ---
 title: "Linux: Get size of sub-directores in current directory"
-tags: ["post", "linux", "shell", "tool"]
+tags: ["post", "linux", "shell", "tool", "archived"]
 layout: post
 ---
 

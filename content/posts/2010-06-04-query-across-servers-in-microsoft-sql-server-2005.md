@@ -1,6 +1,6 @@
 ---
 title: "Query across servers in Microsoft SQL Server 2005"
-tags: ["post", "sql"]
+tags: ["post", "sql", "archived"]
 layout: post
 ---
 

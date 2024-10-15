@@ -1,6 +1,16 @@
 ---
 title: "URL rewriting template engine"
-tags: ["post", "apache", "lighttpd", "my-software", "php", "regex", "tool"]
+tags:
+  [
+    "post",
+    "apache",
+    "lighttpd",
+    "my-software",
+    "php",
+    "regex",
+    "tool",
+    "archived",
+  ]
 layout: post
 ---
 

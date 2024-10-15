@@ -1,6 +1,6 @@
 ---
 title: "Posts to resume shortly"
-tags: ["post", "blog"]
+tags: ["post", "blog", "archived"]
 layout: post
 ---
 

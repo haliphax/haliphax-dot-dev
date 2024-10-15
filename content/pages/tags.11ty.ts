@@ -30,12 +30,12 @@ export = class Tags {
 					${tags
 						.map(
 							(t) => /*html*/ `
-						<li class="d-inline-block mr-5 mb-10">
-							<a href="/tags/${t}/" class="btn btn-secondary">
-								${renderIcon("tag")} ${t}
-							</a>
-						</li>
-						`,
+								<li class="d-inline-block mr-5 mb-10">
+									<a href="/tags/${t}/" class="btn btn-secondary">
+										${renderIcon("tag")} ${t}
+									</a>
+								</li>
+								`,
 						)
 						.join("")}
 				</ul>
