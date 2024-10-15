@@ -10,7 +10,7 @@ function renderGitHubLink(data: any) {
 			<small>
 				<a href="${githubLink}" class="no-external">
 					${renderIcon("edit")}
-					Suggest an edit
+					Suggest a change
 				</a>
 			</small>
 			`;
