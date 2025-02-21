@@ -29,17 +29,17 @@ export = class Post {
 		const posted = data.page.date.toISOString().replace(/T.*$/, "");
 
 		return /*html*/ `
-			${renderArchivedNotice(data.tags)}
-			${renderTags(data.tags)}
+			${await renderArchivedNotice(data.tags)}
+			${await renderTags(data.tags)}
 			<div class="mb-10 d-flex flex-row flex-grow-1">
 				${await renderReadingTime(data)}
-				${renderGitHubLink(data)}
+				${await renderGitHubLink(data)}
 			</div>
 			<div class="card border mx-0 pb-0 pt-5 mt-0 mb-0">
 				${data.content}
 			</div>
 			<p class="text-muted" role="contentinfo">
-				${renderIcon("calendar")}
+				${await renderIcon("calendar")}
 				Posted: <time datetime="${posted}">${posted}</time>
 			</p>
 			`;

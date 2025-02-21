@@ -28,7 +28,7 @@ export = class Tag {
 		};
 	}
 
-	render({
+	async render({
 		collections,
 		tag,
 	}: {
@@ -36,10 +36,10 @@ export = class Tag {
 		tag: string;
 	}) {
 		return /*html*/ `
-			${renderCollection(collections[tag])}
+			${await renderCollection(collections[tag])}
 			<p>
 				<a href="/tags/">
-					${renderIcon("tag")} View all tags
+					${await renderIcon("tag")} View all tags
 				</a>
 			</p>
 			`;

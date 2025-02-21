@@ -1,6 +1,6 @@
 import renderIcon from "./renderIcon";
 
-function renderGitHubLink(data: any) {
+async function renderGitHubLink(data: any) {
 	const encodedPath = encodeURIComponent(
 		[data.misc.githubRoot, data.page.inputPath.substring(1)].join(""),
 	);
@@ -9,7 +9,7 @@ function renderGitHubLink(data: any) {
 	return /*html*/ `
 			<small>
 				<a href="${githubLink}" class="no-external">
-					${renderIcon("edit")}
+					${await renderIcon("edit")}
 					Suggest a change
 				</a>
 			</small>

@@ -5,7 +5,7 @@ import renderIcon from "../functions/renderIcon";
 
 export = class Base {
 	/** generate sidebar link for given object */
-	generateSidebarLink(opts: any) {
+	async generateSidebarLink(opts: any) {
 		let attrs = "";
 
 		if (opts.hasOwnProperty("attributes")) {
@@ -17,7 +17,7 @@ export = class Base {
 		return /*html*/ `
 			<li class="d-block">
 				<a href="${opts.url}" class="sidebar-link" ${attrs}>
-					<span>${renderIcon(opts.icon)} ${opts.name}</span>
+					<span>${await renderIcon(opts.icon)} ${opts.name}</span>
 				</a>
 			</li>
 			`;
@@ -67,7 +67,7 @@ export = class Base {
 					I'm streaming on Twitch <em><strong>right now</strong></em>.	You should stop by.
 					<a href="https://www.twitch.tv/${process.env.TWITCH_USERNAME}"
 						class="btn btn-sm btn-primary ml-10 no-external">
-						${renderIcon("twitch")}
+						${await renderIcon("twitch")}
 						Let's go!
 					</a>
 				</div>
@@ -102,7 +102,7 @@ export = class Base {
 			</head>
 			<body class="dark-mode mh-full h-full">
 				<a class="btn btn-primary" id="skip-nav" href="#main-content">
-					${renderIcon("fast-forward")}
+					${await renderIcon("fast-forward")}
 					Skip to main content
 				</a>
 				<div class="page-wrapper with-sidebar"
@@ -110,8 +110,8 @@ export = class Base {
 					<template type="text/html" id="tp-btn-sidebar-toggle">
 						<button id="btn-sidebar-toggle" type="button"
 							class="btn btn-action position-absolute t-0 l-0 m-5">
-							<span class="icon-sidebar-o">${renderIcon("menu")}</span>
-							<span class="icon-sidebar-x">${renderIcon("x")}</span>
+							<span class="icon-sidebar-o">${await renderIcon("menu")}</span>
+							<span class="icon-sidebar-x">${await renderIcon("x")}</span>
 							<span class="sr-only">Toggle sidebar menu</span>
 						</button>
 					</template>
@@ -121,12 +121,18 @@ export = class Base {
 								<h5 class="sidebar-title">${data.strings.siteMenuHeader}</h5>
 								<div class="sidebar-divider"></div>
 								<ul class="list-unstyled d-flex flex-column mb-20">
-									${data.links.map(this.generateSidebarLink.bind(this)).join("")}
+									${(await Promise.all(data.links.map(this.generateSidebarLink.bind(this)))).join(
+										"",
+									)}
 								</ul>
 								<h5 class="sidebar-title">${data.strings.socialMenuHeader}</h5>
 								<div class="sidebar-divider"></div>
 								<ul class="list-unstyled d-flex flex-column">
-									${data.socials.map(this.generateSidebarLink.bind(this)).join("")}
+									${(
+										await Promise.all(
+											data.socials.map(this.generateSidebarLink.bind(this)),
+										)
+									).join("")}
 								</ul>
 							</nav>
 						</div>

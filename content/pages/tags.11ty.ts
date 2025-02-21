@@ -13,7 +13,7 @@ export = class Tags {
 		};
 	}
 
-	render(data: any) {
+	async render(data: any) {
 		const tags = Object.keys(data.collections)
 			.filter(
 				(t) =>
@@ -27,17 +27,19 @@ export = class Tags {
 		return /*html*/ `
 			<div class="card border mt-0 mx-0 pt-20 pb-0">
 				<ul class="list-unstyled text-center">
-					${tags
-						.map(
-							(t) => /*html*/ `
+					${(
+						await Promise.all(
+							tags.map(
+								async (t) => /*html*/ `
 								<li class="d-inline-block mr-5 mb-10">
 									<a href="/tags/${t}/" class="btn btn-secondary">
-										${renderIcon("tag")} ${t}
+										${await renderIcon("tag")} ${t}
 									</a>
 								</li>
 								`,
+							),
 						)
-						.join("")}
+					).join("")}
 				</ul>
 			</div>
 			`;

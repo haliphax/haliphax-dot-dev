@@ -18,14 +18,13 @@ const data = [
 		name: "Mastodon",
 		url: "https://hachyderm.io/@haliphax",
 		icon: "message-circle",
-		attributes: {
-			rel: "me",
-		},
+		attributes: { rel: "me" },
 	},
 	{
-		name: "Instagram",
-		url: "https://www.instagram.com/haliphax",
-		icon: "instagram",
+		name: "Bookwyrm",
+		url: "https://bookwyrm.social/user/haliphax",
+		icon: "book",
+		attributes: { rel: "me" },
 	},
 	{
 		name: "Ko-fi",

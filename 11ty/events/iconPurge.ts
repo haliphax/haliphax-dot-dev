@@ -32,7 +32,8 @@ const getHtmlFiles = async (dir: string): Promise<string[]> =>
 const iconPurge = (cfg: UserConfig) => {
 	cfg.on("eleventy.after", async ({ dir }: { dir: EleventyDir }) => {
 		const files = await getHtmlFiles(dir.output);
-		const iconRegex = /<use href="\/img\/feather-sprite\.svg#([^"]+)"/gi;
+		const iconRegex =
+			/<use href="\/img\/feather-sprite\.svg\?_=[^#]+#([^"]+)"/gi;
 		const iconsUsed = new Map<string, boolean>();
 
 		// find icons used in each file
@@ -42,10 +43,7 @@ const iconPurge = (cfg: UserConfig) => {
 
 			do {
 				match = iconRegex.exec(content);
-
-				if (match !== null) {
-					iconsUsed.set(match[1], true);
-				}
+				if (match !== null) iconsUsed.set(match[1], true);
 			} while (match);
 		}
 
@@ -53,12 +51,15 @@ const iconPurge = (cfg: UserConfig) => {
 			await readFile(`${dir.output}/img/feather-sprite.svg`, fileOpts),
 		);
 		const defs = svg.children[0];
+		const newDefs = [];
 
 		// loop through icons, removing unused
 		for (let i = 0; i < defs.children.length; i++) {
 			const icon = defs.children[i];
-			if (!iconsUsed.has(icon.attributes["id"])) delete defs.children[i];
+			if (iconsUsed.has(icon.attributes["id"])) newDefs.push(icon);
 		}
+
+		defs.children = newDefs;
 
 		await writeFile(
 			`${dir.output}/img/feather-sprite.svg`,

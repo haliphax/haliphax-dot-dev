@@ -15,7 +15,7 @@ export = class Index {
 		};
 	}
 
-	render(data: any) {
+	async render(data: any) {
 		const vod = data.external?.twitch?.latestVod;
 		const vodDescription = getDescription(
 			vod?.description,
@@ -42,7 +42,7 @@ export = class Index {
 					? ""
 					: /*html*/ `
 						<h2 class="mb-0">
-							<span class="text-primary mr-5">${renderIcon("tv")}</span>
+							<span class="text-primary mr-5">${await renderIcon("tv")}</span>
 							Latest stream
 						</h2>
 						<div class="row d-flex">
@@ -68,7 +68,7 @@ export = class Index {
 								<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
 									<a href="${vod.url}"
 										class="btn btn-secondary d-inline-block no-external">
-										${renderIcon("play")}
+										${await renderIcon("play")}
 										<span>
 											Watch VOD
 											<span class="sr-only">- ${vod.title}</span>
@@ -84,7 +84,7 @@ export = class Index {
 					? ""
 					: /*html*/ `
 						<h2 class="mb-0">
-							<span class="text-primary mr-5">${renderIcon("film")}</span>
+							<span class="text-primary mr-5">${await renderIcon("film")}</span>
 							Latest video
 						</h2>
 						<div class="row d-flex">
@@ -112,7 +112,7 @@ export = class Index {
 								<div class="text-right position-absolute bottom-0 right-0 mr-10 mb-10">
 									<a href="https://youtu.be/${yt.snippet.resourceId.videoId}"
 										class="btn btn-secondary d-inline-block no-external">
-										${renderIcon("play")}
+										${await renderIcon("play")}
 										<span>
 											Watch video
 											<span class="sr-only">- ${yt.snippet.title}</span>
@@ -124,10 +124,10 @@ export = class Index {
 						`
 			}
 			<h2 class="mb-0">
-				<span class="text-primary mr-5">${renderIcon("book-open")}</span>
+				<span class="text-primary mr-5">${await renderIcon("book-open")}</span>
 				Recent posts
 			</h2>
-			${renderCollection(data.collections.post, 3, true)}
+			${await renderCollection(data.collections.post, 3, true)}
 			`;
 	}
 };

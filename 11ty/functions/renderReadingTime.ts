@@ -15,7 +15,7 @@ const renderReadingTime = async (data: any) => {
 
 	return /*html*/ `
 		<small class="text-muted flex-fill ai-center">
-			${renderIcon("clock")}
+			${await renderIcon("clock")}
 			Reading time: ${readTime} minute${readTime !== 1 ? "s" : ""}
 		</small>
 		`;
