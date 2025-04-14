@@ -1,6 +1,6 @@
 ---
 title: "Mozilla's TogetherJS in a bookmarklet"
-tags: ["post", "bookmarklets", "javascript", "tool"]
+tags: ["post", "bookmarklet", "javascript", "tool"]
 layout: post
 ---
 

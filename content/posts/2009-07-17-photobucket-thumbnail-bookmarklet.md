@@ -1,6 +1,6 @@
 ---
 title: "Photobucket thumbnail bookmarklet"
-tags: ["post", "bookmarklets", "javascript", "my-software", "tool"]
+tags: ["post", "bookmarklet", "javascript", "my-software", "tool"]
 layout: post
 ---
 
@@ -27,11 +27,11 @@ javascript:i=prompt('Photobucket URL');void(prompt('Copy and paste this','[url='
 ```js
 javascript: i = prompt("Photobucket URL");
 void prompt(
-	"Copy and paste this",
-	"<a href='" +
-		i +
-		"'><img src='" +
-		i.replace(/\/([\^./]+?\.[\^./]+?)$/, "/th_$1") +
-		"' /></a>",
+  "Copy and paste this",
+  "<a href='" +
+    i +
+    "'><img src='" +
+    i.replace(/\/([\^./]+?\.[\^./]+?)$/, "/th_$1") +
+    "' /></a>",
 );
 ```

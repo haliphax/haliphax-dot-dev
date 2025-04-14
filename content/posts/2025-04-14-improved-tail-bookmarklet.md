@@ -1,6 +1,6 @@
 ---
 title: Improved "tail" bookmarklet
-tags: ["post", "javascript", "bookmarklet", "my-software"]
+tags: ["post", "javascript", "bookmarklet", "tool"]
 layout: post
 ---
 

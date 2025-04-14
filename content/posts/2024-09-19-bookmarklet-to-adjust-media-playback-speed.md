@@ -1,6 +1,6 @@
 ---
 title: Bookmarklet to adjust media playback speed
-tags: ["post", "audio", "bookmarklets", "javascript", "video"]
+tags: ["post", "audio", "bookmarklet", "javascript", "video"]
 layout: post
 ---
 

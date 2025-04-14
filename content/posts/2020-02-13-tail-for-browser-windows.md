@@ -1,6 +1,6 @@
 ---
 title: "Tail for browser windows"
-tags: ["post", "bookmarklets", "javascript", "tool"]
+tags: ["post", "bookmarklet", "javascript", "tool"]
 layout: post
 ---
 
