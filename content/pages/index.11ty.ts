@@ -37,6 +37,11 @@ export = class Index {
 					</div>
 				</details>
 			</div>
+			<h2 class="mb-0">
+				<span class="text-primary mr-5">${await renderIcon("book-open")}</span>
+				Recent posts
+			</h2>
+			${await renderCollection(data.collections.post, 3, true)}
 			${
 				!vod?.url
 					? ""
@@ -123,11 +128,6 @@ export = class Index {
 						</div>
 						`
 			}
-			<h2 class="mb-0">
-				<span class="text-primary mr-5">${await renderIcon("book-open")}</span>
-				Recent posts
-			</h2>
-			${await renderCollection(data.collections.post, 3, true)}
 			`;
 	}
 };
