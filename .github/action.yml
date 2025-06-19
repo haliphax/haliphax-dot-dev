@@ -1,0 +1,46 @@
+name: Checkout repo and setup Node
+description: haliphax-dot-dev composite action for setting up jobs
+
+inputs:
+  token:
+    description: alternative GitHub token
+    required: false
+    default: ${{ github.token }}
+
+runs:
+  using: composite
+  steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ inputs.token }}
+
+    - name: Set up Node
+      uses: actions/setup-node@v4
+      with:
+        node-version-file: .nvmrc
+        cache: npm
+
+    - name: Generate node_modules cache key
+      id: cache-key
+      shell: bash
+      run: echo "CACHE_KEY=deps-${{ hashFiles('package*.json') }}" >> $GITHUB_OUTPUT
+
+    - name: Get cached dependencies
+      id: cache-restore
+      uses: actions/cache/restore@v4
+      with:
+        key: ${{ steps.cache-key.outputs.CACHE_KEY }}
+        path: ./node_modules
+
+    - name: Install dependencies
+      if: steps.cache-restore.outputs.cache-hit != 'true'
+      run: npm ci
+      shell: bash
+
+    - name: Save dependencies cache
+      if: steps.cache-restore.outputs.cache-hit != 'true'
+      uses: actions/cache/save@v4
+      with:
+        key: ${{ steps.cache-key.outputs.CACHE_KEY }}
+        path: ./node_modules
