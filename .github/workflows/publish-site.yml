@@ -29,22 +29,20 @@ jobs:
         uses: dorny/paths-filter@v3
         with:
           filters: |
-            content:
+            changed:
+              - "*.json"
+              - ".eleventy.ts"
+              - "11ty/**"
               - "content/**"
               - "data/**"
               - "static/**"
-            engine:
-              - ".eleventy.ts"
-              - "11ty/**"
               - "tasks/**"
-              - "*.json"
 
   build:
     needs: changes
     if: |
       github.event.inputs.manual != '' ||
-      needs.changes.outputs.content == 'true' ||
-      needs.changes.outputs.engine == 'true'
+      needs.changes.outputs.changed == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: haliphax/haliphax-dot-dev/.github@main
