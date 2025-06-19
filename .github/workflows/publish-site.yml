@@ -36,6 +36,7 @@ jobs:
             engine:
               - ".eleventy.ts"
               - "11ty/**"
+              - "tasks/**"
               - "*.json"
 
   build:
