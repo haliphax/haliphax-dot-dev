@@ -24,21 +24,18 @@ jobs:
 
       - uses: actions/cache/restore@v4
         with:
-          key: external-data
+          key: external-data-${{ github.run_id }}
           path: 11ty/data/external
+          restore-keys: external-data-
 
       - id: diff
         name: Check sources
         env:
-          GH_TOKEN: ${{ github.token }}
           TWITCH_CLIENT_ID: ${{ secrets.TWITCH_CLIENT_ID }}
           TWITCH_CLIENT_SECRET: ${{ secrets.TWITCH_CLIENT_SECRET }}
           TWITCH_USERNAME: ${{ secrets.TWITCH_USERNAME }}
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: |
-          # clear cache
-          gh cache delete external-data || true
-
           # compare API response with locally cached JSON data
           npm run build:ts
           diff=0
@@ -47,7 +44,7 @@ jobs:
 
       - uses: actions/cache/save@v4
         with:
-          key: external-data
+          key: external-data-${{ github.run_id }}
           path: 11ty/data/external
 
       - if: steps.diff.outputs.diff == '1'
