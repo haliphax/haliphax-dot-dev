@@ -29,7 +29,7 @@
 		"typescript": "^5.1.6"
 	},
 	"engines": {
-		"node": "^20"
+		"node": ">=22"
 	},
 	"license": "MIT",
 	"name": "haliphax-dot-dev",
