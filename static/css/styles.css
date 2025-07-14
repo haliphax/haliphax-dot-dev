@@ -258,7 +258,7 @@ samp:not([class*="language-"]) {
 .card a.img-wrap {
 	display: flex;
 	overflow: hidden;
-	transition-duration: 0.5s;
+	transition-duration: 0.25s;
 	transition-property: transform;
 }
 .card a.img-wrap:hover {
