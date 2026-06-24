@@ -11,12 +11,12 @@ runs:
   using: composite
   steps:
     - name: Check out repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v7
       with:
         token: ${{ inputs.token }}
 
     - name: Set up Node
-      uses: actions/setup-node@v4
+      uses: actions/setup-node@v6
       with:
         node-version-file: .nvmrc
         cache: npm
@@ -28,7 +28,7 @@ runs:
 
     - name: Get cached dependencies
       id: cache-restore
-      uses: actions/cache/restore@v4
+      uses: actions/cache/restore@v6
       with:
         key: ${{ steps.cache-key.outputs.CACHE_KEY }}
         path: ./node_modules
@@ -40,7 +40,7 @@ runs:
 
     - name: Save dependencies cache
       if: steps.cache-restore.outputs.cache-hit != 'true'
-      uses: actions/cache/save@v4
+      uses: actions/cache/save@v6
       with:
         key: ${{ steps.cache-key.outputs.CACHE_KEY }}
         path: ./node_modules

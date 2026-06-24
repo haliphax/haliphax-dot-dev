@@ -21,11 +21,11 @@ jobs:
       changed: ${{ steps.changes.outputs.changed }}
     steps:
       - name: Check out
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Detect changed files
         id: changes
-        uses: dorny/paths-filter@v3
+        uses: dorny/paths-filter@v4
         with:
           filters: |
             changed:
@@ -54,12 +54,12 @@ jobs:
           YT_API_KEY: ${{ secrets.YT_API_KEY }}
         run: npm run full
 
-      - uses: actions/cache/save@v4
+      - uses: actions/cache/save@v6
         with:
           key: external-data-${{ github.run_id }}
           path: 11ty/data/external
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: docs/
 
@@ -77,4 +77,4 @@ jobs:
 
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5

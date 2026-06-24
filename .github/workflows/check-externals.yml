@@ -14,7 +14,7 @@ jobs:
     steps:
       - uses: haliphax/haliphax-dot-dev/.github@main
 
-      - uses: actions/cache/restore@v4
+      - uses: actions/cache/restore@v6
         with:
           key: external-data-${{ github.run_id }}
           path: 11ty/data/external
@@ -34,7 +34,7 @@ jobs:
           npm run check || diff=1
           echo "diff=$diff" >> "$GITHUB_OUTPUT"
 
-      - uses: actions/cache/save@v4
+      - uses: actions/cache/save@v6
         with:
           key: external-data-${{ github.run_id }}
           path: 11ty/data/external
@@ -44,7 +44,7 @@ jobs:
         run: npm run build:11ty
 
       - if: steps.diff.outputs.diff == '1'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: docs/
 
@@ -63,4 +63,4 @@ jobs:
 
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
