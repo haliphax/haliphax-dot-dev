@@ -18,8 +18,7 @@ jobs:
     name: Change detection
     runs-on: ubuntu-latest
     outputs:
-      content: ${{ steps.changes.outputs.content }}
-      engine: ${{ steps.changes.outputs.engine }}
+      changed: ${{ steps.changes.outputs.changed }}
     steps:
       - name: Check out
         uses: actions/checkout@v4
