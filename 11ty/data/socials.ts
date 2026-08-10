@@ -31,6 +31,11 @@ const data = [
 		url: "https://ko-fi.com/haliphax",
 		icon: "coffee",
 	},
+	{
+		name: "Patreon",
+		url: "https://patreon.com/haliphax",
+		icon: "dollar-sign",
+	},
 ];
 
 export = data;
