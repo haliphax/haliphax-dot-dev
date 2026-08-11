@@ -21,6 +21,11 @@ const data = [
 		attributes: { rel: "me" },
 	},
 	{
+		name: "3D Printing",
+		url: "https://3dp.oddnetwork.org",
+		icon: "box",
+	},
+	{
 		name: "Bookwyrm",
 		url: "https://bookwyrm.social/user/haliphax",
 		icon: "book",
