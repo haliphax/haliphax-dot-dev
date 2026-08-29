@@ -19,6 +19,11 @@ const data = [
 		url: "/license-info/",
 		icon: "lock",
 	},
+	{
+		name: "Feed",
+		url: "/rss.xml",
+		icon: "rss",
+	},
 ];
 
 export = data;
