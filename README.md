@@ -195,7 +195,6 @@ These are equivalent to _filters_ in other templating languages (e.g. nunjucks).
 | `renderCollection(items, limit, jumboFirst)` | Render a collection of pages                                                           |
 | `renderGitHubLink(data)`                     | Render link to GitHub for editing the current page                                     |
 | `renderIcon(icon)`                           | Render the provided [Feather Icons][] sprite                                           |
-| `renderLazyImage(html)`                      | Render a lazy loaded image of the provided &lt;img&gt; element                         |
 | `renderReadingTime(data)`                    | Render the reading time information for a page/post                                    |
 | `renderTags(tags)`                           | Render a collection of tags                                                            |
 

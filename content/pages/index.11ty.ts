@@ -1,7 +1,6 @@
 import getDescription from "../../11ty/functions/getDescription";
 import renderCollection from "../../11ty/functions/renderCollection";
 import renderIcon from "../../11ty/functions/renderIcon";
-import renderLazyImage from "../../11ty/functions/renderLazyImage";
 
 export = class Index {
 	get data() {
@@ -55,11 +54,9 @@ export = class Index {
 								<div class="col-12 col-sm-6 col-md-12 col-lg-6 thumbnail" aria-hidden="true">
 									<div class="mr-sm-10">
 										<a href="${vod?.url}" class="no-external img-wrap mb-5">
-											${renderLazyImage(/*html*/ `
-												<img src="${vod.thumbnail_url}" width="640"
-													height="360" class="w-full h-auto border-0"
-													alt="Video thumbnail" />
-												`)}
+											<img src="${vod.thumbnail_url}" width="640"
+												height="360" class="w-full h-auto border-0"
+												alt="Video thumbnail" loading="lazy" />
 										</a>
 									</div>
 								</div>
@@ -99,11 +96,10 @@ export = class Index {
 										<a href="https://youtu.be/${
 											yt.snippet.resourceId.videoId
 										}" class="no-external img-wrap mb-5">
-											${renderLazyImage(/*html*/ `
 												<img src="${yt.snippet.thumbnails.standard.url}"
 													width="1280" height="720" alt="Video thumbnail"
-													class="w-full h-auto border-0 yt-thumbnail" />
-												`)}
+													class="w-full h-auto border-0 yt-thumbnail"
+													loading="lazy" />
 										</a>
 									</div>
 								</div>

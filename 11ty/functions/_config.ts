@@ -11,7 +11,6 @@ const functions = [
 	"renderCollection",
 	"renderGitHubLink",
 	"renderIcon",
-	"renderLazyImage",
 	"renderReadingTime",
 	"renderTags",
 ];

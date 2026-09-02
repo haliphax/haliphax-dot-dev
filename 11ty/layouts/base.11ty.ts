@@ -164,7 +164,6 @@ export = class Base {
 				<script id="scripts">
 					${await inlineScript(
 						"11ty/layouts/base/details.js",
-						"11ty/layouts/base/lazy.js",
 						"11ty/layouts/base/loaded.js",
 						"11ty/layouts/base/sidebar.js",
 					)}
