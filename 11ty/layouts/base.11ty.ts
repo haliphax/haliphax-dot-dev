@@ -143,7 +143,7 @@ export = class Base {
 								<div class="navbar-brand w-full">
 									<h1 class="text-center w-full">
 										<img
-											src="/img/header.gif"
+											src="/img/header.svg"
 											height="24"
 											width="40"
 											alt="Magenta skull on purple circuit board logo" class="align-bottom"
