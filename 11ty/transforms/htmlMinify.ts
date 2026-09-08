@@ -1,4 +1,3 @@
-import { UserConfig } from "@11ty/eleventy";
 import { DOMParser } from "@xmldom/xmldom";
 import { transform } from "esbuild";
 import { minify } from "html-minifier";
@@ -10,6 +9,7 @@ const scriptCache = new Map<string, string>();
 const parser = new DOMParser({ errorHandler: { warning: () => {} } });
 
 /** minify HTML and inline scripts */
+// @ts-ignore TS7016
 const htmlMinify = (cfg: UserConfig) =>
 	cfg.addTransform(
 		"htmlMinify",

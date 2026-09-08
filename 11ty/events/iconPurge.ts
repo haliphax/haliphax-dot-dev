@@ -1,4 +1,3 @@
-import { UserConfig } from "@11ty/eleventy";
 import fs from "fs";
 import path from "path";
 import { parse, stringify } from "svgson";
@@ -29,6 +28,7 @@ const getHtmlFiles = async (dir: string): Promise<string[]> =>
 		.filter((f: string) => f.endsWith(".html"));
 
 /** purge unused icons from Feather Icons sprite sheet */
+// @ts-ignore TS7016
 const iconPurge = (cfg: UserConfig) => {
 	cfg.on("eleventy.after", async ({ dir }: { dir: EleventyDir }) => {
 		const files = await getHtmlFiles(dir.output);

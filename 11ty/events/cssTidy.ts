@@ -1,4 +1,3 @@
-import { UserConfig } from "@11ty/eleventy";
 import CleanCSS from "clean-css";
 import fs from "fs";
 import { PurgeCSS } from "purgecss";
@@ -14,6 +13,7 @@ const readFile = promisify(fs.readFile);
 const writeFile = promisify(fs.writeFile);
 
 /** purge unused rules and combine/minify stylesheets */
+// @ts-ignore TS7016
 const cssTidy = (cfg: UserConfig) => {
 	cfg.on("eleventy.after", async ({ dir }: { dir: EleventyDir }) => {
 		const stylesheet = `${dir.output}/css/styles.min.css`;

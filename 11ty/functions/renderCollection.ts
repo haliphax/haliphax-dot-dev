@@ -21,9 +21,7 @@ const renderCollection = async (
 						const cutoff =
 							jumboFirst && i === 0 ? jumboBlurbLength : blurbLength;
 						const slug = slugify(p.url);
-						const content = md.render(
-							p.template.frontMatter.excerpt || p.template.frontMatter.content,
-						);
+						const content = md.render(p.excerpt || p.content);
 						const summary = getDescription(content, cutoff);
 						const classes = [];
 						const jumbo = i === 0 && jumboFirst;

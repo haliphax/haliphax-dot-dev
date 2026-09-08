@@ -1,7 +1,6 @@
-import { UserConfig } from "@11ty/eleventy";
-
 const transforms = ["htmlMinify"];
 
+// @ts-ignore TS7016
 const config = (cfg: UserConfig) =>
 	transforms.map((t) => require(`./${t}`)(cfg));
 

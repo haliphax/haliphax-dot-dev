@@ -1,7 +1,7 @@
-import { UserConfig } from "@11ty/eleventy";
 import { readFileSync } from "fs";
 import { fileOpts } from "./11ty/misc";
 
+// @ts-ignore TS7016
 export = (cfg: UserConfig) => {
 	// load the various packages that make up the site and its functionality
 	["events", "layouts", "libraries", "plugins", "transforms"].map((p) =>
