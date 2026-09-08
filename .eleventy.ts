@@ -4,8 +4,8 @@ import { fileOpts } from "./11ty/misc";
 
 export = (cfg: UserConfig) => {
 	// load the various packages that make up the site and its functionality
-	["events", "functions", "layouts", "libraries", "plugins", "transforms"].map(
-		(p) => require(`./11ty/${p}/_config`)(cfg),
+	["events", "layouts", "libraries", "plugins", "transforms"].map((p) =>
+		require(`./11ty/${p}/_config`)(cfg),
 	);
 
 	cfg.addPassthroughCopy({ static: "/" });
